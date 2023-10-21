@@ -1,4 +1,5 @@
 #pragma once
+#include "Entidade.h"
 #include "Jogador.h"
 
 namespace Entidades {

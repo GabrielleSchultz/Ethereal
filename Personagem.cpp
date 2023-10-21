@@ -1,17 +1,15 @@
 #include "Personagem.h"
+using namespace Entidades; 
+using namespace Personagens; 
 
-namespace Entidades {
-	namespace Personagens {
-		Personagem(int nv) : Entidade(), num_vidas(nv), vivo(true){
+Personagem::Personagem(int nv) : Entidade(), num_vidas(nv), vivo(true){
 
-		}
+}
 
-		~Personagem() {
-			vivo = false;
-		}
+Personagem::~Personagem() {
+	vivo = false;
+}
 
-		bool getVivo() {
-			return vivo;
-		}
-	}
+Personagem::bool getVivo() {
+	return vivo;
 }

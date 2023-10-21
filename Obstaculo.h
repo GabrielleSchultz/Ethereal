@@ -3,6 +3,7 @@
 #include "Jogador.h"
 
 namespace Entidades {
+	using namespace Personagens;
 	namespace Obstaculos {
 		class Obstaculo : public Entidade {
 		protected:
@@ -10,7 +11,7 @@ namespace Entidades {
 		public:
 			Obstaculo();
 			~Obstaculo();
-			virtual void obstacular(Jogador* p) = 0;
+			virtual void obstacular(Personagens::Jogador* p) = 0;
 			virtual void executar() = 0;
 			virtual void salvar() = 0;
 		};

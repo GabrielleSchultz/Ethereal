@@ -3,7 +3,7 @@
 namespace Entidades {
 
     class Entidade : public Ente {
-    private:
+    protected:
         int x;
         int y;
 

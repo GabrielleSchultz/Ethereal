@@ -1,4 +1,6 @@
-#pragmaonce
+#pragma once
+
+#include "Ente.h"
 
 namespace Entidades {
 

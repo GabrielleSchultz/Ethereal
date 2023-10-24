@@ -1,12 +1,11 @@
 #include "Inimigo.h"
 
-using namespace Entidades;
-using namespace Personagens;
+using namespace Entidades::Personagens;
 
 Inimigo::Inimigo(int nv, int mal) : Personagem(nv), nivel_maldade(mal) {
 
 }
 
-~Inimigo() {
-
+Entidades::Personagens::Inimigo::~Inimigo()
+{
 }

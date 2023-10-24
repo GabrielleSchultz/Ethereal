@@ -9,12 +9,11 @@ namespace Entidades {
 			bool vivo;
 
 		public:
-			Personagem();
+			Personagem(int nv = 0);
 			~Personagem();
 			bool getVivo();
 			virtual void executar() = 0;
 			virtual void salvar() = 0;
 		};
 	}
-
 }

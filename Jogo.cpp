@@ -1,8 +1,10 @@
 #include "Jogo.h"
-#include "SFML/Graphics.hpp"
 
-Jogo::Jogo()
+#include <iostream>
+
+Jogo::Jogo() : nome("Ethereal - Echoes of the Soul")
 {
+
 	executar();
 }
 
@@ -12,16 +14,23 @@ Jogo::~Jogo()
 
 void Jogo::executar()
 {
-	sf::RenderWindow window(sf::VideoMode(500, 500), "Ethereal mas nao muito bom");
+    pGerenciadorGrafico->setWindowTitle(nome);
 
-    while (window.isOpen())
+    while (pGerenciadorGrafico->isWindowOpen())
     {
+        //aqui sera muito provavelmente utilizado o gerenciador de eventos
         sf::Event event;
-        while (window.pollEvent(event))
+        while (janelaPrincipal.pollEvent(event))
         {
             if (event.type == sf::Event::Closed)
-                window.close();
+                janelaPrincipal.close();
+
         }
-        window.display();
+        pGerenciadorGrafico->clearWindow();
+        pGerenciadorGrafico->displayWindow();
     }
+}
+
+void Jogo::inicializaEntidades()
+{
 }

@@ -7,6 +7,7 @@ namespace Entidades {
 		protected:
 			int num_vidas;
 			bool vivo;
+			int velocidade;
 
 		public:
 			Personagem(int nv = 0);

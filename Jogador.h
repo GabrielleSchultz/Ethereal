@@ -7,6 +7,7 @@ namespace Entidades {
 	{
 		class Jogador
 		{
+			unsigned int pontuacao;
 		public:
 			Jogador();
 		};

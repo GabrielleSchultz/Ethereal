@@ -2,7 +2,7 @@
 
 int main() {
 
-	Jogo jogo;
+	Jogo Ethereal;
 
 	return 0;
 }

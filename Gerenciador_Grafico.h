@@ -1,5 +1,6 @@
 #pragma once
 #include <SFML/Graphics.hpp>
+#include "Ente.h"
 #include <map>
 #include <string>
 
@@ -40,6 +41,13 @@ namespace Gerenciadores
 		void setWindowTitle(std::string titulo);
 		bool windowClosed();
 		sf::RenderWindow* getWindow();
+		void zoomOut();
+		void zoomIn();
+
+		//geracao de mundo
+		void criarMapa();
+		void desenharEntidade(Ente* pEntidade);
+
 
 	};
 }

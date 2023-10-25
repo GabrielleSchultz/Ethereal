@@ -145,11 +145,13 @@
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Menu.cpp" />
     <ClCompile Include="Obstaculo.cpp" />
-    <ClCompile Include="Obstaculo_Estatico.cpp" />
-    <ClCompile Include="Obstaculo_NaoEstatico.cpp" />
+    <ClCompile Include="Obstaculo_Dificil.cpp" />
+    <ClCompile Include="Obstaculo_Facil.cpp" />
+    <ClCompile Include="Obstaculo_Medio.cpp" />
     <ClCompile Include="Personagem.cpp" />
     <ClCompile Include="Primeira_Fase.cpp" />
     <ClCompile Include="Projetil.cpp" />
+    <ClCompile Include="Segunda_Fase.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Entidade.h" />
@@ -164,11 +166,13 @@
     <ClInclude Include="Jogo.h" />
     <ClInclude Include="Menu.h" />
     <ClInclude Include="Obstaculo.h" />
+    <ClInclude Include="Obstaculo_Facil.h" />
     <ClInclude Include="Obstaculo_Medio.h" />
     <ClInclude Include="Obstaculo_Dificil.h" />
     <ClInclude Include="Personagem.h" />
     <ClInclude Include="Primeira_Fase.h" />
     <ClInclude Include="Projetil.h" />
+    <ClInclude Include="Segunda_Fase.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

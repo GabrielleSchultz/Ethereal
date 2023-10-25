@@ -25,6 +25,30 @@
     <Filter Include="Arquivos de Cabeçalho\Entidades\Obstaculos">
       <UniqueIdentifier>{a96d1ef9-cdea-4bac-a6ec-43cd765c598e}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Arquivos de Origem\Gerenciadores">
+      <UniqueIdentifier>{d9001146-98f2-4db0-8e72-7ab9c768e31a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Arquivos de Origem\Entidades">
+      <UniqueIdentifier>{ff38a100-29b8-4962-a414-ce60485dcdd3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Arquivos de Origem\Entidades\Personagens">
+      <UniqueIdentifier>{e3e19af9-1a40-4713-aa4b-4b97ee18df21}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Arquivos de Origem\Entidades\Obstaculos">
+      <UniqueIdentifier>{9f16a527-8350-4204-bd0f-4295a404fb99}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Arquivos de Cabeçalho\Fases">
+      <UniqueIdentifier>{1460eef1-c811-4bb0-9dd0-f49528d44332}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Arquivos de Origem\Fases">
+      <UniqueIdentifier>{0ca02ae2-4db9-422b-905e-c7e2c0e96ce2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Arquivos de Origem\Menus">
+      <UniqueIdentifier>{f3d79bd7-a437-4a7b-8fd1-22a257bcfcaf}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Arquivos de Cabeçalho\Menus">
+      <UniqueIdentifier>{e187a65d-7549-496b-ba0c-6ad0a60d8797}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Ente.cpp">
@@ -33,63 +57,60 @@
     <ClCompile Include="main.cpp">
       <Filter>Arquivos de Origem</Filter>
     </ClCompile>
-    <ClCompile Include="Menu.cpp">
-      <Filter>Arquivos de Origem</Filter>
-    </ClCompile>
     <ClCompile Include="Jogo.cpp">
       <Filter>Arquivos de Origem</Filter>
     </ClCompile>
-    <ClCompile Include="Fase.cpp">
-      <Filter>Arquivos de Origem</Filter>
-    </ClCompile>
-    <ClCompile Include="Primeira_Fase.cpp">
-      <Filter>Arquivos de Origem</Filter>
-    </ClCompile>
     <ClCompile Include="Gerenciador_Grafico.cpp">
-      <Filter>Arquivos de Origem</Filter>
+      <Filter>Arquivos de Origem\Gerenciadores</Filter>
     </ClCompile>
     <ClCompile Include="Gerenciador_Colisoes.cpp">
-      <Filter>Arquivos de Origem</Filter>
+      <Filter>Arquivos de Origem\Gerenciadores</Filter>
     </ClCompile>
     <ClCompile Include="Gerenciador_Eventos.cpp">
-      <Filter>Arquivos de Origem</Filter>
-    </ClCompile>
-    <ClCompile Include="Inimigo.cpp">
-      <Filter>Arquivos de Origem</Filter>
-    </ClCompile>
-    <ClCompile Include="Obstaculo.cpp">
-      <Filter>Arquivos de Origem</Filter>
-    </ClCompile>
-    <ClCompile Include="Personagem.cpp">
-      <Filter>Arquivos de Origem</Filter>
-    </ClCompile>
-    <ClCompile Include="Projetil.cpp">
-      <Filter>Arquivos de Origem</Filter>
+      <Filter>Arquivos de Origem\Gerenciadores</Filter>
     </ClCompile>
     <ClCompile Include="Entidade.cpp">
-      <Filter>Arquivos de Origem</Filter>
+      <Filter>Arquivos de Origem\Entidades</Filter>
+    </ClCompile>
+    <ClCompile Include="Projetil.cpp">
+      <Filter>Arquivos de Origem\Entidades</Filter>
     </ClCompile>
     <ClCompile Include="Jogador.cpp">
-      <Filter>Arquivos de Origem</Filter>
+      <Filter>Arquivos de Origem\Entidades\Personagens</Filter>
     </ClCompile>
-    <ClCompile Include="Obstaculo_Estatico.cpp">
-      <Filter>Arquivos de Origem</Filter>
+    <ClCompile Include="Inimigo.cpp">
+      <Filter>Arquivos de Origem\Entidades\Personagens</Filter>
     </ClCompile>
-    <ClCompile Include="Obstaculo_NaoEstatico.cpp">
-      <Filter>Arquivos de Origem</Filter>
+    <ClCompile Include="Obstaculo.cpp">
+      <Filter>Arquivos de Origem\Entidades\Obstaculos</Filter>
+    </ClCompile>
+    <ClCompile Include="Obstaculo_Facil.cpp">
+      <Filter>Arquivos de Origem\Entidades\Obstaculos</Filter>
+    </ClCompile>
+    <ClCompile Include="Obstaculo_Medio.cpp">
+      <Filter>Arquivos de Origem\Entidades\Obstaculos</Filter>
+    </ClCompile>
+    <ClCompile Include="Obstaculo_Dificil.cpp">
+      <Filter>Arquivos de Origem\Entidades\Obstaculos</Filter>
+    </ClCompile>
+    <ClCompile Include="Primeira_Fase.cpp">
+      <Filter>Arquivos de Origem\Fases</Filter>
+    </ClCompile>
+    <ClCompile Include="Segunda_Fase.cpp">
+      <Filter>Arquivos de Origem\Fases</Filter>
+    </ClCompile>
+    <ClCompile Include="Personagem.cpp">
+      <Filter>Arquivos de Origem\Entidades\Personagens</Filter>
+    </ClCompile>
+    <ClCompile Include="Fase.cpp">
+      <Filter>Arquivos de Origem\Fases</Filter>
+    </ClCompile>
+    <ClCompile Include="Menu.cpp">
+      <Filter>Arquivos de Origem\Menus</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Menu.h">
-      <Filter>Arquivos de Cabeçalho</Filter>
-    </ClInclude>
     <ClInclude Include="Jogo.h">
-      <Filter>Arquivos de Cabeçalho</Filter>
-    </ClInclude>
-    <ClInclude Include="Fase.h">
-      <Filter>Arquivos de Cabeçalho</Filter>
-    </ClInclude>
-    <ClInclude Include="Primeira_Fase.h">
       <Filter>Arquivos de Cabeçalho</Filter>
     </ClInclude>
     <ClInclude Include="libraries.h">
@@ -130,6 +151,21 @@
     </ClInclude>
     <ClInclude Include="Obstaculo_Dificil.h">
       <Filter>Arquivos de Cabeçalho\Entidades\Obstaculos</Filter>
+    </ClInclude>
+    <ClInclude Include="Fase.h">
+      <Filter>Arquivos de Cabeçalho\Fases</Filter>
+    </ClInclude>
+    <ClInclude Include="Obstaculo_Facil.h">
+      <Filter>Arquivos de Cabeçalho\Entidades\Obstaculos</Filter>
+    </ClInclude>
+    <ClInclude Include="Primeira_Fase.h">
+      <Filter>Arquivos de Cabeçalho\Fases</Filter>
+    </ClInclude>
+    <ClInclude Include="Segunda_Fase.h">
+      <Filter>Arquivos de Cabeçalho\Fases</Filter>
+    </ClInclude>
+    <ClInclude Include="Menu.h">
+      <Filter>Arquivos de Cabeçalho\Menus</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

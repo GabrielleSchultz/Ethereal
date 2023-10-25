@@ -43,11 +43,20 @@ void Grafico::centralizarCamera()
 	//...cameraJogo();
 }
 
-void Gerenciadores::Grafico::setWindowTitle(std::string titulo)
+void Grafico::setWindowTitle(std::string titulo)
 {
 	janelaPrincipal.setTitle(titulo);
 }
 
+bool Grafico::windowClosed()
+{
+	return !janelaPrincipal.isOpen();
+}
+
+sf::RenderWindow* Gerenciadores::Grafico::getWindow()
+{
+	return &janelaPrincipal;
+}
 
 
 

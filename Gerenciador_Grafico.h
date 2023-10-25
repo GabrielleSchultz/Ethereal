@@ -38,5 +38,8 @@ namespace Gerenciadores
 		void displayWindow();
 		void centralizarCamera();
 		void setWindowTitle(std::string titulo);
+		bool windowClosed();
+		sf::RenderWindow* getWindow();
+
 	};
 }

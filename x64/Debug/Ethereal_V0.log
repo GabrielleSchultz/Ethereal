@@ -1,20 +1,2 @@
-﻿  Ente.cpp
-  Entidade.cpp
-  Fase.cpp
-  Gerenciador_Colisoes.cpp
-  Gerenciador_Eventos.cpp
-  Gerenciador_Grafico.cpp
-  Inimigo.cpp
-  Jogador.cpp
-  Jogo.cpp
-C:\Users\gabri\source\repos\GabrielleSchultz\Ethereal\Jogo.cpp(23,16): error C2065: 'janelaPrincipal': identificador não declarado
-C:\Users\gabri\source\repos\GabrielleSchultz\Ethereal\Jogo.cpp(26,17): error C2065: 'janelaPrincipal': identificador não declarado
-  main.cpp
-  Menu.cpp
-  Obstaculo.cpp
-  Obstaculo_Estatico.cpp
-  Obstaculo_NaoEstatico.cpp
-  Personagem.cpp
-  Primeira_Fase.cpp
-  Projetil.cpp
-  Gerando Código...
+﻿  Jogo.cpp
+  Ethereal_V0.vcxproj -> C:\Users\gabri\Source\Repos\GabrielleSchultz\Ethereal\x64\Debug\Ethereal_V0.exe

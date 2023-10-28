@@ -12,6 +12,9 @@ public:
 	Jogo();
 	~Jogo();
 	void executar();
-	void inicializaEntidades();
+	void updateDeltaTime();
+	void clear();
+	void run();
+	void draw();
 
 };

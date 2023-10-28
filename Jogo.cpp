@@ -2,8 +2,10 @@
 #include <iostream>
 
 
-Jogo::Jogo() : nome("Ethereal - Echoes of the Soul")
+Jogo::Jogo() : nome("Ethereal - Echoes of the Soul"), 
+pGerenciadorGrafico (Gerenciadores::Grafico::getGerenciador_Grafico())
 {
+    pGerenciadorGrafico->setWindowTitle(nome);
 	executar();
 }
 
@@ -13,19 +15,23 @@ Jogo::~Jogo()
 
 void Jogo::executar()
 {
-
     while (pGerenciadorGrafico->isWindowOpen())
     {
-        //aqui sera muito provavelmente utilizado o gerenciador de eventos
-        while (!pGerenciadorGrafico->windowClosed())
-        {
-
-        }
-        pGerenciadorGrafico->clearWindow();
-        pGerenciadorGrafico->displayWindow();
+        //updateDeltaTime()
+        clear();
+        //run();
+        draw();
     }
 }
 
-void Jogo::inicializaEntidades()
+void Jogo::clear()
 {
+    pGerenciadorGrafico->clearWindow();
 }
+
+void Jogo::draw()
+{
+    //...
+    pGerenciadorGrafico->displayWindow();
+}
+

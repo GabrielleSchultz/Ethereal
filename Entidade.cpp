@@ -8,10 +8,12 @@ Entidades::Entidade::~Entidade()
 {
 }
 
-int Entidade::getX() {
+int Entidades::Entidade::get_pos_X() const
+{
 	return x;
 }
 
-int Entidade::getY() {
+int Entidades::Entidade::get_pos_Y() const
+{
 	return y;
 }

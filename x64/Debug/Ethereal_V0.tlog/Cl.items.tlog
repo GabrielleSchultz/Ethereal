@@ -10,8 +10,10 @@ C:\Users\gabri\source\repos\GabrielleSchultz\Ethereal\Jogo.cpp;C:\Users\gabri\so
 C:\Users\gabri\source\repos\GabrielleSchultz\Ethereal\main.cpp;C:\Users\gabri\source\repos\GabrielleSchultz\Ethereal\x64\Debug\main.obj
 C:\Users\gabri\source\repos\GabrielleSchultz\Ethereal\Menu.cpp;C:\Users\gabri\source\repos\GabrielleSchultz\Ethereal\x64\Debug\Menu.obj
 C:\Users\gabri\source\repos\GabrielleSchultz\Ethereal\Obstaculo.cpp;C:\Users\gabri\source\repos\GabrielleSchultz\Ethereal\x64\Debug\Obstaculo.obj
-C:\Users\gabri\source\repos\GabrielleSchultz\Ethereal\Obstaculo_Estatico.cpp;C:\Users\gabri\source\repos\GabrielleSchultz\Ethereal\x64\Debug\Obstaculo_Estatico.obj
-C:\Users\gabri\source\repos\GabrielleSchultz\Ethereal\Obstaculo_NaoEstatico.cpp;C:\Users\gabri\source\repos\GabrielleSchultz\Ethereal\x64\Debug\Obstaculo_NaoEstatico.obj
+C:\Users\gabri\source\repos\GabrielleSchultz\Ethereal\Obstaculo_Dificil.cpp;C:\Users\gabri\source\repos\GabrielleSchultz\Ethereal\x64\Debug\Obstaculo_Dificil.obj
+C:\Users\gabri\source\repos\GabrielleSchultz\Ethereal\Obstaculo_Facil.cpp;C:\Users\gabri\source\repos\GabrielleSchultz\Ethereal\x64\Debug\Obstaculo_Facil.obj
+C:\Users\gabri\source\repos\GabrielleSchultz\Ethereal\Obstaculo_Medio.cpp;C:\Users\gabri\source\repos\GabrielleSchultz\Ethereal\x64\Debug\Obstaculo_Medio.obj
 C:\Users\gabri\source\repos\GabrielleSchultz\Ethereal\Personagem.cpp;C:\Users\gabri\source\repos\GabrielleSchultz\Ethereal\x64\Debug\Personagem.obj
 C:\Users\gabri\source\repos\GabrielleSchultz\Ethereal\Primeira_Fase.cpp;C:\Users\gabri\source\repos\GabrielleSchultz\Ethereal\x64\Debug\Primeira_Fase.obj
 C:\Users\gabri\source\repos\GabrielleSchultz\Ethereal\Projetil.cpp;C:\Users\gabri\source\repos\GabrielleSchultz\Ethereal\x64\Debug\Projetil.obj
+C:\Users\gabri\source\repos\GabrielleSchultz\Ethereal\Segunda_Fase.cpp;C:\Users\gabri\source\repos\GabrielleSchultz\Ethereal\x64\Debug\Segunda_Fase.obj

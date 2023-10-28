@@ -1,3 +1,5 @@
+#include "Ente.h"
+
 #include "Gerenciador_Grafico.h"
 using namespace Gerenciadores;
 
@@ -7,7 +9,10 @@ using namespace Gerenciadores;
 
 Grafico* Grafico::instancia_pGG(NULL);
 
-Grafico::Grafico() : janelaPrincipal(sf::VideoMode(WINDOW_LENGHT, WINDOW_HEIGHT), "", sf::Style::Default){}
+Grafico::Grafico() :
+janelaPrincipal(sf::VideoMode(WINDOW_LENGHT, WINDOW_HEIGHT), "", sf::Style::Default)
+{
+}
 
 Grafico::~Grafico()
 {
@@ -16,7 +21,7 @@ Grafico::~Grafico()
 Grafico* Grafico::getGerenciador_Grafico()
 {
 	//no caso de multithread, usar um thread lock
-	if (!instancia_pGG)
+	if (instancia_pGG == NULL)
 		instancia_pGG = new Grafico();
 	return instancia_pGG;
 }
@@ -30,12 +35,14 @@ bool Grafico::isWindowOpen()
 
 void Grafico::clearWindow()
 {
-	janelaPrincipal.clear();
+	if (isWindowOpen())
+		janelaPrincipal.clear();
 }
 
 void Grafico::displayWindow()
 {
-	janelaPrincipal.display();
+	if (isWindowOpen())
+		janelaPrincipal.display();
 }
 
 void Grafico::centralizarCamera()
@@ -48,15 +55,7 @@ void Grafico::setWindowTitle(std::string titulo)
 	janelaPrincipal.setTitle(titulo);
 }
 
-bool Grafico::windowClosed()
-{
-	return !janelaPrincipal.isOpen();
-}
 
-sf::RenderWindow* Gerenciadores::Grafico::getWindow()
-{
-	return &janelaPrincipal;
-}
 
 
 

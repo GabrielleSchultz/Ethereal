@@ -1,8 +1,10 @@
 #pragma once
 #include <SFML/Graphics.hpp>
-#include "Ente.h"
+
 #include <map>
 #include <string>
+
+class Ente;
 
 //gerenciador gráfico baseado no tutorial do Matheus Burda!
 
@@ -29,25 +31,23 @@ namespace Gerenciadores
 		~Grafico();
 		static Grafico* getGerenciador_Grafico();
 
-		//render
-		void renderCharacter(sf::RectangleShape* corpo);
-		void renderText(sf::Text* texto);
-
 		//janela e camera
 		bool isWindowOpen();
 		void clearWindow();
 		void displayWindow();
 		void centralizarCamera();
 		void setWindowTitle(std::string titulo);
-		bool windowClosed();
-		sf::RenderWindow* getWindow();
+		void closeWindow();
 		void zoomOut();
 		void zoomIn();
 
 		//geracao de mundo
-		void criarMapa();
-		void desenharEntidade(Ente* pEntidade);
+		void criarMapa(std::string file_path);
 
+		//render
+		void desenharEnte(Ente* pEnte);
+		void renderEntity(sf::Texture* textura);
+		void renderText(sf::Text* texto);
 
 	};
 }

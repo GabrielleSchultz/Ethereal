@@ -1,17 +1,19 @@
 #include "Projetil.h"
-using namespace Entidades;
 
-Projetil::Projetil(): Entidade(), velocidade(0) {
-}
+namespace Entidades
+{
+	Projetil::Projetil() : Entidade(), velocidade(0) {
+	}
 
-Projetil::~Projetil() {
+	Projetil::~Projetil() {
 
-}
+	}
 
-void Projetil::executar() {
+	void Projetil::executar() {
 
-}
+	}
 
-void Projetil::salvar() {
+	void Projetil::salvar() {
 
+	}
 }

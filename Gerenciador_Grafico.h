@@ -20,7 +20,7 @@ namespace Gerenciadores
 	private:
 		MapaTextura CharactersTextures;
 		MapaTextura FontTextures;
-		sf::RenderWindow janelaPrincipal;
+		sf::RenderWindow* janelaPrincipal;
 		sf::View cameraJogo;
 
 		//Padrão de Projeto Singleton:
@@ -40,14 +40,14 @@ namespace Gerenciadores
 		void closeWindow();
 		void zoomOut();
 		void zoomIn();
+		sf::RenderWindow* getWindow();
 
 		//geracao de mundo
 		void criarMapa(std::string file_path);
 
 		//render
 		void desenharEnte(Ente* pEnte);
-		void renderEntity(sf::Texture* textura);
-		void renderText(sf::Text* texto);
+		void desenharTexto(sf::Text* texto);
 
 	};
 }

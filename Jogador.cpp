@@ -1,7 +1,8 @@
 #include "Jogador.h"
 
-using namespace Entidades::Personagens;
+namespace Entidades {
 
-Jogador::Jogador()
-{
+	namespace Personagens {
+
+	}
 }

@@ -1,10 +1,17 @@
 #include "Obstaculo.h"
 
-using namespace Entidades::Obstaculos;
+namespace Entidades {
 
-Obstaculo::Obstaculo() : Entidade(), danoso(false) {
+	namespace Obstaculos
+	{
 
-}
+		Obstaculo::Obstaculo() : Entidade(), danoso(false) {
 
-Obstaculo::~Obstaculo() {
+		}
+
+		Obstaculo::~Obstaculo() {
+		}
+
+	}
+
 }

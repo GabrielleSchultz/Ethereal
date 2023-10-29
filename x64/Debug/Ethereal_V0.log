@@ -1,4 +1,14 @@
-﻿  Jogo.cpp
+﻿  Ente.cpp
+  Entidade.cpp
+  Fase.cpp
+  Gerenciador_Grafico.cpp
+  Inimigo.cpp
+  Jogador.cpp
+  Jogo.cpp
+  Obstaculo.cpp
+  Personagem.cpp
+  Primeira_Fase.cpp
+  Projetil.cpp
   main.cpp
   Gerando Código...
-  Ethereal_V0.vcxproj -> C:\Users\gabri\source\repos\GabrielleSchultz\Ethereal\x64\Debug\Ethereal_V0.exe
+  Ethereal_V0.vcxproj -> C:\Users\gabri\Source\Repos\GabrielleSchultz\Ethereal\x64\Debug\Ethereal_V0.exe

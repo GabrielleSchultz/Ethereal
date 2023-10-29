@@ -8,18 +8,19 @@ namespace Entidades {
     class Entidade : public Ente {
     protected:
         //isto aqui vamos transformar num template coordenada
-        int x;
-        int y;
-        int velocidade;
-        //coordenada de posicao
+        float x, y;
+        sf::Texture* textura;
+        sf::RectangleShape corpo;
 
     public:
-        Entidade();
+        Entidade(const char* texturePath = "");
         ~Entidade();
-        int get_pos_X() const;
-        int get_pos_Y() const;
+        float get_pos_X() const;
+        float get_pos_Y() const;
         virtual void executar() = 0;
         virtual void salvar() = 0;
+        sf::Vector2f getPosicao() const;
+        void desenhar();
 
     };
 }

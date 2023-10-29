@@ -9,15 +9,17 @@ using namespace Gerenciadores;
 
 Grafico* Grafico::instancia_pGG(NULL);
 
-Grafico::Grafico() :
-janelaPrincipal(sf::VideoMode(WINDOW_LENGHT, WINDOW_HEIGHT), "", sf::Style::Default)
+Grafico::Grafico()
 {
+	janelaPrincipal = new sf::RenderWindow(sf::VideoMode(WINDOW_LENGHT, WINDOW_HEIGHT), "", sf::Style::Titlebar | sf::Style::Close);
 }
 
 Grafico::~Grafico()
 {
+	delete janelaPrincipal;
 }
 
+//singleton:
 Grafico* Grafico::getGerenciador_Grafico()
 {
 	//no caso de multithread, usar um thread lock
@@ -28,7 +30,7 @@ Grafico* Grafico::getGerenciador_Grafico()
 
 bool Grafico::isWindowOpen()
 {
-	if (janelaPrincipal.isOpen())
+	if (janelaPrincipal->isOpen())
 		return true;
 	return false;
 }
@@ -36,23 +38,43 @@ bool Grafico::isWindowOpen()
 void Grafico::clearWindow()
 {
 	if (isWindowOpen())
-		janelaPrincipal.clear();
+		janelaPrincipal->clear();
 }
 
 void Grafico::displayWindow()
 {
 	if (isWindowOpen())
-		janelaPrincipal.display();
+		janelaPrincipal->display();
 }
 
 void Grafico::centralizarCamera()
 {
-	//...cameraJogo();
+	//...
 }
 
 void Grafico::setWindowTitle(std::string titulo)
 {
-	janelaPrincipal.setTitle(titulo);
+	janelaPrincipal->setTitle(titulo);
+}
+
+void Grafico::closeWindow()
+{
+	if (isWindowOpen())
+		janelaPrincipal->close();
+}
+
+sf::RenderWindow* Gerenciadores::Grafico::getWindow()
+{
+	return janelaPrincipal;
+}
+
+void Grafico::desenharEnte(Ente* pEnte)
+{
+	
+}
+
+void Gerenciadores::Grafico::desenharTexto(sf::Text* texto)
+{
 }
 
 

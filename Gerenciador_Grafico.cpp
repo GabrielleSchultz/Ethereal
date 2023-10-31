@@ -41,15 +41,21 @@ void Grafico::clearWindow()
 		janelaPrincipal->clear();
 }
 
+void Gerenciadores::Grafico::clearWindow(sf::Color color)
+{
+	if (isWindowOpen())
+		janelaPrincipal->clear(color);
+}
+
 void Grafico::displayWindow()
 {
 	if (isWindowOpen())
 		janelaPrincipal->display();
 }
 
-void Grafico::centralizarCamera()
+void Gerenciadores::Grafico::centralizarCamera(Math::Vector2Df center)
 {
-	//...
+
 }
 
 void Grafico::setWindowTitle(std::string titulo)
@@ -68,16 +74,25 @@ sf::RenderWindow* Gerenciadores::Grafico::getWindow()
 	return janelaPrincipal;
 }
 
-void Grafico::desenharEnte(Ente* pEnte)
+//para entidades
+void Gerenciadores::Grafico::desenharEnte(std::string filePath, Math::Vector2Df pos)
 {
+	if (!carregarTextura(filePath))
+	{
+		std::cout << "Falha ao carregar textura" << std::endl;
+	}
+}
+
+bool Gerenciadores::Grafico::carregarTextura(std::string filePath)
+{
+	MapaTextura::iterator map_it;
+
+
 	
+	return false;
 }
 
-void Gerenciadores::Grafico::desenharTexto(sf::Text* texto)
-{
-}
-
-
+//para demais entes (menu, fases, ...)
 
 
 

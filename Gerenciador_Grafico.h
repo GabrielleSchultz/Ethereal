@@ -1,5 +1,6 @@
 #pragma once
 #include <SFML/Graphics.hpp>
+#include "Vector2D.h"
 
 #include <map>
 #include <string>
@@ -33,21 +34,21 @@ namespace Gerenciadores
 
 		//janela e camera
 		bool isWindowOpen();
-		void clearWindow();
+		void clearWindow(); //cor default (preto)
+		void clearWindow(sf::Color color);
 		void displayWindow();
-		void centralizarCamera();
+		void centralizarCamera(Math::Vector2Df center);
 		void setWindowTitle(std::string titulo);
 		void closeWindow();
-		void zoomOut();
-		void zoomIn();
+		void zoomOut(float coef);
+		void zoomIn(float coef);
 		sf::RenderWindow* getWindow();
 
 		//geracao de mundo
-		void criarMapa(std::string file_path);
+		bool criarMapa(std::string file_path);
 
 		//render
-		void desenharEnte(Ente* pEnte);
-		void desenharTexto(sf::Text* texto);
-
+		void desenharEnte(std::string filePath, Math::Vector2Df pos);
+		bool carregarTextura(std::string filePath);
 	};
 }

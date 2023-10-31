@@ -4,7 +4,8 @@ namespace Entidades {
 
 	namespace Personagens {
 
-		Personagem::Personagem(int nv) : Entidade(), num_vidas(nv), vivo(true)
+		Personagem::Personagem(int nv, const char* texturePath) : 
+		Entidade(texturePath), num_vidas(nv), vivo(true)
 		{
 
 		}

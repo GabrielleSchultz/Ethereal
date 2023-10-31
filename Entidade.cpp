@@ -1,12 +1,14 @@
 #include "Entidade.h"
 
-namespace Entidades{
+namespace Entidades {
 
-	Entidade::Entidade(const char* texturePath): Ente(), x(0), y(0)
+	Entidade::Entidade(const char* texturePath) : Ente(),
+		gravidade(9.8f)
 	{
-		sf::Texture teste_textura;
-		teste_textura.loadFromFile(texturePath);
-		corpo.setTexture(&teste_textura);
+		inicializar();
+		textura = new sf::Texture();
+		textura->loadFromFile(texturePath);
+		body->setTexture(*textura);
 	}
 
 	Entidades::Entidade::~Entidade()
@@ -14,25 +16,15 @@ namespace Entidades{
 		delete textura;
 	}
 
-	float Entidades::Entidade::get_pos_X() const
+	void Entidade::inicializar()
 	{
-		return x;
 	}
 
-	float Entidades::Entidade::get_pos_Y() const
-	{
-		return y;
-	}
-
-	sf::Vector2f Entidades::Entidade::getPosicao() const
-	{
-		sf::Vector2f posicao(x, y);
-		return posicao;
-	}
 
 	void Entidade::desenhar()
 	{
-		pGerenciadorGrafico->desenharEnte(this);
+		//pGerenciadorGrafico->desenharEnte(*body);
+
 	}
 
 }

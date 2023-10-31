@@ -2,14 +2,16 @@
 
 namespace Entidades {
 
-	namespace Personagens {
+	namespace Personagens{
 
-		Inimigo::Inimigo(int nv, int mal) : Personagem(nv), nivel_maldade(mal) {
-
-		}
-
-		Entidades::Personagens::Inimigo::~Inimigo()
+		Inimigo::Inimigo(int nv, int mal, const char* texturePath) :
+		Personagem (nv, texturePath)
 		{
 		}
+
+		Inimigo::~Inimigo()
+		{
+		}
+
 	}
 }

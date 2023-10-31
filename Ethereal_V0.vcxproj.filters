@@ -49,6 +49,15 @@
     <Filter Include="Arquivos de Cabeçalho\Menus">
       <UniqueIdentifier>{e187a65d-7549-496b-ba0c-6ad0a60d8797}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Arquivos de Cabeçalho\Mementos">
+      <UniqueIdentifier>{e2dad8a8-8262-4215-b697-6a795cb71d10}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Arquivos de Cabeçalho\Utils">
+      <UniqueIdentifier>{a48403bd-15d9-4891-b34f-5ccd39cd51ef}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Arquivos de Origem\Utils">
+      <UniqueIdentifier>{e878451f-7cae-4189-a0a2-86cca45c6c30}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Ente.cpp">
@@ -108,6 +117,21 @@
     <ClCompile Include="Menu.cpp">
       <Filter>Arquivos de Origem\Menus</Filter>
     </ClCompile>
+    <ClCompile Include="MenuOptions.cpp">
+      <Filter>Arquivos de Origem\Menus</Filter>
+    </ClCompile>
+    <ClCompile Include="MenuFases.cpp">
+      <Filter>Arquivos de Origem\Menus</Filter>
+    </ClCompile>
+    <ClCompile Include="MenuRanking.cpp">
+      <Filter>Arquivos de Origem\Menus</Filter>
+    </ClCompile>
+    <ClCompile Include="DynamicBody.cpp">
+      <Filter>Arquivos de Origem\Utils</Filter>
+    </ClCompile>
+    <ClCompile Include="Vector2D.cpp">
+      <Filter>Arquivos de Origem\Utils</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Jogo.h">
@@ -166,6 +190,21 @@
     </ClInclude>
     <ClInclude Include="Menu.h">
       <Filter>Arquivos de Cabeçalho\Menus</Filter>
+    </ClInclude>
+    <ClInclude Include="MenuOptions.h">
+      <Filter>Arquivos de Cabeçalho\Menus</Filter>
+    </ClInclude>
+    <ClInclude Include="MenuFases.h">
+      <Filter>Arquivos de Cabeçalho\Menus</Filter>
+    </ClInclude>
+    <ClInclude Include="MenuRanking.h">
+      <Filter>Arquivos de Cabeçalho\Menus</Filter>
+    </ClInclude>
+    <ClInclude Include="DynamicBody.h">
+      <Filter>Arquivos de Cabeçalho\Utils</Filter>
+    </ClInclude>
+    <ClInclude Include="Vector2D.h">
+      <Filter>Arquivos de Cabeçalho\Utils</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

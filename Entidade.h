@@ -7,20 +7,20 @@ namespace Entidades {
 
     class Entidade : public Ente {
     protected:
-        //isto aqui vamos transformar num template coordenada
-        float x, y;
+        sf::Vector2f position;
         sf::Texture* textura;
-        sf::RectangleShape corpo;
+        sf::Sprite* body;
+        const float gravidade;
 
     public:
         Entidade(const char* texturePath = "");
         ~Entidade();
-        float get_pos_X() const;
-        float get_pos_Y() const;
+        //execucao
+        virtual void inicializar();
         virtual void executar() = 0;
-        virtual void salvar() = 0;
-        sf::Vector2f getPosicao() const;
         void desenhar();
-
+        //salvamento
+        virtual void salvar() = 0;
+        virtual void carregar() = 0;
     };
 }

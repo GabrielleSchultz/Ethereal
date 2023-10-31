@@ -7,7 +7,7 @@ namespace Entidades {
 		protected:
 			int nivel_maldade;
 		public:
-			Inimigo(int nv, int mal);
+			Inimigo(int nv, int mal, const char* texturePath = "");
 			~Inimigo();
 			virtual void danificar(Jogador* p) = 0;
 			virtual void executar() = 0;

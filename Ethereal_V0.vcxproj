@@ -133,6 +133,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="DynamicBody.cpp" />
     <ClCompile Include="Ente.cpp" />
     <ClCompile Include="Entidade.cpp" />
     <ClCompile Include="Fase.cpp" />
@@ -144,6 +145,9 @@
     <ClCompile Include="Jogo.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Menu.cpp" />
+    <ClCompile Include="MenuFases.cpp" />
+    <ClCompile Include="MenuOptions.cpp" />
+    <ClCompile Include="MenuRanking.cpp" />
     <ClCompile Include="Obstaculo.cpp" />
     <ClCompile Include="Obstaculo_Dificil.cpp" />
     <ClCompile Include="Obstaculo_Facil.cpp" />
@@ -154,6 +158,7 @@
     <ClCompile Include="Segunda_Fase.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="DynamicBody.h" />
     <ClInclude Include="Entidade.h" />
     <ClInclude Include="Gerenciador_Colisoes.h" />
     <ClInclude Include="Gerenciador_Eventos.h" />
@@ -165,6 +170,9 @@
     <ClInclude Include="Fase.h" />
     <ClInclude Include="Jogo.h" />
     <ClInclude Include="Menu.h" />
+    <ClInclude Include="MenuFases.h" />
+    <ClInclude Include="MenuOptions.h" />
+    <ClInclude Include="MenuRanking.h" />
     <ClInclude Include="Obstaculo.h" />
     <ClInclude Include="Obstaculo_Facil.h" />
     <ClInclude Include="Obstaculo_Medio.h" />
@@ -173,6 +181,7 @@
     <ClInclude Include="Primeira_Fase.h" />
     <ClInclude Include="Projetil.h" />
     <ClInclude Include="Segunda_Fase.h" />
+    <ClInclude Include="Vector2D.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

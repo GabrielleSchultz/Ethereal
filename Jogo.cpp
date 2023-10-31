@@ -1,9 +1,11 @@
 #include "Jogo.h"
 #include <iostream>
-
+#include "Vector2D.h"
 
 Jogo::Jogo() : nome("Ethereal - Echoes of the Soul"), 
-pGerenciadorGrafico (Gerenciadores::Grafico::getGerenciador_Grafico())
+pGerenciadorGrafico (Gerenciadores::Grafico::getGerenciador_Grafico()),
+deltaTime (0.f),
+dt_multiplier (60.f)
 {
     pGerenciadorGrafico->setWindowTitle(nome);
 	executar();
@@ -16,9 +18,23 @@ Jogo::~Jogo()
 //Game loop
 void Jogo::executar()
 {
+    teste.setFillColor(sf::Color::White);
+    teste.setSize(sf::Vector2f(64.f, 64.f));
+    sf::Texture* text = new sf::Texture();
+    text->loadFromFile("Assets/Sprites/Pixie_static_sprite.png");
+    teste.setTexture(text);
+    maxVel = 10.f;
+    acceleration = 1.f;
+    atrito = 0.5f;
+
+    Math::Vector2Df teste1(2.f, 2.f);
+    Math::Vector2Df teste2(2.f, 2.f);
+    float x = 4;
+
+    std::cout << teste1.x << std::endl;
+
     while (running())
     {
-        updateDeltaTime();
         clear();
         update();
         draw();
@@ -51,7 +67,7 @@ void Jogo::pollEvents()
 
 void Jogo::updateDeltaTime()
 {
-    //...update delta time
+    deltaTime = clock.restart().asSeconds();
 }
 
 void Jogo::clear()
@@ -59,15 +75,72 @@ void Jogo::clear()
     pGerenciadorGrafico->clearWindow();
 }
 
+//vai ser passado como parametro o delta 
 void Jogo::update()
 {
     pollEvents();
+    updateDeltaTime();
     //update de todos os elementos
+
+    //acceleration
+    direction = sf::Vector2f(0.f, 0.f);
+
+    if (sf::Keyboard::isKeyPressed(sf::Keyboard::A))
+    {
+        //fixed
+        direction.x = -1.f;
+        if (currentVelocity.x > -maxVel)
+            currentVelocity.x += acceleration * direction.x * deltaTime * dt_multiplier;
+    }
+    if (sf::Keyboard::isKeyPressed(sf::Keyboard::W)) {
+        direction.y = -1.f;
+        if (currentVelocity.y > -maxVel)
+            currentVelocity.y += acceleration * direction.y * deltaTime * dt_multiplier;
+    }
+    if (sf::Keyboard::isKeyPressed(sf::Keyboard::S)) {
+        direction.y = 1.f;
+        if (currentVelocity.y < maxVel)
+            currentVelocity.y += acceleration * direction.y * deltaTime * dt_multiplier;
+    }
+    if (sf::Keyboard::isKeyPressed(sf::Keyboard::D)) {
+        direction.x = 1.f;
+        if (currentVelocity.x < maxVel)
+            currentVelocity.x += acceleration * direction.x * deltaTime * dt_multiplier;
+    }
+
+    //atrito
+    if (currentVelocity.x > 0.f)
+    {
+        currentVelocity.x -= atrito * deltaTime * dt_multiplier;
+        if (currentVelocity.x < 0.f)
+            currentVelocity.x = 0.f;
+    }
+    else if (currentVelocity.x < 0.f)
+    {
+        currentVelocity.x += atrito * deltaTime * dt_multiplier;
+        if (currentVelocity.x > 0.f)
+            currentVelocity.x = 0.f;
+    }
+    else if (currentVelocity.y > 0.f)
+    {
+        currentVelocity.y -= atrito * deltaTime * dt_multiplier;
+        if (currentVelocity.x < 0.f)
+            currentVelocity.x = 0.f;
+    }
+    else if (currentVelocity.y < 0.f)
+    {
+        currentVelocity.y += atrito * deltaTime * dt_multiplier;
+        if (currentVelocity.y > 0.f)
+            currentVelocity.y = 0.f;
+    }
+
+    teste.move(currentVelocity.x * deltaTime * dt_multiplier, currentVelocity.y * deltaTime * dt_multiplier);
 }
 
 void Jogo::draw()
 {
     //desenhar todos os elementos
     pGerenciadorGrafico->displayWindow();
+
 }
 

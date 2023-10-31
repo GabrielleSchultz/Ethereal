@@ -15,7 +15,6 @@ Ente::~Ente()
 
 void Ente::desenhar()
 {
-	pGerenciadorGrafico->desenharEnte(this);
 }
 
 

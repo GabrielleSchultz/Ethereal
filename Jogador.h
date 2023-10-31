@@ -5,11 +5,29 @@
 namespace Entidades {
 	namespace Personagens
 	{
-		class Jogador
-		{
-			unsigned int pontuacao;
+		class Jogador : public Personagem{
+
+		private:
+			int pontos;
+			float gravityCataliser;
+			//checagem de movimento
+			bool isGrounded;
+			bool isJumping;
+			//remembers de movimento
+			float jumpPressedRemember;
+			float groundedRemember;
+			//timers
+			const float groundedRememberTimer;
+			const float jumpPressedRememberTimer;
+
 		public:
-			Jogador();
+			Jogador(int nv = 0, const char* texturePath = "");
+			~Jogador();
+			void executar();
+			void atualizar(float dt);
+			void salvar();
+			void carregar();
+			void operator++();
 		};
 	}
 }

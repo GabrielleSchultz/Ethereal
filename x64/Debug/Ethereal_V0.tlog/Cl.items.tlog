@@ -1,3 +1,4 @@
+C:\Users\gabri\source\repos\GabrielleSchultz\Ethereal\DynamicBody.cpp;C:\Users\gabri\source\repos\GabrielleSchultz\Ethereal\x64\Debug\DynamicBody.obj
 C:\Users\gabri\source\repos\GabrielleSchultz\Ethereal\Ente.cpp;C:\Users\gabri\source\repos\GabrielleSchultz\Ethereal\x64\Debug\Ente.obj
 C:\Users\gabri\source\repos\GabrielleSchultz\Ethereal\Entidade.cpp;C:\Users\gabri\source\repos\GabrielleSchultz\Ethereal\x64\Debug\Entidade.obj
 C:\Users\gabri\source\repos\GabrielleSchultz\Ethereal\Fase.cpp;C:\Users\gabri\source\repos\GabrielleSchultz\Ethereal\x64\Debug\Fase.obj
@@ -9,6 +10,9 @@ C:\Users\gabri\source\repos\GabrielleSchultz\Ethereal\Jogador.cpp;C:\Users\gabri
 C:\Users\gabri\source\repos\GabrielleSchultz\Ethereal\Jogo.cpp;C:\Users\gabri\source\repos\GabrielleSchultz\Ethereal\x64\Debug\Jogo.obj
 C:\Users\gabri\source\repos\GabrielleSchultz\Ethereal\main.cpp;C:\Users\gabri\source\repos\GabrielleSchultz\Ethereal\x64\Debug\main.obj
 C:\Users\gabri\source\repos\GabrielleSchultz\Ethereal\Menu.cpp;C:\Users\gabri\source\repos\GabrielleSchultz\Ethereal\x64\Debug\Menu.obj
+C:\Users\gabri\source\repos\GabrielleSchultz\Ethereal\MenuFases.cpp;C:\Users\gabri\source\repos\GabrielleSchultz\Ethereal\x64\Debug\MenuFases.obj
+C:\Users\gabri\source\repos\GabrielleSchultz\Ethereal\MenuOptions.cpp;C:\Users\gabri\source\repos\GabrielleSchultz\Ethereal\x64\Debug\MenuOptions.obj
+C:\Users\gabri\source\repos\GabrielleSchultz\Ethereal\MenuRanking.cpp;C:\Users\gabri\source\repos\GabrielleSchultz\Ethereal\x64\Debug\MenuRanking.obj
 C:\Users\gabri\source\repos\GabrielleSchultz\Ethereal\Obstaculo.cpp;C:\Users\gabri\source\repos\GabrielleSchultz\Ethereal\x64\Debug\Obstaculo.obj
 C:\Users\gabri\source\repos\GabrielleSchultz\Ethereal\Obstaculo_Dificil.cpp;C:\Users\gabri\source\repos\GabrielleSchultz\Ethereal\x64\Debug\Obstaculo_Dificil.obj
 C:\Users\gabri\source\repos\GabrielleSchultz\Ethereal\Obstaculo_Facil.cpp;C:\Users\gabri\source\repos\GabrielleSchultz\Ethereal\x64\Debug\Obstaculo_Facil.obj

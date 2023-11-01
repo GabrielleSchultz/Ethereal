@@ -4,6 +4,7 @@
 
 Jogo::Jogo() : nome("Ethereal - Echoes of the Soul"), 
 pGerenciadorGrafico (Gerenciadores::Grafico::getGerenciador_Grafico()),
+pGerenciadorEventos (Gerenciadores::Eventos::getGerenciador_Eventos()),
 deltaTime (0.f),
 dt_multiplier (60.f)
 {
@@ -18,6 +19,7 @@ Jogo::~Jogo()
 //Game loop
 void Jogo::executar()
 {
+    //teste:
     teste.setFillColor(sf::Color::White);
     teste.setSize(sf::Vector2f(64.f, 64.f));
     sf::Texture* text = new sf::Texture();
@@ -45,19 +47,7 @@ bool Jogo::running()
 
 void Jogo::pollEvents()
 {
-    while (pGerenciadorGrafico->getWindow()->pollEvent(ev))
-    {
-        switch (ev.type)
-        {
-        case sf::Event::Closed:
-            pGerenciadorGrafico->closeWindow();
-            break;
-        case sf::Event::KeyPressed:
-            if (ev.key.code == sf::Keyboard::Escape)
-                pGerenciadorGrafico->closeWindow();
-            break;
-        }
-    }
+    pGerenciadorEventos->pollEvents();
 }
 
 void Jogo::updateDeltaTime()

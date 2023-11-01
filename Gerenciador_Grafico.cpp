@@ -24,7 +24,7 @@ Grafico* Grafico::getGerenciador_Grafico()
 {
 	//no caso de multithread, usar um thread lock
 	if (instancia_pGG == NULL)
-		instancia_pGG = new Grafico();
+		instancia_pGG = new Gerenciadores::Grafico();
 	return instancia_pGG;
 }
 
@@ -94,13 +94,6 @@ bool Gerenciadores::Grafico::carregarTextura(std::string filePath)
 {
 	MapaTextura::iterator map_it = CharactersTextures.begin();
 
-	while (map_it != CharactersTextures.end())
-	{
-		if ()
-	}
-
-
-	
 	return false;
 }
 

@@ -1,9 +1,5 @@
-﻿  DynamicBody.cpp
-  Entidade.cpp
-  Inimigo.cpp
-  Jogador.cpp
-  Obstaculo.cpp
-  Personagem.cpp
-  Projetil.cpp
+﻿  Gerenciador_Eventos.cpp
+  Jogo.cpp
+  main.cpp
   Gerando Código...
   Ethereal_V0.vcxproj -> C:\Users\gabri\source\repos\GabrielleSchultz\Ethereal\x64\Debug\Ethereal_V0.exe

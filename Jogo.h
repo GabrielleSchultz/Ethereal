@@ -1,6 +1,6 @@
 #pragma once
-#include <string>
 #include "Gerenciador_Grafico.h"
+#include "Gerenciador_Eventos.h"
 
 //classe principal
 
@@ -9,7 +9,7 @@ class Jogo {
 private:
 	std::string nome;
 	Gerenciadores::Grafico* pGerenciadorGrafico;
-	sf::Event ev;
+	Gerenciadores::Eventos* pGerenciadorEventos;
 	sf::Clock clock;
 	float deltaTime;
 	float dt_multiplier; //constancia para diferentes framerates

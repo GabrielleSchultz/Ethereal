@@ -43,7 +43,9 @@ namespace Math
 		T modulo();
 		void operator-();
 		void normalize();
-		void proj_ortogonal();
+		Vector2D<T> proj_ortogonal(Vector2D<T> other_v);
+		Vector2D<T> proj_ortogonalX();
+		Vector2D<T> proj_ortogonalY();
 	};
 
 	template<typename T>
@@ -182,9 +184,8 @@ namespace Math
 	template<typename T>
 	void Vector2D<T>::operator-()
 	{
-		x = (this->x) * -1;
-		y = (this->y) * -1;
-
+		this->x = (this->x) * -1;
+		this->x = (this->y) * -1;
 	}
 
 	//retorna a direcao, mas evitar a chamada dessa funcao por conta do custo
@@ -198,11 +199,25 @@ namespace Math
 	}
 
 	template<typename T>
-	void Vector2D<T>::proj_ortogonal()
+	Vector2D<T> Vector2D<T>::proj_ortogonal(Vector2D<T> other_v)
 	{
-
+		Vector2D<T> projecao = ((this->operator*(other_v)) / (other_v.modulo())) * other_v;
+		return projecao;
 	}
 
+	template<typename T>
+	Vector2D<T> Vector2D<T>::proj_ortogonalX()
+	{
+		Vector2D<T> vX(this->x, 0);
+		return ;
+	}
+
+	template<typename T>
+	Vector2D<T> Vector2D<T>::proj_ortogonalY()
+	{
+		Vector2D<T> vY(0, this->y);
+		return vY;
+	}
 
 	typedef Vector2D<float> Vector2Df;
 	typedef Vector2D<int> Vector2Di;

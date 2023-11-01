@@ -2,8 +2,18 @@
 
 namespace Gerenciadores
 {
-	class Gerenciador_Colisoes
+	class Colisoes
 	{
-	};
-}
+	private:
+		static Gerenciadores::Colisoes* instancia_pGC;
+		Colisoes();
 
+	public:
+		~Colisoes();
+
+
+	};
+
+
+
+}

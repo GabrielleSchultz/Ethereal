@@ -2,11 +2,13 @@
 #include <iostream>
 #include "Vector2D.h"
 
+#define DELTA_TIME_FIX 60.f
+
 Jogo::Jogo() : nome("Ethereal - Echoes of the Soul"), 
 pGerenciadorGrafico (Gerenciadores::Grafico::getGerenciador_Grafico()),
 pGerenciadorEventos (Gerenciadores::Eventos::getGerenciador_Eventos()),
 deltaTime (0.f),
-dt_multiplier (60.f)
+dt_multiplier (DELTA_TIME_FIX)
 {
     pGerenciadorGrafico->setWindowTitle(nome);
 	executar();

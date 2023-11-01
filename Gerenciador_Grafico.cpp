@@ -55,7 +55,7 @@ void Grafico::displayWindow()
 
 void Gerenciadores::Grafico::centralizarCamera(Math::Vector2Df center)
 {
-
+	cameraJogo.setCenter(sf::Vector2f(center.x, center.y));
 }
 
 void Grafico::setWindowTitle(std::string titulo)
@@ -69,6 +69,16 @@ void Grafico::closeWindow()
 		janelaPrincipal->close();
 }
 
+void Gerenciadores::Grafico::zoomOut(float coef)
+{
+	cameraJogo.zoom(-coef);
+}
+
+void Gerenciadores::Grafico::zoomIn(float coef)
+{
+	cameraJogo.zoom(coef);
+}
+
 sf::RenderWindow* Gerenciadores::Grafico::getWindow()
 {
 	return janelaPrincipal;
@@ -77,15 +87,17 @@ sf::RenderWindow* Gerenciadores::Grafico::getWindow()
 //para entidades
 void Gerenciadores::Grafico::desenharEnte(std::string filePath, Math::Vector2Df pos)
 {
-	if (!carregarTextura(filePath))
-	{
-		std::cout << "Falha ao carregar textura" << std::endl;
-	}
+	
 }
 
 bool Gerenciadores::Grafico::carregarTextura(std::string filePath)
 {
-	MapaTextura::iterator map_it;
+	MapaTextura::iterator map_it = CharactersTextures.begin();
+
+	while (map_it != CharactersTextures.end())
+	{
+		if ()
+	}
 
 
 	

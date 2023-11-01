@@ -12,7 +12,7 @@ class Ente;
 //ps:o nome da classe de cada gerenciador se da pela sua funçao
 //sua chamada por namespace ja nos diz que se trata de um gerenciador
 
-typedef std::map <const char*, sf::Texture*> MapaTextura;
+typedef std::map <const std::string, sf::Texture*> MapaTextura;
 
 namespace Gerenciadores
 {
@@ -45,10 +45,10 @@ namespace Gerenciadores
 		sf::RenderWindow* getWindow();
 
 		//geracao de mundo
-		bool criarMapa(std::string file_path);
+		bool criarMapa(const std::string file_path);
 
 		//render
-		void desenharEnte(std::string filePath, Math::Vector2Df pos);
-		bool carregarTextura(std::string filePath);
+		void desenharEnte(const std::string filePath, Math::Vector2Df pos);
+		bool carregarTextura(const std::string filePath);
 	};
 }

@@ -12,6 +12,7 @@ namespace Entidades {
 	public:
 		Projetil();
 		~Projetil();
+		void setDirection(Math::Vector2Df posA, Math::Vector2Df posB);
 		void executar();
 		void salvar();
 	};

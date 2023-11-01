@@ -1,13 +1,14 @@
 //classe template para substituir sf::Vector e desacoplar SFML
 //baseada na classe de Vetores do próprio SFML e na engine GoDot
 
+#pragma once
+
 #include <iostream>
 #include <cmath>
 
-namespace Math {
-
+namespace Math
+{
 	template <typename T>
-
 	class Vector2D
 	{
 	//para evitar ter que chamar os gets de x e y os atributos sao publicos
@@ -39,13 +40,11 @@ namespace Math {
 		Vector2D<T> operator*(T escalar);
 
 		//operacoes no proprio vetor
-		Vector2D<T> operator-() const;
-		Vector2D<T> normalize(Vector2D<T> unnormalized_v);
+		T modulo();
+		void operator-();
+		void normalize();
+		void proj_ortogonal();
 	};
-
-	typedef Vector2D<int> Vector2Di;
-	typedef Vector2D<float> Vector2Df;
-	typedef Vector2D<double> Vector2Dd;
 
 	template<typename T>
 	Vector2D<T>::Vector2D()
@@ -175,29 +174,38 @@ namespace Math {
 	}
 
 	template<typename T>
-	Vector2D<T> Vector2D<T>::operator-() const
+	T Vector2D<T>::modulo()
 	{
-		Vector2D<T> vetor;
+		return sqrt(((this->x) * (this->x)) + ((this->y) * (this->y)));
+	}
 
-		vetor.x = (this->x) * -1;
-		vetor.y = (this->y) * -1;
+	template<typename T>
+	void Vector2D<T>::operator-()
+	{
+		x = (this->x) * -1;
+		y = (this->y) * -1;
 
-		return vetor;
 	}
 
 	//retorna a direcao, mas evitar a chamada dessa funcao por conta do custo
 	template<typename T>
-	Vector2D<T> Vector2D<T>::normalize(Vector2D<T> unnormalized_v)
+	void Vector2D<T>::normalize()
 	{
-		Vector2D<T> vetor_normalizado;
-
-		T modulo = sqrt((unnormalized_v.x * unnormalized_v.x)
-		+ (unnormalized_v.y * unnormalized_v.y));
+		T modulo = modulo();
 		
-		vetor_normalizado.x = unnormalized_v.x / modulo;
-		vetor_normalizado.y = unnormalized_v.y / modulo;
-
-		return vetor_normalizado;
+		this->x = (this->x) / modulo;
+		this->y = (this->y) / modulo;
 	}
+
+	template<typename T>
+	void Vector2D<T>::proj_ortogonal()
+	{
+
+	}
+
+
+	typedef Vector2D<float> Vector2Df;
+	typedef Vector2D<int> Vector2Di;
+	typedef Vector2D<double> Vector2Dd;
 
 }

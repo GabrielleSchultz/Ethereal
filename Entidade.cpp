@@ -18,6 +18,7 @@ namespace Entidades {
 
 	void Entidade::inicializar()
 	{
+		
 	}
 
 

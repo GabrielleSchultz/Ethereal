@@ -26,7 +26,6 @@ namespace Entidades {
 			void executar();
 			void atualizar(float dt);
 			void salvar();
-			void carregar();
 			void operator++();
 		};
 	}

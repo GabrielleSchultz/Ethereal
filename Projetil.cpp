@@ -9,6 +9,11 @@ namespace Entidades
 
 	}
 
+	void Projetil::setDirection(Math::Vector2Df posA, Math::Vector2Df posB)
+	{
+		direction = posB - posA;
+	}
+
 	void Projetil::executar() {
 
 	}

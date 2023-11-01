@@ -27,15 +27,10 @@ void Jogo::executar()
     acceleration = 1.f;
     atrito = 0.5f;
 
-    Math::Vector2Df teste1(2.f, 2.f);
-    Math::Vector2Df teste2(2.f, 2.f);
-    float x = 4;
-
-    std::cout << teste1.x << std::endl;
-
     while (running())
     {
         clear();
+        pollEvents();
         update();
         draw();
     }
@@ -78,7 +73,6 @@ void Jogo::clear()
 //vai ser passado como parametro o delta 
 void Jogo::update()
 {
-    pollEvents();
     updateDeltaTime();
     //update de todos os elementos
 
@@ -140,6 +134,8 @@ void Jogo::update()
 void Jogo::draw()
 {
     //desenhar todos os elementos
+
+    pGerenciadorGrafico->getWindow()->draw(teste);
     pGerenciadorGrafico->displayWindow();
 
 }

@@ -21,6 +21,5 @@ namespace Entidades {
         void desenhar();
         //salvamento
         virtual void salvar() = 0;
-        virtual void carregar() = 0;
     };
 }

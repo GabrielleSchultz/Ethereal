@@ -8,8 +8,8 @@ class DynamicBody
 {
 protected:
 	Math::Vector2Df currentVelocity;
-	Math::Vector2Df direction;
-	float speed;
+	Math::Vector2Df direction; //verificar
+	const float speed;
 	float acceleration;
 	float atrito;
 	float delta_time;

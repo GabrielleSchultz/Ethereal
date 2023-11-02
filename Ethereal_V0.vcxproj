@@ -169,7 +169,6 @@
     <ClInclude Include="Gerenciador_Grafico.h" />
     <ClInclude Include="Inimigo.h" />
     <ClInclude Include="Jogador.h" />
-    <ClInclude Include="libraries.h" />
     <ClInclude Include="Ente.h" />
     <ClInclude Include="Fase.h" />
     <ClInclude Include="Jogo.h" />

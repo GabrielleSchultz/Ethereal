@@ -49,6 +49,12 @@
     <Filter Include="Arquivos de Cabeçalho\Menus">
       <UniqueIdentifier>{e187a65d-7549-496b-ba0c-6ad0a60d8797}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Arquivos de Cabeçalho\Listas">
+      <UniqueIdentifier>{22dbe087-6d68-4698-8a03-eb9096c3165f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Arquivos de Origem\Listas">
+      <UniqueIdentifier>{37b2e0bb-e973-4e39-a20b-375eab9d13ea}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Ente.cpp">
@@ -108,6 +114,9 @@
     <ClCompile Include="Menu.cpp">
       <Filter>Arquivos de Origem\Menus</Filter>
     </ClCompile>
+    <ClCompile Include="ListaEntidades.cpp">
+      <Filter>Arquivos de Origem\Listas</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Jogo.h">
@@ -166,6 +175,12 @@
     </ClInclude>
     <ClInclude Include="Menu.h">
       <Filter>Arquivos de Cabeçalho\Menus</Filter>
+    </ClInclude>
+    <ClInclude Include="Lista.h">
+      <Filter>Arquivos de Cabeçalho\Listas</Filter>
+    </ClInclude>
+    <ClInclude Include="ListaEntidades.h">
+      <Filter>Arquivos de Cabeçalho\Listas</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

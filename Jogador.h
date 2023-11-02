@@ -9,7 +9,7 @@ namespace Entidades {
 
 		private:
 			int pontos;
-			float gravityCataliser;
+			const float gravityCataliser;
 			//checagem de movimento
 			bool isGrounded;
 			bool isJumping;

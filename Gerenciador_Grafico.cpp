@@ -6,16 +6,33 @@ using namespace Gerenciadores;
 #define WINDOW_LENGHT 1180
 #define WINDOW_HEIGHT 620
 
+#define SPRITE_ERROR "Assets/error_texture.png"
+
 
 Grafico* Grafico::instancia_pGG(NULL);
 
 Grafico::Grafico()
 {
 	janelaPrincipal = new sf::RenderWindow(sf::VideoMode(WINDOW_LENGHT, WINDOW_HEIGHT), "", sf::Style::Titlebar | sf::Style::Close);
+	if (!carregarTextura(SPRITE_ERROR))
+		exit(1);
 }
 
 Grafico::~Grafico()
 {
+	MapaTextura::iterator entities_it = EntityTextures.begin(), fonts_it = FontTextures.begin();
+
+	while (entities_it != EntityTextures.end() || fonts_it != FontTextures.end())
+	{
+		if (entities_it->second != NULL && entities_it != EntityTextures.end())
+			delete entities_it->second;
+		if (fonts_it->second != NULL && fonts_it != FontTextures.end())
+			delete fonts_it->second;
+		
+		entities_it++;
+		fonts_it++;
+	}
+
 	delete janelaPrincipal;
 }
 
@@ -41,11 +58,13 @@ void Grafico::clearWindow()
 		janelaPrincipal->clear();
 }
 
+//sobrecarga com cores
 void Gerenciadores::Grafico::clearWindow(sf::Color color)
 {
 	if (isWindowOpen())
 		janelaPrincipal->clear(color);
 }
+//
 
 void Grafico::displayWindow()
 {
@@ -87,17 +106,42 @@ sf::RenderWindow* Gerenciadores::Grafico::getWindow()
 //para entidades
 void Gerenciadores::Grafico::desenharEnte(std::string filePath, Math::Vector2Df pos)
 {
-	
+	sf::Texture* texture;
+	MapaTextura::iterator it = EntityTextures.find(filePath);
+
+	if (it == EntityTextures.end())
+		it = EntityTextures.find(SPRITE_ERROR);
+
+	texture = it->second;
+	sf::Vector2u size = texture->getSize();
+
+	sf::Sprite sprite;
+	sprite.setTexture(*texture);
+	sprite.setPosition(pos.x, pos.y);
+	janelaPrincipal->draw(sprite);
+
 }
 
-bool Gerenciadores::Grafico::carregarTextura(std::string filePath)
+bool Gerenciadores::Grafico::carregarTextura(const std::string filePath)
 {
-	MapaTextura::iterator map_it = CharactersTextures.begin();
+	MapaTextura::iterator map_it = EntityTextures.begin();
 
-	return false;
+	if (EntityTextures.count(filePath) == 1)
+		return true;
+
+	else
+	{
+		sf::Texture* texture = new sf::Texture();
+		if (!texture->loadFromFile(filePath))
+		{
+			return false; 
+		}
+		EntityTextures.insert(MapaTextura::value_type(filePath, texture));
+		return true;
+	}
+
 }
 
-//para demais entes (menu, fases, ...)
 
 
 

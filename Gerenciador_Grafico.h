@@ -5,12 +5,12 @@
 #include <map>
 #include <string>
 
-class Ente;
-
 //gerenciador gráfico baseado no tutorial do Matheus Burda!
 
 //ps:o nome da classe de cada gerenciador se da pela sua funçao
 //sua chamada por namespace ja nos diz que se trata de um gerenciador
+
+class Ente;
 
 typedef std::map <const std::string, sf::Texture*> MapaTextura;
 
@@ -19,7 +19,7 @@ namespace Gerenciadores
 	class Grafico
 	{
 	private:
-		MapaTextura CharactersTextures;
+		MapaTextura EntityTextures;
 		MapaTextura FontTextures;
 		sf::RenderWindow* janelaPrincipal;
 		sf::View cameraJogo;
@@ -45,7 +45,7 @@ namespace Gerenciadores
 		sf::RenderWindow* getWindow();
 
 		//geracao de mundo
-		bool criarMapa(const std::string file_path);
+		//bool criarMapa(const std::string file_path);
 
 		//render
 		void desenharEnte(const std::string filePath, Math::Vector2Df pos);

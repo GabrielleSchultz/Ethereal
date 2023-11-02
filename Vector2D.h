@@ -158,19 +158,19 @@ namespace Math
 	{
 		Vector2D<T> vetor;
 
-		vetor.x = (this->x) * escalar;
-		vetor.y = (this->y) * escalar;
+		vetor.x = (this->x) / escalar;
+		vetor.y = (this->y) / escalar;
 
 		return vetor;
 	}
 
 	template<typename T>
-	inline Vector2D<T> Vector2D<T>::operator*(T escalar)
+	Vector2D<T> Vector2D<T>::operator*(T escalar)
 	{
 		Vector2D<T> vetor;
 
-		vetor.x = (this->x) / escalar;
-		vetor.y = (this->y) / escalar;
+		vetor.x = (this->x) * escalar;
+		vetor.y = (this->y) * escalar;
 
 		return vetor;
 	}
@@ -222,5 +222,6 @@ namespace Math
 	typedef Vector2D<float> Vector2Df;
 	typedef Vector2D<int> Vector2Di;
 	typedef Vector2D<double> Vector2Dd;
+	typedef Vector2D<unsigned int> Vector2Du;
 
 }

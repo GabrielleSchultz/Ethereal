@@ -1,29 +1,26 @@
-﻿  DynamicBody.cpp
-  Ente.cpp
-  Entidade.cpp
-  Fase.cpp
-  Gerenciador_Colisoes.cpp
-  Gerenciador_Estados.cpp
-  Gerenciador_Eventos.cpp
-  Gerenciador_Grafico.cpp
-  Inimigo.cpp
-  Jogador.cpp
-  Jogo.cpp
-  ListaEntidades.cpp
-  main.cpp
-  Menu.cpp
-  MenuFases.cpp
-  MenuOptions.cpp
-  MenuRanking.cpp
-  Obstaculo.cpp
-  Obstaculo_Dificil.cpp
-  Obstaculo_Facil.cpp
-  Gerando Código...
-  Compilando...
-  Obstaculo_Medio.cpp
-  Personagem.cpp
-  Primeira_Fase.cpp
-  Projetil.cpp
-  Segunda_Fase.cpp
-  Gerando Código...
+﻿DynamicBody.obj : warning LNK4204: '' está faltando informação de depuração para módulo de referência; vinculando objeto quando sem informação de depuração
+Ente.obj : warning LNK4204: '' está faltando informação de depuração para módulo de referência; vinculando objeto quando sem informação de depuração
+Entidade.obj : warning LNK4204: '' está faltando informação de depuração para módulo de referência; vinculando objeto quando sem informação de depuração
+Fase.obj : warning LNK4204: '' está faltando informação de depuração para módulo de referência; vinculando objeto quando sem informação de depuração
+Gerenciador_Colisoes.obj : warning LNK4204: '' está faltando informação de depuração para módulo de referência; vinculando objeto quando sem informação de depuração
+Gerenciador_Estados.obj : warning LNK4204: '' está faltando informação de depuração para módulo de referência; vinculando objeto quando sem informação de depuração
+Gerenciador_Eventos.obj : warning LNK4204: '' está faltando informação de depuração para módulo de referência; vinculando objeto quando sem informação de depuração
+Gerenciador_Grafico.obj : warning LNK4204: '' está faltando informação de depuração para módulo de referência; vinculando objeto quando sem informação de depuração
+Inimigo.obj : warning LNK4204: '' está faltando informação de depuração para módulo de referência; vinculando objeto quando sem informação de depuração
+Jogador.obj : warning LNK4204: '' está faltando informação de depuração para módulo de referência; vinculando objeto quando sem informação de depuração
+Jogo.obj : warning LNK4204: '' está faltando informação de depuração para módulo de referência; vinculando objeto quando sem informação de depuração
+ListaEntidades.obj : warning LNK4204: '' está faltando informação de depuração para módulo de referência; vinculando objeto quando sem informação de depuração
+main.obj : warning LNK4204: '' está faltando informação de depuração para módulo de referência; vinculando objeto quando sem informação de depuração
+Menu.obj : warning LNK4204: '' está faltando informação de depuração para módulo de referência; vinculando objeto quando sem informação de depuração
+MenuFases.obj : warning LNK4204: '' está faltando informação de depuração para módulo de referência; vinculando objeto quando sem informação de depuração
+MenuOptions.obj : warning LNK4204: '' está faltando informação de depuração para módulo de referência; vinculando objeto quando sem informação de depuração
+MenuRanking.obj : warning LNK4204: '' está faltando informação de depuração para módulo de referência; vinculando objeto quando sem informação de depuração
+Obstaculo.obj : warning LNK4204: '' está faltando informação de depuração para módulo de referência; vinculando objeto quando sem informação de depuração
+Obstaculo_Dificil.obj : warning LNK4204: '' está faltando informação de depuração para módulo de referência; vinculando objeto quando sem informação de depuração
+Obstaculo_Facil.obj : warning LNK4204: '' está faltando informação de depuração para módulo de referência; vinculando objeto quando sem informação de depuração
+Obstaculo_Medio.obj : warning LNK4204: '' está faltando informação de depuração para módulo de referência; vinculando objeto quando sem informação de depuração
+Personagem.obj : warning LNK4204: '' está faltando informação de depuração para módulo de referência; vinculando objeto quando sem informação de depuração
+Primeira_Fase.obj : warning LNK4204: '' está faltando informação de depuração para módulo de referência; vinculando objeto quando sem informação de depuração
+Projetil.obj : warning LNK4204: '' está faltando informação de depuração para módulo de referência; vinculando objeto quando sem informação de depuração
+Segunda_Fase.obj : warning LNK4204: '' está faltando informação de depuração para módulo de referência; vinculando objeto quando sem informação de depuração
   Ethereal_V0.vcxproj -> C:\Users\gabri\Source\Repos\GabrielleSchultz\Ethereal\x64\Debug\Ethereal_V0.exe

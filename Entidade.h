@@ -27,7 +27,7 @@ namespace Entidades {
 
     public:
         Entidade(const char* texturePath = "", ID identidade = ID::vazio);
-        ~Entidade();
+        virtual ~Entidade();
         //execucao
         virtual void inicializar();
         virtual void executar() = 0;

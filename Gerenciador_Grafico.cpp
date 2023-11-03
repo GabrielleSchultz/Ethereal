@@ -20,19 +20,7 @@ Grafico::Grafico()
 
 Grafico::~Grafico()
 {
-	MapaTextura::iterator entities_it = EntityTextures.begin(), fonts_it = FontTextures.begin();
-
-	while (entities_it != EntityTextures.end() || fonts_it != FontTextures.end())
-	{
-		if (entities_it->second != NULL && entities_it != EntityTextures.end())
-			delete entities_it->second;
-		if (fonts_it->second != NULL && fonts_it != FontTextures.end())
-			delete fonts_it->second;
-		
-		entities_it++;
-		fonts_it++;
-	}
-
+	deletarTexturas();
 	delete janelaPrincipal;
 }
 
@@ -103,6 +91,16 @@ sf::RenderWindow* Gerenciadores::Grafico::getWindow()
 	return janelaPrincipal;
 }
 
+bool Gerenciadores::Grafico::foraDaCamera(Math::Vector2Df pos, sf::Vector2u size)
+{
+	float posX = pos.x + (float) size.x;
+	float posY = pos.y + (float)size.y;
+
+	if (posX > (cameraJogo.getSize().x) || posY > (cameraJogo.getSize().y))
+		return true;
+	return false;
+}
+
 //para entidades
 void Gerenciadores::Grafico::desenharEnte(std::string filePath, Math::Vector2Df pos)
 {
@@ -115,11 +113,14 @@ void Gerenciadores::Grafico::desenharEnte(std::string filePath, Math::Vector2Df 
 	texture = it->second;
 	sf::Vector2u size = texture->getSize();
 
-	sf::Sprite sprite;
-	sprite.setTexture(*texture);
-	sprite.setPosition(pos.x, pos.y);
-	janelaPrincipal->draw(sprite);
+	if (!foraDaCamera(pos, size))
+	{
+		sf::Sprite sprite;
+		sprite.setTexture(*texture);
+		sprite.setPosition(pos.x, pos.y);
 
+		janelaPrincipal->draw(sprite);
+	}
 }
 
 bool Gerenciadores::Grafico::carregarTextura(const std::string filePath)
@@ -140,6 +141,22 @@ bool Gerenciadores::Grafico::carregarTextura(const std::string filePath)
 		return true;
 	}
 
+}
+
+void Gerenciadores::Grafico::deletarTexturas()
+{
+	MapaTextura::iterator entities_it = EntityTextures.begin(), fonts_it = FontTextures.begin();
+
+	while (entities_it != EntityTextures.end() || fonts_it != FontTextures.end())
+	{
+		if (entities_it->second != NULL && entities_it != EntityTextures.end())
+			delete entities_it->second;
+		if (fonts_it->second != NULL && fonts_it != FontTextures.end())
+			delete fonts_it->second;
+
+		entities_it++;
+		fonts_it++;
+	}
 }
 
 

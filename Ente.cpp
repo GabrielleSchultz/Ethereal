@@ -11,10 +11,6 @@ pGerenciadorGrafico(Gerenciadores::Grafico::getGerenciador_Grafico())
 
 Ente::~Ente()
 {
+	pGerenciadorGrafico = nullptr;
 }
-
-void Ente::desenhar()
-{
-}
-
 

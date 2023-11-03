@@ -43,6 +43,7 @@ namespace Gerenciadores
 		void zoomOut(float coef);
 		void zoomIn(float coef);
 		sf::RenderWindow* getWindow();
+		bool foraDaCamera(Math::Vector2Df pos, sf::Vector2u size);
 
 		//geracao de mundo
 		//bool criarMapa(const std::string file_path);
@@ -50,5 +51,6 @@ namespace Gerenciadores
 		//render
 		void desenharEnte(const std::string filePath, Math::Vector2Df pos);
 		bool carregarTextura(const std::string filePath);
+		void deletarTexturas();
 	};
 }

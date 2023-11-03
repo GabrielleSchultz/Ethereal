@@ -27,9 +27,9 @@ void Jogo::executar()
     sf::Texture* text = new sf::Texture();
     text->loadFromFile("Assets/Sprites/Pixie_static_sprite.png");
     teste.setTexture(text);
-    maxVel = 10.f;
-    acceleration = 1.f;
-    atrito = 0.5f;
+    maxVel = 7.5f;
+    acceleration = 0.5f;
+    atrito = 0.25f;
 
     while (running())
     {
@@ -125,10 +125,7 @@ void Jogo::update()
 
 void Jogo::draw()
 {
-    //desenhar todos os elementos
-
     pGerenciadorGrafico->getWindow()->draw(teste);
     pGerenciadorGrafico->displayWindow();
-
 }
 

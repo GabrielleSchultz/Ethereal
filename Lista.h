@@ -99,6 +99,7 @@ TE* Listas::Lista<TL>::Elemento<TE>::getInfo() {
 }
 
 
+
 /* LISTA */
 template <class TL>
 Listas::Lista<TL>::Lista() {

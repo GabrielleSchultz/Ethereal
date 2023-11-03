@@ -58,6 +58,21 @@
     <Filter Include="Arquivos de Origem\Utils">
       <UniqueIdentifier>{e878451f-7cae-4189-a0a2-86cca45c6c30}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Arquivos de Cabeçalho\Utils\Math">
+      <UniqueIdentifier>{80b45843-aedb-4a19-9196-2a19bfeb7318}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Arquivos de Origem\Controles">
+      <UniqueIdentifier>{f9dcc5a8-9719-4d1a-ad74-cf79f376ffd7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Arquivos de Cabeçalho\Controles">
+      <UniqueIdentifier>{ab7bb27a-35f7-4d65-8fd1-59cd7d571a20}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Arquivos de Origem\Listas">
+      <UniqueIdentifier>{44777df9-e147-47eb-9b47-75386942005f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Arquivos de Cabeçalho\Listas">
+      <UniqueIdentifier>{593eb229-030f-43ce-ba4e-9673089cd2b2}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Ente.cpp">
@@ -129,15 +144,24 @@
     <ClCompile Include="DynamicBody.cpp">
       <Filter>Arquivos de Origem\Utils</Filter>
     </ClCompile>
-    <ClCompile Include="Vector2D.cpp">
-      <Filter>Arquivos de Origem\Utils</Filter>
+    <ClCompile Include="Gerenciador_Inputs.cpp">
+      <Filter>Arquivos de Origem\Gerenciadores</Filter>
+    </ClCompile>
+    <ClCompile Include="Gerenciador_Estados.cpp">
+      <Filter>Arquivos de Origem\Gerenciadores</Filter>
+    </ClCompile>
+    <ClCompile Include="ControleJogador.cpp">
+      <Filter>Arquivos de Origem\Controles</Filter>
+    </ClCompile>
+    <ClCompile Include="ControleMenu.cpp">
+      <Filter>Arquivos de Origem\Controles</Filter>
+    </ClCompile>
+    <ClCompile Include="ListaEntidades.cpp">
+      <Filter>Arquivos de Origem\Listas</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Jogo.h">
-      <Filter>Arquivos de Cabeçalho</Filter>
-    </ClInclude>
-    <ClInclude Include="libraries.h">
       <Filter>Arquivos de Cabeçalho</Filter>
     </ClInclude>
     <ClInclude Include="Gerenciador_Grafico.h">
@@ -203,8 +227,35 @@
     <ClInclude Include="DynamicBody.h">
       <Filter>Arquivos de Cabeçalho\Utils</Filter>
     </ClInclude>
-    <ClInclude Include="Vector2D.h">
+    <ClInclude Include="Controller.h">
+      <Filter>Arquivos de Cabeçalho\Controles</Filter>
+    </ClInclude>
+    <ClInclude Include="ControleJogador.h">
+      <Filter>Arquivos de Cabeçalho\Controles</Filter>
+    </ClInclude>
+    <ClInclude Include="ControleMenu.h">
+      <Filter>Arquivos de Cabeçalho\Controles</Filter>
+    </ClInclude>
+    <ClInclude Include="Globals.h">
       <Filter>Arquivos de Cabeçalho\Utils</Filter>
+    </ClInclude>
+    <ClInclude Include="Constants.h">
+      <Filter>Arquivos de Cabeçalho\Utils\Math</Filter>
+    </ClInclude>
+    <ClInclude Include="Vector2D.h">
+      <Filter>Arquivos de Cabeçalho\Utils\Math</Filter>
+    </ClInclude>
+    <ClInclude Include="Gerenciador_Estados.h">
+      <Filter>Arquivos de Cabeçalho\Gerenciadores</Filter>
+    </ClInclude>
+    <ClInclude Include="Gerenciador_Inputs.h">
+      <Filter>Arquivos de Cabeçalho\Gerenciadores</Filter>
+    </ClInclude>
+    <ClInclude Include="Lista.h">
+      <Filter>Arquivos de Cabeçalho\Listas</Filter>
+    </ClInclude>
+    <ClInclude Include="ListaEntidades.h">
+      <Filter>Arquivos de Cabeçalho\Listas</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

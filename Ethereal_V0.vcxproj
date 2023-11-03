@@ -133,6 +133,8 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="ControleJogador.cpp" />
+    <ClCompile Include="ControleMenu.cpp" />
     <ClCompile Include="DynamicBody.cpp" />
     <ClCompile Include="Ente.cpp" />
     <ClCompile Include="Entidade.cpp" />
@@ -162,6 +164,8 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Constants.h" />
+    <ClInclude Include="ControleJogador.h" />
+    <ClInclude Include="ControleMenu.h" />
     <ClInclude Include="Controller.h" />
     <ClInclude Include="DynamicBody.h" />
     <ClInclude Include="Entidade.h" />
@@ -170,6 +174,7 @@
     <ClInclude Include="Gerenciador_Eventos.h" />
     <ClInclude Include="Gerenciador_Grafico.h" />
     <ClInclude Include="Gerenciador_Inputs.h" />
+    <ClInclude Include="Globals.h" />
     <ClInclude Include="Inimigo.h" />
     <ClInclude Include="Jogador.h" />
     <ClInclude Include="Ente.h" />

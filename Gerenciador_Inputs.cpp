@@ -26,35 +26,35 @@ namespace Gerenciadores
 
     void Input::notifyKeyPressed(sf::Keyboard::Key key)
     {
-        std::vector<Controlers*>::iterator it;
+        std::vector<Controllers*>::iterator it;
 
         for (it = observers.begin(); it != observers.end(); it++)
         {
-            (*it)->notifyReleased();
+            (*it)->notifyReleased(keyMap[key]);
         }
     }
 
     void Input::notifyKeyReleased(sf::Keyboard::Key key)
     {
-        std::vector<Controlers*>::iterator it;
+        std::vector<Controllers*>::iterator it;
 
         for (it = observers.begin(); it != observers.end(); it++)
         {
-            (*it)->notifyPressed();
+            (*it)->notifyPressed(keyMap[key]);
         }
     }
 
-    void Input::adicionar_observer(Controlers* pObserver)
+    void Input::adicionar_observer(Controllers* pObserver)
     {
         if (pObserver)
             observers.push_back(pObserver);
     }
 
-    void Input::remover_observer(Controlers* pObserver)
+    void Input::remover_observer(Controllers* pObserver)
     {
         if (pObserver)
         {
-            std::vector<Controlers*>::iterator it = observers.begin();
+            std::vector<Controllers*>::iterator it = observers.begin();
             while (it != observers.end())
             {
                 if ((*it) == pObserver)

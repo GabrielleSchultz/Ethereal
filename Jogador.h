@@ -2,6 +2,8 @@
 
 #include "Personagem.h"
 
+enum JogadorNum { Jogador1 = 1, Jogador2 = 2 };
+
 namespace Entidades {
 	namespace Personagens
 	{
@@ -9,6 +11,8 @@ namespace Entidades {
 
 		private:
 			int pontos;
+			JogadorNum Player;
+			bool Player1;
 			const float gravityCataliser;
 			//checagem de movimento
 			bool isGrounded;
@@ -21,12 +25,13 @@ namespace Entidades {
 			const float jumpPressedRememberTimer;
 
 		public:
-			Jogador(int nv = 0, const char* texturePath = "");
+			Jogador(int nv = 0, const char* texturePath = "", JogadorNum player = Jogador1);
 			~Jogador();
 			void executar();
 			void atualizar(float dt);
 			void salvar();
 			void operator++();
+			bool isPlayer1();
 		};
 	}
 }

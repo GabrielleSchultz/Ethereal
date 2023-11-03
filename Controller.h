@@ -11,6 +11,6 @@ public:
 	Controlers() :
 		pGerenciadorInput(Gerenciadores::Input::getGerenciador_Inputs()) {}
 	~Controlers() {}
-	virtual void notifyPressed() = 0;
-	virtual void notifyReleased() = 0;
+	virtual void notifyPressed(const char* key) = 0;
+	virtual void notifyReleased(const char* key) = 0;
 };

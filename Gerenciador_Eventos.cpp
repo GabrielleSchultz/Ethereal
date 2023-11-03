@@ -6,6 +6,7 @@ namespace Gerenciadores {
     //aqui a ordem de chamada no .h é importante
     Eventos::Eventos() :
     pGerenciadorGrafico(Gerenciadores::Grafico::getGerenciador_Grafico()),
+    pGerenciadorEntradas(Gerenciadores::Input::getGerenciador_Inputs()),
     pJanela(pGerenciadorGrafico->getWindow())
     {
     }
@@ -32,11 +33,16 @@ namespace Gerenciadores {
             case sf::Event::Closed:
                 pGerenciadorGrafico->closeWindow();
                 break;
-            //isso vai passar para o inputHandler:
             case sf::Event::KeyPressed:
+            {
                 if (ev.key.code == sf::Keyboard::Escape)
                     pGerenciadorGrafico->closeWindow();
+                else
+                    pGerenciadorEntradas->notifyKeyPressed(ev.key.code);
                 break;
+            }
+            case sf::Event::KeyReleased:
+                pGerenciadorEntradas->notifyKeyReleased(ev.key.code);
             }
         }
     }

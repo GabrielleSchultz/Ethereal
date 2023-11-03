@@ -28,7 +28,7 @@ namespace Entidades {
 		{
 		}
 
-		void Jogador::atualizar(float dt)
+		void Jogador::update(float dt)
 		{
             direction = 0.f;
 
@@ -59,7 +59,8 @@ namespace Entidades {
                 if (currentVelocity.x > 0.f)
                     currentVelocity.x = 0.f;
             }
-
+			setPosition(position.x + (currentVelocity.x * dt), position.y);
+			desenhar();
 		}
 
 		void Jogador::salvar()

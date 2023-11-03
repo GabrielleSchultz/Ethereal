@@ -93,11 +93,8 @@ sf::RenderWindow* Gerenciadores::Grafico::getWindow()
 
 bool Gerenciadores::Grafico::foraDaCamera(Math::Vector2Df pos, sf::Vector2u size)
 {
-	float posX = pos.x + (float) size.x;
-	float posY = pos.y + (float)size.y;
-
-	if (posX > (cameraJogo.getSize().x) || posY > (cameraJogo.getSize().y))
-		return true;
+	//if (pos.x > (cameraJogo.getSize().x) || pos.y > (cameraJogo.getSize().y))
+		//return true;
 	return false;
 }
 

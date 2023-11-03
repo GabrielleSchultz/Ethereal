@@ -2,6 +2,8 @@
 #include "Gerenciador_Grafico.h"
 #include "Gerenciador_Eventos.h"
 
+#include "Jogador.h"
+
 //classe principal
 
 class Jogo {
@@ -15,12 +17,7 @@ private:
 	float dt_multiplier; //constancia para diferentes framerates
 
 	//teste
-	sf::RectangleShape teste;
-	sf::Vector2f currentVelocity;
-	sf::Vector2f direction;
-	float maxVel;
-	float acceleration;
-	float atrito;
+	Entidades::Personagens::Jogador* teste;
 
 
 public:

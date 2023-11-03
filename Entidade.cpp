@@ -6,7 +6,8 @@ namespace Entidades {
 
 	Entidade::Entidade(const char* texturePath, ID identidade) : Ente(),
 		caminho_textura(texturePath),
-		id (identidade)
+		id (identidade),
+		position (100,450)
 	{
 		inicializar();
 	}
@@ -24,6 +25,12 @@ namespace Entidades {
 	void Entidade::desenhar()
 	{
 		pGerenciadorGrafico->desenharEnte(caminho_textura, position);
+	}
+
+	void Entidade::setPosition(float x, float y)
+	{
+		position.x = x;
+		position.y = y;
 	}
 
 }

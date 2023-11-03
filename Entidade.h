@@ -35,5 +35,6 @@ namespace Entidades {
         void desenhar();
         //salvamento
         virtual void salvar() = 0;
+        void setPosition(float x, float y);
     };
 }

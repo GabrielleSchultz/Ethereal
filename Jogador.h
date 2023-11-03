@@ -2,6 +2,11 @@
 
 #include "Personagem.h"
 
+namespace Gerenciadores
+{
+	class Input;
+}
+
 enum JogadorNum { Jogador1 = 1, Jogador2 = 2 };
 
 namespace Entidades {
@@ -14,6 +19,7 @@ namespace Entidades {
 			JogadorNum Player;
 			bool Player1;
 			const float gravityCataliser;
+
 			//checagem de movimento
 			bool isGrounded;
 			bool isJumping;
@@ -28,7 +34,7 @@ namespace Entidades {
 			Jogador(int nv = 0, const char* texturePath = "", JogadorNum player = Jogador1, ID id = ID::jogador);
 			~Jogador();
 			void executar();
-			void atualizar(float dt);
+			void update(float dt);
 			void salvar();
 			void operator++();
 			bool isPlayer1();

@@ -2,12 +2,13 @@
 
 #include <SFML/Graphics.hpp>
 #include "Gerenciador_Grafico.h"
+#include "Gerenciador_Inputs.h"
 
 namespace Gerenciadores {
 	class Eventos{
 	private:
 		Gerenciadores::Grafico* pGerenciadorGrafico;
-		//gerenciador de inputs (input handler)
+		Gerenciadores::Input* pGerenciadorEntradas;
 		sf::RenderWindow* pJanela;
 
 		//singleton:

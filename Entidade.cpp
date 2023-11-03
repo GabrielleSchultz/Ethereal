@@ -2,18 +2,16 @@
 
 namespace Entidades {
 
-	Entidade::Entidade(const char* texturePath) : Ente(),
+	Entidade::Entidade(const char* texturePath, ID identidade) : Ente(),
+		caminho_textura(texturePath),
+		id (identidade),
 		gravidade(9.8f)
 	{
 		inicializar();
-		textura = new sf::Texture();
-		textura->loadFromFile(texturePath);
-		body->setTexture(*textura);
 	}
 
 	Entidades::Entidade::~Entidade()
 	{
-		delete textura;
 	}
 
 	void Entidade::inicializar()
@@ -24,8 +22,7 @@ namespace Entidades {
 
 	void Entidade::desenhar()
 	{
-		//pGerenciadorGrafico->desenharEnte(*body);
-
+		pGerenciadorGrafico->desenharEnte(caminho_textura, position);
 	}
 
 }

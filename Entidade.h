@@ -5,15 +5,28 @@
 
 namespace Entidades {
 
+    enum class ID
+    {
+        vazio,
+        jogador,
+        inimigo_tristeza,
+        inimigo_raiva,
+        inimigo_si,
+        boss,
+        plataforma,
+        espinhos,
+        poca_lagrima
+    };
+
     class Entidade : public Ente {
     protected:
-        sf::Vector2f position;
-        sf::Texture* textura;
-        sf::Sprite* body;
+        Math::Vector2Df position;
+        ID id;
         const float gravidade;
+        const char* caminho_textura;
 
     public:
-        Entidade(const char* texturePath = "");
+        Entidade(const char* texturePath = "", ID identidade = ID::vazio);
         ~Entidade();
         //execucao
         virtual void inicializar();

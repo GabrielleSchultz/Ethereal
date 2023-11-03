@@ -60,7 +60,6 @@ namespace Entidades {
                     currentVelocity.x = 0.f;
             }
 
-            body->move(currentVelocity.x * dt, currentVelocity.y * dt);
 		}
 
 		void Jogador::salvar()

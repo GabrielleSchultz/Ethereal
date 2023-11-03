@@ -2,10 +2,11 @@
 
 namespace Entidades {
 
+	const float Entidade::gravidade(9.8f);
+
 	Entidade::Entidade(const char* texturePath, ID identidade) : Ente(),
 		caminho_textura(texturePath),
-		id (identidade),
-		gravidade(9.8f)
+		id (identidade)
 	{
 		inicializar();
 	}

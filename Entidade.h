@@ -22,7 +22,7 @@ namespace Entidades {
     protected:
         Math::Vector2Df position;
         ID id;
-        const float gravidade;
+        static const float gravidade;
         const char* caminho_textura;
 
     public:

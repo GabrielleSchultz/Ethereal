@@ -1,6 +1,7 @@
 #pragma once
 
 #include "Personagem.h"
+#include "ControleJogador.h"
 
 namespace Gerenciadores
 {
@@ -19,6 +20,7 @@ namespace Entidades {
 			JogadorNum Player;
 			bool Player1;
 			const float gravityCataliser;
+			//Controle::ControleJogador* pControles;
 
 			//checagem de movimento
 			bool isGrounded;

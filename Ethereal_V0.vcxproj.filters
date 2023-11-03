@@ -108,15 +108,6 @@
     <ClCompile Include="Obstaculo.cpp">
       <Filter>Arquivos de Origem\Entidades\Obstaculos</Filter>
     </ClCompile>
-    <ClCompile Include="Obstaculo_Facil.cpp">
-      <Filter>Arquivos de Origem\Entidades\Obstaculos</Filter>
-    </ClCompile>
-    <ClCompile Include="Obstaculo_Medio.cpp">
-      <Filter>Arquivos de Origem\Entidades\Obstaculos</Filter>
-    </ClCompile>
-    <ClCompile Include="Obstaculo_Dificil.cpp">
-      <Filter>Arquivos de Origem\Entidades\Obstaculos</Filter>
-    </ClCompile>
     <ClCompile Include="Primeira_Fase.cpp">
       <Filter>Arquivos de Origem\Fases</Filter>
     </ClCompile>
@@ -141,9 +132,6 @@
     <ClCompile Include="MenuRanking.cpp">
       <Filter>Arquivos de Origem\Menus</Filter>
     </ClCompile>
-    <ClCompile Include="DynamicBody.cpp">
-      <Filter>Arquivos de Origem\Utils</Filter>
-    </ClCompile>
     <ClCompile Include="Gerenciador_Inputs.cpp">
       <Filter>Arquivos de Origem\Gerenciadores</Filter>
     </ClCompile>
@@ -158,6 +146,18 @@
     </ClCompile>
     <ClCompile Include="ListaEntidades.cpp">
       <Filter>Arquivos de Origem\Listas</Filter>
+    </ClCompile>
+    <ClCompile Include="Entidade_Dinamica.cpp">
+      <Filter>Arquivos de Origem</Filter>
+    </ClCompile>
+    <ClCompile Include="Espinhos.cpp">
+      <Filter>Arquivos de Origem\Entidades\Obstaculos</Filter>
+    </ClCompile>
+    <ClCompile Include="Plataforma.cpp">
+      <Filter>Arquivos de Origem\Entidades\Obstaculos</Filter>
+    </ClCompile>
+    <ClCompile Include="Poca_Lagrima.cpp">
+      <Filter>Arquivos de Origem\Entidades\Obstaculos</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -194,17 +194,8 @@
     <ClInclude Include="Obstaculo.h">
       <Filter>Arquivos de Cabeçalho\Entidades\Obstaculos</Filter>
     </ClInclude>
-    <ClInclude Include="Obstaculo_Medio.h">
-      <Filter>Arquivos de Cabeçalho\Entidades\Obstaculos</Filter>
-    </ClInclude>
-    <ClInclude Include="Obstaculo_Dificil.h">
-      <Filter>Arquivos de Cabeçalho\Entidades\Obstaculos</Filter>
-    </ClInclude>
     <ClInclude Include="Fase.h">
       <Filter>Arquivos de Cabeçalho\Fases</Filter>
-    </ClInclude>
-    <ClInclude Include="Obstaculo_Facil.h">
-      <Filter>Arquivos de Cabeçalho\Entidades\Obstaculos</Filter>
     </ClInclude>
     <ClInclude Include="Primeira_Fase.h">
       <Filter>Arquivos de Cabeçalho\Fases</Filter>
@@ -223,9 +214,6 @@
     </ClInclude>
     <ClInclude Include="MenuRanking.h">
       <Filter>Arquivos de Cabeçalho\Menus</Filter>
-    </ClInclude>
-    <ClInclude Include="DynamicBody.h">
-      <Filter>Arquivos de Cabeçalho\Utils</Filter>
     </ClInclude>
     <ClInclude Include="Controller.h">
       <Filter>Arquivos de Cabeçalho\Controles</Filter>
@@ -256,6 +244,18 @@
     </ClInclude>
     <ClInclude Include="ListaEntidades.h">
       <Filter>Arquivos de Cabeçalho\Listas</Filter>
+    </ClInclude>
+    <ClInclude Include="Entidade_Dinamica.h">
+      <Filter>Arquivos de Cabeçalho</Filter>
+    </ClInclude>
+    <ClInclude Include="Plataforma.h">
+      <Filter>Arquivos de Cabeçalho\Entidades\Obstaculos</Filter>
+    </ClInclude>
+    <ClInclude Include="Poca_Lagrima.h">
+      <Filter>Arquivos de Cabeçalho\Entidades\Obstaculos</Filter>
+    </ClInclude>
+    <ClInclude Include="Espinhos.h">
+      <Filter>Arquivos de Cabeçalho\Entidades\Obstaculos</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

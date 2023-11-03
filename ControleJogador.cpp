@@ -1,33 +1,14 @@
 #include "ControleJogador.h"
-
+#include "Jogador.h"
 
 Controle::ControleJogador::ControleJogador(Entidades::Personagens::Jogador* pJog)
 {
-	if (pJog->isPlayer1())
-		setKeyCommands("up", "down", "right", "left");
-	else
-		setKeyCommands("w", "s", "d", "a");
+	setKeyCommands("up", "down", "right", "left");
 }
 
 void Controle::ControleJogador::notifyKeyPressed(std::string key)
 {
-	if(key == ressucitar){}
-	//pJogador->tentarRessucitar();
-	else
-	{
-		Math::Vector2Df movimento (0,0);
-		if (key == esquerda)
-		movimento.x--;
-		//	pJogador->setDirection(movimento);
-		if (key == direita)
-		movimento.x++;
-		// pJogador->setDirection
-		if (key == pular)
-		movimento.y++;
-		// pJogador->jump();
-		if (key == ataque){}
-	}
-		
+	
 }
 
 void Controle::ControleJogador::notifKeyRelease(std::string key)

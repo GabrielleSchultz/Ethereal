@@ -1,6 +1,11 @@
 #pragma once
 #include "Controller.h"
-#include "Jogador.h"
+
+namespace Entidades{
+	namespace Personagens {
+		class Jogador;
+	}
+}
 
 namespace Controle{
 

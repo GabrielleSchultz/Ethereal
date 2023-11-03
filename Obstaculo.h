@@ -8,7 +8,7 @@ namespace Entidades {
 		protected:
 			bool danoso;
 		public:
-			Obstaculo();
+			Obstaculo(Math::Vector2Df posicao = Math::Vector2Df(0.f,0.f), const char* texture = "", ID id = ID::vazio);
 			~Obstaculo();
 			virtual void obstacular(Personagens::Jogador* p) = 0;
 			virtual void executar() = 0;

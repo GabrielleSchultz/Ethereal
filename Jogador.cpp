@@ -16,8 +16,12 @@ namespace Entidades {
 			jumpPressedRememberTimer(0.2f),
 			gravityCataliser(0.5f)
 		{
-				if (Player == 2)
-					Player1 = false;
+			//pControles->setJogador(this);
+			if (Player == 2)
+			{
+				Player1 = false;
+				//pControles->setKeyCommands("w", "s", "d", "a");
+			}
 
         }
         Jogador::~Jogador()

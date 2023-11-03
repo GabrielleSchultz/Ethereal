@@ -1,6 +1,6 @@
 C:\Users\gabri\source\repos\GabrielleSchultz\Ethereal\ControleJogador.cpp;C:\Users\gabri\source\repos\GabrielleSchultz\Ethereal\x64\Debug\ControleJogador.obj
 C:\Users\gabri\source\repos\GabrielleSchultz\Ethereal\ControleMenu.cpp;C:\Users\gabri\source\repos\GabrielleSchultz\Ethereal\x64\Debug\ControleMenu.obj
-C:\Users\gabri\source\repos\GabrielleSchultz\Ethereal\DynamicBody.cpp;C:\Users\gabri\source\repos\GabrielleSchultz\Ethereal\x64\Debug\DynamicBody.obj
+C:\Users\gabri\source\repos\GabrielleSchultz\Ethereal\Entidade_Dinamica.cpp;C:\Users\gabri\source\repos\GabrielleSchultz\Ethereal\x64\Debug\Entidade_Dinamica.obj
 C:\Users\gabri\source\repos\GabrielleSchultz\Ethereal\Ente.cpp;C:\Users\gabri\source\repos\GabrielleSchultz\Ethereal\x64\Debug\Ente.obj
 C:\Users\gabri\source\repos\GabrielleSchultz\Ethereal\Entidade.cpp;C:\Users\gabri\source\repos\GabrielleSchultz\Ethereal\x64\Debug\Entidade.obj
 C:\Users\gabri\source\repos\GabrielleSchultz\Ethereal\Fase.cpp;C:\Users\gabri\source\repos\GabrielleSchultz\Ethereal\x64\Debug\Fase.obj
@@ -19,9 +19,9 @@ C:\Users\gabri\source\repos\GabrielleSchultz\Ethereal\MenuFases.cpp;C:\Users\gab
 C:\Users\gabri\source\repos\GabrielleSchultz\Ethereal\MenuOptions.cpp;C:\Users\gabri\source\repos\GabrielleSchultz\Ethereal\x64\Debug\MenuOptions.obj
 C:\Users\gabri\source\repos\GabrielleSchultz\Ethereal\MenuRanking.cpp;C:\Users\gabri\source\repos\GabrielleSchultz\Ethereal\x64\Debug\MenuRanking.obj
 C:\Users\gabri\source\repos\GabrielleSchultz\Ethereal\Obstaculo.cpp;C:\Users\gabri\source\repos\GabrielleSchultz\Ethereal\x64\Debug\Obstaculo.obj
-C:\Users\gabri\source\repos\GabrielleSchultz\Ethereal\Obstaculo_Dificil.cpp;C:\Users\gabri\source\repos\GabrielleSchultz\Ethereal\x64\Debug\Obstaculo_Dificil.obj
-C:\Users\gabri\source\repos\GabrielleSchultz\Ethereal\Obstaculo_Facil.cpp;C:\Users\gabri\source\repos\GabrielleSchultz\Ethereal\x64\Debug\Obstaculo_Facil.obj
-C:\Users\gabri\source\repos\GabrielleSchultz\Ethereal\Obstaculo_Medio.cpp;C:\Users\gabri\source\repos\GabrielleSchultz\Ethereal\x64\Debug\Obstaculo_Medio.obj
+C:\Users\gabri\source\repos\GabrielleSchultz\Ethereal\Espinhos.cpp;C:\Users\gabri\source\repos\GabrielleSchultz\Ethereal\x64\Debug\Espinhos.obj
+C:\Users\gabri\source\repos\GabrielleSchultz\Ethereal\Plataforma.cpp;C:\Users\gabri\source\repos\GabrielleSchultz\Ethereal\x64\Debug\Plataforma.obj
+C:\Users\gabri\source\repos\GabrielleSchultz\Ethereal\Poca_Lagrima.cpp;C:\Users\gabri\source\repos\GabrielleSchultz\Ethereal\x64\Debug\Poca_Lagrima.obj
 C:\Users\gabri\source\repos\GabrielleSchultz\Ethereal\Personagem.cpp;C:\Users\gabri\source\repos\GabrielleSchultz\Ethereal\x64\Debug\Personagem.obj
 C:\Users\gabri\source\repos\GabrielleSchultz\Ethereal\Primeira_Fase.cpp;C:\Users\gabri\source\repos\GabrielleSchultz\Ethereal\x64\Debug\Primeira_Fase.obj
 C:\Users\gabri\source\repos\GabrielleSchultz\Ethereal\Projetil.cpp;C:\Users\gabri\source\repos\GabrielleSchultz\Ethereal\x64\Debug\Projetil.obj

@@ -135,7 +135,7 @@
   <ItemGroup>
     <ClCompile Include="ControleJogador.cpp" />
     <ClCompile Include="ControleMenu.cpp" />
-    <ClCompile Include="DynamicBody.cpp" />
+    <ClCompile Include="Entidade_Dinamica.cpp" />
     <ClCompile Include="Ente.cpp" />
     <ClCompile Include="Entidade.cpp" />
     <ClCompile Include="Fase.cpp" />
@@ -154,9 +154,9 @@
     <ClCompile Include="MenuOptions.cpp" />
     <ClCompile Include="MenuRanking.cpp" />
     <ClCompile Include="Obstaculo.cpp" />
-    <ClCompile Include="Obstaculo_Dificil.cpp" />
-    <ClCompile Include="Obstaculo_Facil.cpp" />
-    <ClCompile Include="Obstaculo_Medio.cpp" />
+    <ClCompile Include="Espinhos.cpp" />
+    <ClCompile Include="Plataforma.cpp" />
+    <ClCompile Include="Poca_Lagrima.cpp" />
     <ClCompile Include="Personagem.cpp" />
     <ClCompile Include="Primeira_Fase.cpp" />
     <ClCompile Include="Projetil.cpp" />
@@ -167,7 +167,7 @@
     <ClInclude Include="ControleJogador.h" />
     <ClInclude Include="ControleMenu.h" />
     <ClInclude Include="Controller.h" />
-    <ClInclude Include="DynamicBody.h" />
+    <ClInclude Include="Entidade_Dinamica.h" />
     <ClInclude Include="Entidade.h" />
     <ClInclude Include="Gerenciador_Colisoes.h" />
     <ClInclude Include="Gerenciador_Estados.h" />
@@ -187,9 +187,9 @@
     <ClInclude Include="MenuOptions.h" />
     <ClInclude Include="MenuRanking.h" />
     <ClInclude Include="Obstaculo.h" />
-    <ClInclude Include="Obstaculo_Facil.h" />
-    <ClInclude Include="Obstaculo_Medio.h" />
-    <ClInclude Include="Obstaculo_Dificil.h" />
+    <ClInclude Include="Poca_Lagrima.h" />
+    <ClInclude Include="Espinhos.h" />
+    <ClInclude Include="Plataforma.h" />
     <ClInclude Include="Personagem.h" />
     <ClInclude Include="Primeira_Fase.h" />
     <ClInclude Include="Projetil.h" />

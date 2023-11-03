@@ -2,7 +2,10 @@
 
 namespace Entidades
 {
-	Projetil::Projetil() : Entidade(), velocidade(0) {
+	Projetil::Projetil(const char* texturePath, ID id) :
+	Entidade_Dinamica(texturePath, id),
+	velocidade(0)
+	{
 	}
 
 	Projetil::~Projetil() {

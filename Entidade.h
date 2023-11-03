@@ -15,7 +15,8 @@ namespace Entidades {
         boss,
         plataforma,
         espinhos,
-        poca_lagrima
+        poca_lagrima,
+        projetil
     };
 
     class Entidade : public Ente {

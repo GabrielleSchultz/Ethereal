@@ -3,8 +3,8 @@
 namespace Entidades {
 
 	namespace Personagens {
-        Jogador::Jogador(int nv, const char* texturePath, JogadorNum player) :
-			Personagem(nv, texturePath),
+        Jogador::Jogador(int nv, const char* texturePath, JogadorNum player, ID id) :
+			Personagem(nv, texturePath, id),
 			pontos(0),
 			Player1(true),
 			isGrounded(false),

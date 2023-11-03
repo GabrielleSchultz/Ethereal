@@ -25,7 +25,7 @@ namespace Entidades {
 			const float jumpPressedRememberTimer;
 
 		public:
-			Jogador(int nv = 0, const char* texturePath = "", JogadorNum player = Jogador1);
+			Jogador(int nv = 0, const char* texturePath = "", JogadorNum player = Jogador1, ID id = ID::jogador);
 			~Jogador();
 			void executar();
 			void atualizar(float dt);

@@ -17,7 +17,7 @@ namespace Entidades {
 
 	void Entidade::inicializar()
 	{
-		
+		pGerenciadorGrafico->carregarTextura(caminho_textura);
 	}
 
 

@@ -1,5 +1,10 @@
-﻿  Jogador.cpp
-  Jogo.cpp
-  main.cpp
+﻿  Espinhos.cpp
+  Jogador.cpp
+  Obstaculo.cpp
+  Plataforma.cpp
+  Poca_Lagrima.cpp
   Gerando Código...
+vcruntimed.lib(VCRUNTIME140_1D.dll) : warning LNK4020: um registro de tipo '' está corrompido; alguns tipos e símbolos não são acessíveis a partir do depurador
+ucrtd.lib(ucrtbased.dll) : warning LNK4020: um registro de tipo '' está corrompido; alguns tipos e símbolos não são acessíveis a partir do depurador
+ucrtd.lib(ucrtbased.dll) : warning LNK4020: um registro de tipo '' está corrompido; alguns tipos e símbolos não são acessíveis a partir do depurador
   Ethereal_V0.vcxproj -> C:\Users\gabri\source\repos\GabrielleSchultz\Ethereal\x64\Debug\Ethereal_V0.exe

@@ -1,12 +1,15 @@
 #include "Raiva.h"
+#include <time.h>
 
 namespace Entidades {
 	namespace Personagens {
 		Raiva::Raiva(int nv, int mal, const char* texturePath, ID id):
 		Inimigo(nv, mal, texturePath, id),
-		raio(200),
-		agilidade(0.6){
-
+		raio(175),
+		agilidade(0.0f){
+			srand(time(NULL));
+			agilidade = (float)(rand() % 3 + 1) / 10;
+			std::cout << agilidade << std::endl;
 		}
 
 		Raiva::~Raiva() {

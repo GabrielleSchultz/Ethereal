@@ -52,5 +52,6 @@ namespace Gerenciadores
 		void desenharEnte(const std::string filePath, Math::Vector2Df pos);
 		bool carregarTextura(const std::string filePath);
 		void deletarTexturas();
+		Math::Vector2Df getDimensao(std::string texturePath);
 	};
 }

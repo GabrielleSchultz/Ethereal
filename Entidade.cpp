@@ -19,6 +19,8 @@ namespace Entidades {
 	void Entidade::inicializar()
 	{
 		pGerenciadorGrafico->carregarTextura(caminho_textura);
+		tamanho = pGerenciadorGrafico->getDimensao(caminho_textura);
+		std::cout << tamanho.x << tamanho.y << std::endl;
 	}
 
 
@@ -33,9 +35,20 @@ namespace Entidades {
 		position.y = y;
 	}
 
+	void Entidade::setTamanho(float x, float y)
+	{
+		tamanho.x = x;
+		tamanho.y = y;
+	}
+
 	Math::Vector2Df Entidade::getPosition()
 	{
 		return position;
+	}
+
+	Math::Vector2Df Entidade::getTamanho()
+	{
+		return tamanho;
 	}
 
 }

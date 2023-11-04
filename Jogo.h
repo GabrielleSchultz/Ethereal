@@ -2,7 +2,13 @@
 #include "Gerenciador_Grafico.h"
 #include "Gerenciador_Eventos.h"
 
-#include "Jogador.h"
+#include "Raiva.h"
+namespace Entidades {
+	namespace Personagens {
+		class Tristeza;
+		class Vinganca;
+	}
+}
 
 //classe principal
 
@@ -18,7 +24,9 @@ private:
 
 	//teste
 	Entidades::Personagens::Jogador* teste;
-
+	Entidades::Personagens::Raiva* raivinha;
+	Entidades::Personagens::Tristeza* sadness;
+	Entidades::Personagens::Vinganca* boss;
 
 public:
 	Jogo();

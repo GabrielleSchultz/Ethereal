@@ -1,3 +1,6 @@
-﻿  Raiva.cpp
+﻿  Jogo.cpp
+  Raiva.cpp
 C:\Users\miche_bb3fmdp\OneDrive\Documentos\GitHub\Ethereal\Raiva.cpp(10,14): warning C4244: 'argumento': conversão de 'time_t' para 'unsigned int', possível perda de dados
+  main.cpp
+  Gerando Código...
   Ethereal_V0.vcxproj -> C:\Users\miche_bb3fmdp\OneDrive\Documentos\GitHub\Ethereal\x64\Debug\Ethereal_V0.exe

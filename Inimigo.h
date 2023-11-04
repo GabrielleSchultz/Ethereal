@@ -12,7 +12,7 @@ namespace Entidades {
 			virtual void danificar(Jogador* p) = 0;
 			virtual void executar() = 0;
 			virtual void salvar() = 0;
-			void update(float dt = 0) = 0;
+			virtual void update(float dt = 0) = 0;
 		};
 	}
 }

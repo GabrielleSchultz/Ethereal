@@ -159,6 +159,15 @@
     <ClCompile Include="Poca_Lagrima.cpp">
       <Filter>Arquivos de Origem\Entidades\Obstaculos</Filter>
     </ClCompile>
+    <ClCompile Include="Raiva.cpp">
+      <Filter>Arquivos de Origem\Entidades\Personagens</Filter>
+    </ClCompile>
+    <ClCompile Include="Tristeza.cpp">
+      <Filter>Arquivos de Origem\Entidades\Personagens</Filter>
+    </ClCompile>
+    <ClCompile Include="Vinganca.cpp">
+      <Filter>Arquivos de Origem\Entidades\Personagens</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Jogo.h">
@@ -256,6 +265,15 @@
     </ClInclude>
     <ClInclude Include="Espinhos.h">
       <Filter>Arquivos de Cabeçalho\Entidades\Obstaculos</Filter>
+    </ClInclude>
+    <ClInclude Include="Raiva.h">
+      <Filter>Arquivos de Cabeçalho\Entidades\Personagens</Filter>
+    </ClInclude>
+    <ClInclude Include="Tristeza.h">
+      <Filter>Arquivos de Cabeçalho\Entidades\Personagens</Filter>
+    </ClInclude>
+    <ClInclude Include="Vinganca.h">
+      <Filter>Arquivos de Cabeçalho\Entidades\Personagens</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

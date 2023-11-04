@@ -37,7 +37,7 @@ namespace Entidades {
         virtual void salvar() = 0;
         void setPosition(float x, float y);
 
-        // para edison oda perseguir
+        // método para o inimigo raiva perseguir
         Math::Vector2Df getPosition();
     };
 }

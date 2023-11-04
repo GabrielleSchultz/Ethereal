@@ -1,2 +1,20 @@
-﻿  Raiva.cpp
+﻿  ControleJogador.cpp
+  Entidade.cpp
+  Entidade_Dinamica.cpp
+  Espinhos.cpp
+  Inimigo.cpp
+  Jogador.cpp
+  Jogo.cpp
+  ListaEntidades.cpp
+  Obstaculo.cpp
+  Personagem.cpp
+  Plataforma.cpp
+  Poca_Lagrima.cpp
+  Projetil.cpp
+  Raiva.cpp
+C:\Users\gabri\source\repos\GabrielleSchultz\Ethereal\Raiva.cpp(11,14): warning C4244: 'argumento': conversão de 'time_t' para 'unsigned int', possível perda de dados
+  Tristeza.cpp
+  Vinganca.cpp
+  main.cpp
+  Gerando Código...
   Ethereal_V0.vcxproj -> C:\Users\gabri\source\repos\GabrielleSchultz\Ethereal\x64\Debug\Ethereal_V0.exe

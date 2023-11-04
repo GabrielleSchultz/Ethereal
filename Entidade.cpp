@@ -7,7 +7,7 @@ namespace Entidades {
 	Entidade::Entidade(const char* texturePath, ID identidade) : Ente(),
 		caminho_textura(texturePath),
 		id (identidade),
-		position (100,450)
+		position (0,0)
 	{
 		inicializar();
 	}
@@ -31,6 +31,11 @@ namespace Entidades {
 	{
 		position.x = x;
 		position.y = y;
+	}
+
+	Math::Vector2Df Entidade::getPosition()
+	{
+		return position;
 	}
 
 }

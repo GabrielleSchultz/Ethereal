@@ -36,5 +36,8 @@ namespace Entidades {
         //salvamento
         virtual void salvar() = 0;
         void setPosition(float x, float y);
+
+        // para edison oda perseguir
+        Math::Vector2Df getPosition();
     };
 }

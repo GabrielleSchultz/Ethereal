@@ -1,5 +1,6 @@
-﻿  Jogador.cpp
-  Jogo.cpp
+﻿  Jogo.cpp
   main.cpp
+  Raiva.cpp
+C:\Users\miche_bb3fmdp\OneDrive\Documentos\GitHub\Ethereal\Raiva.cpp(8,12): warning C4305: 'inicializando': truncamento de 'double' para 'float'
   Gerando Código...
-  Ethereal_V0.vcxproj -> C:\Users\gabri\source\repos\GabrielleSchultz\Ethereal\x64\Debug\Ethereal_V0.exe
+  Ethereal_V0.vcxproj -> C:\Users\miche_bb3fmdp\OneDrive\Documentos\GitHub\Ethereal\x64\Debug\Ethereal_V0.exe

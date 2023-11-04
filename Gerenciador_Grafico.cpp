@@ -3,8 +3,8 @@
 #include "Gerenciador_Grafico.h"
 using namespace Gerenciadores;
 
-#define WINDOW_LENGHT 1180
-#define WINDOW_HEIGHT 620
+#define WINDOW_LENGHT 1280
+#define WINDOW_HEIGHT 660
 
 #define SPRITE_ERROR "Assets/error_texture.png"
 
@@ -14,6 +14,8 @@ Grafico* Grafico::instancia_pGG(NULL);
 Grafico::Grafico()
 {
 	janelaPrincipal = new sf::RenderWindow(sf::VideoMode(WINDOW_LENGHT, WINDOW_HEIGHT), "", sf::Style::Titlebar | sf::Style::Close);
+	cameraJogo.reset(sf::FloatRect(0, 0, WINDOW_LENGHT, WINDOW_HEIGHT));
+	janelaPrincipal->setView(cameraJogo);
 	if (!carregarTextura(SPRITE_ERROR))
 		exit(1);
 }
@@ -78,12 +80,12 @@ void Grafico::closeWindow()
 
 void Gerenciadores::Grafico::zoomOut(float coef)
 {
-	cameraJogo.zoom(-coef);
+	cameraJogo.zoom(1 + (coef/100));
 }
 
 void Gerenciadores::Grafico::zoomIn(float coef)
 {
-	cameraJogo.zoom(coef);
+	cameraJogo.zoom(1 - (coef/100));
 }
 
 sf::RenderWindow* Gerenciadores::Grafico::getWindow()
@@ -114,6 +116,7 @@ void Gerenciadores::Grafico::desenharEnte(std::string filePath, Math::Vector2Df 
 	{
 		sf::Sprite sprite;
 		sprite.setTexture(*texture);
+		sprite.setOrigin(size.x / 2.0f, size.y / 2.0f);
 		sprite.setPosition(pos.x, pos.y);
 
 		janelaPrincipal->draw(sprite);
@@ -154,6 +157,17 @@ void Gerenciadores::Grafico::deletarTexturas()
 		entities_it++;
 		fonts_it++;
 	}
+}
+
+Math::Vector2Df Gerenciadores::Grafico::getDimensao(std::string texturePath)
+{
+	MapaTextura::iterator it = EntityTextures.find(texturePath);
+
+	sf::Vector2u size = it->second->getSize();
+	Math::Vector2Df dimensao((float)size.x, (float)size.y);
+
+	return dimensao;
+
 }
 
 

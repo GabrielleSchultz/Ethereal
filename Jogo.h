@@ -1,6 +1,7 @@
 #pragma once
 #include "Gerenciador_Grafico.h"
 #include "Gerenciador_Eventos.h"
+#include "Gerenciador_Colisoes.h"
 
 #include "Raiva.h"
 namespace Entidades {
@@ -18,6 +19,7 @@ private:
 	std::string nome;
 	Gerenciadores::Grafico* pGerenciadorGrafico;
 	Gerenciadores::Eventos* pGerenciadorEventos;
+	Gerenciadores::Colisoes* pGerenciadorColisoes;
 	sf::Clock clock;
 	float deltaTime;
 	float dt_multiplier; //constancia para diferentes framerates
@@ -25,6 +27,7 @@ private:
 	//teste
 	Entidades::Personagens::Jogador* teste;
 	Entidades::Personagens::Raiva* raivinha;
+	Entidades::Personagens::Raiva* raivinha2;
 	Entidades::Personagens::Tristeza* sadness;
 	Entidades::Personagens::Vinganca* boss;
 

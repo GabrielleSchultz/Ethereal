@@ -169,7 +169,3 @@ Math::Vector2Df Gerenciadores::Grafico::getDimensao(std::string texturePath)
 	return dimensao;
 
 }
-
-
-
-

@@ -12,9 +12,10 @@ namespace Entidades {
 			Raiva(int nv = 0, int mal = 0, const char* texturePath = "Assets/Sprites/anger_teste.png", ID id = ID::inimigo_raiva);
 			~Raiva();
 			void executar();
-			void danificar(Jogador* p);
 			void salvar();
 			void update(float dt);
+			void danificar(Jogador* p);
+			void perseguir(Jogador* p);
 		};
 	}
 }

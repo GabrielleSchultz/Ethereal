@@ -7,7 +7,8 @@ namespace Entidades {
 	Entidade::Entidade(const char* texturePath, ID identidade) : Ente(),
 		caminho_textura(texturePath),
 		id (identidade),
-		position (0,0)
+		position (0,0),
+		tamanho(0,0)
 	{
 		inicializar();
 	}
@@ -20,7 +21,6 @@ namespace Entidades {
 	{
 		pGerenciadorGrafico->carregarTextura(caminho_textura);
 		tamanho = pGerenciadorGrafico->getDimensao(caminho_textura);
-		std::cout << tamanho.x << tamanho.y << std::endl;
 	}
 
 

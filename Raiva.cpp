@@ -8,8 +8,7 @@ namespace Entidades {
 		raio(175),
 		agilidade(0.0f){
 			srand(time(NULL));
-			agilidade = (float)(rand() % 3 + 1) / 10;
-			std::cout << agilidade << std::endl;
+			agilidade = (float)(rand() % 4 + 1) / 10;
 		}
 
 		Raiva::~Raiva() {
@@ -20,8 +19,20 @@ namespace Entidades {
 
 		}
 
+		void Raiva::salvar() {
+
+		}
+
+		void Raiva::update(float dt) {
+			desenhar();
+		}
+
 		void Raiva::danificar(Jogador* p) {
-			
+
+		}
+
+		void Raiva::perseguir(Jogador* p) {
+
 			// perseguir pixi e bity :0
 			if (p->getPosition().x >= position.x - raio && p->getPosition().x <= position.x) {
 				setPosition(position.x - agilidade, position.y);
@@ -29,14 +40,6 @@ namespace Entidades {
 			else if (p->getPosition().x >= position.x && p->getPosition().x <= position.x + raio) {
 				setPosition(position.x + agilidade, position.y);
 			}
-		}
-
-		void Raiva::salvar() {
-
-		}
-
-		void Raiva::update(float dt) {
-			desenhar();
 		}
 	}
 }

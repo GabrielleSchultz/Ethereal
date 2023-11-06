@@ -17,7 +17,7 @@ void Entidades::Personagens::Tristeza::danificar(Jogador* p)
 {
 }
 
-void Entidades::Personagens::Tristeza::salvar()
+void Entidades::Personagens::Tristeza::salvar(std::ostringstream* entrada)
 {
 }
 

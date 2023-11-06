@@ -2,6 +2,7 @@
 
 #include <SFML/Graphics.hpp>
 #include "Ente.h"
+#include <fstream>
 
 namespace Entidades {
 
@@ -32,11 +33,13 @@ namespace Entidades {
         virtual ~Entidade();
         //execucao
         virtual void inicializar();
-        virtual void executar() = 0;
+        void executar(float dt);
+        virtual void update(float dt) = 0;
         void desenhar();
         //salvamento
-        virtual void salvar() = 0;
+        virtual void salvar(std::ostringstream* entrada) = 0;
         void setPosition(float x, float y);
+        void setPosition(Math::Vector2Df v);
         void setTamanho(float x, float y);
 
         // método para o inimigo raiva perseguir

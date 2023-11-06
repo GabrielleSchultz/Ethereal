@@ -11,8 +11,8 @@ namespace Listas {
 		~ListaEntidades();
 		void incluir(Entidades::Entidade* pE);
 		void remover(Entidades::Entidade* pE);
-		void executar();
-		void salvar();
+		void executar(float dt);
+		void salvar(std::ostringstream* entrada);
 		Lista<Entidades::Entidade>::Iterador get_primeiro() const;
 	};
 }

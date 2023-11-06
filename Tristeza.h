@@ -12,7 +12,7 @@ namespace Entidades {
 			~Tristeza();
 			void executar();
 			void danificar(Jogador* p);
-			void salvar();
+			void salvar(std::ostringstream* entrada);
 			void update(float dt);
 		};
 	}

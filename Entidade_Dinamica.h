@@ -22,6 +22,10 @@ namespace Entidades {
 		~Entidade_Dinamica();
 		void setDeltaTime(const float dt);
 		void setupValues();
+		float getAtrito() const;
+		void setAtrito(const float at);
+		void update(float dt) = 0;
+		virtual void salvar(std::ostringstream* entrada) = 0;
 
 	};
 

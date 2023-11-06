@@ -1,11 +1,13 @@
 #include "Jogador.h"
 
+int Entidades::Personagens::Jogador::numJogadores(0);
+int Entidades::Personagens::Jogador::pontos(0);
+
 namespace Entidades {
 
 	namespace Personagens {
         Jogador::Jogador(int nv, const char* texturePath, JogadorNum player, ID id) :
 			Personagem(nv, texturePath, id),
-			pontos(0),
 			Player1(true),
 			isGrounded(false),
 			isJumping(false),
@@ -23,12 +25,9 @@ namespace Entidades {
 				//pControles->setKeyCommands("w", "s", "d", "a");
 			}
 
+			numJogadores++;
         }
         Jogador::~Jogador()
-		{
-		}
-
-		void Jogador::executar()
 		{
 		}
 
@@ -67,7 +66,7 @@ namespace Entidades {
 			desenhar();
 		}
 
-		void Jogador::salvar()
+		void Jogador::salvar(std::ostringstream* entrada)
 		{
 		}
 
@@ -78,6 +77,10 @@ namespace Entidades {
 		bool Jogador::isPlayer1()
 		{
 			return Player1;
+		}
+		int Jogador::getNumJogadores()
+		{
+			return numJogadores;
 		}
 	}
 }

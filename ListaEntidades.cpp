@@ -18,21 +18,21 @@ void Listas::ListaEntidades::remover(Entidades::Entidade* pE) {
 	LEs.remover(pE);
 }
 
-void Listas::ListaEntidades::executar() {
+void Listas::ListaEntidades::executar(float dt) {
 	Lista<Entidades::Entidade>::Iterador it;
 	Entidades::Entidade* aux = nullptr;
 	for (it = get_primeiro(); (!it.operator==(nullptr)); it.operator++()) {
 		aux = it.operator*();
-		aux->executar();
+		aux->executar(dt);
 	}
 }
 
-void Listas::ListaEntidades::salvar() {
+void Listas::ListaEntidades::salvar(std::ostringstream* entrada) {
 	Lista<Entidades::Entidade>::Iterador it;
 	Entidades::Entidade* aux = nullptr;
 	for (it = get_primeiro(); (!it.operator==(nullptr)); it.operator++()) {
 		aux = it.operator*();
-		aux->salvar();
+		aux->salvar(entrada);
 	}
 }
 

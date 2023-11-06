@@ -1,5 +1,10 @@
 #include "Entidade_Dinamica.h"
 
+#define ATRITO_DEFAULT 0.5f
+#define MAXVEL_DEFAULT 7.5f
+#define ACELERACAO_DEFAULT 0.25f
+
+
 namespace Entidades {
 
 	Entidade_Dinamica::Entidade_Dinamica(const char* filePath, ID identidade) :
@@ -28,7 +33,17 @@ namespace Entidades {
 	{
 		max_vel = 7.5f;
 		acceleration = 0.5f;
-		atrito = 0.25f;
+		setAtrito(0.25f);
+	}
+
+	float Entidade_Dinamica::getAtrito() const
+	{
+		return atrito;
+	}
+
+	void Entidade_Dinamica::setAtrito(const float at)
+	{
+		atrito = at;
 	}
 
 }

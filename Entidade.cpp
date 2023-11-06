@@ -2,7 +2,7 @@
 
 namespace Entidades {
 
-	const float Entidade::gravidade(9.8f);
+	const float Entidade::gravidade(9.8f/8);
 
 	Entidade::Entidade(const char* texturePath, ID identidade) : Ente(),
 		caminho_textura(texturePath),
@@ -23,6 +23,12 @@ namespace Entidades {
 		tamanho = pGerenciadorGrafico->getDimensao(caminho_textura);
 	}
 
+	void Entidade::executar(float dt)
+	{
+		position.y += gravidade * dt;
+		update(dt);
+	}
+
 
 	void Entidade::desenhar()
 	{
@@ -33,6 +39,11 @@ namespace Entidades {
 	{
 		position.x = x;
 		position.y = y;
+	}
+
+	void Entidade::setPosition(Math::Vector2Df v)
+	{
+		setPosition(v.x, v.y);
 	}
 
 	void Entidade::setTamanho(float x, float y)

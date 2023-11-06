@@ -16,9 +16,7 @@ namespace Entidades {
 		class Jogador : public Personagem{
 
 		private:
-			int pontos;
-			JogadorNum Player;
-			bool Player1;
+			static int pontos;
 			const float gravityCataliser;
 			//Controle::ControleJogador* pControles;
 
@@ -32,14 +30,19 @@ namespace Entidades {
 			const float groundedRememberTimer;
 			const float jumpPressedRememberTimer;
 
+			//multiplayer
+			JogadorNum Player;
+			bool Player1;
+			static int numJogadores;
+
 		public:
 			Jogador(int nv = 0, const char* texturePath = "", JogadorNum player = Jogador1, ID id = ID::jogador);
 			~Jogador();
-			void executar();
 			void update(float dt);
-			void salvar();
+			void salvar(std::ostringstream* entrada);
 			void operator++();
 			bool isPlayer1();
+			static int getNumJogadores();
 		};
 	}
 }

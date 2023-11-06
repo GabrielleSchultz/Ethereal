@@ -147,9 +147,6 @@
     <ClCompile Include="ListaEntidades.cpp">
       <Filter>Arquivos de Origem\Listas</Filter>
     </ClCompile>
-    <ClCompile Include="Entidade_Dinamica.cpp">
-      <Filter>Arquivos de Origem</Filter>
-    </ClCompile>
     <ClCompile Include="Espinhos.cpp">
       <Filter>Arquivos de Origem\Entidades\Obstaculos</Filter>
     </ClCompile>
@@ -167,6 +164,9 @@
     </ClCompile>
     <ClCompile Include="Vinganca.cpp">
       <Filter>Arquivos de Origem\Entidades\Personagens</Filter>
+    </ClCompile>
+    <ClCompile Include="Entidade_Dinamica.cpp">
+      <Filter>Arquivos de Origem\Entidades</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -254,9 +254,6 @@
     <ClInclude Include="ListaEntidades.h">
       <Filter>Arquivos de Cabeçalho\Listas</Filter>
     </ClInclude>
-    <ClInclude Include="Entidade_Dinamica.h">
-      <Filter>Arquivos de Cabeçalho</Filter>
-    </ClInclude>
     <ClInclude Include="Plataforma.h">
       <Filter>Arquivos de Cabeçalho\Entidades\Obstaculos</Filter>
     </ClInclude>
@@ -274,6 +271,9 @@
     </ClInclude>
     <ClInclude Include="Vinganca.h">
       <Filter>Arquivos de Cabeçalho\Entidades\Personagens</Filter>
+    </ClInclude>
+    <ClInclude Include="Entidade_Dinamica.h">
+      <Filter>Arquivos de Cabeçalho\Entidades</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

@@ -11,7 +11,8 @@ namespace Entidades {
 			agilidade = (float)(rand() % 4 + 1) / 10;
 		}
 
-		Raiva::~Raiva() {
+		Raiva::~Raiva()
+		{
 
 		}
 
@@ -19,7 +20,7 @@ namespace Entidades {
 
 		}
 
-		void Raiva::salvar() {
+		void Raiva::salvar(std::ostringstream* entrada) {
 
 		}
 
@@ -27,7 +28,8 @@ namespace Entidades {
 			desenhar();
 		}
 
-		void Raiva::danificar(Jogador* p) {
+		void Raiva::danificar(Jogador* p)
+		{
 
 		}
 

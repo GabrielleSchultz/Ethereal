@@ -20,5 +20,15 @@ namespace Entidades {
 			return vivo;
 		}
 
+		int Personagem::getNumVidas() const
+		{
+			return num_vidas;
+		}
+
+		void Personagem::setNumVidas(const int nv)
+		{
+			num_vidas = nv;
+		}
+
 	}
 }

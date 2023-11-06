@@ -13,9 +13,10 @@ namespace Entidades {
 			Personagem(int nv = 0, const char* texturePath = "", ID id = ID::vazio);
 			~Personagem();
 			bool getVivo();
+			int getNumVidas() const;
+			void setNumVidas(const int nv);
 			virtual void update(float dt = 0) = 0;
-			virtual void executar() = 0;
-			virtual void salvar() = 0;
+			virtual void salvar(std::ostringstream* entrada) = 0;
 		};
 	}
 }

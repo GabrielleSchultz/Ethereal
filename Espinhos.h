@@ -12,8 +12,9 @@ namespace Entidades{
 			Espinhos(Math::Vector2Df posicao = Math::Vector2Df(0.f, 0.f), const char* texture = "", ID id = ID::espinhos);
 			~Espinhos();
 			void obstacular(Entidades::Personagens::Jogador* p);
-			void executar();
-			void salvar();
+			void espetar(Entidades::Personagens::Jogador* p);
+			void update(float dt);
+			void salvar(std::ostringstream* entrada);
 		};
 
 	}

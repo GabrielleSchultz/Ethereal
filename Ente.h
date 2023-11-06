@@ -11,6 +11,7 @@ protected:
 public:
 	Ente();
 	virtual ~Ente();
-	virtual void executar() = 0;
+	virtual void executar(float dt) = 0;
 	virtual void desenhar() = 0;
+	virtual void salvar(std::ostringstream* entrada) = 0;
 };

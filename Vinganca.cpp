@@ -17,7 +17,7 @@ void Entidades::Personagens::Vinganca::danificar(Jogador* p) {
 
 }
 
-void Entidades::Personagens::Vinganca::salvar() {
+void Entidades::Personagens::Vinganca::salvar(std::ostringstream* entrada) {
 
 }
 

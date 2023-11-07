@@ -45,5 +45,7 @@ namespace Entidades {
         // método para o inimigo raiva perseguir
         Math::Vector2Df getPosition();
         Math::Vector2Df getTamanho();
+
+        ID getId();
     };
 }

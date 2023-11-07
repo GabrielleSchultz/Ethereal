@@ -2,7 +2,7 @@
 
 namespace Entidades {
 
-	const float Entidade::gravidade(9.8f/8);
+	const float Entidade::gravidade(9.8f/10);
 
 	Entidade::Entidade(const char* texturePath, ID identidade) : Ente(),
 		caminho_textura(texturePath),
@@ -60,6 +60,11 @@ namespace Entidades {
 	Math::Vector2Df Entidade::getTamanho()
 	{
 		return tamanho;
+	}
+
+	ID Entidade::getId()
+	{
+		return id;
 	}
 
 }

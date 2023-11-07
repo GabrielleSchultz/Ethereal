@@ -48,7 +48,7 @@ namespace Gerenciadores
 		for (it = inimigos->get_primeiro(); (!it.operator==(nullptr)); it.operator++()) {
 			inim = it.operator*();
 			if (Colisao(inim, jog)) {
-				jog->setPosition(jog->getPosition().x - 100, jog->getPosition().y);
+				jog->setPosition(jog->getPosition().x - 50, jog->getPosition().y);
 			}
 		}
 	}

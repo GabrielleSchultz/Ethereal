@@ -42,8 +42,10 @@ namespace Entidades {
         void setPosition(Math::Vector2Df v);
         void setTamanho(float x, float y);
 
-        // método para o inimigo raiva perseguir
+        // m todo para o inimigo raiva perseguir
         Math::Vector2Df getPosition();
         Math::Vector2Df getTamanho();
+
+        ID getId();
     };
 }

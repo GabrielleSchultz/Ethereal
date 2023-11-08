@@ -95,8 +95,8 @@ sf::RenderWindow* Gerenciadores::Grafico::getWindow()
 
 bool Gerenciadores::Grafico::foraDaCamera(Math::Vector2Df pos, sf::Vector2u size)
 {
-	//if (pos.x > (cameraJogo.getSize().x) || pos.y > (cameraJogo.getSize().y))
-		//return true;
+	//if (pos.x + (size.x) > (cameraJogo.getSize().x) || pos.y + (size.y) > (cameraJogo.getSize().y))
+	//	return true;
 	return false;
 }
 
@@ -162,6 +162,9 @@ void Gerenciadores::Grafico::deletarTexturas()
 Math::Vector2Df Gerenciadores::Grafico::getDimensao(std::string texturePath)
 {
 	MapaTextura::iterator it = EntityTextures.find(texturePath);
+
+	if (it == EntityTextures.end())
+		it = EntityTextures.find(SPRITE_ERROR);
 
 	sf::Vector2u size = it->second->getSize();
 	Math::Vector2Df dimensao((float)size.x, (float)size.y);

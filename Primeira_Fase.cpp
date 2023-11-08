@@ -27,6 +27,8 @@ void Fases::Primeira_Fase::executar(float dt)
 		//aux->executar(dt);
 		if (aux->getId() == Entidades::ID::inimigo_raiva) {
 			static_cast<Entidades::Personagens::Raiva*>(aux)->perseguir(pixi);
+			if (bity)
+				static_cast<Entidades::Personagens::Raiva*>(aux)->perseguir(bity);
 		}
 	}
 }

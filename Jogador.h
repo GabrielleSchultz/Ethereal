@@ -45,6 +45,7 @@ namespace Entidades {
 			void operator++();
 			bool isPlayer1();
 			static int getNumJogadores();
+			void atacar();
 		};
 	}
 }

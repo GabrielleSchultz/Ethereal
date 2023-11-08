@@ -17,7 +17,7 @@ void Fases::Primeira_Fase::executar(float dt)
 	//pixi->executar(dt);
 	if (bity)
 		bity->update(dt);
-	//bity->executar(dt);
+		//bity->executar(dt);
 
 	Listas::Lista<Entidades::Entidade>::Iterador it;
 	Entidades::Entidade* aux = nullptr;

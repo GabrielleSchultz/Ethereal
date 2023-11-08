@@ -52,12 +52,12 @@ namespace Entidades {
 		tamanho.y = y;
 	}
 
-	Math::Vector2Df Entidade::getPosition()
+	Math::Vector2Df Entidade::getPosition() const
 	{
 		return position;
 	}
 
-	Math::Vector2Df Entidade::getTamanho()
+	Math::Vector2Df Entidade::getTamanho() const
 	{
 		return tamanho;
 	}

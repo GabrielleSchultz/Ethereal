@@ -8,6 +8,7 @@ namespace Entidades {
 	
 	private:
 		int velocidade;
+		int dano;
 
 	public:
 		Projetil(const char* texturePath, ID id = ID::projetil);

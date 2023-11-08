@@ -29,7 +29,7 @@ namespace Entidades {
 		float getAtrito() const;
 		Math::Vector2Df getDirection() const;
 		//move
-		void update(float dt) = 0;
+		virtual void update(float dt) = 0;
 		virtual void mover(float dt){}
 
 		virtual void salvar(std::ostringstream* entrada) = 0;

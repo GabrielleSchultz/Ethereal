@@ -84,5 +84,8 @@ namespace Entidades {
 		{
 			return numJogadores;
 		}
+		void Jogador::atacar()
+		{
+		}
 	}
 }

@@ -36,16 +36,22 @@ namespace Entidades {
 				Player1 = false;
 				pControles->setKeyCommands("up", "right", "left", "down");
 			}
-		}
+		} 
 
 		void Jogador::update(float dt)
 		{
-            float velocidadeX = fabs(currentVelocity.x);
+			mover(dt);
+			desenhar();
+		}
+
+		void Jogador::mover(float dt)
+		{
+			float velocidadeX = fabs(currentVelocity.x);
 
 			if (velocidadeX < max_vel)
 				currentVelocity.x += acceleration * direction.x * dt;
 
-            //atrito
+			//atrito
 			if (currentVelocity.x > 0.f)
 			{
 				currentVelocity.x -= atrito * dt;
@@ -60,7 +66,6 @@ namespace Entidades {
 			}
 
 			setPosition(position.x + (currentVelocity.x * dt), position.y);
-			desenhar();
 		}
 
 		void Jogador::salvar(std::ostringstream* entrada)

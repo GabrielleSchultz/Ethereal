@@ -40,6 +40,7 @@ namespace Entidades {
 			~Jogador();
 			void inicializa();
 			void update(float dt);
+			void mover(float dt);
 			void salvar(std::ostringstream* entrada);
 			void operator++();
 			bool isPlayer1();

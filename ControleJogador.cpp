@@ -29,10 +29,7 @@ void Controle::ControleJogador::notifyKeyPressed(std::string key)
 void Controle::ControleJogador::notifyKeyReleased(std::string key)
 {
 	if (pJogador) {
-		if (key == esquerda) 
-			pJogador->setDirection(Math::Vector2Df(0.f, 0.f));
-		
-		if (key == direita)
+		if (key == esquerda || key == direita)
 			pJogador->setDirection(Math::Vector2Df(0.f, 0.f));
 	}
 	else

@@ -10,7 +10,7 @@ namespace Entidades {
 	{
 	protected:
 		Math::Vector2Df currentVelocity;
-		Math::Vector2Df direction; //verificar
+		Math::Vector2Df direction;
 		const float speed;
 		float acceleration;
 		float atrito;
@@ -20,13 +20,18 @@ namespace Entidades {
 	public:
 		Entidade_Dinamica(const char* filePath = "", ID identidade = ID::vazio);
 		~Entidade_Dinamica();
+		//sets
 		void setDeltaTime(const float dt);
 		void setupValues();
-		float getAtrito() const;
 		void setAtrito(const float at);
-		Math::Vector2Df getDirection() const;
 		void setDirection(const Math::Vector2Df direcao);
+		//gets
+		float getAtrito() const;
+		Math::Vector2Df getDirection() const;
+		//move
 		void update(float dt) = 0;
+		virtual void mover(float dt){}
+
 		virtual void salvar(std::ostringstream* entrada) = 0;
 
 	};

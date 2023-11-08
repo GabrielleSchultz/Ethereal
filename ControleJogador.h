@@ -26,7 +26,7 @@ namespace Controle{
 		~ControleJogador() { pJogador = nullptr; }
 
 		void notifyKeyPressed(std::string key);
-		void notifKeyRelease(std::string key);
+		void notifyKeyReleased(std::string key);
 
 		void setJogador(Entidades::Personagens::Jogador* jogador);
 		void setKeyCommands(std::string jump, std::string right, std::string left, std::string attack);

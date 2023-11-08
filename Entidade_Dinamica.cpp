@@ -46,4 +46,14 @@ namespace Entidades {
 		atrito = at;
 	}
 
+	Math::Vector2Df Entidade_Dinamica::getDirection() const
+	{
+		return direction;
+	}
+
+	void Entidade_Dinamica::setDirection(const Math::Vector2Df direcao)
+	{
+		direction = direcao;
+	}
+
 }

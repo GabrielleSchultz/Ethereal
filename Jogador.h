@@ -18,7 +18,7 @@ namespace Entidades {
 		private:
 			static int pontos;
 			const float gravityCataliser;
-			//Controle::ControleJogador* pControles;
+			Controle::ControleJogador* pControles;
 
 			//checagem de movimento
 			bool isGrounded;
@@ -38,6 +38,7 @@ namespace Entidades {
 		public:
 			Jogador(int nv = 0, const char* texturePath = "", JogadorNum player = Jogador1, ID id = ID::jogador);
 			~Jogador();
+			void inicializa();
 			void update(float dt);
 			void salvar(std::ostringstream* entrada);
 			void operator++();

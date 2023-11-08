@@ -30,7 +30,7 @@ namespace Gerenciadores
 
         for (it = observers.begin(); it != observers.end(); it++)
         {
-            (*it)->notifyReleased(keyMap[key]);
+            (*it)->notifyKeyPressed(keyMap[key]);
         }
     }
 
@@ -40,7 +40,7 @@ namespace Gerenciadores
 
         for (it = observers.begin(); it != observers.end(); it++)
         {
-            (*it)->notifyPressed(keyMap[key]);
+            (*it)->notifyKeyReleased(keyMap[key]);
         }
     }
 

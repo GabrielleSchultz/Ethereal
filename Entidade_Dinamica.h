@@ -24,6 +24,8 @@ namespace Entidades {
 		void setupValues();
 		float getAtrito() const;
 		void setAtrito(const float at);
+		Math::Vector2Df getDirection() const;
+		void setDirection(const Math::Vector2Df direcao);
 		void update(float dt) = 0;
 		virtual void salvar(std::ostringstream* entrada) = 0;
 

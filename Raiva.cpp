@@ -8,7 +8,7 @@ namespace Entidades {
 		raio(175),
 		agilidade(0.0f){
 			srand(time(NULL));
-			agilidade = (float)(rand() % 4 + 1) / 10;
+			agilidade = (float)(rand() % 5 + 1) / 10;
 		}
 
 		Raiva::~Raiva()

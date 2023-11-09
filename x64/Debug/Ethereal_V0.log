@@ -1,18 +1,3 @@
-﻿  ControleJogador.cpp
-  Espinhos.cpp
-  Fase.cpp
-  Gerenciador_Colisoes.cpp
-  Inimigo.cpp
-  Jogador.cpp
-  Jogo.cpp
-  Obstaculo.cpp
-  Plataforma.cpp
-  Poca_Lagrima.cpp
-  Primeira_Fase.cpp
-  Raiva.cpp
+﻿  Raiva.cpp
 C:\Users\miche_bb3fmdp\OneDrive\Documentos\GitHub\Ethereal\Raiva.cpp(10,14): warning C4244: 'argumento': conversão de 'time_t' para 'unsigned int', possível perda de dados
-  Tristeza.cpp
-  Vinganca.cpp
-  main.cpp
-  Gerando Código...
   Ethereal_V0.vcxproj -> C:\Users\miche_bb3fmdp\OneDrive\Documentos\GitHub\Ethereal\x64\Debug\Ethereal_V0.exe

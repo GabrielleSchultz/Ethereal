@@ -56,4 +56,10 @@ namespace Entidades {
 		direction = direcao;
 	}
 
+	void Entidade_Dinamica::setDirection(float x, float y)
+	{
+		direction.x = x;
+		direction.y = y;
+	}
+
 }

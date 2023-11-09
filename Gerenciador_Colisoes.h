@@ -27,8 +27,7 @@ namespace Gerenciadores
 
 		bool Colisao(Entidades::Entidade* e1, Entidades::Entidade* e2);
 		void ColisaoJogInim(Entidades::Personagens::Jogador* jog);
-
-
+		void ColisaoProjInim();
 	};
 
 

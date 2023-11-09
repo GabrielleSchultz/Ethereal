@@ -2,6 +2,8 @@
 
 #include "Personagem.h"
 #include "ControleJogador.h"
+#include "Projetil.h"
+#include "ListaEntidades.h"
 
 namespace Gerenciadores
 {
@@ -34,6 +36,8 @@ namespace Entidades {
 			JogadorNum Player;
 			bool Player1;
 			static int numJogadores;
+
+			Listas::ListaEntidades projeteis;
 
 		public:
 			Jogador(int nv = 0, const char* texturePath = "", JogadorNum player = Jogador1, ID id = ID::jogador);

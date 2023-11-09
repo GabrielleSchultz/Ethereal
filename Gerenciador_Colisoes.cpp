@@ -52,4 +52,15 @@ namespace Gerenciadores
 			}
 		}
 	}
+	void Colisoes::ColisaoProjInim()
+	{
+		Listas::Lista<Entidades::Entidade>::Iterador it = nullptr;
+		Entidades::Entidade* inim = nullptr;
+		for (it = inimigos->get_primeiro(); (!it.operator==(nullptr)); it.operator++()) {
+			inim = it.operator*();
+			//if (Colisao(inim, jog)) {
+				//jog->setPosition(jog->getPosition().x - 100, jog->getPosition().y);
+			//}
+		}
+	}
 }

@@ -20,6 +20,10 @@ void Controle::ControleJogador::notifyKeyPressed(std::string key)
 			Math::Vector2Df resultante(-1.f, 0.f);
 			pJogador->setDirection(pJogador->getDirection() - resultante);
 		}
+
+		if (key == ataque) {
+			pJogador->atacar();
+		}
 	}
 	else
 		std::cout << "Controle::ControleJogador -> ponteiro nulo" << std::endl;

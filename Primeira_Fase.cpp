@@ -2,6 +2,7 @@
 #include "Raiva.h"
 #include "Tristeza.h"
 #include "Vinganca.h"
+#include "Projetil.h"
 
 Fases::Primeira_Fase::Primeira_Fase()
 {
@@ -13,6 +14,7 @@ Fases::Primeira_Fase::~Primeira_Fase()
 
 void Fases::Primeira_Fase::executar(float dt)
 {
+	//pixi->atacar();
 	pixi->update(dt);
 	//pixi->executar(dt);
 	if (bity)
@@ -60,6 +62,9 @@ void Fases::Primeira_Fase::criar_inimigos()
 	Entidades::Personagens::Vinganca* boss = new Entidades::Personagens::Vinganca();
 	boss->setPosition(150, 600);
 	inimigos.incluir(boss);
+
+
+	//pixi->atacar();
 }
 
 void Fases::Primeira_Fase::criar_obstaculos()

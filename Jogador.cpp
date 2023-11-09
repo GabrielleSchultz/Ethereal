@@ -41,6 +41,15 @@ namespace Entidades {
 		void Jogador::update(float dt)
 		{
 			mover(dt);
+			//projeteis.executar(dt);
+			Listas::Lista<Entidades::Entidade>::Iterador it;
+			Entidades::Entidade* aux = nullptr;
+			for (it = projeteis.get_primeiro(); (!it.operator==(nullptr)); it.operator++()) {
+				aux = it.operator*();
+				aux->update(dt);
+				if (static_cast<Projetil*>(aux)->getColidiu())
+					projeteis.remover(aux);
+			}
 			desenhar();
 		}
 
@@ -86,6 +95,13 @@ namespace Entidades {
 		}
 		void Jogador::atacar()
 		{
+			// feito com base no vídeo: https://www.youtube.com/watch?v=DZOCzW9e6Qs
+			Entidades::Projetil* projetil;
+			projetil = new Entidades::Projetil("Assets/Sprites/projetil0.png", 10);
+			projetil->setAtirador(this);
+			projetil->setDirection(1,0);
+			projetil->setPosition(position.x + tamanho.x / 2, position.y);
+			projeteis.incluir(projetil);
 		}
 	}
 }

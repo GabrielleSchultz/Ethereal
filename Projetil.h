@@ -4,7 +4,7 @@
 
 namespace Entidades {
 
-	class Projetil : Entidade_Dinamica {
+	class Projetil : public Entidade, public Tipo::Dinamica {
 	
 	private:
 		int velocidade;

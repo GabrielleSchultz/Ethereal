@@ -1,10 +1,10 @@
 #pragma once
 #include "Entidade.h"
-#include "Entidade_Dinamica.h" //include utils.h
+#include "Entidade_Dinamica.h"
 
 namespace Entidades {
 	namespace Personagens {
-		class Personagem : public Entidade_Dinamica {
+		class Personagem : public Entidade, public Tipo::Dinamica {
 		protected:
 			int num_vidas;
 			bool vivo;

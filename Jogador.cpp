@@ -6,9 +6,8 @@ int Entidades::Personagens::Jogador::pontos(0);
 namespace Entidades {
 
 	namespace Personagens {
-        Jogador::Jogador(int nv, const char* texturePath, JogadorNum player, ID id) :
+		Jogador::Jogador(int nv, const char* texturePath, JogadorNum player, ID id) :
 			Personagem(nv, texturePath, id),
-			Player1(true),
 			isGrounded(false),
 			isJumping(false),
 			Player(player),
@@ -16,14 +15,15 @@ namespace Entidades {
 			groundedRemember(0.f),
 			groundedRememberTimer(0.2f),
 			jumpPressedRememberTimer(0.2f),
-			gravityCataliser(0.5f)
+			gravityCataliser(0.5f),
+			facingRight(true)
 		{
 			pControles = new Controle::ControleJogador();
 			numJogadores++;
 			inicializa();
-        }
+		}
 
-        Jogador::~Jogador()
+		Jogador::~Jogador()
 		{
 		}
 
@@ -33,14 +33,24 @@ namespace Entidades {
 
 			if (Player == 2)
 			{
-				Player1 = false;
 				pControles->setKeyCommands("up", "right", "left", "down");
 			}
-		} 
+		}
 
 		void Jogador::update(float dt)
 		{
 			mover(dt);
+			//projeteis.executar(dt);
+			Listas::Lista<Entidades::Entidade>::Iterador it;
+			Entidades::Entidade* aux = nullptr;
+			for (it = projeteis.get_primeiro(); (!it.operator==(nullptr)); it.operator++()) {
+				aux = it.operator*();
+				aux->update(dt);
+				if (static_cast<Projetil*>(aux)->getColidiu()) {
+					projeteis.remover(aux);
+					delete(aux);
+				}
+			}
 			desenhar();
 		}
 
@@ -76,16 +86,38 @@ namespace Entidades {
 		{
 			pontos++;
 		}
-		bool Jogador::isPlayer1()
-		{
-			return Player1;
-		}
 		int Jogador::getNumJogadores()
 		{
 			return numJogadores;
 		}
 		void Jogador::atacar()
 		{
+			// feito com base no vídeo: https://www.youtube.com/watch?v=DZOCzW9e6Qs
+			Entidades::Projetil* projetil;
+			if (Player == Jogador1) {
+				projetil = new Entidades::Projetil("Assets/Sprites/pixie_bubble.png", 10);
+			}
+			else {
+				projetil = new Entidades::Projetil("Assets/Sprites/bytie_bubble.png", 10);
+			}
+			projetil->setAtirador(this);
+			if (facingRight) {
+				projetil->setDirection(1, 0);
+				projetil->setPosition(position.x + tamanho.x / 2, position.y);
+			}
+			else {
+				projetil->setDirection(-1, 0);
+				projetil->setPosition(position.x, position.y);
+			}
+			projeteis.incluir(projetil);
+		}
+		bool Jogador::getFacingRight() const
+		{
+			return facingRight;
+		}
+		void Jogador::setFacingRight(const bool b)
+		{
+			facingRight = b;
 		}
 	}
 }

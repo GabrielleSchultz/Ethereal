@@ -2,6 +2,8 @@
 
 #include "Personagem.h"
 #include "ControleJogador.h"
+#include "Projetil.h"
+#include "ListaEntidades.h"
 
 namespace Gerenciadores
 {
@@ -13,7 +15,7 @@ enum JogadorNum { Jogador1 = 1, Jogador2 = 2 };
 namespace Entidades {
 	namespace Personagens
 	{
-		class Jogador : public Personagem{
+		class Jogador : public Personagem {
 
 		private:
 			static int pontos;
@@ -32,8 +34,11 @@ namespace Entidades {
 
 			//multiplayer
 			JogadorNum Player;
-			bool Player1;
 			static int numJogadores;
+
+			Listas::ListaEntidades projeteis;
+
+			bool facingRight;
 
 		public:
 			Jogador(int nv = 0, const char* texturePath = "", JogadorNum player = Jogador1, ID id = ID::jogador);
@@ -43,9 +48,10 @@ namespace Entidades {
 			void mover(float dt);
 			void salvar(std::ostringstream* entrada);
 			void operator++();
-			bool isPlayer1();
 			static int getNumJogadores();
 			void atacar();
+			bool getFacingRight() const;
+			void setFacingRight(const bool b);
 		};
 	}
 }

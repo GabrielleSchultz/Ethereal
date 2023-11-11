@@ -11,14 +11,20 @@ void Controle::ControleJogador::notifyKeyPressed(std::string key)
 	if (pJogador) {
 		if (key == esquerda)
 		{
-			Math::Vector2Df resultante (-1.f, 0.f);
+			Math::Vector2Df resultante(-1.f, 0.f);
 			pJogador->setDirection(pJogador->getDirection() + resultante);
+			pJogador->setFacingRight(false);
 		}
-		
+
 		if (key == direita)
 		{
 			Math::Vector2Df resultante(-1.f, 0.f);
 			pJogador->setDirection(pJogador->getDirection() - resultante);
+			pJogador->setFacingRight(true);
+		}
+
+		if (key == ataque) {
+			pJogador->atacar();
 		}
 	}
 	else
@@ -52,5 +58,5 @@ void Controle::ControleJogador::setKeyCommands(std::string jump, std::string rig
 
 void Controle::ControleJogador::setReviveCommand(std::string revive)
 {
-	
+
 }

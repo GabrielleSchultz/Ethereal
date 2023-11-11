@@ -8,7 +8,7 @@
 namespace Entidades {
 	namespace Tipo {
 
-		Dinamica::Dinamica() :
+		Tipo::Dinamica::Dinamica() :
 			currentVelocity(0.f, 0.f),
 			direction(0.f, 0.f),
 			speed(0.f),
@@ -20,40 +20,46 @@ namespace Entidades {
 			setupValues();
 		}
 
-		Dinamica::~Dinamica()
+		Tipo::Dinamica::~Dinamica()
 		{
 		}
 
-		void Dinamica::setDeltaTime(const float dt)
+		void Tipo::Dinamica::setDeltaTime(const float dt)
 		{
 			delta_time = dt;
 		}
 
-		void Dinamica::setupValues()
+		void Tipo::Dinamica::setupValues()
 		{
 			max_vel = 7.5f;
 			acceleration = 0.5f;
 			setAtrito(0.25f);
 		}
 
-		float Dinamica::getAtrito() const
+		float Tipo::Dinamica::getAtrito() const
 		{
 			return atrito;
 		}
 
-		void Dinamica::setAtrito(const float at)
+		void Tipo::Dinamica::setAtrito(const float at)
 		{
 			atrito = at;
 		}
 
-		Math::Vector2Df Dinamica::getDirection() const
+		Math::Vector2Df Tipo::Dinamica::getDirection() const
 		{
 			return direction;
 		}
 
-		void Dinamica::setDirection(const Math::Vector2Df direcao)
+		void Tipo::Dinamica::setDirection(const Math::Vector2Df direcao)
 		{
 			direction = direcao;
+		}
+
+		void Tipo::Dinamica::setDirection(float x, float y)
+		{
+			direction.x = x;
+			direction.y = y;
 		}
 	}
 }

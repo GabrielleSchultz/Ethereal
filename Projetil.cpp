@@ -2,9 +2,12 @@
 
 namespace Entidades
 {
-	Projetil::Projetil(const char* texturePath, ID id) :
-	Entidade(texturePath, id),
-	velocidade(0)
+	Projetil::Projetil(const char* texturePath, int d, ID id) :
+		Entidade(texturePath, id),
+		velocidade(5),
+		dano(d),
+		atirador(nullptr),
+		colidiu(false)
 	{
 	}
 
@@ -12,16 +15,30 @@ namespace Entidades
 
 	}
 
-	void Projetil::setDirection(Math::Vector2Df posA, Math::Vector2Df posB)
+	void Projetil::setAtirador(Entidade* a)
 	{
-		direction = posB - posA;
+		atirador = a;
 	}
 
-	void Projetil::executar() {
-
+	bool Projetil::getColidiu() const
+	{
+		return colidiu;
 	}
 
-	void Projetil::salvar() {
-
+	void Projetil::colidir()
+	{
+		colidiu = true;
 	}
+
+	void Projetil::update(float dt)
+	{
+		setPosition(position.x + (velocidade * dt * direction.x), position.y + (velocidade * dt * direction.y));
+		desenhar();
+	}
+
+	void Projetil::salvar(std::ostringstream* entrada)
+	{
+	}
+
+	
 }

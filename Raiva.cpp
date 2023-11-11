@@ -3,12 +3,12 @@
 
 namespace Entidades {
 	namespace Personagens {
-		Raiva::Raiva(int nv, int mal, const char* texturePath, ID id):
-		Inimigo(nv, mal, texturePath, id),
-		raio(175),
-		agilidade(0.0f){
+		Raiva::Raiva(int nv, int mal, const char* texturePath, ID id) :
+			Inimigo(nv, mal, texturePath, id),
+			raio(175),
+			agilidade(0.0f) {
 			srand(time(NULL));
-			agilidade = (float)(rand() % 4 + 1) / 10;
+			agilidade = (float)(rand() % 5 + 1) / 10;
 		}
 
 		Raiva::~Raiva()

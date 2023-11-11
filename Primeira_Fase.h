@@ -1,5 +1,6 @@
 #pragma once
 #include "Fase.h"
+#include "Projetil.h"
 
 namespace Fases {
 	class Primeira_Fase : public Fase

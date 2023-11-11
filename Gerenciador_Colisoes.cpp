@@ -6,8 +6,8 @@ namespace Gerenciadores
 {
 	Colisoes* Colisoes::instancia_pGC(nullptr);
 
-	Colisoes::Colisoes():
-	inimigos(nullptr){
+	Colisoes::Colisoes() :
+		inimigos(nullptr) {
 
 	}
 
@@ -33,7 +33,7 @@ namespace Gerenciadores
 		// esquerda e1 > direita e2
 		// top e1 > bottom e2
 		// bottom e1 < top e2
-		if( (e1->getPosition().x + e1->getTamanho().x) < e2->getPosition().x ||
+		if ((e1->getPosition().x + e1->getTamanho().x) < e2->getPosition().x ||
 			e1->getPosition().x > (e2->getPosition().x + e2->getTamanho().x) ||
 			e1->getPosition().y > (e2->getPosition().y + e2->getTamanho().y) ||
 			(e1->getPosition().y + e1->getTamanho().y) < e2->getPosition().y)
@@ -50,6 +50,17 @@ namespace Gerenciadores
 			if (Colisao(inim, jog)) {
 				jog->setPosition(jog->getPosition().x - 100, jog->getPosition().y);
 			}
+		}
+	}
+	void Colisoes::ColisaoProjInim()
+	{
+		Listas::Lista<Entidades::Entidade>::Iterador it = nullptr;
+		Entidades::Entidade* inim = nullptr;
+		for (it = inimigos->get_primeiro(); (!it.operator==(nullptr)); it.operator++()) {
+			inim = it.operator*();
+			//if (Colisao(inim, jog)) {
+				//jog->setPosition(jog->getPosition().x - 100, jog->getPosition().y);
+			//}
 		}
 	}
 }

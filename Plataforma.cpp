@@ -1,7 +1,8 @@
 #include "Plataforma.h"
 
 Entidades::Obstaculos::Plataforma::Plataforma(Math::Vector2Df posicao, const char* texture, ID id) :
-Obstaculo (posicao, texture, id)
+Obstaculo (posicao, texture, id),
+forca_normal(0)
 {
 }
 
@@ -18,6 +19,7 @@ void Entidades::Obstaculos::Plataforma::update(float dt)
 {
 	//nao se afeta pela gravidade
 	position.y -= forca_normal;
+	desenhar();
 }
 
 void Entidades::Obstaculos::Plataforma::salvar(std::ostringstream* entrada)

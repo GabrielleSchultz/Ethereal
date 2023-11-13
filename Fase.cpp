@@ -8,7 +8,7 @@ namespace Fases
 	Fase::Fase() :
 		pGerenciadorColisoes(Gerenciadores::Colisoes::getGerenciador_Colisoes()),
 		pixi(nullptr), bity(nullptr),
-		inimigos()
+		inimigos(), obstaculos()
 	{
 	}
 
@@ -41,6 +41,6 @@ namespace Fases
 			bity->setPosition(140, 450);
 		}
 		else
-			std::cerr << "Erro ao criar jogador. Verificar arquivo de gera  o de mapa" << std::endl;
+			std::cerr << "Erro ao criar jogador. Verificar arquivo de gera o de mapa" << std::endl;
 	}
 }

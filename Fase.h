@@ -14,7 +14,7 @@ namespace Fases {
 		Entidades::Personagens::Jogador* pixi;
 		Entidades::Personagens::Jogador* bity;
 		Listas::ListaEntidades inimigos;
-		// lista obstáculos
+		Listas::ListaEntidades obstaculos;
 
 	public:
 		Fase();

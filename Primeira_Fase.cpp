@@ -16,6 +16,8 @@ Fases::Primeira_Fase::~Primeira_Fase()
 
 void Fases::Primeira_Fase::executar(float dt)
 {
+	pGerenciadorGrafico->desenharEnte("Assets/Backgrounds/Stage1_full_background.png", Math::Vector2Df(0, 0));
+
 	pixi->update(dt);
 	//pixi->executar(dt);
 	if (bity)
@@ -43,6 +45,8 @@ void Fases::Primeira_Fase::executar(float dt)
 		static_cast<Entidades::Obstaculos::Plataforma*>(aux)->obstacular(bity);
 		//aux->executar(dt);
 	}
+
+	pGerenciadorGrafico->desenharEnte("Assets/Backgrounds/Stars Small_1.png", Math::Vector2Df(0, 0));
 }
 
 void Fases::Primeira_Fase::desenhar()

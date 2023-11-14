@@ -1,41 +1,11 @@
-<<<<<<< HEAD
-﻿  ControleJogador.cpp
-  ControleMenu.cpp
-  Entidade_Dinamica.cpp
-  Ente.cpp
-  Entidade.cpp
-  Fase.cpp
-  Gerenciador_Colisoes.cpp
-  Gerenciador_Estados.cpp
-  Gerenciador_Eventos.cpp
-  Gerenciador_Grafico.cpp
-  Gerenciador_Inputs.cpp
-  Inimigo.cpp
-  Jogador.cpp
-  Jogo.cpp
-  ListaEntidades.cpp
-  main.cpp
-  Menu.cpp
-  MenuFases.cpp
-  MenuOptions.cpp
-  MenuRanking.cpp
-  Gerando Código...
-  Compilando...
-  Obstaculo.cpp
-  Espinhos.cpp
-  Plataforma.cpp
-  Poca_Lagrima.cpp
-  Personagem.cpp
-  Primeira_Fase.cpp
-  Projetil.cpp
-  Raiva.cpp
-C:\Users\gabri\source\repos\GabrielleSchultz\Ethereal\Raiva.cpp(10,14): warning C4244: 'argumento': conversão de 'time_t' para 'unsigned int', possível perda de dados
-  Segunda_Fase.cpp
-  Tristeza.cpp
-  Vinganca.cpp
-  Gerando Código...
+﻿  Primeira_Fase.cpp
+C:\Users\gabri\source\repos\GabrielleSchultz\Ethereal\Primeira_Fase.cpp(87,65): warning C4244: 'argumento': conversão de 'int' para 'T', possível perda de dados
+          with
+          [
+              T=float
+          ]
+C:\Users\gabri\source\repos\GabrielleSchultz\Ethereal\Primeira_Fase.cpp(121,33): warning C4244: 'argumento': conversão de 'int' para 'float', possível perda de dados
+C:\Users\gabri\source\repos\GabrielleSchultz\Ethereal\Primeira_Fase.cpp(121,25): warning C4244: 'argumento': conversão de 'int' para 'float', possível perda de dados
+C:\Users\gabri\source\repos\GabrielleSchultz\Ethereal\Primeira_Fase.cpp(127,33): warning C4244: 'argumento': conversão de 'int' para 'float', possível perda de dados
+C:\Users\gabri\source\repos\GabrielleSchultz\Ethereal\Primeira_Fase.cpp(127,25): warning C4244: 'argumento': conversão de 'int' para 'float', possível perda de dados
   Ethereal_V0.vcxproj -> C:\Users\gabri\source\repos\GabrielleSchultz\Ethereal\x64\Debug\Ethereal_V0.exe
-=======
-﻿  Jogo.cpp
-  Ethereal_V0.vcxproj -> C:\Users\miche_bb3fmdp\OneDrive\Documentos\GitHub\Ethereal\x64\Debug\Ethereal_V0.exe
->>>>>>> f5c178d0a1c09cd65dd10b7dcdd7a579ae78c5fd

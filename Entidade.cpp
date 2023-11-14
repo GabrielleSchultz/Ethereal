@@ -4,10 +4,10 @@ namespace Entidades {
 
 	const float Entidade::gravidade(9.8f / 10);
 
-	Entidade::Entidade(const char* texturePath, ID identidade) : Ente(),
+	Entidade::Entidade(const char* texturePath, ID identidade, Math::Vector2Df pos) : Ente(),
 		caminho_textura(texturePath),
 		id(identidade),
-		position(0, 0),
+		position(pos),
 		tamanho(0, 0)
 	{
 		inicializar();

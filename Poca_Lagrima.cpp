@@ -17,6 +17,7 @@ void Entidades::Obstaculos::Poca_Lagrimas::obstacular(Entidades::Personagens::Jo
 
 void Entidades::Obstaculos::Poca_Lagrimas::update(float dt)
 {
+	desenhar();
 }
 
 

@@ -37,6 +37,7 @@ void Fases::Primeira_Fase::executar(float dt)
 
 	for (it = obstaculos.get_primeiro(); (!it.operator==(nullptr)); it.operator++()) {
 		aux = it.operator*();
+		//std::cout << aux->getPosition().x << std::endl;
 		aux->update(dt);
 		static_cast<Entidades::Obstaculos::Plataforma*>(aux)->obstacular(pixi);
 		static_cast<Entidades::Obstaculos::Plataforma*>(aux)->obstacular(bity);
@@ -84,7 +85,7 @@ void Fases::Primeira_Fase::criar_obstaculos()
 	Entidades::Obstaculos::Plataforma* p = nullptr;
 	for (int i = 0; i < 60; i++) {
 		p = new Entidades::Obstaculos::Plataforma(Math::Vector2Df(450 + 64 * i, 250), "Assets/Sprites/top_ground_sprite.png");
-		std::cout << "Criou chão" << Math::Vector2Df(450 + 64 * i, 250).x << Math::Vector2Df(450 + 64 * i, 250).y << std::endl;
+		//std::cout << "Criou chão" << Math::Vector2Df(450 + 64 * i, 250).x << Math::Vector2Df(450 + 64 * i, 250).y << std::endl;
 		if (p) {
 			obstaculos.incluir(p);
 		}
@@ -94,7 +95,8 @@ void Fases::Primeira_Fase::criar_obstaculos()
 void Fases::Primeira_Fase::criar_cenario(std::string file_path)
 {
 	std::ifstream arq(file_path);
-	if (!arq ) {
+	if (!arq)
+	{
 		std::cout << "Não foi possível abrir arquivo de cenário" << std::endl;
 		exit(1);
 	}
@@ -102,35 +104,43 @@ void Fases::Primeira_Fase::criar_cenario(std::string file_path)
 	Entidades::Entidade* aux = nullptr;
 
 	int i = 0, j = 0;
-	for (i = 0; std::getline(arq, linha); i++, j = 0) {
-		for (char simbolo : linha) {
-			switch (simbolo) {
-			case '#': {
-				std::cout << "Criou plataforma" << j * 10.0 << i * 10.0 << std::endl;
-				aux = static_cast<Entidades::Entidade*>(new Entidades::Obstaculos::Plataforma(Math::Vector2Df(j * 10.0, i * 10.0), "Assets/Sprites/middle_ground_sprite.png"));
-				if(aux)
+	for (i = 0; std::getline(arq, linha); i++, j = 0)
+	{
+		for (char simbolo : linha)
+		{
+			switch (simbolo)
+			{
+			case '#':
+				//std::cout << "Criou plataforma" << j * 32 << i * 32 << std::endl;
+				aux = static_cast<Entidades::Entidade*>(new Entidades::Obstaculos::Plataforma(Math::Vector2Df(j * 32.f, i * 32.f), "Assets/Sprites/middle_ground_sprite.png"));
+				if (aux) 
 					obstaculos.incluir(aux);
-			}break;
-			case 'P': {
+					break;
+			case 'P':
 				criar_jogador('P');
-				pixi->setPosition(j * 10.0, i * 10.0);
-				std::cout << "Criou o jogador em " << j * 10.0 << i * 10.0 << std::endl;
-			}break;
-			case 'B': {
+				pixi->setPosition(j * 64, i * 64);
+				//std::cout << "Criou o jogador em " << j * 10.0 << i * 10.0 << std::endl;
+
+				break;
+			case 'B':
 				criar_jogador('B');
-				bity->setPosition(j * 10.0, i * 10.0);
-				std::cout << "Criou o jogador em " << j * 10.0 << i * 10.0 << std::endl;
-			}break;
-			case '*': {
-				aux = static_cast<Entidades::Entidade*>(new Entidades::Obstaculos::Plataforma(Math::Vector2Df(j * 10.0, i * 10.0), "Assets/Sprites/top_ground_sprite.png"));
-				std::cout << "Criou plataforma" << j * 10.0 << i * 10.0 << std::endl;
+				bity->setPosition(j * 64, i * 64);
+				//std::cout << "Criou o jogador em " << j * 10.0 << i * 10.0 << std::endl;
+
+				break;
+			case '*':
+				aux = static_cast<Entidades::Entidade*>(new Entidades::Obstaculos::Plataforma(Math::Vector2Df(j * 32.f, i * 32.f), "Assets/Sprites/top_ground_sprite.png"));
+				//std::cout << "Criou plataforma" << j * 32 << i * 32 << std::endl;
 				if (aux)
 					obstaculos.incluir(aux);
-			}break;
-			}
-			j++;
-		}
-	}
 
-	arq.close();
+				break;
+			default:
+				break;
+				}
+				j++;
+			}
+		}
+
+		arq.close();
 }

@@ -33,6 +33,7 @@ void Entidades::Obstaculos::Espinhos::espetar(Entidades::Personagens::Jogador* p
 
 void Entidades::Obstaculos::Espinhos::update(float dt)
 {
+	desenhar();
 }
 
 void Entidades::Obstaculos::Espinhos::salvar(std::ostringstream* entrada)

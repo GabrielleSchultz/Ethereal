@@ -64,7 +64,6 @@ void Jogo::clear()
 void Jogo::update()
 {
     updateDeltaTime();
-
     pfase.executar(deltaTime * dt_multiplier);
     pfase.gerenciar_colisoes();
 }

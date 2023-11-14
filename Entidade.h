@@ -29,7 +29,7 @@ namespace Entidades {
         const char* caminho_textura;
 
     public:
-        Entidade(const char* texturePath = "", ID identidade = ID::vazio);
+        Entidade(const char* texturePath = "", ID identidade = ID::vazio, Math::Vector2Df pos = Math::Vector2Df(0.f,0.f));
         virtual ~Entidade();
         //execucao
         virtual void inicializar();

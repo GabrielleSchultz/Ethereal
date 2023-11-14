@@ -14,7 +14,7 @@ deltaTime(0.f),
 dt_multiplier(DELTA_TIME_FIX),
 pfase()
 {
-    //pfase.criar_cenario("Mapas/Fase1.txt");
+    pfase.criar_cenario("Mapas/Fase1.txt");
     pfase.criar_jogador('P');
     pfase.criar_jogador('B');
     pfase.criar_inimigos();
@@ -64,7 +64,6 @@ void Jogo::clear()
 void Jogo::update()
 {
     updateDeltaTime();
-
     pfase.executar(deltaTime * dt_multiplier);
     pfase.gerenciar_colisoes();
 }

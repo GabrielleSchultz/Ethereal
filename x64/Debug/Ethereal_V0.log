@@ -1,33 +1,16 @@
+<<<<<<< HEAD
 ﻿  Gerenciador_Grafico.cpp
+=======
+﻿  Plataforma.cpp
+>>>>>>> 9b926f96f6d623de0dab0e9c9fa437564628fde5
   Primeira_Fase.cpp
-C:\Users\miche_bb3fmdp\OneDrive\Documentos\GitHub\Ethereal\Primeira_Fase.cpp(90,65): warning C4244: 'argumento': conversão de 'int' para 'T', possível perda de dados
-          with
-          [
-              T=float
-          ]
-C:\Users\miche_bb3fmdp\OneDrive\Documentos\GitHub\Ethereal\Primeira_Fase.cpp(114,111): warning C4244: 'argumento': conversão de 'double' para 'T', possível perda de dados
-          with
-          [
-              T=float
-          ]
-C:\Users\miche_bb3fmdp\OneDrive\Documentos\GitHub\Ethereal\Primeira_Fase.cpp(114,101): warning C4244: 'argumento': conversão de 'double' para 'T', possível perda de dados
-          with
-          [
-              T=float
-          ]
-C:\Users\miche_bb3fmdp\OneDrive\Documentos\GitHub\Ethereal\Primeira_Fase.cpp(120,35): warning C4244: 'argumento': conversão de 'double' para 'float', possível perda de dados
-C:\Users\miche_bb3fmdp\OneDrive\Documentos\GitHub\Ethereal\Primeira_Fase.cpp(120,25): warning C4244: 'argumento': conversão de 'double' para 'float', possível perda de dados
-C:\Users\miche_bb3fmdp\OneDrive\Documentos\GitHub\Ethereal\Primeira_Fase.cpp(125,35): warning C4244: 'argumento': conversão de 'double' para 'float', possível perda de dados
-C:\Users\miche_bb3fmdp\OneDrive\Documentos\GitHub\Ethereal\Primeira_Fase.cpp(125,25): warning C4244: 'argumento': conversão de 'double' para 'float', possível perda de dados
-C:\Users\miche_bb3fmdp\OneDrive\Documentos\GitHub\Ethereal\Primeira_Fase.cpp(129,111): warning C4244: 'argumento': conversão de 'double' para 'T', possível perda de dados
-          with
-          [
-              T=float
-          ]
-C:\Users\miche_bb3fmdp\OneDrive\Documentos\GitHub\Ethereal\Primeira_Fase.cpp(129,101): warning C4244: 'argumento': conversão de 'double' para 'T', possível perda de dados
-          with
-          [
-              T=float
-          ]
+C:\Users\gabri\source\repos\GabrielleSchultz\Ethereal\Primeira_Fase.cpp(115,33): warning C4244: 'argumento': conversão de 'int' para 'float', possível perda de dados
+C:\Users\gabri\source\repos\GabrielleSchultz\Ethereal\Primeira_Fase.cpp(115,25): warning C4244: 'argumento': conversão de 'int' para 'float', possível perda de dados
+C:\Users\gabri\source\repos\GabrielleSchultz\Ethereal\Primeira_Fase.cpp(121,33): warning C4244: 'argumento': conversão de 'int' para 'float', possível perda de dados
+C:\Users\gabri\source\repos\GabrielleSchultz\Ethereal\Primeira_Fase.cpp(121,25): warning C4244: 'argumento': conversão de 'int' para 'float', possível perda de dados
   Gerando Código...
+<<<<<<< HEAD
   Ethereal_V0.vcxproj -> C:\Users\miche_bb3fmdp\OneDrive\Documentos\GitHub\Ethereal\x64\Debug\Ethereal_V0.exe
+=======
+  Ethereal_V0.vcxproj -> C:\Users\gabri\source\repos\GabrielleSchultz\Ethereal\x64\Debug\Ethereal_V0.exe
+>>>>>>> 9b926f96f6d623de0dab0e9c9fa437564628fde5

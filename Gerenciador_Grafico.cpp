@@ -3,7 +3,7 @@
 #include "Gerenciador_Grafico.h"
 using namespace Gerenciadores;
 
-#define WINDOW_LENGHT 1280
+#define WINDOW_LENGHT 1300
 #define WINDOW_HEIGHT 660
 
 #define SPRITE_ERROR "Assets/error_texture.png"
@@ -121,6 +121,23 @@ void Gerenciadores::Grafico::desenharEnte(std::string filePath, Math::Vector2Df 
 
 		janelaPrincipal->draw(sprite);
 	}
+}
+
+void Gerenciadores::Grafico::desenhar(const std::string filePath, Math::Vector2Df pos)
+{
+	sf::Texture* texture;
+	MapaTextura::iterator it = EntityTextures.find(filePath);
+
+	if (it == EntityTextures.end())
+		it = EntityTextures.find(SPRITE_ERROR);
+
+	texture = it->second;
+	sf::Vector2u size = texture->getSize();
+
+	sf::Sprite sprite;
+	sprite.setTexture(*texture);
+
+	janelaPrincipal->draw(sprite);
 }
 
 bool Gerenciadores::Grafico::carregarTextura(const std::string filePath)

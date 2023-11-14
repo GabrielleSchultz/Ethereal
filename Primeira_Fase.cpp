@@ -16,6 +16,8 @@ Fases::Primeira_Fase::~Primeira_Fase()
 
 void Fases::Primeira_Fase::executar(float dt)
 {
+	pGerenciadorGrafico->desenharEnte("Assets/Backgrounds/Stage1_full_background.png", Math::Vector2Df(0, 0));
+
 	pixi->update(dt);
 	//pixi->executar(dt);
 	if (bity)
@@ -42,6 +44,8 @@ void Fases::Primeira_Fase::executar(float dt)
 		static_cast<Entidades::Obstaculos::Plataforma*>(aux)->obstacular(bity);
 		//aux->executar(dt);
 	}
+
+	pGerenciadorGrafico->desenharEnte("Assets/Backgrounds/Stars Small_1.png", Math::Vector2Df(0, 0));
 }
 
 void Fases::Primeira_Fase::desenhar()
@@ -84,7 +88,7 @@ void Fases::Primeira_Fase::criar_obstaculos()
 	Entidades::Obstaculos::Plataforma* p = nullptr;
 	for (int i = 0; i < 60; i++) {
 		p = new Entidades::Obstaculos::Plataforma(Math::Vector2Df(450 + 64 * i, 250), "Assets/Sprites/top_ground_sprite.png");
-		std::cout << "Criou chão" << Math::Vector2Df(450 + 64 * i, 250).x << Math::Vector2Df(450 + 64 * i, 250).y << std::endl;
+		//std::cout << "Criou chão" << Math::Vector2Df(450 + 64 * i, 250).x << Math::Vector2Df(450 + 64 * i, 250).y << std::endl;
 		if (p) {
 			obstaculos.incluir(p);
 		}
@@ -106,7 +110,7 @@ void Fases::Primeira_Fase::criar_cenario(std::string file_path)
 		for (char simbolo : linha) {
 			switch (simbolo) {
 			case '#': {
-				std::cout << "Criou plataforma" << j * 10.0 << i * 10.0 << std::endl;
+				//std::cout << "Criou plataforma" << j * 10.0 << i * 10.0 << std::endl;
 				aux = static_cast<Entidades::Entidade*>(new Entidades::Obstaculos::Plataforma(Math::Vector2Df(j * 10.0, i * 10.0), "Assets/Sprites/middle_ground_sprite.png"));
 				if(aux)
 					obstaculos.incluir(aux);
@@ -114,16 +118,16 @@ void Fases::Primeira_Fase::criar_cenario(std::string file_path)
 			case 'P': {
 				criar_jogador('P');
 				pixi->setPosition(j * 10.0, i * 10.0);
-				std::cout << "Criou o jogador em " << j * 10.0 << i * 10.0 << std::endl;
+				//std::cout << "Criou o jogador em " << j * 10.0 << i * 10.0 << std::endl;
 			}break;
 			case 'B': {
 				criar_jogador('B');
 				bity->setPosition(j * 10.0, i * 10.0);
-				std::cout << "Criou o jogador em " << j * 10.0 << i * 10.0 << std::endl;
+				//std::cout << "Criou o jogador em " << j * 10.0 << i * 10.0 << std::endl;
 			}break;
 			case '*': {
 				aux = static_cast<Entidades::Entidade*>(new Entidades::Obstaculos::Plataforma(Math::Vector2Df(j * 10.0, i * 10.0), "Assets/Sprites/top_ground_sprite.png"));
-				std::cout << "Criou plataforma" << j * 10.0 << i * 10.0 << std::endl;
+				//std::cout << "Criou plataforma" << j * 10.0 << i * 10.0 << std::endl;
 				if (aux)
 					obstaculos.incluir(aux);
 			}break;

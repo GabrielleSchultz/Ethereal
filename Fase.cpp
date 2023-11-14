@@ -6,10 +6,14 @@ namespace Fases
 {
 
 	Fase::Fase() :
+		Ente(),
 		pGerenciadorColisoes(Gerenciadores::Colisoes::getGerenciador_Colisoes()),
 		pixi(nullptr), bity(nullptr),
 		inimigos(), obstaculos()
 	{
+
+		pGerenciadorGrafico->carregarTextura("Assets/Backgrounds/Stage1_full_background.png");
+		pGerenciadorGrafico->carregarTextura("Assets/Backgrounds/Stars Small_1.png");
 	}
 
 	Fase::~Fase()

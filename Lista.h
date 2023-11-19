@@ -1,5 +1,7 @@
 #pragma once
 
+#include <iostream>
+
 // código das Listas feito com base nos vídeos do Felipe Barbosa
 // e no código passado pelo Peteco
 
@@ -172,7 +174,6 @@ void Listas::Lista<TL>::remover(TL* elemento) {
 		anterior->setProximo(aux->getProximo());
 	}
 
-	delete aux;
 	tamanho--;
 }
 

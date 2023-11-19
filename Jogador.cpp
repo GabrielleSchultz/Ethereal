@@ -45,10 +45,8 @@ namespace Entidades {
 			Entidades::Entidade* aux = nullptr;
 			for (it = projeteis.get_primeiro(); (!it.operator==(nullptr)); it.operator++()) {
 				aux = it.operator*();
-				aux->update(dt);
-				if (static_cast<Projetil*>(aux)->getColidiu()) {
-					projeteis.remover(aux);
-					delete(aux);
+				if(aux){
+					aux->update(dt);
 				}
 			}
 			desenhar();
@@ -80,6 +78,12 @@ namespace Entidades {
 
 		void Jogador::salvar(std::ostringstream* entrada)
 		{
+			if (!entrada) {
+				std::cout << "Não foi possível abrir o arquivo de salvamento Jogador" << std::endl;
+				return;
+			}			
+			//(*entrada) << _id << id << std::endl;
+			//(*entrada) << getId() << position.x << std::endl << position.y << std::endl << num_vidas << std::endl << pontos << std::endl << facingRight << std::endl;
 		}
 
 		void Jogador::operator++()
@@ -90,15 +94,19 @@ namespace Entidades {
 		{
 			return numJogadores;
 		}
+		void Jogador::colidir()
+		{
+			setPosition(position.x - 50, position.y);
+		}
 		void Jogador::atacar()
 		{
 			// feito com base no vídeo: https://www.youtube.com/watch?v=DZOCzW9e6Qs
 			Entidades::Projetil* projetil;
 			if (Player == Jogador1) {
-				projetil = new Entidades::Projetil("Assets/Sprites/pixie_bubble.png", 10);
+				projetil = new Entidades::Projetil("Assets/Sprites/pixie_bubble.png", 3);
 			}
 			else {
-				projetil = new Entidades::Projetil("Assets/Sprites/bytie_bubble.png", 10);
+				projetil = new Entidades::Projetil("Assets/Sprites/bytie_bubble.png", 3);
 			}
 			projetil->setAtirador(this);
 			if (facingRight) {
@@ -118,6 +126,10 @@ namespace Entidades {
 		void Jogador::setFacingRight(const bool b)
 		{
 			facingRight = b;
+		}
+		Listas::ListaEntidades* Jogador::getProjeteis()
+		{
+			return &projeteis;
 		}
 	}
 }

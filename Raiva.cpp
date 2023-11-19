@@ -28,9 +28,14 @@ namespace Entidades {
 			desenhar();
 		}
 
+		void Raiva::colidir()
+		{
+			setPosition(position.x + 1, position.y);
+		}
+
 		void Raiva::danificar(Jogador* p)
 		{
-
+			p->setNumVidas(p->getNumVidas() - nivel_maldade);
 		}
 
 		void Raiva::perseguir(Jogador* p) {

@@ -11,10 +11,9 @@ namespace Fases {
 	class Fase : public Ente {
 	protected:
 		Gerenciadores::Colisoes* pGerenciadorColisoes;
-		Entidades::Personagens::Jogador* pixi;
-		Entidades::Personagens::Jogador* bity;
 		Listas::ListaEntidades inimigos;
 		Listas::ListaEntidades obstaculos;
+		Listas::ListaEntidades jogadores;
 
 	public:
 		Fase();

@@ -2,9 +2,9 @@
 
 namespace Entidades
 {
-	Projetil::Projetil(const char* texturePath, int d, ID id) :
+	Projetil::Projetil(const char* texturePath, int d, int v, ID id) :
 		Entidade(texturePath, id),
-		velocidade(5),
+		velocidade(v),
 		dano(d),
 		atirador(nullptr),
 		colidiu(false)
@@ -28,6 +28,12 @@ namespace Entidades
 	void Projetil::colidir()
 	{
 		colidiu = true;
+		delete this;
+	}
+
+	void Projetil::danificar(Entidades::Personagens::Personagem* p)
+	{
+		p->setNumVidas(p->getNumVidas() - dano);
 	}
 
 	void Projetil::update(float dt)

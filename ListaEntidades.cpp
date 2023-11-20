@@ -27,6 +27,10 @@ void Listas::ListaEntidades::executar(float dt) {
 	}
 }
 
+const int Listas::ListaEntidades::getTamanho() const {
+	return LEs.getTamanho();
+}
+
 void Listas::ListaEntidades::salvar(std::ostringstream* entrada) {
 	Lista<Entidades::Entidade>::Iterador it;
 	Entidades::Entidade* aux = nullptr;

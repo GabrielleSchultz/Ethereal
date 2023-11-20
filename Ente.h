@@ -4,7 +4,7 @@
 class Ente {
 
 protected:
-	const int id;
+	const int _id;
 	static int cont_id;	
 	Gerenciadores::Grafico* pGerenciadorGrafico;
 

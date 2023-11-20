@@ -1,6 +1,5 @@
 #pragma once
-#include "Entidade.h"
-#include "Entidade_Dinamica.h"
+#include "Personagem.h"
 
 namespace Entidades {
 
@@ -13,11 +12,12 @@ namespace Entidades {
 		bool colidiu;
 
 	public:
-		Projetil(const char* texturePath = "", int d = 0, ID id = ID::projetil);
+		Projetil(const char* texturePath = "", int d = 0, int v = 5, ID id = ID::projetil);
 		~Projetil();
 		void setAtirador(Entidade* a);
 		bool getColidiu() const;
 		void colidir();
+		void danificar(Entidades::Personagens::Personagem* p);
 		void update(float dt);
 		void salvar(std::ostringstream* entrada);
 	};

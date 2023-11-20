@@ -11,6 +11,7 @@ namespace Entidades {
 			~Inimigo();
 			virtual void danificar(Jogador* p) = 0;
 			virtual void executar() = 0;
+			virtual void colidir() = 0;
 			virtual void salvar(std::ostringstream* entrada) = 0;
 			virtual void update(float dt = 0) = 0;
 		};

@@ -13,6 +13,7 @@ namespace Gerenciadores
 	{
 	private:
 		Listas::ListaEntidades* inimigos;
+		Listas::ListaEntidades* jogadores;
 
 		// Singleton
 		Colisoes();
@@ -24,10 +25,12 @@ namespace Gerenciadores
 		static Colisoes* getGerenciador_Colisoes();
 
 		void setListaInimigos(Listas::ListaEntidades* i);
+		void setListaJogadores(Listas::ListaEntidades* j);
 
 		bool Colisao(Entidades::Entidade* e1, Entidades::Entidade* e2);
-		void ColisaoJogInim(Entidades::Personagens::Jogador* jog);
+		void ColisaoJogInim();
 		void ColisaoProjInim();
+		void ColisaoProjJog();
 	};
 
 

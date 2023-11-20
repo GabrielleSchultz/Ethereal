@@ -30,6 +30,7 @@ namespace Entidades {
 			float getAtrito() const;
 			Math::Vector2Df getDirection() const;
 			//move
+			virtual void colidir() = 0;
 			virtual void update(float dt) = 0;
 			virtual void mover(float dt) {}
 

@@ -150,9 +150,6 @@
     <ClCompile Include="ControleMenu.cpp">
       <Filter>Arquivos de Origem\Controles</Filter>
     </ClCompile>
-    <ClCompile Include="ListaEntidades.cpp">
-      <Filter>Arquivos de Origem\Listas</Filter>
-    </ClCompile>
     <ClCompile Include="Espinhos.cpp">
       <Filter>Arquivos de Origem\Entidades\Obstaculos</Filter>
     </ClCompile>
@@ -174,11 +171,16 @@
     <ClCompile Include="Entidade_Dinamica.cpp">
       <Filter>Arquivos de Origem\Entidades</Filter>
     </ClCompile>
+<<<<<<< HEAD
     <ClCompile Include="Estado.cpp">
       <Filter>Arquivos de Origem\Estados</Filter>
     </ClCompile>
     <ClCompile Include="GameState.cpp">
       <Filter>Arquivos de Origem\Estados</Filter>
+=======
+    <ClCompile Include="ListaEntidades.cpp">
+      <Filter>Arquivos de Origem\Utils</Filter>
+>>>>>>> 74996bd901d986697ef8cce310e42683acdfb105
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

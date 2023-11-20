@@ -1,7 +1,5 @@
 #include <iostream>
 
-//abstract builder
-
 #include "Fase.h"
 
 namespace Fases
@@ -10,12 +8,12 @@ namespace Fases
 	Fase::Fase() :
 		Ente(),
 		pGerenciadorColisoes(Gerenciadores::Colisoes::getGerenciador_Colisoes()),
-		pixi(nullptr), bity(nullptr),
-		inimigos(), obstaculos()
+		inimigos(), obstaculos(), jogadores()
 	{
-
 		pGerenciadorGrafico->carregarTextura("Assets/Backgrounds/Stage1_full_background.png");
 		pGerenciadorGrafico->carregarTextura("Assets/Backgrounds/Stars Small_1.png");
+		pGerenciadorColisoes->setListaInimigos(&inimigos);
+		pGerenciadorColisoes->setListaJogadores(&jogadores);
 	}
 
 	Fase::~Fase()
@@ -24,27 +22,30 @@ namespace Fases
 
 	void Fase::gerenciar_colisoes()
 	{
-		pGerenciadorColisoes->setListaInimigos(&inimigos);
-		pGerenciadorColisoes->ColisaoJogInim(pixi);
-		if (bity)
-			pGerenciadorColisoes->ColisaoJogInim(bity);
+		pGerenciadorColisoes->ColisaoJogInim();
+		pGerenciadorColisoes->ColisaoProjInim();
+		pGerenciadorColisoes->ColisaoProjJog();
 	}
 
-	void Fases::Fase::criar_jogador(char type, Math::Vector2Df pos)
+	void Fases::Fase::criar_jogador(char type)
 	{
+		Entidades::Personagens::Jogador* jogador = nullptr;
+		
 		if (type == 'P')
 		{
 			//cria novo jogador 1
 			//passa o jogador para o gerenciador grafico
-			pixi = new Entidades::Personagens::Jogador(20, "Assets/Sprites/Pixi_cortado.png", Jogador1);
-			pixi->setPosition(pos.x, pos.y);
+			jogador = new Entidades::Personagens::Jogador(50, "Assets/Sprites/Pixi_cortado.png", Jogador1);
+			jogador->setPosition(100, 450);
+			jogadores.incluir(jogador);
 		}
 		else if (type == 'B')
 		{
 			//cria novo jogador 2
 			//passa o jogador para o gerenciador grafico
-			bity = new Entidades::Personagens::Jogador(20, "Assets/Sprites/Bity_cortado.png", Jogador2);
-			bity->setPosition(pos.x, pos.y);
+			jogador = new Entidades::Personagens::Jogador(50, "Assets/Sprites/Bity_cortado.png", Jogador2);
+			jogador->setPosition(140, 450);
+			jogadores.incluir(jogador);
 		}
 		else
 			std::cerr << "Erro ao criar jogador. Verificar arquivo de gera o de mapa" << std::endl;

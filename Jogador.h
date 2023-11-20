@@ -49,9 +49,11 @@ namespace Entidades {
 			void salvar(std::ostringstream* entrada);
 			void operator++();
 			static int getNumJogadores();
+			void colidir();
 			void atacar();
 			bool getFacingRight() const;
 			void setFacingRight(const bool b);
+			Listas::ListaEntidades* getProjeteis();
 		};
 	}
 }

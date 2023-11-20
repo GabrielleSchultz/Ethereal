@@ -27,7 +27,7 @@ namespace Fases
 		pGerenciadorColisoes->ColisaoProjJog();
 	}
 
-	void Fases::Fase::criar_jogador(char type)
+	void Fases::Fase::criar_jogador(char type, Math::Vector2Df pos)
 	{
 		Entidades::Personagens::Jogador* jogador = nullptr;
 		
@@ -36,7 +36,7 @@ namespace Fases
 			//cria novo jogador 1
 			//passa o jogador para o gerenciador grafico
 			jogador = new Entidades::Personagens::Jogador(50, "Assets/Sprites/Pixi_cortado.png", Jogador1);
-			jogador->setPosition(100, 450);
+			jogador->setPosition(pos.x, pos.y);
 			jogadores.incluir(jogador);
 		}
 		else if (type == 'B')
@@ -44,7 +44,7 @@ namespace Fases
 			//cria novo jogador 2
 			//passa o jogador para o gerenciador grafico
 			jogador = new Entidades::Personagens::Jogador(50, "Assets/Sprites/Bity_cortado.png", Jogador2);
-			jogador->setPosition(140, 450);
+			jogador->setPosition(pos.x, pos.y);
 			jogadores.incluir(jogador);
 		}
 		else

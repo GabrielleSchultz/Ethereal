@@ -1,16 +1,2 @@
-<<<<<<< HEAD
-﻿  Estado.cpp
-  Fase.cpp
-  Gerenciador_Estados.cpp
-C:\Users\gabri\source\repos\GabrielleSchultz\Ethereal\Gerenciador_Estados.cpp(27,3): warning C4060: instrução switch não contém nenhum rótulo 'case' ou 'default'
-  Jogo.cpp
-  Primeira_Fase.cpp
-  main.cpp
-  Gerando Código...
-  LINK : C:\Users\gabri\source\repos\GabrielleSchultz\Ethereal\x64\Debug\Ethereal_V0.exe não encontrado ou não compilado pelo o último link incremental; executando link completo
+﻿  Segunda_Fase.cpp
   Ethereal_V0.vcxproj -> C:\Users\gabri\source\repos\GabrielleSchultz\Ethereal\x64\Debug\Ethereal_V0.exe
-=======
-﻿  Primeira_Fase.cpp
-C:\Users\miche_bb3fmdp\OneDrive\Documentos\GitHub\Ethereal\Primeira_Fase.cpp(66,12): warning C4244: 'argumento': conversão de 'time_t' para 'unsigned int', possível perda de dados
-  Ethereal_V0.vcxproj -> C:\Users\miche_bb3fmdp\OneDrive\Documentos\GitHub\Ethereal\x64\Debug\Ethereal_V0.exe
->>>>>>> 74996bd901d986697ef8cce310e42683acdfb105

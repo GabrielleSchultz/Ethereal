@@ -104,26 +104,20 @@ void Fases::Segunda_Fase::criar_cenario(std::string file_path)
 			switch (simbolo)
 			{
 			case '#':
-				//std::cout << "Criou plataforma" << j * 32 << i * 32 << std::endl;
 				aux = static_cast<Entidades::Entidade*>(new Entidades::Obstaculos::Plataforma(Math::Vector2Df(j * 32.f, i * 32.f), "Assets/Sprites/middle_ground_sprite.png"));
 				if (aux)
 					obstaculos.incluir(aux);
 				break;
 			case 'P':
-				criar_jogador('P');
-				//pixi->setPosition((float)j * 64, (float)i * 64);
-				//std::cout << "Criou o jogador em " << j * 10.0 << i * 10.0 << std::endl;
+				criar_jogador('P', Math::Vector2Df(i * 32.f, j * 32.f));
 
 				break;
 			case 'B':
-				criar_jogador('B');
-				//bity->setPosition((float)j * 64, (float)i * 64);
-				//std::cout << "Criou o jogador em " << j * 10.0 << i * 10.0 << std::endl;
+				criar_jogador('B', Math::Vector2Df(i * 32.f, j * 32.f));
 
 				break;
 			case '*':
 				aux = static_cast<Entidades::Entidade*>(new Entidades::Obstaculos::Plataforma(Math::Vector2Df(j * 32.f, i * 32.f), "Assets/Sprites/top_ground_sprite.png"));
-				//std::cout << "Criou plataforma" << j * 32 << i * 32 << std::endl;
 				if (aux)
 					obstaculos.incluir(aux);
 

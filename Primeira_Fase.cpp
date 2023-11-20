@@ -115,13 +115,13 @@ void Fases::Primeira_Fase::criar_cenario(std::string file_path)
 					obstaculos.incluir(aux);
 					break;
 			case 'P':
-				criar_jogador('P');
+				criar_jogador('P', Math::Vector2Df(i*32,j*32));
 				//pixi->setPosition((float)j * 64, (float)i * 64);
 				//std::cout << "Criou o jogador em " << j * 10.0 << i * 10.0 << std::endl;
 
 				break;
 			case 'B':
-				criar_jogador('B');
+				criar_jogador('B', Math::Vector2Df(i * 32, j * 32));
 				//bity->setPosition((float)j * 64, (float)i * 64);
 				//std::cout << "Criou o jogador em " << j * 10.0 << i * 10.0 << std::endl;
 

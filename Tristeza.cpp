@@ -6,7 +6,6 @@ Entidades::Personagens::Tristeza::Tristeza(int nv, int mal, const char* textureP
 	Inimigo(nv, mal, texturePath, id),
 	lancamento(0),
 	projeteis()
-	//projetil(nullptr)
 {
 }
 
@@ -28,6 +27,9 @@ void Entidades::Personagens::Tristeza::salvar(std::ostringstream* entrada)
 
 void Entidades::Personagens::Tristeza::update(float dt)
 {
+	// não é afetado pela gravidade, levita no ar !!
+	// talvez colocar em outro método (??)
+	position.y -= gravidade * dt;
 
 	if (lancamento == FREQUENCIA_LANCAMENTO) {
 		lancar_projetil();
@@ -35,13 +37,10 @@ void Entidades::Personagens::Tristeza::update(float dt)
 	}
 	lancamento++;
 	
-	/*if (projetil)
-		projetil->update(dt);*/
 	//projeteis.executar(dt);
 	Listas::Lista<Entidades::Entidade>::Iterador it;
 	Entidades::Entidade* aux = nullptr;
 	int i = 0;
-	//for (it = projeteis.get_primeiro(); (!it.operator==(nullptr)); it.operator++()) {
 	for (it = projeteis.get_primeiro(), i = 0; i < projeteis.getTamanho(); it.operator++(), i++) {
 		aux = it.operator*();
 		if(aux != nullptr){
@@ -53,18 +52,15 @@ void Entidades::Personagens::Tristeza::update(float dt)
 
 void Entidades::Personagens::Tristeza::lancar_projetil()
 {
-	/*if (projetil) {
-		delete projetil;
-	}*/
 	Entidades::Projetil* projetil = nullptr;
-	projetil = new Entidades::Projetil("Assets/Sprites/teardrop_projectile_cortado.png", 1, 2);
+	projetil = new Entidades::Projetil("Assets/Sprites/teardrop_projectile_cortado.png", nivel_maldade, 2);
 	projetil->setAtirador(this);
 	projetil->setDirection(0, 1);
 	projetil->setPosition(position.x, position.y);
 	projeteis.incluir(projetil);
 }
 
-void Entidades::Personagens::Tristeza::colidir()
+void Entidades::Personagens::Tristeza::colidir(Entidades::Entidade* e)
 {
 }
 
@@ -72,7 +68,3 @@ Listas::ListaEntidades* Entidades::Personagens::Tristeza::getProjeteis()
 {
 	return &projeteis;
 }
-
-/*Entidades::Projetil* Entidades::Personagens::Tristeza::getProjetil() {
-	return projetil;
-}*/

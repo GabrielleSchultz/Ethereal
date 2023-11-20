@@ -5,6 +5,7 @@
 //toda entidade que pode se mover dentro do jogo
 
 namespace Entidades {
+	class Entidade;
 	namespace Tipo {
 		class Dinamica
 		{
@@ -30,7 +31,7 @@ namespace Entidades {
 			float getAtrito() const;
 			Math::Vector2Df getDirection() const;
 			//move
-			virtual void colidir() = 0;
+			virtual void colidir(Entidades::Entidade* e) = 0;
 			virtual void update(float dt) = 0;
 			virtual void mover(float dt) {}
 

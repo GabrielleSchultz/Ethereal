@@ -14,7 +14,7 @@ namespace Entidades {
 			void executar();
 			void salvar(std::ostringstream* entrada);
 			void update(float dt);
-			void colidir();
+			void colidir(Entidades::Entidade* e);
 			void danificar(Jogador* p);
 			void perseguir(Jogador* p);
 		};

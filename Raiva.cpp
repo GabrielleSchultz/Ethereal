@@ -28,9 +28,15 @@ namespace Entidades {
 			desenhar();
 		}
 
-		void Raiva::colidir()
+		void Raiva::colidir(Entidades::Entidade* e)
 		{
-			setPosition(position.x + 1, position.y);
+			if (e) {
+				if(e->getId() == Entidades::ID::projetil)
+					setPosition(position.x + 1 * direction.x, position.y);
+				if (e->getId() == Entidades::ID::plataforma || e->getId() == Entidades::ID::espinhos || e->getId() == Entidades::ID::poca_lagrima)
+					setPosition(position.x, e->getPosition().y - e->getTamanho().y / 2 - tamanho.y / 2);
+			}
+			
 		}
 
 		void Raiva::danificar(Jogador* p)

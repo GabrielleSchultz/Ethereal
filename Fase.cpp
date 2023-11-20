@@ -14,6 +14,7 @@ namespace Fases
 		pGerenciadorGrafico->carregarTextura("Assets/Backgrounds/Stars Small_1.png");
 		pGerenciadorColisoes->setListaInimigos(&inimigos);
 		pGerenciadorColisoes->setListaJogadores(&jogadores);
+		pGerenciadorColisoes->setListaObstaculos(&obstaculos);
 	}
 
 	Fase::~Fase()
@@ -25,9 +26,10 @@ namespace Fases
 		pGerenciadorColisoes->ColisaoJogInim();
 		pGerenciadorColisoes->ColisaoProjInim();
 		pGerenciadorColisoes->ColisaoProjJog();
+		pGerenciadorColisoes->ColisaoObs();
 	}
 
-	void Fases::Fase::criar_jogador(char type, Math::Vector2Df pos)
+	void Fases::Fase::criar_jogador(char type, Math::Vector2Df posicao)
 	{
 		Entidades::Personagens::Jogador* jogador = nullptr;
 		
@@ -36,7 +38,7 @@ namespace Fases
 			//cria novo jogador 1
 			//passa o jogador para o gerenciador grafico
 			jogador = new Entidades::Personagens::Jogador(50, "Assets/Sprites/Pixi_cortado.png", Jogador1);
-			jogador->setPosition(pos.x, pos.y);
+			jogador->setPosition(posicao);
 			jogadores.incluir(jogador);
 		}
 		else if (type == 'B')
@@ -44,7 +46,7 @@ namespace Fases
 			//cria novo jogador 2
 			//passa o jogador para o gerenciador grafico
 			jogador = new Entidades::Personagens::Jogador(50, "Assets/Sprites/Bity_cortado.png", Jogador2);
-			jogador->setPosition(pos.x, pos.y);
+			jogador->setPosition(posicao);
 			jogadores.incluir(jogador);
 		}
 		else

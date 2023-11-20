@@ -15,7 +15,7 @@ namespace Entidades {
 			bool getVivo();
 			int getNumVidas() const;
 			void setNumVidas(const int nv);
-			virtual void colidir() = 0;
+			virtual void colidir(Entidades::Entidade* e) = 0;
 			virtual void update(float dt = 0) = 0;
 			virtual void salvar(std::ostringstream* entrada) = 0;
 		};

@@ -37,19 +37,21 @@ namespace Entidades {
 			static int numJogadores;
 
 			Listas::ListaEntidades projeteis;
+			int lancamento;
 
 			bool facingRight;
 
 		public:
-			Jogador(int nv = 0, const char* texturePath = "", JogadorNum player = Jogador1, ID id = ID::jogador);
+			Jogador(int nv = 50, const char* texturePath = "", JogadorNum player = Jogador1, ID id = ID::jogador);
 			~Jogador();
 			void inicializa();
 			void update(float dt);
 			void mover(float dt);
 			void salvar(std::ostringstream* entrada);
-			void operator++();
+			void operator++(int p);
+			static const int getPontos();
 			static int getNumJogadores();
-			void colidir();
+			void colidir(Entidades::Entidade* e);
 			void atacar();
 			bool getFacingRight() const;
 			void setFacingRight(const bool b);

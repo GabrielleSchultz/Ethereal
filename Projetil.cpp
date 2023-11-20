@@ -1,4 +1,5 @@
 #include "Projetil.h"
+#include "Jogador.h"
 
 namespace Entidades
 {
@@ -6,8 +7,7 @@ namespace Entidades
 		Entidade(texturePath, id),
 		velocidade(v),
 		dano(d),
-		atirador(nullptr),
-		colidiu(false)
+		atirador(nullptr)
 	{
 	}
 
@@ -20,20 +20,23 @@ namespace Entidades
 		atirador = a;
 	}
 
-	bool Projetil::getColidiu() const
+	void Projetil::colidir(Entidades::Entidade* e)
 	{
-		return colidiu;
-	}
-
-	void Projetil::colidir()
-	{
-		colidiu = true;
-		delete this;
+		if (e) {
+			if (e->getId() != Entidades::ID::espinhos && e->getId() != Entidades::ID::plataforma && e->getId() != Entidades::ID::poca_lagrima
+				&& e->getId() != Entidades::ID::projetil && e->getId() != Entidades::ID::vazio) {
+				danificar(static_cast<Entidades::Personagens::Personagem*>(e));
+			}
+			delete this;
+		}
 	}
 
 	void Projetil::danificar(Entidades::Personagens::Personagem* p)
 	{
 		p->setNumVidas(p->getNumVidas() - dano);
+		if (atirador->getId() == Entidades::ID::jogador) {
+			static_cast<Entidades::Personagens::Jogador*>(atirador)->operator++(dano);
+		}
 	}
 
 	void Projetil::update(float dt)

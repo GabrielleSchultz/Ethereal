@@ -1,8 +1,10 @@
-﻿  Plataforma.cpp
+﻿  Estado.cpp
+  Fase.cpp
+  Gerenciador_Estados.cpp
+C:\Users\gabri\source\repos\GabrielleSchultz\Ethereal\Gerenciador_Estados.cpp(27,3): warning C4060: instrução switch não contém nenhum rótulo 'case' ou 'default'
+  Jogo.cpp
   Primeira_Fase.cpp
-C:\Users\gabri\source\repos\GabrielleSchultz\Ethereal\Primeira_Fase.cpp(115,33): warning C4244: 'argumento': conversão de 'int' para 'float', possível perda de dados
-C:\Users\gabri\source\repos\GabrielleSchultz\Ethereal\Primeira_Fase.cpp(115,25): warning C4244: 'argumento': conversão de 'int' para 'float', possível perda de dados
-C:\Users\gabri\source\repos\GabrielleSchultz\Ethereal\Primeira_Fase.cpp(121,33): warning C4244: 'argumento': conversão de 'int' para 'float', possível perda de dados
-C:\Users\gabri\source\repos\GabrielleSchultz\Ethereal\Primeira_Fase.cpp(121,25): warning C4244: 'argumento': conversão de 'int' para 'float', possível perda de dados
+  main.cpp
   Gerando Código...
+  LINK : C:\Users\gabri\source\repos\GabrielleSchultz\Ethereal\x64\Debug\Ethereal_V0.exe não encontrado ou não compilado pelo o último link incremental; executando link completo
   Ethereal_V0.vcxproj -> C:\Users\gabri\source\repos\GabrielleSchultz\Ethereal\x64\Debug\Ethereal_V0.exe

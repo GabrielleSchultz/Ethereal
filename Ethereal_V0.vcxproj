@@ -138,7 +138,9 @@
     <ClCompile Include="Entidade_Dinamica.cpp" />
     <ClCompile Include="Ente.cpp" />
     <ClCompile Include="Entidade.cpp" />
+    <ClCompile Include="Estado.cpp" />
     <ClCompile Include="Fase.cpp" />
+    <ClCompile Include="GameState.cpp" />
     <ClCompile Include="Gerenciador_Colisoes.cpp" />
     <ClCompile Include="Gerenciador_Estados.cpp" />
     <ClCompile Include="Gerenciador_Eventos.cpp" />
@@ -172,6 +174,8 @@
     <ClInclude Include="Controller.h" />
     <ClInclude Include="Entidade_Dinamica.h" />
     <ClInclude Include="Entidade.h" />
+    <ClInclude Include="Estado.h" />
+    <ClInclude Include="GameState.h" />
     <ClInclude Include="Gerenciador_Colisoes.h" />
     <ClInclude Include="Gerenciador_Estados.h" />
     <ClInclude Include="Gerenciador_Eventos.h" />

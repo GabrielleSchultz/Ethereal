@@ -1,5 +1,7 @@
 #include <iostream>
 
+//abstract builder
+
 #include "Fase.h"
 
 namespace Fases
@@ -28,21 +30,21 @@ namespace Fases
 			pGerenciadorColisoes->ColisaoJogInim(bity);
 	}
 
-	void Fases::Fase::criar_jogador(char type)
+	void Fases::Fase::criar_jogador(char type, Math::Vector2Df pos)
 	{
 		if (type == 'P')
 		{
 			//cria novo jogador 1
 			//passa o jogador para o gerenciador grafico
 			pixi = new Entidades::Personagens::Jogador(20, "Assets/Sprites/Pixi_cortado.png", Jogador1);
-			pixi->setPosition(100, 450);
+			pixi->setPosition(pos.x, pos.y);
 		}
 		else if (type == 'B')
 		{
 			//cria novo jogador 2
 			//passa o jogador para o gerenciador grafico
 			bity = new Entidades::Personagens::Jogador(20, "Assets/Sprites/Bity_cortado.png", Jogador2);
-			bity->setPosition(140, 450);
+			bity->setPosition(pos.x, pos.y);
 		}
 		else
 			std::cerr << "Erro ao criar jogador. Verificar arquivo de gera o de mapa" << std::endl;

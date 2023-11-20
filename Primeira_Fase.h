@@ -16,5 +16,6 @@ namespace Fases {
 		void criar_inimigos();
 		void criar_obstaculos();
 		void criar_cenario(std::string file_path);
+		void criar_fundo(std::string file_path);
 	};
 }

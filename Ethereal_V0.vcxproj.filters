@@ -73,6 +73,12 @@
     <Filter Include="Arquivos de Cabeçalho\Listas">
       <UniqueIdentifier>{593eb229-030f-43ce-ba4e-9673089cd2b2}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Arquivos de Cabeçalho\Estados">
+      <UniqueIdentifier>{aa86c8f5-fc1d-4059-9a22-df3c939f8c1b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Arquivos de Origem\Estados">
+      <UniqueIdentifier>{d09b4418-42a7-40fa-acdd-441531d43d86}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Ente.cpp">
@@ -167,6 +173,12 @@
     </ClCompile>
     <ClCompile Include="Entidade_Dinamica.cpp">
       <Filter>Arquivos de Origem\Entidades</Filter>
+    </ClCompile>
+    <ClCompile Include="Estado.cpp">
+      <Filter>Arquivos de Origem\Estados</Filter>
+    </ClCompile>
+    <ClCompile Include="GameState.cpp">
+      <Filter>Arquivos de Origem\Estados</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -274,6 +286,12 @@
     </ClInclude>
     <ClInclude Include="Entidade_Dinamica.h">
       <Filter>Arquivos de Cabeçalho\Entidades</Filter>
+    </ClInclude>
+    <ClInclude Include="Estado.h">
+      <Filter>Arquivos de Cabeçalho\Estados</Filter>
+    </ClInclude>
+    <ClInclude Include="GameState.h">
+      <Filter>Arquivos de Cabeçalho\Estados</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

@@ -1,13 +1,16 @@
 #include "Gerenciador_Colisoes.h"
 #include "Jogador.h"
 #include "Tristeza.h"
+#include "Obstaculo.h"
 
 namespace Gerenciadores
 {
 	Colisoes* Colisoes::instancia_pGC(nullptr);
 
 	Colisoes::Colisoes() :
-		inimigos(nullptr), jogadores(nullptr)
+		inimigos(nullptr), 
+		jogadores(nullptr),
+		obstaculos(nullptr)
 	{
 
 	}
@@ -25,12 +28,19 @@ namespace Gerenciadores
 
 	void Colisoes::setListaInimigos(Listas::ListaEntidades* i)
 	{
-		inimigos = i;
+		if(i)
+			inimigos = i;
 	}
 
 	void Colisoes::setListaJogadores(Listas::ListaEntidades* j)
 	{
-		jogadores = j;
+		if(j)
+			jogadores = j;
+	}
+
+	void Colisoes::setListaObstaculos(Listas::ListaEntidades* o) {
+		if (o)
+			obstaculos = o;
 	}
 
 	bool Colisoes::Colisao(Entidades::Entidade* e1, Entidades::Entidade* e2)
@@ -61,8 +71,8 @@ namespace Gerenciadores
 			for (it = inimigos->get_primeiro(), i = 0; i < inimigos->getTamanho(); it.operator++(), i++) {
 				inim = it.operator*();
 				if (Colisao(inim, jogador)) {
-					static_cast<Entidades::Personagens::Jogador*>(jogador)->colidir();
-					static_cast<Entidades::Personagens::Inimigo*>(inim)->colidir();
+					static_cast<Entidades::Personagens::Jogador*>(jogador)->colidir(inim);
+					static_cast<Entidades::Personagens::Inimigo*>(inim)->colidir(jogador);
 					static_cast<Entidades::Personagens::Inimigo*>(inim)->danificar(static_cast<Entidades::Personagens::Jogador*>(jogador));
 				}
 			}
@@ -90,9 +100,8 @@ namespace Gerenciadores
 					proj = pro.operator*();
 					if (Colisao(inim, proj)) {
 						projeteis->remover(proj);
-						static_cast<Entidades::Projetil*>(proj)->danificar(static_cast<Entidades::Personagens::Personagem*>(inim));
-						static_cast<Entidades::Personagens::Personagem*>(proj)->colidir();
-						static_cast<Entidades::Personagens::Personagem*>(inim)->colidir();
+						static_cast<Entidades::Personagens::Personagem*>(proj)->colidir(inim);
+						static_cast<Entidades::Personagens::Personagem*>(inim)->colidir(proj);
 					}
 				}
 			}
@@ -125,12 +134,58 @@ namespace Gerenciadores
 						proj = pro.operator*();
 						if (Colisao(proj, jogador)) {
 							projeteis->remover(proj);
-							static_cast<Entidades::Projetil*>(proj)->danificar(static_cast<Entidades::Personagens::Personagem*>(jogador));
-							static_cast<Entidades::Personagens::Personagem*>(proj)->colidir();
+							static_cast<Entidades::Personagens::Personagem*>(proj)->colidir(jogador);
 						}
 					}
 				}
 			}
 		}
+	}
+	void Colisoes::ColisaoObs()
+	{
+		Listas::Lista<Entidades::Entidade>::Iterador obs = nullptr;
+		Entidades::Entidade* obstaculo = nullptr;
+
+		Listas::Lista<Entidades::Entidade>::Iterador inim = nullptr;
+		Entidades::Entidade* inimigo = nullptr;
+
+		Listas::Lista<Entidades::Entidade>::Iterador jog = nullptr;
+		Entidades::Entidade* jogador = nullptr;
+
+		Listas::ListaEntidades* projeteis = nullptr;
+		Listas::Lista<Entidades::Entidade>::Iterador proj = nullptr;
+		Entidades::Entidade* projetil = nullptr;
+
+		int o = 0, i = 0, j = 0, p = 0;
+		for (obs = obstaculos->get_primeiro(), o = 0; o < obstaculos->getTamanho(); obs.operator++(), o++) {
+			obstaculo = obs.operator*();
+			
+			for (jog = jogadores->get_primeiro(), j = 0; j < jogadores->getTamanho(); jog.operator++(), j++) {
+				jogador = jog.operator*();
+				if (Colisao(jogador, obstaculo)) {
+					// não funcionou, achar algo pro obstacular fazer !!
+					static_cast<Entidades::Obstaculos::Obstaculo*>(obstaculo)->obstacular(static_cast<Entidades::Personagens::Jogador*>(jogador));
+					//static_cast<Entidades::Personagens::Jogador*>(jogador)->colidir(obstaculo);
+				}
+			}
+			for (inim = inimigos->get_primeiro(), i = 0; i < inimigos->getTamanho(); inim.operator++(), i++) {
+				inimigo = inim.operator*();
+				if (Colisao(inimigo, obstaculo)) {
+					static_cast<Entidades::Personagens::Jogador*>(inimigo)->colidir(obstaculo);
+				}
+				if (inimigo->getId() == Entidades::ID::inimigo_tristeza) {
+					projeteis = static_cast<Entidades::Personagens::Tristeza*>(inimigo)->getProjeteis();
+
+					for (proj = projeteis->get_primeiro(), p = 0; p < projeteis->getTamanho(); proj.operator++(), p++) {
+						projetil = proj.operator*();
+						if (Colisao(projetil, obstaculo)) {
+							projeteis->remover(projetil);
+							static_cast<Entidades::Personagens::Personagem*>(projetil)->colidir(obstaculo);
+						}
+					}
+				}
+			}
+		}
+
 	}
 }

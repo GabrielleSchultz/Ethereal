@@ -17,7 +17,7 @@ void Entidades::Personagens::Vinganca::danificar(Jogador* p) {
 
 }
 
-void Entidades::Personagens::Vinganca::colidir()
+void Entidades::Personagens::Vinganca::colidir(Entidades::Entidade* e)
 {
 }
 

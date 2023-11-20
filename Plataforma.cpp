@@ -12,7 +12,8 @@ Entidades::Obstaculos::Plataforma::~Plataforma()
 
 void Entidades::Obstaculos::Plataforma::obstacular(Entidades::Personagens::Jogador* p)
 {
-	p->setPosition(p->getPosition().x, (p->getPosition().y) + forca_normal);
+	//p->setPosition(p->getPosition().x, (p->getPosition().y) + forca_normal);
+	p->setPosition(p->getPosition().x, position.y - tamanho.y / 2 - p->getTamanho().y / 2);
 }
 
 void Entidades::Obstaculos::Plataforma::update(float dt)

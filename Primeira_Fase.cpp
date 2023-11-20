@@ -2,6 +2,7 @@
 #include "Raiva.h"
 #include "Tristeza.h"
 #include "Plataforma.h"
+#include "Espinhos.h"
 #include <fstream>
 #include <iostream>
 
@@ -24,19 +25,19 @@ void Fases::Primeira_Fase::executar(float dt)
 	int j = 0, i = 0, o = 0;
 	for (jog = jogadores.get_primeiro(), j = 0; j < jogadores.getTamanho(); jog.operator++(), j++) {
 		jogador = jog.operator*();
-		jogador->update(dt);
-		//jogador->executar(dt);
-
+		//jogador->update(dt);
+		jogador->executar(dt);
 
 		Listas::Lista<Entidades::Entidade>::Iterador it;
 		Entidades::Entidade* aux = nullptr;
 		for (it = inimigos.get_primeiro(), i = 0; i < inimigos.getTamanho(); it.operator++(), i++) {
 			aux = it.operator*();
-			aux->update(dt);
-			//aux->executar(dt);
+			//aux->update(dt);
+			aux->executar(dt);
 			if (static_cast<Entidades::Personagens::Personagem*>(aux)->getNumVidas() <= 0) {
 				inimigos.remover(aux);
 				delete aux;
+				static_cast<Entidades::Personagens::Jogador*>(jogador)->operator++(100);
 			}
 			if (aux->getId() == Entidades::ID::inimigo_raiva) {
 				static_cast<Entidades::Personagens::Raiva*>(aux)->perseguir(static_cast<Entidades::Personagens::Jogador*>(jogador));
@@ -46,15 +47,11 @@ void Fases::Primeira_Fase::executar(float dt)
 		for (it = obstaculos.get_primeiro(), o = 0; o < obstaculos.getTamanho(); it.operator++(), o++) {
 			aux = it.operator*();
 			aux->update(dt);
-			static_cast<Entidades::Obstaculos::Plataforma*>(aux)->obstacular(static_cast<Entidades::Personagens::Jogador*>(jogador));
+			//static_cast<Entidades::Obstaculos::Plataforma*>(aux)->obstacular(static_cast<Entidades::Personagens::Jogador*>(jogador));
 		}
 	}
 
 	pGerenciadorGrafico->desenharEnte("Assets/Backgrounds/Stars Small_1.png", Math::Vector2Df(0, 0));
-}
-
-void Fases::Primeira_Fase::desenhar()
-{
 }
 
 void Fases::Primeira_Fase::salvar(std::ostringstream* entrada)
@@ -67,10 +64,11 @@ void Fases::Primeira_Fase::criar_inimigos()
 
 	Entidades::Personagens::Raiva* raivinha = nullptr;
 	for (int i = 0; i < rand() % 2 + 3; i++) {
+		std::cout << "criou raiva" << std::endl;
 		raivinha = new Entidades::Personagens::Raiva();
 		if(raivinha)
 		{
-			raivinha->setPosition((float)700 + 64 * i, 450);
+			raivinha->setPosition((float)700 + 64 * i, 200);
 			inimigos.incluir(raivinha);
 		}
 	}
@@ -80,7 +78,7 @@ void Fases::Primeira_Fase::criar_inimigos()
 		sadness = new Entidades::Personagens::Tristeza();
 		if(sadness)
 		{
-			sadness->setPosition((float)450 + 64 * i, 200);
+			sadness->setPosition((float)450 + 64 * i, 100 * (rand() % 2 + 1));
 			inimigos.incluir(sadness);
 		}
 	}
@@ -113,22 +111,18 @@ void Fases::Primeira_Fase::criar_cenario(std::string file_path)
 				aux = static_cast<Entidades::Entidade*>(new Entidades::Obstaculos::Plataforma(Math::Vector2Df(j * 32.f, i * 32.f), "Assets/Sprites/middle_ground_sprite.png"));
 				if (aux) 
 					obstaculos.incluir(aux);
-					break;
+				
+				break;
 			case 'P':
-				criar_jogador('P');
-				//pixi->setPosition((float)j * 64, (float)i * 64);
-				//std::cout << "Criou o jogador em " << j * 10.0 << i * 10.0 << std::endl;
+				criar_jogador('P', Math::Vector2Df(j * 32.f, i * 32.f));
 
 				break;
 			case 'B':
-				criar_jogador('B');
-				//bity->setPosition((float)j * 64, (float)i * 64);
-				//std::cout << "Criou o jogador em " << j * 10.0 << i * 10.0 << std::endl;
+				criar_jogador('B', Math::Vector2Df(j * 32.f, i * 32.f));
 
 				break;
-			case '*':
-				aux = static_cast<Entidades::Entidade*>(new Entidades::Obstaculos::Plataforma(Math::Vector2Df(j * 32.f, i * 32.f), "Assets/Sprites/top_ground_sprite.png"));
-				//std::cout << "Criou plataforma" << j * 32 << i * 32 << std::endl;
+			case '^':
+				aux = static_cast<Entidades::Entidade*>(new Entidades::Obstaculos::Espinhos(Math::Vector2Df(j * 32.f, 620), "Assets/Sprites/spike_cortado.png"));
 				if (aux)
 					obstaculos.incluir(aux);
 

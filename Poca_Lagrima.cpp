@@ -12,7 +12,7 @@ Entidades::Obstaculos::Poca_Lagrimas::~Poca_Lagrimas()
 
 void Entidades::Obstaculos::Poca_Lagrimas::obstacular(Entidades::Personagens::Jogador* p)
 {
-	p->setAtrito(p->getAtrito() * (1 + slowdown));
+	p->setAtrito(p->getAtrito() * (0.1 + slowdown));
 }
 
 void Entidades::Obstaculos::Poca_Lagrimas::update(float dt)

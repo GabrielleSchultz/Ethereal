@@ -11,7 +11,6 @@ namespace Fases {
 		Primeira_Fase();
 		~Primeira_Fase();
 		void executar(float dt);
-		void desenhar();
 		void salvar(std::ostringstream* entrada);
 		void criar_inimigos();
 		void criar_obstaculos();

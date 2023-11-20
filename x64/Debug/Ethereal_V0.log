@@ -1,3 +1,3 @@
-﻿  Primeira_Fase.cpp
-C:\Users\miche_bb3fmdp\OneDrive\Documentos\GitHub\Ethereal\Primeira_Fase.cpp(66,12): warning C4244: 'argumento': conversão de 'time_t' para 'unsigned int', possível perda de dados
+﻿  Segunda_Fase.cpp
+C:\Users\miche_bb3fmdp\OneDrive\Documentos\GitHub\Ethereal\Segunda_Fase.cpp(63,12): warning C4244: 'argumento': conversão de 'time_t' para 'unsigned int', possível perda de dados
   Ethereal_V0.vcxproj -> C:\Users\miche_bb3fmdp\OneDrive\Documentos\GitHub\Ethereal\x64\Debug\Ethereal_V0.exe

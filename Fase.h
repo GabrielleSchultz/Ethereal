@@ -19,10 +19,9 @@ namespace Fases {
 		Fase();
 		~Fase();
 		virtual void executar(float dt) = 0;
-		virtual void desenhar() = 0;
 		virtual void salvar(std::ostringstream* entrada) = 0;
 		void gerenciar_colisoes();
-		void criar_jogador(char type);
+		void criar_jogador(char type, Math::Vector2Df posicao);
 		virtual void criar_inimigos() = 0;
 		virtual void criar_obstaculos() = 0;
 		virtual void criar_cenario(std::string file_path) = 0;

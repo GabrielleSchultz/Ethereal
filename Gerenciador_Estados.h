@@ -3,7 +3,12 @@
 //referencia: livro SFML Game Development - Arthur Moreira, Jan Haller
 
 #include <vector>
+
 #include "Estado.h"
+#include "GameState.h"
+#include "MenuPause.h"
+#include "MenuPrincipal.h"
+#include "MenuRanking.h"
 
 namespace Gerenciadores {
 	class Gerenciador_Estados
@@ -29,7 +34,7 @@ namespace Gerenciadores {
 		~Gerenciador_Estados();
 		static Gerenciador_Estados* getGerenciadorEstados();
 		void criar_estado(Estados::Tipo id);
-		void push(Estados::Tipo id);
+		void push(Estados::Estado* estado);
 		void pop();
 		void clear();
 

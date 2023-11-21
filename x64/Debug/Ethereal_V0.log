@@ -1,3 +1,8 @@
-﻿  Jogador.cpp
-C:\Users\gabri\source\repos\GabrielleSchultz\Ethereal\Jogador.cpp(167,55): warning C4244: 'argumento': conversão de 'double' para 'float', possível perda de dados
+﻿  Estado.cpp
+  Gerenciador_Estados.cpp
+  Menu.cpp
+  MenuFases.cpp
+  MenuPause.cpp
+  MenuPrincipal.cpp
+  Gerando Código...
   Ethereal_V0.vcxproj -> C:\Users\gabri\source\repos\GabrielleSchultz\Ethereal\x64\Debug\Ethereal_V0.exe

@@ -5,7 +5,7 @@
 
 namespace Controles 
 {
-	class ControleMenu : public Controllers
+	class ControleMenu : public Controller
 	{
 
 	};

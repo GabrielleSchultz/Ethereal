@@ -3,14 +3,14 @@
 
 //Observer - Interface
 
-class Controllers
+class Controller
 {
 protected:
 	Gerenciadores::Input* pGerenciadorInput;
 public:
-	Controllers() :
+	Controller() :
 		pGerenciadorInput(Gerenciadores::Input::getGerenciador_Inputs()) {}
-	~Controllers() {}
+	~Controller() {}
 	virtual void notifyKeyPressed(std::string key) = 0;
 	virtual void notifyKeyReleased(std::string key) = 0;
 };

@@ -74,7 +74,7 @@ namespace Entidades {
 				currentVelocity.x += acceleration * direction.x * dt;
 
 			if (!isGrounded)
-				position.y += 2 * gravityCataliser * dt;
+				position.y += gravityCataliser * dt;
 			
 			//atrito
 			if (currentVelocity.x > 0.f)
@@ -91,7 +91,7 @@ namespace Entidades {
 			}
 
 			if (currentVelocity.y < 0.f) {
-				currentVelocity.y += gravidade + gravityCataliser * 4.f;
+				currentVelocity.y += (gravidade*0.25f) + gravityCataliser * 4.f;
 				if (currentVelocity.y > 0.f)
 					currentVelocity.y = 0.f;
 			}

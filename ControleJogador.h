@@ -9,7 +9,7 @@ namespace Entidades{
 
 namespace Controle{
 
-	class ControleJogador : public Controllers
+	class ControleJogador : public Controller
 	{
 	private:
 		Entidades::Personagens::Jogador* pJogador;

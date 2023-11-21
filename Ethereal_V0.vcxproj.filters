@@ -61,7 +61,7 @@
     <ClCompile Include="MenuFases.cpp">
       <Filter>Sources\Menu</Filter>
     </ClCompile>
-    <ClCompile Include="MenuOptions.cpp">
+    <ClCompile Include="MenuPrincipal.cpp">
       <Filter>Sources\Menu</Filter>
     </ClCompile>
     <ClCompile Include="MenuRanking.cpp">
@@ -99,6 +99,9 @@
     </ClCompile>
     <ClCompile Include="Inimigo.cpp">
       <Filter>Sources\Entidade\Personagem\Inimigo</Filter>
+    </ClCompile>
+    <ClCompile Include="MenuPause.cpp">
+      <Filter>Sources\Menu</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -174,7 +177,7 @@
     <ClInclude Include="MenuFases.h">
       <Filter>Headers\Menu</Filter>
     </ClInclude>
-    <ClInclude Include="MenuOptions.h">
+    <ClInclude Include="MenuPrincipal.h">
       <Filter>Headers\Menu</Filter>
     </ClInclude>
     <ClInclude Include="MenuRanking.h">
@@ -212,6 +215,9 @@
     </ClInclude>
     <ClInclude Include="Vinganca.h">
       <Filter>Headers\Entidade\Personagem\Inimigo</Filter>
+    </ClInclude>
+    <ClInclude Include="MenuPause.h">
+      <Filter>Headers\Menu</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

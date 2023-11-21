@@ -24,11 +24,32 @@ namespace Gerenciadores
 
 		switch (id)
 		{
+		case Estados::Tipo::GameState:
+		{
+			novo_estado = new Estados::GameState();
+			push(static_cast<Estados::Estado*>(novo_estado));
+		}
+		break;
+
+		case Estados::Tipo::MenuPrincipal:
+		{
+			novo_estado = new Estados::Menus::MenuPrincipal();
+			push(static_cast<Estados::Estado*>(novo_estado));
+		}
+		break;
+
+		case Estados::Tipo::MenuPause:
+		{
+			novo_estado = new Estados::Menus::MenuPause();
+			push(static_cast<Estados::Estado*>(novo_estado));
+		}
+		break;
 		}
 	}
 
-	void Gerenciador_Estados::push(Estados::Tipo id)
+	void Gerenciador_Estados::push(Estados::Estado* estado)
 	{
+		vetor_estados.push_back(estado);
 	}
 
 	void Gerenciador_Estados::pop()

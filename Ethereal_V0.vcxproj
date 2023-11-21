@@ -153,7 +153,8 @@
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Menu.cpp" />
     <ClCompile Include="MenuFases.cpp" />
-    <ClCompile Include="MenuOptions.cpp" />
+    <ClCompile Include="MenuPrincipal.cpp" />
+    <ClCompile Include="MenuPause.cpp" />
     <ClCompile Include="MenuRanking.cpp" />
     <ClCompile Include="Obstaculo.cpp" />
     <ClCompile Include="Espinhos.cpp" />
@@ -191,7 +192,8 @@
     <ClInclude Include="ListaEntidades.h" />
     <ClInclude Include="Menu.h" />
     <ClInclude Include="MenuFases.h" />
-    <ClInclude Include="MenuOptions.h" />
+    <ClInclude Include="MenuPause.h" />
+    <ClInclude Include="MenuPrincipal.h" />
     <ClInclude Include="MenuRanking.h" />
     <ClInclude Include="Obstaculo.h" />
     <ClInclude Include="Poca_Lagrima.h" />

@@ -5,19 +5,18 @@ namespace Entidades {
 	namespace Personagens {
 
 		Personagem::Personagem(int nv, const char* texturePath, ID id) : 
-		Entidade(texturePath, id), num_vidas(nv), vivo(true)
+		Entidade(texturePath, id), num_vidas(nv)
 		{
 
 		}
 
 		Personagem::~Personagem() 
 		{
-			vivo = false;
 		}
 
 		bool Entidades::Personagens::Personagem::getVivo()
 		{
-			return vivo;
+			return num_vidas > 0;
 		}
 
 		int Personagem::getNumVidas() const
@@ -29,6 +28,5 @@ namespace Entidades {
 		{
 			num_vidas = nv;
 		}
-
 	}
 }

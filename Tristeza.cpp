@@ -11,6 +11,7 @@ Entidades::Personagens::Tristeza::Tristeza(int nv, int mal, const char* textureP
 
 Entidades::Personagens::Tristeza::~Tristeza()
 {
+	projeteis.clear();
 }
 
 void Entidades::Personagens::Tristeza::executar()
@@ -19,6 +20,8 @@ void Entidades::Personagens::Tristeza::executar()
 
 void Entidades::Personagens::Tristeza::danificar(Jogador* p)
 {
+	if(p)
+		p->setNumVidas(p->getNumVidas() - nivel_maldade);
 }
 
 void Entidades::Personagens::Tristeza::salvar(std::ostringstream* entrada)
@@ -62,6 +65,10 @@ void Entidades::Personagens::Tristeza::lancar_projetil()
 
 void Entidades::Personagens::Tristeza::colidir(Entidades::Entidade* e)
 {
+	if (e) {
+		if (e->getId() == Entidades::ID::jogador)
+			danificar(static_cast<Entidades::Personagens::Jogador*>(e));
+	}
 }
 
 Listas::ListaEntidades* Entidades::Personagens::Tristeza::getProjeteis()

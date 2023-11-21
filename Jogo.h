@@ -3,7 +3,7 @@
 #include "Gerenciador_Eventos.h"
 #include "Gerenciador_Colisoes.h"
 #include "Segunda_Fase.h"
-#include "Primeira_Fase.h"
+//#include "Primeira_Fase.h"
 
 #include "Raiva.h"
 namespace Entidades {

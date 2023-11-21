@@ -6,7 +6,7 @@ namespace Fases {
 	class Segunda_Fase : public Fase
 	{
 	private:
-
+		// vetor de Vingança
 	public:
 		Segunda_Fase();
 		~Segunda_Fase();

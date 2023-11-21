@@ -1,6 +1,9 @@
 #include "Projetil.h"
 #include "Jogador.h"
 
+#define WINDOW_LENGHT 1300
+#define WINDOW_HEIGHT 660
+
 namespace Entidades
 {
 	Projetil::Projetil(const char* texturePath, int d, int v, ID id) :
@@ -12,7 +15,7 @@ namespace Entidades
 	}
 
 	Projetil::~Projetil() {
-
+		atirador = nullptr;
 	}
 
 	void Projetil::setAtirador(Entidade* a)
@@ -41,6 +44,9 @@ namespace Entidades
 
 	void Projetil::update(float dt)
 	{
+		/*if (position.x < 0 || position.x > WINDOW_LENGHT || position.y < 0 || position.y > WINDOW_HEIGHT) {
+			
+		}*/
 		setPosition(position.x + (velocidade * dt * direction.x), position.y + (velocidade * dt * direction.y));
 		desenhar();
 	}

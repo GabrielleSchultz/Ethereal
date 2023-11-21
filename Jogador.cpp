@@ -28,6 +28,8 @@ namespace Entidades {
 
 		Jogador::~Jogador()
 		{
+			pControles = nullptr;
+			projeteis.clear();
 		}
 
 		void Jogador::inicializa()
@@ -109,10 +111,9 @@ namespace Entidades {
 		{
 			if(e){
 				if (e->getId() == Entidades::ID::inimigo_raiva) {
-					// arrumar pra quando colisão é na direita !! 
-					setPosition(position.x - 50, position.y);
+					setPosition(position + static_cast<Entidades::Personagens::Personagem*>(e)->getDirection() * 40);
 				}
-				if (e->getId() == Entidades::ID::plataforma) {
+				else if (e->getId() == Entidades::ID::plataforma) {
 					setAtrito(0.25f);
 				}
 			}

@@ -7,7 +7,6 @@ namespace Entidades {
 		class Personagem : public Entidade, public Tipo::Dinamica {
 		protected:
 			int num_vidas;
-			bool vivo;
 
 		public:
 			Personagem(int nv = 0, const char* texturePath = "", ID id = ID::vazio);

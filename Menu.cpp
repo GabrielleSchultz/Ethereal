@@ -1,9 +1,10 @@
 #include "Menu.h"
 
-Menu::Menu()
+Estados::Menu::Menu():
+	Estado()
 {
 }
 
-Menu::~Menu()
+Estados::Menu::~Menu()
 {
 }

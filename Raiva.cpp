@@ -31,12 +31,13 @@ namespace Entidades {
 		void Raiva::colidir(Entidades::Entidade* e)
 		{
 			if (e) {
-				if(e->getId() == Entidades::ID::projetil)
-					setPosition(position.x + 1 * direction.x, position.y);
-				if (e->getId() == Entidades::ID::plataforma || e->getId() == Entidades::ID::espinhos || e->getId() == Entidades::ID::poca_lagrima)
+				if (e->getId() == Entidades::ID::projetil)
+					setPosition(position + static_cast<Entidades::Personagens::Personagem*>(e)->getDirection());
+				else if (e->getId() == Entidades::ID::plataforma || e->getId() == Entidades::ID::espinhos || e->getId() == Entidades::ID::poca_lagrima)
 					setPosition(position.x, e->getPosition().y - e->getTamanho().y / 2 - tamanho.y / 2);
+				else if (e->getId() == Entidades::ID::jogador)
+					danificar(static_cast<Entidades::Personagens::Jogador*>(e));
 			}
-			
 		}
 
 		void Raiva::danificar(Jogador* p)
@@ -49,9 +50,11 @@ namespace Entidades {
 			// perseguir pixi e bity :0
 			if (p->getPosition().x >= position.x - raio && p->getPosition().x <= position.x) {
 				setPosition(position.x - agilidade, position.y);
+				setDirection(-1, 0);
 			}
 			else if (p->getPosition().x >= position.x && p->getPosition().x <= position.x + raio) {
 				setPosition(position.x + agilidade, position.y);
+				setDirection(1, 0);
 			}
 		}
 	}

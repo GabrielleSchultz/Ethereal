@@ -10,8 +10,8 @@ namespace Estados {
 		Fases::Fase* pFase;
 
 	public:
-
-
+		GameState(Fases::Fase* f = nullptr);
+		~GameState();
 	};
 
 }

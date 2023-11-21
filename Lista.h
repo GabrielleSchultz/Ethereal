@@ -34,6 +34,7 @@ namespace Listas {
 		const int getTamanho() const;
 		void incluir(TL* elemento);
 		void remover(TL* elemento);
+		void clear();
 
 		class Iterador {
 		private:
@@ -112,17 +113,7 @@ Listas::Lista<TL>::Lista() {
 
 template <class TL>
 Listas::Lista<TL>::~Lista() {
-	Elemento<TL>* aux = nullptr;
-
-	while (primeiro) {
-		aux = primeiro;
-		primeiro = primeiro->getProximo();
-		if (aux) {
-			delete aux;
-		}
-		tamanho = 0;
-		primeiro = nullptr;
-	}
+	clear();
 }
 
 template <class TL>
@@ -175,6 +166,20 @@ void Listas::Lista<TL>::remover(TL* elemento) {
 	}
 
 	tamanho--;
+}
+
+template<class TL>
+void Listas::Lista<TL>::clear()
+{
+	Elemento<TL>* aux = nullptr;
+	while (primeiro) {
+		aux = primeiro;
+		primeiro = primeiro->getProximo();
+		if (aux)
+			delete aux;
+	}
+	tamanho = 0;
+	primeiro = nullptr;
 }
 
 /* ITERADOR */

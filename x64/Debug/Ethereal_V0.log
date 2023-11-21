@@ -1,7 +1,12 @@
-﻿  Segunda_Fase.cpp
-<<<<<<< HEAD
-  Ethereal_V0.vcxproj -> C:\Users\gabri\source\repos\GabrielleSchultz\Ethereal\x64\Debug\Ethereal_V0.exe
-=======
-C:\Users\miche_bb3fmdp\OneDrive\Documentos\GitHub\Ethereal\Segunda_Fase.cpp(63,12): warning C4244: 'argumento': conversão de 'time_t' para 'unsigned int', possível perda de dados
+﻿  Jogo.cpp
+  Menu.cpp
+  Primeira_Fase.cpp
+C:\Users\miche_bb3fmdp\OneDrive\Documentos\GitHub\Ethereal\Primeira_Fase.cpp(68,12): warning C4244: 'argumento': conversão de 'time_t' para 'unsigned int', possível perda de dados
+C:\Users\miche_bb3fmdp\OneDrive\Documentos\GitHub\Ethereal\Primeira_Fase.cpp(87,50): warning C4244: 'argumento': conversão de 'int' para 'float', possível perda de dados
+C:\Users\miche_bb3fmdp\OneDrive\Documentos\GitHub\Ethereal\Primeira_Fase.cpp(95,12): warning C4244: 'argumento': conversão de 'time_t' para 'unsigned int', possível perda de dados
+  Segunda_Fase.cpp
+C:\Users\miche_bb3fmdp\OneDrive\Documentos\GitHub\Ethereal\Segunda_Fase.cpp(69,12): warning C4244: 'argumento': conversão de 'time_t' para 'unsigned int', possível perda de dados
+C:\Users\miche_bb3fmdp\OneDrive\Documentos\GitHub\Ethereal\Segunda_Fase.cpp(88,12): warning C4244: 'argumento': conversão de 'time_t' para 'unsigned int', possível perda de dados
+  main.cpp
+  Gerando Código...
   Ethereal_V0.vcxproj -> C:\Users\miche_bb3fmdp\OneDrive\Documentos\GitHub\Ethereal\x64\Debug\Ethereal_V0.exe
->>>>>>> ff2936ec212f123fc33a082c2ea7321ecfc420cd

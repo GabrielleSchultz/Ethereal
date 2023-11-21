@@ -163,9 +163,8 @@ namespace Gerenciadores
 			for (jog = jogadores->get_primeiro(), j = 0; j < jogadores->getTamanho(); jog.operator++(), j++) {
 				jogador = jog.operator*();
 				if (Colisao(jogador, obstaculo)) {
-					// não funcionou, achar algo pro obstacular fazer !!
 					static_cast<Entidades::Obstaculos::Obstaculo*>(obstaculo)->obstacular(static_cast<Entidades::Personagens::Jogador*>(jogador));
-					//static_cast<Entidades::Personagens::Jogador*>(jogador)->colidir(obstaculo);
+					static_cast<Entidades::Personagens::Jogador*>(jogador)->colidir(obstaculo);
 				}
 			}
 			for (inim = inimigos->get_primeiro(), i = 0; i < inimigos->getTamanho(); inim.operator++(), i++) {

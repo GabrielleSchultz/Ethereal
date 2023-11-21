@@ -1,299 +1,285 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <Filter Include="Arquivos de Origem">
-      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
-      <Extensions>cpp;c;cc;cxx;c++;cppm;ixx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
-    </Filter>
-    <Filter Include="Arquivos de Cabeçalho">
-      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
-      <Extensions>h;hh;hpp;hxx;h++;hm;inl;inc;ipp;xsd</Extensions>
-    </Filter>
-    <Filter Include="Arquivos de Recurso">
-      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
-      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
-    </Filter>
-    <Filter Include="Arquivos de Cabeçalho\Gerenciadores">
-      <UniqueIdentifier>{a610a145-5452-427e-811c-892dea0eebfb}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Arquivos de Cabeçalho\Entidades">
-      <UniqueIdentifier>{0ed7384e-4d97-4c83-96c7-d5f34719eb64}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Arquivos de Cabeçalho\Entidades\Personagens">
-      <UniqueIdentifier>{1bba7c9c-3675-4d6e-924a-ad745a354d08}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Arquivos de Cabeçalho\Entidades\Obstaculos">
-      <UniqueIdentifier>{a96d1ef9-cdea-4bac-a6ec-43cd765c598e}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Arquivos de Origem\Gerenciadores">
-      <UniqueIdentifier>{d9001146-98f2-4db0-8e72-7ab9c768e31a}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Arquivos de Origem\Entidades">
-      <UniqueIdentifier>{ff38a100-29b8-4962-a414-ce60485dcdd3}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Arquivos de Origem\Entidades\Personagens">
-      <UniqueIdentifier>{e3e19af9-1a40-4713-aa4b-4b97ee18df21}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Arquivos de Origem\Entidades\Obstaculos">
-      <UniqueIdentifier>{9f16a527-8350-4204-bd0f-4295a404fb99}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Arquivos de Cabeçalho\Fases">
-      <UniqueIdentifier>{1460eef1-c811-4bb0-9dd0-f49528d44332}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Arquivos de Origem\Fases">
-      <UniqueIdentifier>{0ca02ae2-4db9-422b-905e-c7e2c0e96ce2}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Arquivos de Origem\Menus">
-      <UniqueIdentifier>{f3d79bd7-a437-4a7b-8fd1-22a257bcfcaf}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Arquivos de Cabeçalho\Menus">
-      <UniqueIdentifier>{e187a65d-7549-496b-ba0c-6ad0a60d8797}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Arquivos de Cabeçalho\Mementos">
-      <UniqueIdentifier>{e2dad8a8-8262-4215-b697-6a795cb71d10}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Arquivos de Cabeçalho\Utils">
-      <UniqueIdentifier>{a48403bd-15d9-4891-b34f-5ccd39cd51ef}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Arquivos de Origem\Utils">
-      <UniqueIdentifier>{e878451f-7cae-4189-a0a2-86cca45c6c30}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Arquivos de Cabeçalho\Utils\Math">
-      <UniqueIdentifier>{80b45843-aedb-4a19-9196-2a19bfeb7318}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Arquivos de Origem\Controles">
-      <UniqueIdentifier>{f9dcc5a8-9719-4d1a-ad74-cf79f376ffd7}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Arquivos de Cabeçalho\Controles">
-      <UniqueIdentifier>{ab7bb27a-35f7-4d65-8fd1-59cd7d571a20}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Arquivos de Origem\Listas">
-      <UniqueIdentifier>{44777df9-e147-47eb-9b47-75386942005f}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Arquivos de Cabeçalho\Listas">
-      <UniqueIdentifier>{593eb229-030f-43ce-ba4e-9673089cd2b2}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Arquivos de Cabeçalho\Estados">
-      <UniqueIdentifier>{aa86c8f5-fc1d-4059-9a22-df3c939f8c1b}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Arquivos de Origem\Estados">
-      <UniqueIdentifier>{d09b4418-42a7-40fa-acdd-441531d43d86}</UniqueIdentifier>
-    </Filter>
-  </ItemGroup>
-  <ItemGroup>
-    <ClCompile Include="Ente.cpp">
-      <Filter>Arquivos de Origem</Filter>
-    </ClCompile>
-    <ClCompile Include="main.cpp">
-      <Filter>Arquivos de Origem</Filter>
-    </ClCompile>
-    <ClCompile Include="Jogo.cpp">
-      <Filter>Arquivos de Origem</Filter>
-    </ClCompile>
-    <ClCompile Include="Gerenciador_Grafico.cpp">
-      <Filter>Arquivos de Origem\Gerenciadores</Filter>
-    </ClCompile>
-    <ClCompile Include="Gerenciador_Colisoes.cpp">
-      <Filter>Arquivos de Origem\Gerenciadores</Filter>
-    </ClCompile>
-    <ClCompile Include="Gerenciador_Eventos.cpp">
-      <Filter>Arquivos de Origem\Gerenciadores</Filter>
-    </ClCompile>
-    <ClCompile Include="Entidade.cpp">
-      <Filter>Arquivos de Origem\Entidades</Filter>
-    </ClCompile>
-    <ClCompile Include="Projetil.cpp">
-      <Filter>Arquivos de Origem\Entidades</Filter>
-    </ClCompile>
-    <ClCompile Include="Jogador.cpp">
-      <Filter>Arquivos de Origem\Entidades\Personagens</Filter>
-    </ClCompile>
-    <ClCompile Include="Inimigo.cpp">
-      <Filter>Arquivos de Origem\Entidades\Personagens</Filter>
-    </ClCompile>
-    <ClCompile Include="Obstaculo.cpp">
-      <Filter>Arquivos de Origem\Entidades\Obstaculos</Filter>
-    </ClCompile>
-    <ClCompile Include="Primeira_Fase.cpp">
-      <Filter>Arquivos de Origem\Fases</Filter>
-    </ClCompile>
-    <ClCompile Include="Segunda_Fase.cpp">
-      <Filter>Arquivos de Origem\Fases</Filter>
-    </ClCompile>
-    <ClCompile Include="Personagem.cpp">
-      <Filter>Arquivos de Origem\Entidades\Personagens</Filter>
-    </ClCompile>
-    <ClCompile Include="Fase.cpp">
-      <Filter>Arquivos de Origem\Fases</Filter>
-    </ClCompile>
-    <ClCompile Include="Menu.cpp">
-      <Filter>Arquivos de Origem\Menus</Filter>
-    </ClCompile>
-    <ClCompile Include="MenuOptions.cpp">
-      <Filter>Arquivos de Origem\Menus</Filter>
-    </ClCompile>
-    <ClCompile Include="MenuFases.cpp">
-      <Filter>Arquivos de Origem\Menus</Filter>
-    </ClCompile>
-    <ClCompile Include="MenuRanking.cpp">
-      <Filter>Arquivos de Origem\Menus</Filter>
-    </ClCompile>
-    <ClCompile Include="Gerenciador_Inputs.cpp">
-      <Filter>Arquivos de Origem\Gerenciadores</Filter>
-    </ClCompile>
-    <ClCompile Include="Gerenciador_Estados.cpp">
-      <Filter>Arquivos de Origem\Gerenciadores</Filter>
-    </ClCompile>
     <ClCompile Include="ControleJogador.cpp">
-      <Filter>Arquivos de Origem\Controles</Filter>
+      <Filter>Sources\Controle</Filter>
     </ClCompile>
     <ClCompile Include="ControleMenu.cpp">
-      <Filter>Arquivos de Origem\Controles</Filter>
+      <Filter>Sources\Controle</Filter>
     </ClCompile>
-    <ClCompile Include="Espinhos.cpp">
-      <Filter>Arquivos de Origem\Entidades\Obstaculos</Filter>
-    </ClCompile>
-    <ClCompile Include="Plataforma.cpp">
-      <Filter>Arquivos de Origem\Entidades\Obstaculos</Filter>
-    </ClCompile>
-    <ClCompile Include="Poca_Lagrima.cpp">
-      <Filter>Arquivos de Origem\Entidades\Obstaculos</Filter>
-    </ClCompile>
-    <ClCompile Include="Raiva.cpp">
-      <Filter>Arquivos de Origem\Entidades\Personagens</Filter>
-    </ClCompile>
-    <ClCompile Include="Tristeza.cpp">
-      <Filter>Arquivos de Origem\Entidades\Personagens</Filter>
-    </ClCompile>
-    <ClCompile Include="Vinganca.cpp">
-      <Filter>Arquivos de Origem\Entidades\Personagens</Filter>
+    <ClCompile Include="Entidade.cpp">
+      <Filter>Sources\Entidade</Filter>
     </ClCompile>
     <ClCompile Include="Entidade_Dinamica.cpp">
-      <Filter>Arquivos de Origem\Entidades</Filter>
+      <Filter>Sources\Entidade</Filter>
     </ClCompile>
-<<<<<<< HEAD
+    <ClCompile Include="Espinhos.cpp">
+      <Filter>Sources\Entidade\Obstaculo</Filter>
+    </ClCompile>
+    <ClCompile Include="Ente.cpp">
+      <Filter>Sources</Filter>
+    </ClCompile>
     <ClCompile Include="Estado.cpp">
-      <Filter>Arquivos de Origem\Estados</Filter>
+      <Filter>Sources\Estados</Filter>
+    </ClCompile>
+    <ClCompile Include="Fase.cpp">
+      <Filter>Sources\Fases</Filter>
     </ClCompile>
     <ClCompile Include="GameState.cpp">
-      <Filter>Arquivos de Origem\Estados</Filter>
-=======
+      <Filter>Sources\Estados</Filter>
+    </ClCompile>
+    <ClCompile Include="Gerenciador_Colisoes.cpp">
+      <Filter>Sources\Gerenciadores</Filter>
+    </ClCompile>
+    <ClCompile Include="Gerenciador_Estados.cpp">
+      <Filter>Sources\Gerenciadores</Filter>
+    </ClCompile>
+    <ClCompile Include="Gerenciador_Eventos.cpp">
+      <Filter>Sources\Gerenciadores</Filter>
+    </ClCompile>
+    <ClCompile Include="Gerenciador_Grafico.cpp">
+      <Filter>Sources\Gerenciadores</Filter>
+    </ClCompile>
+    <ClCompile Include="Gerenciador_Inputs.cpp">
+      <Filter>Sources\Gerenciadores</Filter>
+    </ClCompile>
+    <ClCompile Include="Jogador.cpp">
+      <Filter>Sources\Entidade\Personagem</Filter>
+    </ClCompile>
+    <ClCompile Include="Jogo.cpp">
+      <Filter>Sources</Filter>
+    </ClCompile>
     <ClCompile Include="ListaEntidades.cpp">
-      <Filter>Arquivos de Origem\Utils</Filter>
->>>>>>> 74996bd901d986697ef8cce310e42683acdfb105
+      <Filter>Sources\Listas</Filter>
+    </ClCompile>
+    <ClCompile Include="main.cpp">
+      <Filter>Sources</Filter>
+    </ClCompile>
+    <ClCompile Include="Menu.cpp">
+      <Filter>Sources\Menu</Filter>
+    </ClCompile>
+    <ClCompile Include="MenuFases.cpp">
+      <Filter>Sources\Menu</Filter>
+    </ClCompile>
+    <ClCompile Include="MenuOptions.cpp">
+      <Filter>Sources\Menu</Filter>
+    </ClCompile>
+    <ClCompile Include="MenuRanking.cpp">
+      <Filter>Sources\Menu</Filter>
+    </ClCompile>
+    <ClCompile Include="Obstaculo.cpp">
+      <Filter>Sources\Entidade\Obstaculo</Filter>
+    </ClCompile>
+    <ClCompile Include="Personagem.cpp">
+      <Filter>Sources\Entidade\Personagem</Filter>
+    </ClCompile>
+    <ClCompile Include="Plataforma.cpp">
+      <Filter>Sources\Entidade\Obstaculo</Filter>
+    </ClCompile>
+    <ClCompile Include="Segunda_Fase.cpp">
+      <Filter>Sources\Fases</Filter>
+    </ClCompile>
+    <ClCompile Include="Primeira_Fase.cpp">
+      <Filter>Sources\Fases</Filter>
+    </ClCompile>
+    <ClCompile Include="Poca_Lagrima.cpp">
+      <Filter>Sources\Entidade\Obstaculo</Filter>
+    </ClCompile>
+    <ClCompile Include="Projetil.cpp">
+      <Filter>Sources\Entidade</Filter>
+    </ClCompile>
+    <ClCompile Include="Raiva.cpp">
+      <Filter>Sources\Entidade\Personagem\Inimigo</Filter>
+    </ClCompile>
+    <ClCompile Include="Tristeza.cpp">
+      <Filter>Sources\Entidade\Personagem\Inimigo</Filter>
+    </ClCompile>
+    <ClCompile Include="Vinganca.cpp">
+      <Filter>Sources\Entidade\Personagem\Inimigo</Filter>
+    </ClCompile>
+    <ClCompile Include="Inimigo.cpp">
+      <Filter>Sources\Entidade\Personagem\Inimigo</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Jogo.h">
-      <Filter>Arquivos de Cabeçalho</Filter>
-    </ClInclude>
-    <ClInclude Include="Gerenciador_Grafico.h">
-      <Filter>Arquivos de Cabeçalho\Gerenciadores</Filter>
-    </ClInclude>
-    <ClInclude Include="Gerenciador_Colisoes.h">
-      <Filter>Arquivos de Cabeçalho\Gerenciadores</Filter>
-    </ClInclude>
-    <ClInclude Include="Gerenciador_Eventos.h">
-      <Filter>Arquivos de Cabeçalho\Gerenciadores</Filter>
-    </ClInclude>
-    <ClInclude Include="Ente.h">
-      <Filter>Arquivos de Cabeçalho</Filter>
-    </ClInclude>
-    <ClInclude Include="Entidade.h">
-      <Filter>Arquivos de Cabeçalho\Entidades</Filter>
-    </ClInclude>
-    <ClInclude Include="Projetil.h">
-      <Filter>Arquivos de Cabeçalho\Entidades</Filter>
-    </ClInclude>
-    <ClInclude Include="Personagem.h">
-      <Filter>Arquivos de Cabeçalho\Entidades\Personagens</Filter>
-    </ClInclude>
-    <ClInclude Include="Inimigo.h">
-      <Filter>Arquivos de Cabeçalho\Entidades\Personagens</Filter>
-    </ClInclude>
-    <ClInclude Include="Jogador.h">
-      <Filter>Arquivos de Cabeçalho\Entidades\Personagens</Filter>
-    </ClInclude>
-    <ClInclude Include="Obstaculo.h">
-      <Filter>Arquivos de Cabeçalho\Entidades\Obstaculos</Filter>
-    </ClInclude>
-    <ClInclude Include="Fase.h">
-      <Filter>Arquivos de Cabeçalho\Fases</Filter>
-    </ClInclude>
-    <ClInclude Include="Primeira_Fase.h">
-      <Filter>Arquivos de Cabeçalho\Fases</Filter>
-    </ClInclude>
-    <ClInclude Include="Segunda_Fase.h">
-      <Filter>Arquivos de Cabeçalho\Fases</Filter>
-    </ClInclude>
-    <ClInclude Include="Menu.h">
-      <Filter>Arquivos de Cabeçalho\Menus</Filter>
-    </ClInclude>
-    <ClInclude Include="MenuOptions.h">
-      <Filter>Arquivos de Cabeçalho\Menus</Filter>
-    </ClInclude>
-    <ClInclude Include="MenuFases.h">
-      <Filter>Arquivos de Cabeçalho\Menus</Filter>
-    </ClInclude>
-    <ClInclude Include="MenuRanking.h">
-      <Filter>Arquivos de Cabeçalho\Menus</Filter>
-    </ClInclude>
-    <ClInclude Include="Controller.h">
-      <Filter>Arquivos de Cabeçalho\Controles</Filter>
-    </ClInclude>
     <ClInclude Include="ControleJogador.h">
-      <Filter>Arquivos de Cabeçalho\Controles</Filter>
+      <Filter>Headers\Controle</Filter>
     </ClInclude>
     <ClInclude Include="ControleMenu.h">
-      <Filter>Arquivos de Cabeçalho\Controles</Filter>
+      <Filter>Headers\Controle</Filter>
     </ClInclude>
-    <ClInclude Include="Globals.h">
-      <Filter>Arquivos de Cabeçalho\Utils</Filter>
+    <ClInclude Include="Controller.h">
+      <Filter>Headers\Controle</Filter>
     </ClInclude>
     <ClInclude Include="Constants.h">
-      <Filter>Arquivos de Cabeçalho\Utils\Math</Filter>
+      <Filter>Headers</Filter>
     </ClInclude>
-    <ClInclude Include="Vector2D.h">
-      <Filter>Arquivos de Cabeçalho\Utils\Math</Filter>
+    <ClInclude Include="Ente.h">
+      <Filter>Headers</Filter>
     </ClInclude>
-    <ClInclude Include="Gerenciador_Estados.h">
-      <Filter>Arquivos de Cabeçalho\Gerenciadores</Filter>
-    </ClInclude>
-    <ClInclude Include="Gerenciador_Inputs.h">
-      <Filter>Arquivos de Cabeçalho\Gerenciadores</Filter>
-    </ClInclude>
-    <ClInclude Include="Lista.h">
-      <Filter>Arquivos de Cabeçalho\Listas</Filter>
-    </ClInclude>
-    <ClInclude Include="ListaEntidades.h">
-      <Filter>Arquivos de Cabeçalho\Listas</Filter>
-    </ClInclude>
-    <ClInclude Include="Plataforma.h">
-      <Filter>Arquivos de Cabeçalho\Entidades\Obstaculos</Filter>
-    </ClInclude>
-    <ClInclude Include="Poca_Lagrima.h">
-      <Filter>Arquivos de Cabeçalho\Entidades\Obstaculos</Filter>
-    </ClInclude>
-    <ClInclude Include="Espinhos.h">
-      <Filter>Arquivos de Cabeçalho\Entidades\Obstaculos</Filter>
-    </ClInclude>
-    <ClInclude Include="Raiva.h">
-      <Filter>Arquivos de Cabeçalho\Entidades\Personagens</Filter>
-    </ClInclude>
-    <ClInclude Include="Tristeza.h">
-      <Filter>Arquivos de Cabeçalho\Entidades\Personagens</Filter>
-    </ClInclude>
-    <ClInclude Include="Vinganca.h">
-      <Filter>Arquivos de Cabeçalho\Entidades\Personagens</Filter>
+    <ClInclude Include="Entidade.h">
+      <Filter>Headers\Entidade</Filter>
     </ClInclude>
     <ClInclude Include="Entidade_Dinamica.h">
-      <Filter>Arquivos de Cabeçalho\Entidades</Filter>
+      <Filter>Headers\Entidade</Filter>
+    </ClInclude>
+    <ClInclude Include="Espinhos.h">
+      <Filter>Headers\Entidade\Obstaculo</Filter>
+    </ClInclude>
+    <ClInclude Include="Gerenciador_Colisoes.h">
+      <Filter>Headers\Gerenciadores</Filter>
+    </ClInclude>
+    <ClInclude Include="Gerenciador_Estados.h">
+      <Filter>Headers\Gerenciadores</Filter>
+    </ClInclude>
+    <ClInclude Include="Gerenciador_Eventos.h">
+      <Filter>Headers\Gerenciadores</Filter>
+    </ClInclude>
+    <ClInclude Include="Gerenciador_Grafico.h">
+      <Filter>Headers\Gerenciadores</Filter>
+    </ClInclude>
+    <ClInclude Include="Gerenciador_Inputs.h">
+      <Filter>Headers\Gerenciadores</Filter>
     </ClInclude>
     <ClInclude Include="Estado.h">
-      <Filter>Arquivos de Cabeçalho\Estados</Filter>
+      <Filter>Headers\Estados</Filter>
+    </ClInclude>
+    <ClInclude Include="Fase.h">
+      <Filter>Headers\Fases</Filter>
     </ClInclude>
     <ClInclude Include="GameState.h">
-      <Filter>Arquivos de Cabeçalho\Estados</Filter>
+      <Filter>Headers\Estados</Filter>
     </ClInclude>
+    <ClInclude Include="Globals.h">
+      <Filter>Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="Jogador.h">
+      <Filter>Headers\Entidade\Personagem</Filter>
+    </ClInclude>
+    <ClInclude Include="Jogo.h">
+      <Filter>Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="Inimigo.h">
+      <Filter>Headers\Entidade\Personagem\Inimigo</Filter>
+    </ClInclude>
+    <ClInclude Include="Lista.h">
+      <Filter>Headers\Listas</Filter>
+    </ClInclude>
+    <ClInclude Include="ListaEntidades.h">
+      <Filter>Headers\Listas</Filter>
+    </ClInclude>
+    <ClInclude Include="Menu.h">
+      <Filter>Headers\Menu</Filter>
+    </ClInclude>
+    <ClInclude Include="MenuFases.h">
+      <Filter>Headers\Menu</Filter>
+    </ClInclude>
+    <ClInclude Include="MenuOptions.h">
+      <Filter>Headers\Menu</Filter>
+    </ClInclude>
+    <ClInclude Include="MenuRanking.h">
+      <Filter>Headers\Menu</Filter>
+    </ClInclude>
+    <ClInclude Include="Obstaculo.h">
+      <Filter>Headers\Entidade\Obstaculo</Filter>
+    </ClInclude>
+    <ClInclude Include="Personagem.h">
+      <Filter>Headers\Entidade\Personagem</Filter>
+    </ClInclude>
+    <ClInclude Include="Plataforma.h">
+      <Filter>Headers\Entidade\Obstaculo</Filter>
+    </ClInclude>
+    <ClInclude Include="Poca_Lagrima.h">
+      <Filter>Headers\Entidade\Obstaculo</Filter>
+    </ClInclude>
+    <ClInclude Include="Primeira_Fase.h">
+      <Filter>Headers\Fases</Filter>
+    </ClInclude>
+    <ClInclude Include="Segunda_Fase.h">
+      <Filter>Headers\Fases</Filter>
+    </ClInclude>
+    <ClInclude Include="Projetil.h">
+      <Filter>Headers\Entidade</Filter>
+    </ClInclude>
+    <ClInclude Include="Raiva.h">
+      <Filter>Headers\Entidade\Personagem\Inimigo</Filter>
+    </ClInclude>
+    <ClInclude Include="Tristeza.h">
+      <Filter>Headers\Entidade\Personagem\Inimigo</Filter>
+    </ClInclude>
+    <ClInclude Include="Vector2D.h">
+      <Filter>Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="Vinganca.h">
+      <Filter>Headers\Entidade\Personagem\Inimigo</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Sources">
+      <UniqueIdentifier>{b967a4d2-25a2-441d-8269-68ce4044a1cf}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Sources\Controle">
+      <UniqueIdentifier>{b1bf45da-9723-49e9-911b-dc54c23dd076}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Headers">
+      <UniqueIdentifier>{e9fd645b-be1a-42fd-baa1-a3e10f273803}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Sources\Entidade">
+      <UniqueIdentifier>{d2fb0d25-a327-4edf-b01d-a6a6f66cb71c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Sources\Entidade\Personagem">
+      <UniqueIdentifier>{c05d9fbc-1073-42c9-b37e-e72cf67fb639}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Sources\Entidade\Obstaculo">
+      <UniqueIdentifier>{a0e80e42-2fbc-4a65-8954-ec69cad08632}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Sources\Estados">
+      <UniqueIdentifier>{9df73a0c-a774-4a6a-8748-04ffebdc96af}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Sources\Fases">
+      <UniqueIdentifier>{fc2a9f52-a67e-40f5-8b41-147b91e3dd40}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Sources\Gerenciadores">
+      <UniqueIdentifier>{96dfe290-9464-4def-a608-e235f5c9a9d4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Sources\Listas">
+      <UniqueIdentifier>{b3660a0b-c68d-4231-80f2-97ce240c8a2d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Sources\Menu">
+      <UniqueIdentifier>{70f9b1a9-d384-41e1-8adb-a2908d1649c3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Headers\Controle">
+      <UniqueIdentifier>{87e21b5b-2dc9-416a-b772-1652a94a4154}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Headers\Entidade">
+      <UniqueIdentifier>{de2ec580-04ce-4720-a18a-01e6efd4e3ab}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Headers\Entidade\Personagem">
+      <UniqueIdentifier>{125321b0-93b5-437a-93a9-1e6e13af5ff4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Headers\Entidade\Obstaculo">
+      <UniqueIdentifier>{f0b4af02-a5df-498c-ac9a-fd769ada3ade}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Headers\Gerenciadores">
+      <UniqueIdentifier>{041069d9-9930-4a5f-a1df-d7f5c270b4f3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Headers\Fases">
+      <UniqueIdentifier>{bbdde12d-c55c-4316-9a70-c00b9c5e770a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Headers\Estados">
+      <UniqueIdentifier>{34fe1405-444d-4952-a93b-0930f023aba3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Headers\Entidade\Personagem\Inimigo">
+      <UniqueIdentifier>{3ac319f6-0a7c-4b85-99bc-6717f21d1e35}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Headers\Listas">
+      <UniqueIdentifier>{f8ecef71-e78b-40e6-999c-cafd4151de51}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Headers\Menu">
+      <UniqueIdentifier>{6d375dd3-2163-486b-82d2-440007b96f48}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Sources\Entidade\Personagem\Inimigo">
+      <UniqueIdentifier>{e7842873-45e2-4873-8987-9380d0b7592d}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
 </Project>

@@ -1,7 +1,3 @@
-﻿  Segunda_Fase.cpp
-<<<<<<< HEAD
+﻿  Jogador.cpp
+C:\Users\gabri\source\repos\GabrielleSchultz\Ethereal\Jogador.cpp(167,55): warning C4244: 'argumento': conversão de 'double' para 'float', possível perda de dados
   Ethereal_V0.vcxproj -> C:\Users\gabri\source\repos\GabrielleSchultz\Ethereal\x64\Debug\Ethereal_V0.exe
-=======
-C:\Users\miche_bb3fmdp\OneDrive\Documentos\GitHub\Ethereal\Segunda_Fase.cpp(63,12): warning C4244: 'argumento': conversão de 'time_t' para 'unsigned int', possível perda de dados
-  Ethereal_V0.vcxproj -> C:\Users\miche_bb3fmdp\OneDrive\Documentos\GitHub\Ethereal\x64\Debug\Ethereal_V0.exe
->>>>>>> ff2936ec212f123fc33a082c2ea7321ecfc420cd

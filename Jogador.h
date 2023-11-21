@@ -20,6 +20,7 @@ namespace Entidades {
 		private:
 			static int pontos;
 			const float gravityCataliser;
+			float gravityScale;
 			Controle::ControleJogador* pControles;
 
 			//checagem de movimento
@@ -53,8 +54,10 @@ namespace Entidades {
 			static int getNumJogadores();
 			void colidir(Entidades::Entidade* e);
 			void atacar();
+			void pular();
 			bool getFacingRight() const;
 			void setFacingRight(const bool b);
+			bool getIsGrounded();
 			Listas::ListaEntidades* getProjeteis();
 		};
 	}

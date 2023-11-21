@@ -23,6 +23,11 @@ void Controle::ControleJogador::notifyKeyPressed(std::string key)
 			pJogador->setFacingRight(true);
 		}
 
+		if (key == pular)
+		{
+			pJogador->pular();
+		}
+
 		if (key == ataque) {
 			pJogador->atacar();
 		}

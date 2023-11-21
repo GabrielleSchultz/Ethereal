@@ -1,6 +1,12 @@
 #include "Jogador.h"
 
 #define FREQUENCIA_TIRO 100
+#define PLAYER_MAXVEL 4
+
+
+//jumping
+#define DURACAO_PULO 2
+#define ALTURA_PULO 128
 
 int Entidades::Personagens::Jogador::numJogadores(0);
 int Entidades::Personagens::Jogador::pontos(0);
@@ -17,9 +23,10 @@ namespace Entidades {
 			groundedRemember(0.f),
 			groundedRememberTimer(0.2f),
 			jumpPressedRememberTimer(0.2f),
-			gravityCataliser(0.5f),
+			gravityCataliser(0.6f),
 			lancamento(FREQUENCIA_TIRO),
-			facingRight(true)
+			facingRight(true),
+			gravityScale (ALTURA_PULO / (2 * DURACAO_PULO * DURACAO_PULO))
 		{
 			pControles = new Controle::ControleJogador();
 			numJogadores++;
@@ -38,6 +45,8 @@ namespace Entidades {
 			{
 				pControles->setKeyCommands("up", "right", "left", "down");
 			}
+
+			max_vel = PLAYER_MAXVEL;
 		}
 
 		void Jogador::update(float dt)
@@ -64,6 +73,9 @@ namespace Entidades {
 			if (velocidadeX < max_vel)
 				currentVelocity.x += acceleration * direction.x * dt;
 
+			if (!isGrounded)
+				position.y += 2 * gravityCataliser * dt;
+			
 			//atrito
 			if (currentVelocity.x > 0.f)
 			{
@@ -78,7 +90,15 @@ namespace Entidades {
 					currentVelocity.x = 0.f;
 			}
 
-			setPosition(position.x + (currentVelocity.x * dt), position.y);
+			if (currentVelocity.y < 0.f) {
+				currentVelocity.y += gravidade + gravityCataliser * 4.f;
+				if (currentVelocity.y > 0.f)
+					currentVelocity.y = 0.f;
+			}
+
+			//std::cout << isGrounded << std::endl;
+			std::cout << currentVelocity.y << std::endl;
+			setPosition(position.x + (currentVelocity.x * dt), position.y + currentVelocity.y);
 		}
 
 		void Jogador::salvar(std::ostringstream* entrada)
@@ -109,11 +129,11 @@ namespace Entidades {
 		{
 			if(e){
 				if (e->getId() == Entidades::ID::inimigo_raiva) {
-					// arrumar pra quando colisão é na direita !! 
 					setPosition(position.x - 50, position.y);
 				}
 				if (e->getId() == Entidades::ID::plataforma) {
-					setAtrito(0.25f);
+					isGrounded = true;
+					setAtrito(0.25);
 				}
 			}
 		}
@@ -141,6 +161,15 @@ namespace Entidades {
 				lancamento = 0;
 			}
 		}
+		void Jogador::pular()
+		{
+			if (isGrounded) {
+				float jumpSpeed = sqrtf(2.0f * gravityScale * 0.2 * ALTURA_PULO);
+				currentVelocity.y = -jumpSpeed;
+				isGrounded = false;
+			}
+		}
+
 		bool Jogador::getFacingRight() const
 		{
 			return facingRight;
@@ -148,6 +177,10 @@ namespace Entidades {
 		void Jogador::setFacingRight(const bool b)
 		{
 			facingRight = b;
+		}
+		bool Jogador::getIsGrounded()
+		{
+			return isGrounded;
 		}
 		Listas::ListaEntidades* Jogador::getProjeteis()
 		{

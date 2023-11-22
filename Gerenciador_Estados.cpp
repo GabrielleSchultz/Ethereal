@@ -19,7 +19,7 @@ namespace Gerenciadores
 
 		Acoes_Pendentes* aux_pendencia = nullptr;
 		while (lista_pendencias.size() != 0) {
-			aux_pendencia = &lista_pendencias.back();
+			aux_pendencia = lista_pendencias.back();
 			lista_pendencias.pop_back();
 			delete(aux_pendencia);
 		}
@@ -42,45 +42,54 @@ namespace Gerenciadores
 		case Estados::Tipo::GameState:
 		{
 			novo_estado = new Estados::GameState();
-			push(static_cast<Estados::Estado*>(novo_estado));
+			vetor_estados.push_back(static_cast<Estados::Estado*>(novo_estado));
 		}
 		break;
 
 		case Estados::Tipo::MenuPrincipal:
 		{
 			novo_estado = new Estados::Menus::MenuPrincipal();
-			push(static_cast<Estados::Estado*>(novo_estado));
+			vetor_estados.push_back(static_cast<Estados::Estado*>(novo_estado));
 		}
 		break;
 
 		case Estados::Tipo::MenuPause:
 		{
 			novo_estado = new Estados::Menus::MenuPause();
-			push(static_cast<Estados::Estado*>(novo_estado));
+			vetor_estados.push_back(static_cast<Estados::Estado*>(novo_estado));
 		}
 		break;
 		case Estados::Tipo::Ranking:
 		{
 			novo_estado = new Estados::Menus::MenuRanking();
-			push(static_cast<Estados::Estado*>(novo_estado));
+			vetor_estados.push_back(static_cast<Estados::Estado*>(novo_estado));
 		}
 		break;
 		}
 	}
 
-	void Gerenciador_Estados::push(Estados::Estado* estado)
+	void Gerenciador_Estados::push(Estados::Tipo id)
 	{
-		vetor_estados.push_back(estado);
+		Acoes_Pendentes* aux = new Acoes_Pendentes;
+		aux->acao = Push;
+		aux->ID = id;
+		lista_pendencias.push_back(aux);
 	}
 
 	void Gerenciador_Estados::pop()
 	{
-		vetor_estados.pop_back();
+		Acoes_Pendentes* aux = new Acoes_Pendentes;
+		aux->acao = Pop;
+		aux->ID = Estados::Tipo::vazio;
+		lista_pendencias.push_back(aux);
 	}
 
 	void Gerenciador_Estados::clear()
 	{
-		vetor_estados.clear();
+		Acoes_Pendentes* aux = new Acoes_Pendentes;
+		aux->acao = Push;
+		aux->ID = Estados::Tipo::vazio;
+		lista_pendencias.push_back(aux);
 	}
 
 	void Gerenciador_Estados::aplicar_pendencias()
@@ -88,12 +97,12 @@ namespace Gerenciadores
 		/*std::vector <Acoes_Pendentes>::iterator it;
 
 		for (it = lista_pendencias.begin(); it != lista_pendencias.end(); it++)*/
-		for(Acoes_Pendentes it : lista_pendencias)
+		for(Acoes_Pendentes *it : lista_pendencias)
 		{
-			switch (it.acao)
+			switch (it->acao)
 			{
 			case Push:
-				criar_estado(it.ID);
+				criar_estado(it->ID);
 				break;
 			case Pop:
 				pop();

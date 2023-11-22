@@ -24,7 +24,7 @@ namespace Gerenciadores {
 		};
 
 		std::vector<Estados::Estado*> vetor_estados;
-		std::vector <Acoes_Pendentes> lista_pendencias;
+		std::vector <Acoes_Pendentes*> lista_pendencias;
 
 		static Gerenciador_Estados* instancia_pGE;
 
@@ -37,7 +37,7 @@ namespace Gerenciadores {
 		bool isEmpty() const;
 
 	private:
-		void push(Estados::Estado* estado);
+		void push(Estados::Tipo id);
 		void pop();
 		void clear();
 		void aplicar_pendencias();

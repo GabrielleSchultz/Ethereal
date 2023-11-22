@@ -8,6 +8,7 @@ namespace Estados
 {
 	enum class Tipo
 	{
+		vazio,
 		GameState, //gameplay
 		TitleScreen, 
 		MenuPrincipal,

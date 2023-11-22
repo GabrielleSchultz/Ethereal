@@ -175,16 +175,16 @@
       <Filter>Headers\Listas</Filter>
     </ClInclude>
     <ClInclude Include="Menu.h">
-      <Filter>Headers\Menu</Filter>
+      <Filter>Headers\Estados\Menu</Filter>
     </ClInclude>
     <ClInclude Include="MenuFases.h">
-      <Filter>Headers\Menu</Filter>
+      <Filter>Headers\Estados\Menu</Filter>
     </ClInclude>
     <ClInclude Include="MenuPrincipal.h">
-      <Filter>Headers\Menu</Filter>
+      <Filter>Headers\Estados\Menu</Filter>
     </ClInclude>
     <ClInclude Include="MenuRanking.h">
-      <Filter>Headers\Menu</Filter>
+      <Filter>Headers\Estados\Menu</Filter>
     </ClInclude>
     <ClInclude Include="Obstaculo.h">
       <Filter>Headers\Entidade\Obstaculo</Filter>
@@ -220,10 +220,10 @@
       <Filter>Headers\Entidade\Personagem\Inimigo</Filter>
     </ClInclude>
     <ClInclude Include="MenuPause.h">
-      <Filter>Headers\Menu</Filter>
+      <Filter>Headers\Estados\Menu</Filter>
     </ClInclude>
     <ClInclude Include="Selecao.h">
-      <Filter>Headers\Menu</Filter>
+      <Filter>Headers\Estados\Menu</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -287,11 +287,11 @@
     <Filter Include="Headers\Listas">
       <UniqueIdentifier>{f8ecef71-e78b-40e6-999c-cafd4151de51}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Headers\Menu">
-      <UniqueIdentifier>{6d375dd3-2163-486b-82d2-440007b96f48}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Sources\Entidade\Personagem\Inimigo">
       <UniqueIdentifier>{e7842873-45e2-4873-8987-9380d0b7592d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Headers\Estados\Menu">
+      <UniqueIdentifier>{6d375dd3-2163-486b-82d2-440007b96f48}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>

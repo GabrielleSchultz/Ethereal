@@ -61,5 +61,10 @@ namespace Entidades {
 			direction.x = x;
 			direction.y = y;
 		}
+		void Dinamica::setVelocidade(float x, float y)
+		{
+			currentVelocity.x = x;
+			currentVelocity.y = y;
+		}
 	}
 }

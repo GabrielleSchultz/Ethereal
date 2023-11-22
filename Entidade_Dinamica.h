@@ -27,6 +27,7 @@ namespace Entidades {
 			void setAtrito(const float at);
 			void setDirection(const Math::Vector2Df direcao);
 			void setDirection(float x, float y);
+			void setVelocidade(float x, float y);
 			//gets
 			float getAtrito() const;
 			Math::Vector2Df getDirection() const;

@@ -2,11 +2,18 @@
 #include "Fase.h"
 #include "Projetil.h"
 
+namespace Entidades {
+	namespace Personagens {
+		class Vinganca;
+	}
+}
+
 namespace Fases {
 	class Segunda_Fase : public Fase
 	{
 	private:
-
+		Listas::ListaEntidades chefoes;
+		Entidades::Personagens::Vinganca* boss;
 	public:
 		Segunda_Fase();
 		~Segunda_Fase();

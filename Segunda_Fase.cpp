@@ -6,8 +6,10 @@
 #include <fstream>
 #include <iostream>
 
-Fases::Segunda_Fase::Segunda_Fase():
-	Fase()
+Fases::Segunda_Fase::Segunda_Fase() :
+	Fase(), 
+	chefoes(), 
+	boss(nullptr)
 {
 }
 
@@ -34,7 +36,17 @@ void Fases::Segunda_Fase::executar(float dt)
 			aux = it.operator*();
 			//aux->update(dt);
 			aux->executar(dt);
-			if (static_cast<Entidades::Personagens::Personagem*>(aux)->getNumVidas() <= 0) {
+			if (!static_cast<Entidades::Personagens::Personagem*>(aux)->getVivo()) {
+				if (aux->getId() == Entidades::ID::boss) {
+					Listas::Lista<Entidades::Entidade>::Iterador it_boss = chefoes.get_primeiro();
+					if (chefoes.getTamanho() > 1) {
+						it_boss.operator++();
+						boss = static_cast<Entidades::Personagens::Vinganca*>(it_boss.operator*());
+						inimigos.incluir(boss);
+					}
+					chefoes.remover(aux);
+					//std::cout << "chefão morreu" << std::endl;
+				}
 				inimigos.remover(aux);
 				delete aux;
 				static_cast<Entidades::Personagens::Jogador*>(jogador)->operator++(100);
@@ -49,6 +61,12 @@ void Fases::Segunda_Fase::executar(float dt)
 			aux->update(dt);
 			//static_cast<Entidades::Obstaculos::Plataforma*>(aux)->obstacular(static_cast<Entidades::Personagens::Jogador*>(jogador));
 		}
+
+		if (!static_cast<Entidades::Personagens::Personagem*>(jogador)->getVivo()) {
+			jogadores.remover(jogador);
+			delete jogador;
+			// bool fim de fase ?? -> esperar menu pra ver
+		}
 	}
 
 	pGerenciadorGrafico->desenharEnte("Assets/Backgrounds/Stars Small_1.png", Math::Vector2Df(0, 0));
@@ -62,24 +80,50 @@ void Fases::Segunda_Fase::criar_inimigos()
 {
 	srand(time(NULL));
 
-	Entidades::Personagens::Raiva* raivinha = nullptr;
-	for (int i = 0; i < rand() % 2 + 3; i++) {
-		std::cout << "criou raiva" << std::endl;
-		raivinha = new Entidades::Personagens::Raiva();
-		if (raivinha)
+	int i = 0;
+
+	Entidades::Personagens::Raiva* raiva = nullptr;
+	for (i = 0; i < rand() % 2 + 3; i++) {
+		raiva = new Entidades::Personagens::Raiva();
+		if (raiva)
 		{
-			raivinha->setPosition((float)700 + 64 * i, 200);
-			inimigos.incluir(raivinha);
+			raiva->setPosition((float)700 + 64 * i, 200);
+			inimigos.incluir(raiva);
 		}
 	}
 
-	Entidades::Personagens::Vinganca* boss = new Entidades::Personagens::Vinganca();
-	boss->setPosition(600, 600);
+	for (i = 0; i < rand() % 2 + 3; i++) {
+		Entidades::Personagens::Vinganca* chefao = new Entidades::Personagens::Vinganca(50 * i + 50, 25 * i + 25);
+		chefao->setPosition(1000, 0);
+		chefoes.incluir(chefao);
+		//std::cout << "criou um chefão" << std::endl;
+	}
+
+	// um chefão por vez!
+	Listas::Lista<Entidades::Entidade>::Iterador it = chefoes.get_primeiro();
+	boss = static_cast<Entidades::Personagens::Vinganca*>(it.operator*());
 	inimigos.incluir(boss);
 }
 
 void Fases::Segunda_Fase::criar_obstaculos()
 {
+	srand(time(NULL));
+	int i = 0, x = 15, qtd_pocas = rand() % 6 + 3;
+
+	Entidades::Obstaculos::Poca_Lagrimas* poca = nullptr;
+	for (i = 0; i < qtd_pocas; i++, x++) {
+		poca = new Entidades::Obstaculos::Poca_Lagrimas(Math::Vector2Df(x * 32.f + 16.f, 624.f), "Assets/Sprites/top_ground_sprite.png");
+		if (poca)
+			obstaculos.incluir(poca);
+	}
+
+	Entidades::Obstaculos::Plataforma* plataforma = nullptr;
+	for (i = 0; i < 8 - qtd_pocas; i++, x++) {
+		plataforma = new Entidades::Obstaculos::Plataforma(Math::Vector2Df(x * 32.f + 16.f, 624.f), "Assets/Sprites/middle_ground_sprite.png");
+		if (plataforma)
+			obstaculos.incluir(plataforma);
+	}
+
 }
 
 void Fases::Segunda_Fase::criar_cenario(std::string file_path)
@@ -100,8 +144,9 @@ void Fases::Segunda_Fase::criar_cenario(std::string file_path)
 		{
 			switch (simbolo)
 			{
+				// plataforma
 			case '#':
-				aux = static_cast<Entidades::Entidade*>(new Entidades::Obstaculos::Plataforma(Math::Vector2Df(j * 32.f, i * 32.f), "Assets/Sprites/middle_ground_sprite.png"));
+				aux = static_cast<Entidades::Entidade*>(new Entidades::Obstaculos::Plataforma(Math::Vector2Df(j * 32.f + 16.f, i * 32.f + 16.f), "Assets/Sprites/middle_ground_sprite.png"));
 				if (aux)
 					obstaculos.incluir(aux);
 
@@ -112,12 +157,6 @@ void Fases::Segunda_Fase::criar_cenario(std::string file_path)
 				break;
 			case 'B':
 				criar_jogador('B', Math::Vector2Df(j * 32.f, i * 32.f));
-
-				break;
-			case '~':
-				aux = static_cast<Entidades::Entidade*>(new Entidades::Obstaculos::Poca_Lagrimas(Math::Vector2Df(j * 32.f, i * 32.f), "Assets/Sprites/top_ground_sprite.png"));
-				if (aux)
-					obstaculos.incluir(aux);
 
 				break;
 			default:

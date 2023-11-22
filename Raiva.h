@@ -9,7 +9,7 @@ namespace Entidades {
 			float raio;
 			float agilidade;
 		public:
-			Raiva(int nv = 10, int mal = 0, const char* texturePath = "Assets/Sprites/anger_teste.png", ID id = ID::inimigo_raiva);
+			Raiva(int nv = 10, int mal = 1, const char* texturePath = "Assets/Sprites/anger_teste.png", ID id = ID::inimigo_raiva);
 			~Raiva();
 			void executar();
 			void salvar(std::ostringstream* entrada);

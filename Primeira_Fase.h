@@ -6,7 +6,7 @@ namespace Fases {
 	class Primeira_Fase : public Fase
 	{
 	private:
-
+		// portal 
 	public:
 		Primeira_Fase();
 		~Primeira_Fase();

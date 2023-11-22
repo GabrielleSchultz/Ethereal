@@ -1,16 +1,22 @@
 #include "Tristeza.h"
 
 #define FREQUENCIA_LANCAMENTO 1000
+#define MOVIMENTACAO 10
 
 Entidades::Personagens::Tristeza::Tristeza(int nv, int mal, const char* texturePath, ID id) :
 	Inimigo(nv, mal, texturePath, id),
 	lancamento(0),
-	projeteis()
+	projeteis(),
+	x_maximo(0),
+	x_minimo(0)
 {
+	setDirection(1, 0);
+	setVelocidade(0.05, 0);
 }
 
 Entidades::Personagens::Tristeza::~Tristeza()
 {
+	projeteis.clear();
 }
 
 void Entidades::Personagens::Tristeza::executar()
@@ -19,6 +25,8 @@ void Entidades::Personagens::Tristeza::executar()
 
 void Entidades::Personagens::Tristeza::danificar(Jogador* p)
 {
+	if (p)
+		p->setNumVidas(p->getNumVidas() - nivel_maldade);
 }
 
 void Entidades::Personagens::Tristeza::salvar(std::ostringstream* entrada)
@@ -36,17 +44,25 @@ void Entidades::Personagens::Tristeza::update(float dt)
 		lancamento = 0;
 	}
 	lancamento++;
-	
+
 	//projeteis.executar(dt);
 	Listas::Lista<Entidades::Entidade>::Iterador it;
 	Entidades::Entidade* aux = nullptr;
 	int i = 0;
 	for (it = projeteis.get_primeiro(), i = 0; i < projeteis.getTamanho(); it.operator++(), i++) {
 		aux = it.operator*();
-		if(aux != nullptr){
+		if (aux != nullptr) {
 			aux->update(dt);
 		}
 	}
+
+	if (position.x > x_maximo)
+		setDirection(-1, 0);
+	else if (position.x < x_minimo)
+		setDirection(1, 0);
+
+	setPosition( Math::Vector2Df(position.x + currentVelocity.x * dt * direction.x, position.y));
+
 	desenhar();
 }
 
@@ -62,9 +78,19 @@ void Entidades::Personagens::Tristeza::lancar_projetil()
 
 void Entidades::Personagens::Tristeza::colidir(Entidades::Entidade* e)
 {
+	if (e) {
+		if (e->getId() == Entidades::ID::jogador)
+			danificar(static_cast<Entidades::Personagens::Jogador*>(e));
+	}
 }
 
 Listas::ListaEntidades* Entidades::Personagens::Tristeza::getProjeteis()
 {
 	return &projeteis;
+}
+
+void Entidades::Personagens::Tristeza::setMovimentacao(const float x)
+{
+	x_minimo = x - MOVIMENTACAO;
+	x_maximo = x + MOVIMENTACAO;
 }

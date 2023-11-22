@@ -9,6 +9,8 @@ namespace Entidades {
 		private:
 			Listas::ListaEntidades projeteis;
 			int lancamento;
+			float x_maximo;
+			float x_minimo;
 		public:
 			Tristeza(int nv = 10, int mal = 1, const char* texturePath = "Assets/Sprites/sadness_teste.png", ID id = ID::inimigo_tristeza);
 			~Tristeza();
@@ -19,6 +21,7 @@ namespace Entidades {
 			void lancar_projetil();
 			void colidir(Entidades::Entidade* e);
 			Listas::ListaEntidades* getProjeteis();
+			void setMovimentacao(const float x);
 		};
 	}
 }

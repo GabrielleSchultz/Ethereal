@@ -6,7 +6,7 @@
 #include <fstream>
 #include <iostream>
 
-Fases::Primeira_Fase::Primeira_Fase():
+Fases::Primeira_Fase::Primeira_Fase() :
 	Fase()
 {
 }
@@ -34,7 +34,7 @@ void Fases::Primeira_Fase::executar(float dt)
 			aux = it.operator*();
 			//aux->update(dt);
 			aux->executar(dt);
-			if (static_cast<Entidades::Personagens::Personagem*>(aux)->getNumVidas() <= 0) {
+			if (!static_cast<Entidades::Personagens::Personagem*>(aux)->getVivo()) {
 				inimigos.remover(aux);
 				delete aux;
 				static_cast<Entidades::Personagens::Jogador*>(jogador)->operator++(100);
@@ -48,6 +48,11 @@ void Fases::Primeira_Fase::executar(float dt)
 			aux = it.operator*();
 			aux->update(dt);
 			//static_cast<Entidades::Obstaculos::Plataforma*>(aux)->obstacular(static_cast<Entidades::Personagens::Jogador*>(jogador));
+		}
+
+		if (!static_cast<Entidades::Personagens::Personagem*>(jogador)->getVivo()) {
+			jogadores.remover(jogador);
+			delete jogador;
 		}
 	}
 
@@ -63,10 +68,11 @@ void Fases::Primeira_Fase::criar_inimigos()
 	srand(time(NULL));
 
 	Entidades::Personagens::Raiva* raivinha = nullptr;
-	for (int i = 0; i < rand() % 2 + 3; i++) {
-		std::cout << "criou raiva" << std::endl;
+	for (int i = 0; i < rand() % 3 + 3; i++) {
+		//std::cout << "criou raiva" << std::endl;
+		// posição aleatória
 		raivinha = new Entidades::Personagens::Raiva();
-		if(raivinha)
+		if (raivinha)
 		{
 			raivinha->setPosition((float)700 + 64 * i, 200);
 			inimigos.incluir(raivinha);
@@ -76,9 +82,10 @@ void Fases::Primeira_Fase::criar_inimigos()
 	Entidades::Personagens::Tristeza* sadness = nullptr;
 	for (int i = 0; i < rand() % 2 + 3; i++) {
 		sadness = new Entidades::Personagens::Tristeza();
-		if(sadness)
+		if (sadness)
 		{
-			sadness->setPosition((float)450 + 64 * i, 100 * (rand() % 2 + 1));
+			sadness->setPosition((float)450 + 64 * i, 100 * (rand() % 2 + 2));
+			sadness->setMovimentacao((float)450 + 64 * i);
 			inimigos.incluir(sadness);
 		}
 	}
@@ -86,6 +93,26 @@ void Fases::Primeira_Fase::criar_inimigos()
 
 void Fases::Primeira_Fase::criar_obstaculos()
 {
+	srand(time(NULL));
+	int i = 0, x = 12, qtd_espinhos = rand() % 3 + 3;
+
+	Entidades::Obstaculos::Espinhos* espinho = nullptr;
+	for (i = 0; i < qtd_espinhos; i++, x++) {
+		espinho = new Entidades::Obstaculos::Espinhos(Math::Vector2Df(x * 32.f + 16.f, 654.f));
+		if (espinho)
+			obstaculos.incluir(espinho);
+	}
+
+	Entidades::Obstaculos::Plataforma* plataforma_cima = nullptr;
+	Entidades::Obstaculos::Plataforma* plataforma_baixo = nullptr;
+	for (i = 0; i < 5 - qtd_espinhos; i++, x++) {
+		plataforma_cima = new Entidades::Obstaculos::Plataforma(Math::Vector2Df(x * 32.f + 16.f, 624.f), "Assets/Sprites/middle_ground_sprite.png");
+		plataforma_baixo = new Entidades::Obstaculos::Plataforma(Math::Vector2Df(x * 32.f + 16.f, 656.f), "Assets/Sprites/middle_ground_sprite.png");
+		if (plataforma_cima && plataforma_baixo) {
+			obstaculos.incluir(plataforma_cima);
+			obstaculos.incluir(plataforma_baixo);
+		}
+	}
 }
 
 void Fases::Primeira_Fase::criar_cenario(std::string file_path)
@@ -107,11 +134,10 @@ void Fases::Primeira_Fase::criar_cenario(std::string file_path)
 			switch (simbolo)
 			{
 			case '#':
-				//std::cout << "Criou plataforma" << j * 32 << i * 32 << std::endl;
-				aux = static_cast<Entidades::Entidade*>(new Entidades::Obstaculos::Plataforma(Math::Vector2Df(j * 32.f, i * 32.f), "Assets/Sprites/middle_ground_sprite.png"));
-				if (aux) 
+				aux = static_cast<Entidades::Entidade*>(new Entidades::Obstaculos::Plataforma(Math::Vector2Df(j * 32.f + 16.f, i * 32.f + 16.f), "Assets/Sprites/middle_ground_sprite.png"));
+				if (aux)
 					obstaculos.incluir(aux);
-				
+
 				break;
 			case 'P':
 				criar_jogador('P', Math::Vector2Df(j * 32.f, i * 32.f));
@@ -121,18 +147,12 @@ void Fases::Primeira_Fase::criar_cenario(std::string file_path)
 				criar_jogador('B', Math::Vector2Df(j * 32.f, i * 32.f));
 
 				break;
-			case '^':
-				aux = static_cast<Entidades::Entidade*>(new Entidades::Obstaculos::Espinhos(Math::Vector2Df(j * 32.f, 620), "Assets/Sprites/spike_cortado.png"));
-				if (aux)
-					obstaculos.incluir(aux);
-
-				break;
 			default:
 				break;
-				}
-				j++;
 			}
+			j++;
 		}
+	}
 
-		arq.close();
+	arq.close();
 }

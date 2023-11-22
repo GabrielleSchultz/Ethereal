@@ -13,6 +13,7 @@ namespace Listas {
 		void remover(Entidades::Entidade* pE);
 		void executar(float dt);
 		const int getTamanho() const;
+		void clear();
 		void salvar(std::ostringstream* entrada);
 		Lista<Entidades::Entidade>::Iterador get_primeiro() const;
 	};

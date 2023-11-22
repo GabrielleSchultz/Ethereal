@@ -2,7 +2,7 @@
 #include "Gerenciador_Grafico.h"
 #include "Gerenciador_Eventos.h"
 #include "Gerenciador_Colisoes.h"
-#include "Segunda_Fase.h"
+//#include "Segunda_Fase.h"
 #include "Primeira_Fase.h"
 
 #include "Raiva.h"
@@ -25,8 +25,8 @@ private:
 	float deltaTime;
 	float dt_multiplier; //constancia para diferentes framerates
 
-	Fases::Segunda_Fase pfase;
-	//Fases::Primeira_Fase pfase;
+	//Fases::Segunda_Fase pfase;
+	Fases::Primeira_Fase pfase;
 
 public:
 	Jogo();

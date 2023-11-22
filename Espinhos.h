@@ -9,7 +9,7 @@ namespace Entidades{
 		private:
 			int dano;
 		public:
-			Espinhos(Math::Vector2Df posicao = Math::Vector2Df(0.f, 0.f), const char* texture = "", ID id = ID::espinhos);
+			Espinhos(Math::Vector2Df posicao = Math::Vector2Df(0.f, 0.f), const char* texture = "Assets/Sprites/spike_cortado.png", ID id = ID::espinhos);
 			~Espinhos();
 			void obstacular(Entidades::Personagens::Jogador* p);
 			void espetar(Entidades::Personagens::Jogador* p);

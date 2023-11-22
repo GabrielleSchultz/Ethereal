@@ -31,6 +31,11 @@ const int Listas::ListaEntidades::getTamanho() const {
 	return LEs.getTamanho();
 }
 
+void Listas::ListaEntidades::clear()
+{
+	LEs.clear();
+}
+
 void Listas::ListaEntidades::salvar(std::ostringstream* entrada) {
 	Lista<Entidades::Entidade>::Iterador it;
 	Entidades::Entidade* aux = nullptr;

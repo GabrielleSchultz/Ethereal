@@ -74,7 +74,7 @@ namespace Entidades {
 				currentVelocity.x += acceleration * direction.x * dt;
 
 			if (!isGrounded)
-				position.y += gravityCataliser * dt;
+				position.y += 2 * gravityCataliser * dt;
 			
 			//atrito
 			if (currentVelocity.x > 0.f)
@@ -91,13 +91,13 @@ namespace Entidades {
 			}
 
 			if (currentVelocity.y < 0.f) {
-				currentVelocity.y += (gravidade*0.25f) + gravityCataliser * 4.f;
+				currentVelocity.y += gravidade + gravityCataliser * 4.f;
 				if (currentVelocity.y > 0.f)
 					currentVelocity.y = 0.f;
 			}
 
 			//std::cout << isGrounded << std::endl;
-			std::cout << currentVelocity.y << std::endl;
+			//std::cout << currentVelocity.y << std::endl;
 			setPosition(position.x + (currentVelocity.x * dt), position.y + currentVelocity.y);
 		}
 
@@ -127,11 +127,11 @@ namespace Entidades {
 		}
 		void Jogador::colidir(Entidades::Entidade* e)
 		{
-			if(e){
-				if (e->getId() == Entidades::ID::inimigo_raiva) {
-					setPosition(position.x - 50, position.y);
+			if (e) {
+				if (e->getId() == Entidades::ID::inimigo_raiva || e->getId() == Entidades::ID::inimigo_tristeza) {
+					setPosition(position + static_cast<Entidades::Personagens::Personagem*>(e)->getDirection() * 40);
 				}
-				if (e->getId() == Entidades::ID::plataforma) {
+				else if (e->getId() == Entidades::ID::plataforma) {
 					isGrounded = true;
 					setAtrito(0.25);
 				}

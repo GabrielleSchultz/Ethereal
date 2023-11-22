@@ -33,7 +33,11 @@ namespace Gerenciadores {
 	public:
 		~Gerenciador_Estados();
 		static Gerenciador_Estados* getGerenciadorEstados();
+		
+		// não tá como privado (???)
 		void criar_estado(Estados::Tipo id);
+		void aplicarAcoes_Pendentes();
+
 		void push(Estados::Estado* estado);
 		void pop();
 		void clear();

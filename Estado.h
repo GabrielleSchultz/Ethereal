@@ -18,11 +18,10 @@ namespace Estados
 	class Estado
 	{
 	protected:
-		Gerenciadores::Gerenciador_Estados* pGE;
+		static Gerenciadores::Gerenciador_Estados* pGE;
 		bool sair;
 
 	public:
-
 		Estado();
 		virtual ~Estado();
 		void request_push(Estados::Tipo id_estado);

@@ -10,8 +10,6 @@ namespace Fases
 		pGerenciadorColisoes(Gerenciadores::Colisoes::getGerenciador_Colisoes()),
 		inimigos(), obstaculos(), jogadores()
 	{
-		pGerenciadorGrafico->carregarTextura("Assets/Backgrounds/Stage1_full_background.png");
-		pGerenciadorGrafico->carregarTextura("Assets/Backgrounds/Stars Small_1.png");
 		pGerenciadorColisoes->setListaInimigos(&inimigos);
 		pGerenciadorColisoes->setListaJogadores(&jogadores);
 		pGerenciadorColisoes->setListaObstaculos(&obstaculos);

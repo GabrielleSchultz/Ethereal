@@ -2,11 +2,10 @@
 #include "Gerenciador_Grafico.h"
 
 class Ente {
-
 protected:
 	const int _id;
 	static int cont_id;	
-	Gerenciadores::Grafico* pGerenciadorGrafico;
+	static Gerenciadores::Grafico* pGerenciadorGrafico;
 
 public:
 	Ente();

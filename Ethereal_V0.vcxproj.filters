@@ -103,6 +103,9 @@
     <ClCompile Include="MenuPause.cpp">
       <Filter>Sources\Menu</Filter>
     </ClCompile>
+    <ClCompile Include="Selecao.cpp">
+      <Filter>Sources\Menu</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="ControleJogador.h">
@@ -217,6 +220,9 @@
       <Filter>Headers\Entidade\Personagem\Inimigo</Filter>
     </ClInclude>
     <ClInclude Include="MenuPause.h">
+      <Filter>Headers\Menu</Filter>
+    </ClInclude>
+    <ClInclude Include="Selecao.h">
       <Filter>Headers\Menu</Filter>
     </ClInclude>
   </ItemGroup>

@@ -74,12 +74,12 @@ void Entidades::Personagens::Vinganca::teletransporte() {
 
 	//#define WINDOW_LENGHT 1300
 	//#define WINDOW_HEIGHT 660
-	float x = rand() % 11 * 100 + 100;
-	float y = rand() % 5 * 100 + 100;
+	float x = rand() % 11 * 100.f + 100.f;
+	float y = rand() % 5 * 100.f + 100.f;
 	// melhorar depois
 	while (x == position.x || y == position.y) {
-		float x = rand() % 11 * 100 + 100;
-		float y = rand() % 5 * 100 + 100;
+		float x = rand() % 11 * 100.f + 100.f;
+		float y = rand() % 5 * 100.f + 100.f;
 	}
 	setPosition(Math::Vector2Df(x, y));
 	//std::cout << x << " " << y << std::endl;

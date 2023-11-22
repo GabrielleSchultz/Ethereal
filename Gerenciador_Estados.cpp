@@ -44,6 +44,12 @@ namespace Gerenciadores
 			push(static_cast<Estados::Estado*>(novo_estado));
 		}
 		break;
+		case Estados::Tipo::Ranking:
+		{
+			novo_estado = new Estados::Menus::MenuRanking();
+			push(static_cast<Estados::Estado*>(novo_estado));
+		}
+		break;
 		}
 	}
 
@@ -54,10 +60,34 @@ namespace Gerenciadores
 
 	void Gerenciador_Estados::pop()
 	{
+		vetor_estados.pop_back();
 	}
 
 	void Gerenciador_Estados::clear()
 	{
+		vetor_estados.clear();
+	}
+
+	void Gerenciador_Estados::aplicar_pendencias()
+	{
+		std::vector <Acoes_Pendentes>::iterator it;
+
+		for (it = lista_pendencias.begin(); it != lista_pendencias.end(); it++)
+		{
+			switch (it->acao)
+			{
+			case Push:
+				criar_estado(it->ID);
+				break;
+			case Pop:
+				pop();
+				break;
+			case Clear:
+				clear();
+				break;
+			}
+		}
+		lista_pendencias.clear();
 	}
 
 	bool Gerenciador_Estados::isEmpty() const

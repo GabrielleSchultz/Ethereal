@@ -34,10 +34,12 @@ namespace Gerenciadores {
 		~Gerenciador_Estados();
 		static Gerenciador_Estados* getGerenciadorEstados();
 		void criar_estado(Estados::Tipo id);
+		bool isEmpty() const;
+
+	private:
 		void push(Estados::Estado* estado);
 		void pop();
 		void clear();
-
-		bool isEmpty() const;
+		void aplicar_pendencias();
 	};
 }

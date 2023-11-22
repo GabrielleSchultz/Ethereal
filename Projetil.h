@@ -6,7 +6,6 @@ namespace Entidades {
 	class Projetil : public Entidade, public Tipo::Dinamica {
 
 	private:
-		int velocidade;
 		int dano;
 		Entidade* atirador;
 

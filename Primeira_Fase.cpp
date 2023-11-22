@@ -9,6 +9,8 @@
 Fases::Primeira_Fase::Primeira_Fase() :
 	Fase()
 {
+	pGerenciadorGrafico->carregarTextura("Assets/Backgrounds/Stage1_full_background.png");
+	pGerenciadorGrafico->carregarTextura("Assets/Backgrounds/Stars Small_1.png");
 }
 
 Fases::Primeira_Fase::~Primeira_Fase()
@@ -47,7 +49,6 @@ void Fases::Primeira_Fase::executar(float dt)
 		for (it = obstaculos.get_primeiro(), o = 0; o < obstaculos.getTamanho(); it.operator++(), o++) {
 			aux = it.operator*();
 			aux->update(dt);
-			//static_cast<Entidades::Obstaculos::Plataforma*>(aux)->obstacular(static_cast<Entidades::Personagens::Jogador*>(jogador));
 		}
 
 		if (!static_cast<Entidades::Personagens::Personagem*>(jogador)->getVivo()) {

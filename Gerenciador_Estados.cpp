@@ -9,6 +9,21 @@ namespace Gerenciadores
 	}
 	Gerenciador_Estados::~Gerenciador_Estados()
 	{
+		Estados::Estado* aux = nullptr;
+		while (vetor_estados.size() != 0) {
+			aux = vetor_estados.back();
+			delete(aux);
+			vetor_estados.pop_back();
+		}
+		vetor_estados.clear();
+
+		Acoes_Pendentes* aux2 = nullptr;
+		while (lista_pendencias.size() != 0) {
+			aux2 = &lista_pendencias.back();
+			delete(aux2);
+			lista_pendencias.pop_back();
+		}
+		lista_pendencias.clear();
 	}
 
 	Gerenciador_Estados* Gerenciador_Estados::getGerenciadorEstados()
@@ -70,14 +85,15 @@ namespace Gerenciadores
 
 	void Gerenciador_Estados::aplicar_pendencias()
 	{
-		std::vector <Acoes_Pendentes>::iterator it;
+		/*std::vector <Acoes_Pendentes>::iterator it;
 
-		for (it = lista_pendencias.begin(); it != lista_pendencias.end(); it++)
+		for (it = lista_pendencias.begin(); it != lista_pendencias.end(); it++)*/
+		for(Acoes_Pendentes it : lista_pendencias)
 		{
-			switch (it->acao)
+			switch (it.acao)
 			{
 			case Push:
-				criar_estado(it->ID);
+				criar_estado(it.ID);
 				break;
 			case Pop:
 				pop();

@@ -7,10 +7,12 @@
 #include <iostream>
 
 Fases::Segunda_Fase::Segunda_Fase() :
-	Fase(), 
-	chefoes(), 
+	Fase(),
+	chefoes(),
 	boss(nullptr)
 {
+	pGerenciadorGrafico->carregarTextura("Assets/Backgrounds/Stage2_full_background.png");
+	pGerenciadorGrafico->carregarTextura("Assets/Backgrounds/Stars-Big_1_2_PC.png");
 }
 
 Fases::Segunda_Fase::~Segunda_Fase()
@@ -19,7 +21,7 @@ Fases::Segunda_Fase::~Segunda_Fase()
 
 void Fases::Segunda_Fase::executar(float dt)
 {
-	pGerenciadorGrafico->desenhar("Assets/Backgrounds/Stage1_full_background.png", Math::Vector2Df(0, 0));
+	pGerenciadorGrafico->desenhar("Assets/Backgrounds/Stage2_full_background.png", Math::Vector2Df(0, 0));
 
 	Listas::Lista<Entidades::Entidade>::Iterador jog;
 	Entidades::Entidade* jogador = nullptr;
@@ -69,7 +71,7 @@ void Fases::Segunda_Fase::executar(float dt)
 		}
 	}
 
-	pGerenciadorGrafico->desenharEnte("Assets/Backgrounds/Stars Small_1.png", Math::Vector2Df(0, 0));
+	pGerenciadorGrafico->desenharEnte("Assets/Backgrounds/Stars-Big_1_2_PC.png", Math::Vector2Df(0, 0));
 }
 
 void Fases::Segunda_Fase::salvar(std::ostringstream* entrada)

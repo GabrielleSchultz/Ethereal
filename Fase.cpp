@@ -10,8 +10,6 @@ namespace Fases
 		pGerenciadorColisoes(Gerenciadores::Colisoes::getGerenciador_Colisoes()),
 		inimigos(), obstaculos(), jogadores()
 	{
-		pGerenciadorGrafico->carregarTextura("Assets/Backgrounds/Stage1_full_background.png");
-		pGerenciadorGrafico->carregarTextura("Assets/Backgrounds/Stars Small_1.png");
 		pGerenciadorColisoes->setListaInimigos(&inimigos);
 		pGerenciadorColisoes->setListaJogadores(&jogadores);
 		pGerenciadorColisoes->setListaObstaculos(&obstaculos);
@@ -32,7 +30,7 @@ namespace Fases
 	void Fases::Fase::criar_jogador(char type, Math::Vector2Df posicao)
 	{
 		Entidades::Personagens::Jogador* jogador = nullptr;
-		
+
 		if (type == 'P')
 		{
 			//cria novo jogador 1

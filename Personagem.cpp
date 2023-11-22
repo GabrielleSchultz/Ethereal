@@ -16,7 +16,8 @@ namespace Entidades {
 
 		bool Entidades::Personagens::Personagem::getVivo()
 		{
-			return num_vidas > 0;
+			// se saiu de tela morre :P
+			return (num_vidas > 0 && position.y < 700);
 		}
 
 		int Personagem::getNumVidas() const

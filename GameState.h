@@ -3,15 +3,15 @@
 #include "Fase.h"
 
 namespace Estados {
-	
+
 	class GameState : public Estado
 	{
 	private:
 		Fases::Fase* pFase;
 
 	public:
-
-
+		GameState();
+		~GameState();
 	};
 
 }

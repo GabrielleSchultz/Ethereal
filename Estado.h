@@ -19,7 +19,7 @@ namespace Estados
 	class Estado
 	{
 	protected:
-		Gerenciadores::Gerenciador_Estados* pGE;
+		static Gerenciadores::Gerenciador_Estados* pGE;
 		bool sair;
 
 	public:

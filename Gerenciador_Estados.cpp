@@ -40,32 +40,23 @@ namespace Gerenciadores
 		switch (id)
 		{
 		case Estados::Tipo::GameState:
-		{
 			novo_estado = new Estados::GameState();
-			vetor_estados.push_back(static_cast<Estados::Estado*>(novo_estado));
-		}
-		break;
+			break;
 
 		case Estados::Tipo::MenuPrincipal:
-		{
 			novo_estado = new Estados::Menus::MenuPrincipal();
-			vetor_estados.push_back(static_cast<Estados::Estado*>(novo_estado));
-		}
-		break;
+			break;
 
 		case Estados::Tipo::MenuPause:
-		{
 			novo_estado = new Estados::Menus::MenuPause();
-			vetor_estados.push_back(static_cast<Estados::Estado*>(novo_estado));
-		}
-		break;
+			break;
+
 		case Estados::Tipo::Ranking:
-		{
 			novo_estado = new Estados::Menus::MenuRanking();
-			vetor_estados.push_back(static_cast<Estados::Estado*>(novo_estado));
+			break;
 		}
-		break;
-		}
+
+		vetor_estados.push_back(static_cast<Estados::Estado*>(novo_estado));
 	}
 
 	void Gerenciador_Estados::push(Estados::Tipo id)
@@ -105,10 +96,10 @@ namespace Gerenciadores
 				criar_estado(it->ID);
 				break;
 			case Pop:
-				pop();
+				vetor_estados.pop_back();
 				break;
 			case Clear:
-				clear();
+				vetor_estados.clear();
 				break;
 			}
 		}
@@ -119,5 +110,4 @@ namespace Gerenciadores
 	{
 		return vetor_estados.empty();
 	}
-
 }

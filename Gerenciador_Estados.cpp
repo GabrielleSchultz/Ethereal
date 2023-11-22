@@ -9,19 +9,19 @@ namespace Gerenciadores
 	}
 	Gerenciador_Estados::~Gerenciador_Estados()
 	{
-		Estados::Estado* aux = nullptr;
+		Estados::Estado* aux_estado = nullptr;
 		while (vetor_estados.size() != 0) {
-			aux = vetor_estados.back();
-			delete(aux);
+			aux_estado = vetor_estados.back();
 			vetor_estados.pop_back();
+			delete(aux_estado);
 		}
 		vetor_estados.clear();
 
-		Acoes_Pendentes* aux2 = nullptr;
+		Acoes_Pendentes* aux_pendencia = nullptr;
 		while (lista_pendencias.size() != 0) {
-			aux2 = &lista_pendencias.back();
-			delete(aux2);
+			aux_pendencia = &lista_pendencias.back();
 			lista_pendencias.pop_back();
+			delete(aux_pendencia);
 		}
 		lista_pendencias.clear();
 	}

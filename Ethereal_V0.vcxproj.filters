@@ -103,7 +103,7 @@
     <ClCompile Include="MenuPause.cpp">
       <Filter>Sources\Menu</Filter>
     </ClCompile>
-    <ClCompile Include="Selecao.cpp">
+    <ClCompile Include="MenuSelecao.cpp">
       <Filter>Sources\Menu</Filter>
     </ClCompile>
   </ItemGroup>
@@ -222,7 +222,7 @@
     <ClInclude Include="MenuPause.h">
       <Filter>Headers\Estados\Menu</Filter>
     </ClInclude>
-    <ClInclude Include="Selecao.h">
+    <ClInclude Include="MenuSelecao.h">
       <Filter>Headers\Estados\Menu</Filter>
     </ClInclude>
   </ItemGroup>

@@ -59,8 +59,8 @@ void Jogo::update()
 {
     updateDeltaTime();
     m.desenhar();
-    //if (pGerenciadorEstados->isEmpty())
-     //   pGerenciadorGrafico->closeWindow();
+   //if (pGerenciadorEstados->isEmpty())
+     //pGerenciadorGrafico->closeWindow();
 }
 
 void Jogo::draw()

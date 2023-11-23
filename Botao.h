@@ -19,7 +19,7 @@ namespace Estados {
 				Botao(const Math::Vector2Df pos, Tipo tipo = Tipo::vazio);
 				~Botao();
 				void setPosicao(Math::Vector2Df pos);
-				void setTexto(std::string text);
+				void setTexto(const std::string text);
 				void desenhar();
 				void setSelecionado(bool b);
 				Estados::Tipo getTipo() const;

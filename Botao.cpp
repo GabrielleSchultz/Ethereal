@@ -37,7 +37,7 @@ void Botao::setPosicao(Math::Vector2Df pos)
 	texto.setPosition(pos.x, pos.y);
 }
 
-void Botao::setTexto(std::string text)
+void Botao::setTexto(const std::string text)
 {
 	texto.setString(text);
 }

@@ -21,7 +21,6 @@ namespace Estados {
 		public:
 			Menu();
 			~Menu();
-			//void inicializaIterator();
 			void selecionarCima();
 			void selecionarBaixo();
 			Estados::Tipo getTipoEstado() const;

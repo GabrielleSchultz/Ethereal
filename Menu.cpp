@@ -15,31 +15,14 @@ Estados::Menus::Menu::Menu() :
 
 Estados::Menus::Menu::~Menu()
 {
-    /*for (it_botao = botoes.begin(); it_botao != botoes.end(); it_botao++) {
-        delete(*it_botao);
-    }*/
     for (botao_atual = 0; botao_atual < botoes.size(); botao_atual++) {
         delete botoes[botao_atual];
     }
     botoes.clear();
 }
 
-/*void Estados::Menus::Menu::inicializaIterator()
-{
-    try {
-        it_botao = botoes.begin();
-        (*it_botao)->setSelecionado(true);
-    }
-    catch (const std::exception& e)
-    {
-        std::cerr << e.what() << std::endl;
-        exit(1); //muito extremo
-    }
-}*/
-
 void Estados::Menus::Menu::selecionarCima()
 {
-    //std::cout << botao_atual << std::endl;
     botoes[botao_atual]->setSelecionado(false);
     if (botao_atual > 0)
         botao_atual--;

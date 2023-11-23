@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 ﻿  Botao.cpp
   ControleJogador.cpp
   ControleMenu.cpp
@@ -5,9 +6,12 @@
   Entidade.cpp
   Estado.cpp
   Fase.cpp
+=======
+﻿  Estado.cpp
+>>>>>>> 678bcb63f0d02d02b4b9f795bbd16055f6957714
   GameState.cpp
-  Gerenciador_Colisoes.cpp
   Gerenciador_Estados.cpp
+<<<<<<< HEAD
   Gerenciador_Eventos.cpp
   Gerenciador_Grafico.cpp
   Inimigo.cpp
@@ -48,3 +52,16 @@ C:\Users\miche_bb3fmdp\OneDrive\Documentos\GitHub\Ethereal\Vinganca.cpp(73,12): 
   Gerando Código...
   LINK : C:\Users\miche_bb3fmdp\OneDrive\Documentos\GitHub\Ethereal\x64\Debug\Ethereal_V0.exe não encontrado ou não compilado pelo o último link incremental; executando link completo
   Ethereal_V0.vcxproj -> C:\Users\miche_bb3fmdp\OneDrive\Documentos\GitHub\Ethereal\x64\Debug\Ethereal_V0.exe
+=======
+  Jogador.cpp
+C:\Users\gabri\source\repos\GabrielleSchultz\Ethereal\Jogador.cpp(166,55): warning C4244: 'argumento': conversão de 'double' para 'float', possível perda de dados
+  Menu.cpp
+  MenuFases.cpp
+  MenuPrincipal.cpp
+  MenuPause.cpp
+  MenuRanking.cpp
+  MenuSelecao.cpp
+  Tristeza.cpp
+  Gerando Código...
+  Ethereal_V0.vcxproj -> C:\Users\gabri\source\repos\GabrielleSchultz\Ethereal\x64\Debug\Ethereal_V0.exe
+>>>>>>> 678bcb63f0d02d02b4b9f795bbd16055f6957714

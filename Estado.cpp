@@ -1,8 +1,9 @@
 #include "Estado.h"
 #include "Gerenciador_Estados.h"
 
-Estados::Estado::Estado():
-	pGE(Gerenciadores::Gerenciador_Estados::getGerenciadorEstados())
+Gerenciadores::Gerenciador_Estados* Estados::Estado::pGE(Gerenciadores::Gerenciador_Estados::getGerenciadorEstados());
+
+Estados::Estado::Estado()
 {
 }
 

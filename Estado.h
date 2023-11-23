@@ -8,6 +8,7 @@ namespace Estados
 {
 	enum class Tipo
 	{
+		vazio,
 		GameState, //gameplay
 		TitleScreen, 
 		MenuPrincipal,
@@ -18,7 +19,7 @@ namespace Estados
 	class Estado
 	{
 	protected:
-		Gerenciadores::Gerenciador_Estados* pGE;
+		static Gerenciadores::Gerenciador_Estados* pGE;
 		bool sair;
 
 	public:

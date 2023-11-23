@@ -10,8 +10,8 @@ Entidades::Personagens::Tristeza::Tristeza(int nv, int mal, const char* textureP
 	x_maximo(0),
 	x_minimo(0)
 {
-	setDirection(1, 0);
-	setVelocidade(0.05, 0);
+	setDirection(1.f, 0);
+	setVelocidade(0.05f, 0);
 }
 
 Entidades::Personagens::Tristeza::~Tristeza()

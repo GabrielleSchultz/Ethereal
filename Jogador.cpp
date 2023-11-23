@@ -3,7 +3,6 @@
 #define FREQUENCIA_TIRO 100
 #define PLAYER_MAXVEL 4
 
-
 //jumping
 #define DURACAO_PULO 2
 #define ALTURA_PULO 128

@@ -13,6 +13,7 @@ namespace Estados {
 		public:
 			MenuPause();
 			~MenuPause();
+			void cria_botoes();
 		};
 
 	}

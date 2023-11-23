@@ -18,6 +18,9 @@ Grafico::Grafico()
 	janelaPrincipal->setView(cameraJogo);
 	if (!carregarTextura(SPRITE_ERROR))
 		exit(1);
+	fonte = new sf::Font;
+	if (!fonte->loadFromFile("Assets/Fonts/title.ttf"))
+		std::cout << "FONTE NÃO CARREGOU" << std::endl;
 }
 
 Grafico::~Grafico()
@@ -138,6 +141,21 @@ void Gerenciadores::Grafico::desenhar(const std::string filePath, Math::Vector2D
 	sprite.setTexture(*texture);
 
 	janelaPrincipal->draw(sprite);
+}
+
+void Gerenciadores::Grafico::desenharForma(sf::RectangleShape* rec)
+{
+	janelaPrincipal->draw(*rec);
+}
+
+void Gerenciadores::Grafico::desenharTexto(sf::Text* t)
+{
+	janelaPrincipal->draw(*t);
+}
+
+sf::Font* Gerenciadores::Grafico::getFonte() const
+{
+	return fonte;
 }
 
 bool Gerenciadores::Grafico::carregarTextura(const std::string filePath)

@@ -9,11 +9,12 @@ namespace Estados
 	enum class Tipo
 	{
 		vazio,
-		GameState, //gameplay
-		TitleScreen, 
+		GameState,
+		Gameover,
 		MenuPrincipal,
+		MenuSettings,
 		MenuPause,
-		Ranking
+		MenuRanking
 	};
 
 	class Estado

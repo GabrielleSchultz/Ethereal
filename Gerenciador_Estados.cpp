@@ -51,7 +51,7 @@ namespace Gerenciadores
 			novo_estado = new Estados::Menus::MenuPause();
 			break;
 
-		case Estados::Tipo::Ranking:
+		case Estados::Tipo::MenuRanking:
 			novo_estado = new Estados::Menus::MenuRanking();
 			break;
 		}
@@ -85,9 +85,6 @@ namespace Gerenciadores
 
 	void Gerenciador_Estados::aplicar_pendencias()
 	{
-		/*std::vector <Acoes_Pendentes>::iterator it;
-
-		for (it = lista_pendencias.begin(); it != lista_pendencias.end(); it++)*/
 		for(Acoes_Pendentes *it : lista_pendencias)
 		{
 			switch (it->acao)

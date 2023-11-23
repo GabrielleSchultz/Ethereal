@@ -13,6 +13,7 @@ namespace Estados {
 		public:
 			MenuRanking();
 			~MenuRanking();
+			void cria_botoes();
 		};
 
 	}

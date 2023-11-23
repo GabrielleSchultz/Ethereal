@@ -21,6 +21,7 @@ namespace Gerenciadores
 	private:
 		MapaTextura EntityTextures;
 		MapaTextura FontTextures;
+		sf::Font* fonte;
 		sf::RenderWindow* janelaPrincipal;
 		sf::View cameraJogo;
 
@@ -51,6 +52,10 @@ namespace Gerenciadores
 		//render
 		void desenharEnte(const std::string filePath, Math::Vector2Df pos);
 		void desenhar(const std::string filePath, Math::Vector2Df pos);
+		// pro botao
+		void desenharForma(sf::RectangleShape* rec);
+		void desenharTexto(sf::Text* t);
+		sf::Font* getFonte() const;
 		bool carregarTextura(const std::string filePath);
 		void deletarTexturas();
 		Math::Vector2Df getDimensao(std::string texturePath);

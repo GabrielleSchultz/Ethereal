@@ -1,13 +1,13 @@
 #pragma once
 #include "Controller.h"
 
-namespace Entidades{
+namespace Entidades {
 	namespace Personagens {
 		class Jogador;
 	}
 }
 
-namespace Controle{
+namespace Controle {
 
 	class ControleJogador : public Controller
 	{
@@ -22,7 +22,7 @@ namespace Controle{
 
 	public:
 
-		ControleJogador(Entidades::Personagens::Jogador* pJog = nullptr);
+		ControleJogador();
 		~ControleJogador() { pJogador = nullptr; }
 
 		void notifyKeyPressed(std::string key);

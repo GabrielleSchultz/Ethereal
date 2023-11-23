@@ -11,6 +11,7 @@ public:
 	Ente();
 	virtual ~Ente();
 	virtual void executar(float dt) = 0;
-	virtual void desenhar(){}
+	virtual void desenhar() {}
+	virtual void update(float dt){}
 	virtual void salvar(std::ostringstream* entrada) = 0;
 };

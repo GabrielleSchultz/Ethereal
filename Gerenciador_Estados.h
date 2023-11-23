@@ -35,8 +35,6 @@ namespace Gerenciadores {
 		static Gerenciador_Estados* getGerenciadorEstados();
 		void criar_estado(Estados::Tipo id);
 		bool isEmpty() const;
-
-	private:
 		void push(Estados::Tipo id);
 		void pop();
 		void clear();

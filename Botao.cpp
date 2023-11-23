@@ -4,9 +4,11 @@
 #define TAMANHOX 600.f
 #define TAMANHOY 80.f
 
-Gerenciadores::Grafico* Estados::Menus::Botao::pGG(Gerenciadores::Grafico::getGerenciador_Grafico());
+using namespace Estados::Menus::ElementosGraficos;
 
-Estados::Menus::Botao::Botao(const Math::Vector2Df pos, Estados::Tipo tipo) :
+Gerenciadores::Grafico* Estados::Menus::ElementosGraficos::Botao::pGG(Gerenciadores::Grafico::getGerenciador_Grafico());
+
+Botao::Botao(const Math::Vector2Df pos, Estados::Tipo tipo) :
 	botao(sf::Vector2f(TAMANHOX, TAMANHOY)),
 	texto(),
 	tipo_estado(tipo),
@@ -25,28 +27,28 @@ Estados::Menus::Botao::Botao(const Math::Vector2Df pos, Estados::Tipo tipo) :
 	texto.setOutlineThickness(1.f);
 }
 
-Estados::Menus::Botao::~Botao() {
+Botao::~Botao() {
 
 }
 
-void Estados::Menus::Botao::setPosicao(Math::Vector2Df pos)
+void Botao::setPosicao(Math::Vector2Df pos)
 {
 	botao.setPosition(pos.x, pos.y);
 	texto.setPosition(pos.x, pos.y);
 }
 
-void Estados::Menus::Botao::setTexto(std::string text)
+void Botao::setTexto(std::string text)
 {
 	texto.setString(text);
 }
 
-void Estados::Menus::Botao::desenhar() {
+void Botao::desenhar() {
 	pGG->desenharForma(&botao);
 	pGG->desenharTexto(&texto);
 }
 
 
-void Estados::Menus::Botao::setSelecionado(bool b)
+void Botao::setSelecionado(bool b)
 {
 	selecionado = b;
 	if (b) {
@@ -59,7 +61,7 @@ void Estados::Menus::Botao::setSelecionado(bool b)
 	}
 }
 
-Estados::Tipo Estados::Menus::Botao::getTipo() const
+Estados::Tipo Botao::getTipo() const
 {
 	return tipo_estado;
 }

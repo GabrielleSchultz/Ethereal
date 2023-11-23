@@ -11,8 +11,8 @@ namespace Estados {
 	namespace Menus {
 		class Menu : public Estados::Estado {
 		protected:
-			Texto titulo;
-			std::vector<Botao*> botoes;
+			ElementosGraficos::Texto titulo;
+			std::vector<ElementosGraficos::Botao*> botoes;
 			int botao_atual;
 
 			Controle::ControleMenu* pControles;
@@ -26,7 +26,7 @@ namespace Estados {
 			void selecionarBaixo();
 			Estados::Tipo getTipoEstado() const;
 			void executar(float dt);
-			virtual void desenhar();
+			virtual void desenhar() = 0;
 			virtual void cria_botoes() = 0;
 		};
 	}

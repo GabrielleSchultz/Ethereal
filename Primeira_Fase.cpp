@@ -41,7 +41,7 @@ void Fases::Primeira_Fase::executar(float dt)
 				delete aux;
 				static_cast<Entidades::Personagens::Jogador*>(jogador)->operator++(100);
 			}
-			if (aux->getId() == Entidades::ID::inimigo_raiva) {
+			else if (aux->getId() == Entidades::ID::inimigo_raiva) {
 				static_cast<Entidades::Personagens::Raiva*>(aux)->perseguir(static_cast<Entidades::Personagens::Jogador*>(jogador));
 			}
 		}

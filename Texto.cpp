@@ -1,8 +1,9 @@
 #include "Texto.h"
+using namespace Estados::Menus::ElementosGraficos;
 
-Gerenciadores::Grafico* Estados::Menus::Texto::pGG(Gerenciadores::Grafico::getGerenciador_Grafico());
+Gerenciadores::Grafico* Texto::pGG(Gerenciadores::Grafico::getGerenciador_Grafico());
 
-Estados::Menus::Texto::Texto()
+Texto::Texto()
 {
 	texto.setFont(*pGG->getFonte());
 	texto.setCharacterSize(80);
@@ -13,27 +14,27 @@ Estados::Menus::Texto::Texto()
 	//texto.setOutlineThickness(5.f);
 }
 
-Estados::Menus::Texto::~Texto()
+Texto::~Texto()
 {
 	pGG = nullptr;
 }
 
-void Estados::Menus::Texto::setPosicao(Math::Vector2Df pos)
+void Texto::setPosicao(Math::Vector2Df pos)
 {
 	texto.setPosition(pos.x, pos.y);
 }
 
-void Estados::Menus::Texto::setTamanho(int tam)
+void Texto::setTamanho(int tam)
 {
 	texto.setCharacterSize(tam);
 }
 
-void Estados::Menus::Texto::setTexto(std::string text)
+void Texto::setTexto(std::string text)
 {
 	texto.setString(text);
 }
 
-void Estados::Menus::Texto::desenhar()
+void Texto::desenhar()
 {
 	pGG->desenharTexto(&texto);
 }

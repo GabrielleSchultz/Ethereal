@@ -39,7 +39,7 @@ Estados::Menus::Menu::~Menu()
 
 void Estados::Menus::Menu::selecionarCima()
 {
-    std::cout << botao_atual << std::endl;
+    //std::cout << botao_atual << std::endl;
     botoes[botao_atual]->setSelecionado(false);
     if (botao_atual > 0)
         botao_atual--;
@@ -72,10 +72,8 @@ void Estados::Menus::Menu::desenhar()
 {
     pGG->desenhar("Assets/Backgrounds/Menu.png", Math::Vector2Df(0, 0));
     titulo.desenhar();
-    /*for (it_botao = botoes.begin(); it_botao != botoes.end(); it_botao++) {
-        (*it_botao)->desenhar();
-    }*/
-    for (int i = 0; i < botoes.size(); i++) {
+    for (int i = 0; i < botoes.size(); i++)
+    {
         botoes[i]->desenhar();
     }
 }

@@ -141,6 +141,7 @@
     <ClCompile Include="Entidade.cpp" />
     <ClCompile Include="Estado.cpp" />
     <ClCompile Include="Fase.cpp" />
+    <ClCompile Include="MenuGameOver.cpp" />
     <ClCompile Include="GameState.cpp" />
     <ClCompile Include="Gerenciador_Colisoes.cpp" />
     <ClCompile Include="Gerenciador_Estados.cpp" />
@@ -166,27 +167,25 @@
     <ClCompile Include="Projetil.cpp" />
     <ClCompile Include="Raiva.cpp" />
     <ClCompile Include="Segunda_Fase.cpp" />
-    <ClCompile Include="MenuSelecao.cpp" />
     <ClCompile Include="Texto.cpp" />
     <ClCompile Include="Tristeza.cpp" />
     <ClCompile Include="Vinganca.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Botao.h" />
-    <ClInclude Include="Constants.h" />
     <ClInclude Include="ControleJogador.h" />
     <ClInclude Include="ControleMenu.h" />
     <ClInclude Include="Controller.h" />
     <ClInclude Include="Entidade_Dinamica.h" />
     <ClInclude Include="Entidade.h" />
     <ClInclude Include="Estado.h" />
+    <ClInclude Include="MenuGameOver.h" />
     <ClInclude Include="GameState.h" />
     <ClInclude Include="Gerenciador_Colisoes.h" />
     <ClInclude Include="Gerenciador_Estados.h" />
     <ClInclude Include="Gerenciador_Eventos.h" />
     <ClInclude Include="Gerenciador_Grafico.h" />
     <ClInclude Include="Gerenciador_Inputs.h" />
-    <ClInclude Include="Globals.h" />
     <ClInclude Include="Inimigo.h" />
     <ClInclude Include="Jogador.h" />
     <ClInclude Include="Ente.h" />
@@ -208,7 +207,6 @@
     <ClInclude Include="Projetil.h" />
     <ClInclude Include="Raiva.h" />
     <ClInclude Include="Segunda_Fase.h" />
-    <ClInclude Include="MenuSelecao.h" />
     <ClInclude Include="Texto.h" />
     <ClInclude Include="Tristeza.h" />
     <ClInclude Include="Vector2D.h" />

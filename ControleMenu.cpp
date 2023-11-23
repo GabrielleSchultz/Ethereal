@@ -19,13 +19,13 @@ void Controle::ControleMenu::notifyKeyPressed(std::string key)
 	if (pMenu) {
 		if (key == para_cima)
 		{
-			std::cout << "vai pra cima" << std::endl;
+			//std::cout << "vai pra cima" << std::endl;
 			pMenu->selecionarCima();
 		}
 
 		if (key == para_baixo)
 		{
-			std::cout << "vai pra baixo" << std::endl;
+			//std::cout << "vai pra baixo" << std::endl;
 			pMenu->selecionarBaixo();
 		}
 
@@ -44,7 +44,7 @@ void Controle::ControleMenu::notifyKeyPressed(std::string key)
 void Controle::ControleMenu::notifyKeyReleased(std::string key)
 {
 	if (pMenu) {
-		std::cout << "tecla livre" << std::endl;
+		//std::cout << "tecla livre" << std::endl;
 	}
 	else
 		std::cout << "Controle::ControleMenu -> ponteiro nulo" << std::endl;

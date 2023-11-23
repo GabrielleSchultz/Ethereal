@@ -7,7 +7,7 @@ namespace Estados {
 
 		class MenuPrincipal : public Menu {
 		private:
-			Texto subtitulo;
+			ElementosGraficos::Texto subtitulo;
 
 		public:
 			MenuPrincipal();

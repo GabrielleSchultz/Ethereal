@@ -13,6 +13,7 @@ dt_multiplier(DELTA_TIME_FIX),
 m()
 {
     pGerenciadorGrafico->setWindowTitle(nome);
+    //pGerenciadorEstados->push(Estados::Tipo::MenuPrincipal);
     executar();
 }
 
@@ -58,8 +59,8 @@ void Jogo::update()
 {
     updateDeltaTime();
     m.desenhar();
-    if (pGerenciadorEstados->isEmpty())
-        pGerenciadorGrafico->closeWindow();
+    //if (pGerenciadorEstados->isEmpty())
+     //   pGerenciadorGrafico->closeWindow();
 }
 
 void Jogo::draw()

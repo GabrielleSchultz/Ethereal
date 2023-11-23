@@ -7,12 +7,13 @@ namespace Estados {
 
 		class MenuPrincipal : public Menu {
 		private:
-			//...
-
+			Texto subtitulo;
 
 		public:
 			MenuPrincipal();
 			~MenuPrincipal();
+			void cria_botoes();
+			void desenhar();
 		};
 
 	}

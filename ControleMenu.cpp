@@ -7,8 +7,6 @@ Controle::ControleMenu::ControleMenu() :
 	pMenu(nullptr)
 {
 	setKeyCommands("up", "down", "space");
-	// adicionar aqui, não achei onde adicionava o controle jogador (??)
-	pGerenciadorInput->adicionar_observer(this);
 }
 
 Controle::ControleMenu::~ControleMenu()
@@ -21,17 +19,21 @@ void Controle::ControleMenu::notifyKeyPressed(std::string key)
 	if (pMenu) {
 		if (key == para_cima)
 		{
+			std::cout << "vai pra cima" << std::endl;
 			pMenu->selecionarCima();
 		}
 
 		if (key == para_baixo)
 		{
+			std::cout << "vai pra baixo" << std::endl;
 			pMenu->selecionarBaixo();
 		}
 
 		if (key == enter)
 		{
-			// seleciona definitivamente
+			pMenu->request_pop();
+			if(pMenu->getTipoEstado() != Estados::Tipo::vazio)
+				pMenu->request_push(pMenu->getTipoEstado());
 		}
 	}
 	else
@@ -42,7 +44,7 @@ void Controle::ControleMenu::notifyKeyPressed(std::string key)
 void Controle::ControleMenu::notifyKeyReleased(std::string key)
 {
 	if (pMenu) {
-		// . . .
+		std::cout << "tecla livre" << std::endl;
 	}
 	else
 		std::cout << "Controle::ControleMenu -> ponteiro nulo" << std::endl;
@@ -57,6 +59,8 @@ void Controle::ControleMenu::setKeyCommands(std::string up, std::string down, st
 
 void Controle::ControleMenu::setMenu(Estados::Menus::Menu* m)
 {
-	if (m)
+	if (m){
 		pMenu = m;
+		pGerenciadorInput->adicionar_observer(this);
+	}
 }

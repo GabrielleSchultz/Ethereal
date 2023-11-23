@@ -1,45 +1,65 @@
 #include "Botao.h"
 
 #define TAMANHO_TEXTO 20
+#define TAMANHOX 600.f
+#define TAMANHOY 80.f
 
-Estados::Menus::Botao::Botao(const Math::Vector2Df tam, const Math::Vector2Df pos, const std::string tex) :
-	Ente(),
-	tamanho(tam),
-	posicao(pos),
-	textura(tex),
+Gerenciadores::Grafico* Estados::Menus::Botao::pGG(Gerenciadores::Grafico::getGerenciador_Grafico());
+
+Estados::Menus::Botao::Botao(const Math::Vector2Df pos, Estados::Tipo tipo) :
+	botao(sf::Vector2f(TAMANHOX, TAMANHOY)),
+	texto(),
+	tipo_estado(tipo),
 	selecionado(false)
 {
-	pGerenciadorGrafico->carregarTextura(textura);
+	botao.setOrigin(TAMANHOX / 2, TAMANHOY / 2);
+	botao.setFillColor(sf::Color::Transparent);
+	botao.setPosition(pos.x, pos.y);
+
+	texto.setOrigin(TAMANHOX / 2 - 50, TAMANHOY / 2 - 25);
+	texto.setFont(*pGG->getFonte());
+	texto.setFillColor(sf::Color::White);
+	texto.setOutlineColor(sf::Color::Black);
+	texto.setCharacterSize(30);
+	texto.setPosition(pos.x, pos.y);
+	texto.setOutlineThickness(1.f);
 }
 
 Estados::Menus::Botao::~Botao() {
 
 }
 
+void Estados::Menus::Botao::setPosicao(Math::Vector2Df pos)
+{
+	botao.setPosition(pos.x, pos.y);
+	texto.setPosition(pos.x, pos.y);
+}
+
 void Estados::Menus::Botao::setTexto(std::string text)
 {
 	texto.setString(text);
-	// pegar fonte
-	texto.setCharacterSize(TAMANHO_TEXTO);
-
-	sf::FloatRect textRect = texto.getLocalBounds();
-	texto.setOrigin(textRect.left + textRect.width / 2.0f, textRect.top + textRect.height / 2.0f);
-	texto.setPosition(posicao.x, posicao.y);
-	texto.setFillColor(sf::Color::White);
 }
 
 void Estados::Menus::Botao::desenhar() {
-	pGerenciadorGrafico->desenharForma(posicao, tamanho, textura);
-	pGerenciadorGrafico->desenharTexto(texto);
+	pGG->desenharForma(&botao);
+	pGG->desenharTexto(&texto);
 }
 
-void Estados::Menus::Botao::executar(float dt)
-{
-	desenhar();
-}
 
 void Estados::Menus::Botao::setSelecionado(bool b)
 {
 	selecionado = b;
-	// mudar cor texto dependendo se tá selecionado ou n (???)
+	if (b) {
+		texto.setFillColor(sf::Color::Black);
+		texto.setOutlineColor(sf::Color::White);
+	}
+	else {
+		texto.setFillColor(sf::Color::White);
+		texto.setOutlineColor(sf::Color::Black);
+	}
+}
+
+Estados::Tipo Estados::Menus::Botao::getTipo() const
+{
+	return tipo_estado;
 }

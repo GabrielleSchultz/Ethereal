@@ -2,6 +2,7 @@
 
 Estados::Menus::MenuFases::MenuFases()
 {
+
 }
 
 Estados::Menus::MenuFases::~MenuFases()

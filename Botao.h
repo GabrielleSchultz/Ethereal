@@ -1,28 +1,27 @@
 #pragma once
 
-#include "Ente.h"
+#include "Gerenciador_Grafico.h"
+#include "Estado.h"
 
 namespace Estados {
 	namespace Menus {
-		class Botao : public Ente {
+		class Botao{
 		private:
-			Math::Vector2Df tamanho;
-			Math::Vector2Df posicao;
-			const std::string textura;
-
+			static Gerenciadores::Grafico* pGG;
+			sf::RectangleShape botao;
 			sf::Text texto;
-			sf::Font fonte;
+			Estados::Tipo tipo_estado;
 
 			bool selecionado;
 
 		public:
-			Botao(const Math::Vector2Df tam, const Math::Vector2Df pos, const std::string tex);
+			Botao(const Math::Vector2Df pos, Tipo tipo = Tipo::vazio);
 			~Botao();
+			void setPosicao(Math::Vector2Df pos);
 			void setTexto(std::string text);
 			void desenhar();
-			virtual void executar(float dt);
-			virtual void salvar(std::ostringstream* entrada) {}
 			void setSelecionado(bool b);
+			Estados::Tipo getTipo() const;
 		};
 	}
 }

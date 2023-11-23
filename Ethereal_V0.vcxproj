@@ -167,6 +167,7 @@
     <ClCompile Include="Raiva.cpp" />
     <ClCompile Include="Segunda_Fase.cpp" />
     <ClCompile Include="MenuSelecao.cpp" />
+    <ClCompile Include="Texto.cpp" />
     <ClCompile Include="Tristeza.cpp" />
     <ClCompile Include="Vinganca.cpp" />
   </ItemGroup>
@@ -208,6 +209,7 @@
     <ClInclude Include="Raiva.h" />
     <ClInclude Include="Segunda_Fase.h" />
     <ClInclude Include="MenuSelecao.h" />
+    <ClInclude Include="Texto.h" />
     <ClInclude Include="Tristeza.h" />
     <ClInclude Include="Vector2D.h" />
     <ClInclude Include="Vinganca.h" />

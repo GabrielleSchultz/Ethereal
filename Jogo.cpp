@@ -2,22 +2,16 @@
 #include <iostream>
 #include "Vector2D.h"
 
-#include "Tristeza.h"
-#include "Vinganca.h"
-
 #define DELTA_TIME_FIX 60.f
 
 Jogo::Jogo() : nome("Ethereal - Echoes of the Soul"),
 pGerenciadorGrafico(Gerenciadores::Grafico::getGerenciador_Grafico()),
 pGerenciadorEventos(Gerenciadores::Eventos::getGerenciador_Eventos()),
+pGerenciadorEstados(Gerenciadores::Gerenciador_Estados::getGerenciadorEstados()),
 deltaTime(0.f),
 dt_multiplier(DELTA_TIME_FIX),
-pfase()
+m()
 {
-    //pfase.criar_cenario("Mapas/Fase1.txt");
-    pfase.criar_cenario("Mapas/Fase2.txt");
-    pfase.criar_inimigos();
-    pfase.criar_obstaculos();
     pGerenciadorGrafico->setWindowTitle(nome);
     executar();
 }
@@ -63,8 +57,9 @@ void Jogo::clear()
 void Jogo::update()
 {
     updateDeltaTime();
-    pfase.executar(deltaTime * dt_multiplier);
-    pfase.gerenciar_colisoes();
+    m.desenhar();
+    if (pGerenciadorEstados->isEmpty())
+        pGerenciadorGrafico->closeWindow();
 }
 
 void Jogo::draw()

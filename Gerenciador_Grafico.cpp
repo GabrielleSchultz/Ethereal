@@ -140,6 +140,31 @@ void Gerenciadores::Grafico::desenhar(const std::string filePath, Math::Vector2D
 	janelaPrincipal->draw(sprite);
 }
 
+void Gerenciadores::Grafico::desenharForma(Math::Vector2Df pos, Math::Vector2Df tam, const std::string filePath)
+{
+	sf::RectangleShape forma;
+
+	sf::Texture* texture;
+	MapaTextura::iterator it = EntityTextures.find(filePath);
+
+	if (it == EntityTextures.end())
+		it = EntityTextures.find(SPRITE_ERROR);
+
+	texture = it->second;
+	forma.setTexture(texture);
+
+	forma.setPosition(pos.x, pos.y);
+	forma.setSize(sf::Vector2f(tam.x, tam.y));
+
+	janelaPrincipal->draw(forma);
+	std::cout << "desenhou" << std::endl;
+}
+
+void Gerenciadores::Grafico::desenharTexto(sf::Text t)
+{
+	janelaPrincipal->draw(t);
+}
+
 bool Gerenciadores::Grafico::carregarTextura(const std::string filePath)
 {
 	MapaTextura::iterator map_it = EntityTextures.begin();

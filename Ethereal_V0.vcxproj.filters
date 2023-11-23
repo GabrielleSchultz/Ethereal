@@ -106,6 +106,9 @@
     <ClCompile Include="Selecao.cpp">
       <Filter>Sources\Menu</Filter>
     </ClCompile>
+    <ClCompile Include="Botao.cpp">
+      <Filter>Sources\Menu</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="ControleJogador.h">
@@ -223,6 +226,9 @@
       <Filter>Headers\Menu</Filter>
     </ClInclude>
     <ClInclude Include="Selecao.h">
+      <Filter>Headers\Menu</Filter>
+    </ClInclude>
+    <ClInclude Include="Botao.h">
       <Filter>Headers\Menu</Filter>
     </ClInclude>
   </ItemGroup>

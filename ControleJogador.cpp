@@ -1,7 +1,9 @@
 #include "ControleJogador.h"
 #include "Jogador.h"
 
-Controle::ControleJogador::ControleJogador(Entidades::Personagens::Jogador* pJog)
+Controle::ControleJogador::ControleJogador():
+	Controller(),
+	pJogador(nullptr)
 {
 	setKeyCommands("W", "D", "A", "S");
 }

@@ -22,7 +22,7 @@ namespace Controle{
 
 	public:
 
-		ControleJogador(Entidades::Personagens::Jogador* pJog = nullptr);
+		ControleJogador();
 		~ControleJogador() { pJogador = nullptr; }
 
 		void notifyKeyPressed(std::string key);

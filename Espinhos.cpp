@@ -36,7 +36,7 @@ void Entidades::Obstaculos::Espinhos::update(float dt)
 	desenhar();
 }
 
-void Entidades::Obstaculos::Espinhos::salvar(std::ostringstream* entrada)
+void Entidades::Obstaculos::Espinhos::salvar(nlohmann::ordered_json& entrada)
 {
-
 }
+

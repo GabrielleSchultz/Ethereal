@@ -47,7 +47,10 @@ namespace Entidades
 		desenhar();
 	}
 
-	void Projetil::salvar(std::ostringstream* entrada)
+	void Projetil::salvar(nlohmann::ordered_json& entrada)
 	{
+		entrada["posicao_projetil"] = { {"pos x", position.x},{"pos y", position.y} };
+		entrada["velocidade_projetil"] = { {"vel x", currentVelocity.x},{"vel y", currentVelocity.y} };
 	}
+
 }

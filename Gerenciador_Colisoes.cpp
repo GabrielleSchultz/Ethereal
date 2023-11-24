@@ -138,20 +138,22 @@ namespace Gerenciadores
 					else if(inimigo->getId() == Entidades::ID::boss)
 					projeteis_inimigo = static_cast<Entidades::Personagens::Vinganca*>(inimigo)->getProjeteis();
 
-					for (it_proj_inim = projeteis_inimigo->get_primeiro(), p = 0; p < projeteis_inimigo->getTamanho(); it_proj_inim.operator++(), p++) {
-						projetil_inimigo = it_proj_inim.operator*();
-						if (Colisao(projetil_inimigo, jogador)) {
-							projeteis_inimigo->remover(projetil_inimigo);
-							static_cast<Entidades::Projetil*>(projetil_inimigo)->colidir(jogador);
-						}
-						for (it_proj_jog = projeteis_jogador->get_primeiro(), p2 = 0; p2 < projeteis_jogador->getTamanho(); it_proj_jog.operator++(), p2++) {
-							projetil_jogador = it_proj_jog.operator*();
-							if (Colisao(projetil_inimigo, projetil_jogador)) {
+					if (projeteis_inimigo != nullptr) {
+						for (it_proj_inim = projeteis_inimigo->get_primeiro(), p = 0; p < projeteis_inimigo->getTamanho(); it_proj_inim.operator++(), p++) {
+							projetil_inimigo = it_proj_inim.operator*();
+							if (Colisao(projetil_inimigo, jogador)) {
 								projeteis_inimigo->remover(projetil_inimigo);
-								projeteis_jogador->remover(projetil_jogador);
-								static_cast<Entidades::Projetil*>(projetil_inimigo)->colidir(projetil_jogador);
-								static_cast<Entidades::Projetil*>(projetil_jogador)->colidir(projetil_inimigo);
+								static_cast<Entidades::Projetil*>(projetil_inimigo)->colidir(jogador);
+							}
+							for (it_proj_jog = projeteis_jogador->get_primeiro(), p2 = 0; p2 < projeteis_jogador->getTamanho(); it_proj_jog.operator++(), p2++) {
+								projetil_jogador = it_proj_jog.operator*();
+								if (Colisao(projetil_inimigo, projetil_jogador)) {
+									projeteis_inimigo->remover(projetil_inimigo);
+									projeteis_jogador->remover(projetil_jogador);
+									static_cast<Entidades::Projetil*>(projetil_inimigo)->colidir(projetil_jogador);
+									static_cast<Entidades::Projetil*>(projetil_jogador)->colidir(projetil_inimigo);
 
+								}
 							}
 						}
 					}
@@ -193,15 +195,17 @@ namespace Gerenciadores
 
 				if (inimigo->getId() == Entidades::ID::inimigo_tristeza || inimigo->getId() == Entidades::ID::boss) {
 					if(inimigo->getId() == Entidades::ID::inimigo_tristeza)
-					projeteis = static_cast<Entidades::Personagens::Tristeza*>(inimigo)->getProjeteis();
+						projeteis = static_cast<Entidades::Personagens::Tristeza*>(inimigo)->getProjeteis();
 					else if(inimigo->getId() == Entidades::ID::boss)
-					projeteis = static_cast<Entidades::Personagens::Vinganca*>(inimigo)->getProjeteis();
+						projeteis = static_cast<Entidades::Personagens::Vinganca*>(inimigo)->getProjeteis();
 					
-					for (proj = projeteis->get_primeiro(), p = 0; p < projeteis->getTamanho(); proj.operator++(), p++) {
-						projetil = proj.operator*();
-						if (Colisao(projetil, obstaculo)) {
-							projeteis->remover(projetil);
-							static_cast<Entidades::Personagens::Personagem*>(projetil)->colidir(obstaculo);
+					if (projeteis != nullptr){
+						for (proj = projeteis->get_primeiro(), p = 0; p < projeteis->getTamanho(); proj.operator++(), p++) {
+							projetil = proj.operator*();
+							if (Colisao(projetil, obstaculo)) {
+								projeteis->remover(projetil);
+								static_cast<Entidades::Personagens::Personagem*>(projetil)->colidir(obstaculo);
+							}
 						}
 					}
 				}

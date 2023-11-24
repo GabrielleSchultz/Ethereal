@@ -1,10 +1,11 @@
 #include <iostream>
+#include <fstream>
 
 #include "Fase.h"
+#include "json.h"
 
 namespace Fases
 {
-
 	Fase::Fase() :
 		Ente(),
 		pGerenciadorColisoes(Gerenciadores::Colisoes::getGerenciador_Colisoes()),
@@ -19,12 +20,66 @@ namespace Fases
 	{
 	}
 
+	void Fase::salvar()
+	{
+		salvarJogadores();
+		salvarInimigos();
+		salvarObstaculos();
+	}
+
+	void Fase::salvarJogadores()
+	{
+		//cria o objeto json para salvar jogadores
+		nlohmann::ordered_json dados_jogadores;
+		//salva cada um dos jogadores da lista e da um push_back em dados_jogadores
+		jogadores.salvar(dados_jogadores);
+
+		//formata e grava no arquivo de saida
+		std::ofstream jsonOutput("../Ethereal/Data/jogadores_data.json");
+		jsonOutput << std::setw(2) << dados_jogadores;
+
+		jsonOutput.close();
+	}
+
+	void Fase::salvarInimigos()
+	{
+		//cria o objeto json para salvar jogadores
+		nlohmann::ordered_json dados_inimigos;
+		//salva cada um dos jogadores da lista e da um push_back em dados_jogadores
+		inimigos.salvar(dados_inimigos);
+
+		//formata e grava no arquivo de saida
+		std::ofstream jsonOutput("../Ethereal/Data/inimigos_data.json");
+		jsonOutput << std::setw(2) << dados_inimigos;
+
+		jsonOutput.close();
+	}
+
+	void Fase::salvarObstaculos()
+	{
+		//cria o objeto json para salvar jogadores
+		nlohmann::ordered_json dados_obstaculos;
+		//salva cada um dos jogadores da lista e da um push_back em dados_jogadores
+		jogadores.salvar(dados_obstaculos);
+
+		//formata e grava no arquivo de saida
+		std::ofstream jsonOutput("../Ethereal/Data/obstaculos_data.json");
+		jsonOutput << std::setw(2) << dados_obstaculos;
+
+		jsonOutput.close();
+	}
+
 	void Fase::gerenciar_colisoes()
 	{
 		pGerenciadorColisoes->ColisaoJogInim();
 		pGerenciadorColisoes->ColisaoProjInim();
 		pGerenciadorColisoes->ColisaoProjJog();
 		pGerenciadorColisoes->ColisaoObs();
+	}
+
+	int Fase::getPontuacaoJogadores() const
+	{
+		return Entidades::Personagens::Jogador::getPontos();
 	}
 
 	void Fases::Fase::criar_jogador(char type, Math::Vector2Df posicao)

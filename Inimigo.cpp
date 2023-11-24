@@ -14,5 +14,11 @@ namespace Entidades {
 		{
 		}
 
+		void Inimigo::salvarInimigo(nlohmann::ordered_json& entrada)
+		{
+			salvarPersonagem(entrada);
+			entrada["maldade"] = nivel_maldade;
+		}
+
 	}
 }

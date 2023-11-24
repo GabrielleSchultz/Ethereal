@@ -15,7 +15,7 @@ namespace Entidades {
 			void executar();
 			void danificar(Jogador* p);
 			void colidir(Entidades::Entidade* e);
-			void salvar(std::ostringstream* entrada);
+			void salvar(nlohmann::ordered_json& entrada);
 			void update(float dt);
 			void teletransporte();
 			void lancar_projeteis();

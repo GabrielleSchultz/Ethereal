@@ -22,6 +22,7 @@ void Entidades::Obstaculos::Plataforma::update(float dt)
 	desenhar();
 }
 
-void Entidades::Obstaculos::Plataforma::salvar(std::ostringstream* entrada)
+void Entidades::Obstaculos::Plataforma::salvar(nlohmann::ordered_json& entrada)
 {
 }
+

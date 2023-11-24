@@ -51,6 +51,13 @@ namespace Entidades {
 			return direction;
 		}
 
+		void Dinamica::salvarAtributosDinamicos(nlohmann::ordered_json& entrada)
+		{
+			entrada["atrito"] = atrito;
+			entrada["direcao"] = { {"x", direction.x}, {"y", direction.y } };
+			entrada["velocidade"] = { {"x", direction.x}, {"y", direction.y } };
+		}
+
 		void Tipo::Dinamica::setDirection(const Math::Vector2Df direcao)
 		{
 			direction = direcao;

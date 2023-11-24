@@ -35,6 +35,12 @@ namespace Entidades {
 		pGerenciadorGrafico->desenharEnte(caminho_textura, position);
 	}
 
+	void Entidade::salvarEntidade(nlohmann::ordered_json& entrada)
+	{
+		entrada["ID"] = id;
+		entrada["posicao"] = { {"x", getPosition().x}, {"y", getPosition().y } };
+	}
+
 	void Entidade::setPosition(float x, float y)
 	{
 		position.x = x;

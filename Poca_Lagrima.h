@@ -13,7 +13,7 @@ namespace Entidades {
 			~Poca_Lagrimas();
 			void obstacular(Entidades::Personagens::Jogador* p);
 			void update(float dt);
-			void salvar(std::ostringstream* entrada);
+			void salvar(nlohmann::ordered_json& entrada);
 		};
 	}
 }

@@ -2,7 +2,7 @@
 #include <fstream>
 #include <map>
 
-#define RANKING_FILEPATH "../Ethereal/Ranking/ranking.txt"
+#define RANKING_FILEPATH "../Ethereal/Data/Ranking/ranking.txt"
 #define RANKING_MAX 10
 
 Estados::Menus::MenuRanking::MenuRanking(): Menu()

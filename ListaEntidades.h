@@ -1,6 +1,7 @@
 #pragma once
 #include "Lista.h"
 #include "Entidade.h"
+#include "json.h"
 
 namespace Listas {
 	class ListaEntidades {
@@ -14,7 +15,9 @@ namespace Listas {
 		void executar(float dt);
 		const int getTamanho() const;
 		void clear();
-		void salvar(std::ostringstream* entrada);
+		void salvar(nlohmann::ordered_json& entrada);
 		Lista<Entidades::Entidade>::Iterador get_primeiro() const;
+		Lista<Entidades::Entidade>::Iterador inicio() const;
+		Lista<Entidades::Entidade>::Iterador fim() const;
 	};
 }

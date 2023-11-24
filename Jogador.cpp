@@ -34,6 +34,7 @@ namespace Entidades {
 
 		Jogador::~Jogador()
 		{
+
 		}
 
 		void Jogador::inicializa()
@@ -100,14 +101,10 @@ namespace Entidades {
 			setPosition(position.x + (currentVelocity.x * dt), position.y + currentVelocity.y);
 		}
 
-		void Jogador::salvar(std::ostringstream* entrada)
+		void Jogador::salvar(nlohmann::ordered_json& entrada)
 		{
-			if (!entrada) {
-				std::cout << "Não foi possível abrir o arquivo de salvamento Jogador" << std::endl;
-				return;
-			}			
-			//(*entrada) << _id << id << std::endl;
-			//(*entrada) << getId() << position.x << std::endl << position.y << std::endl << num_vidas << std::endl << pontos << std::endl << facingRight << std::endl;
+			salvarPersonagem(entrada);
+			entrada["jogador_num"] = Player;
 		}
 
 		void Jogador::operator++(int p)

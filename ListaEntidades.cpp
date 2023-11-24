@@ -36,15 +36,28 @@ void Listas::ListaEntidades::clear()
 	LEs.clear();
 }
 
-void Listas::ListaEntidades::salvar(std::ostringstream* entrada) {
+void Listas::ListaEntidades::salvar(nlohmann::ordered_json& entrada) {
 	Lista<Entidades::Entidade>::Iterador it;
 	Entidades::Entidade* aux = nullptr;
+
 	for (it = get_primeiro(); (!it.operator==(nullptr)); it.operator++()) {
+		nlohmann::ordered_json dados_entidade;
 		aux = it.operator*();
-		aux->salvar(entrada);
+		aux->salvar(dados_entidade);
+		entrada.push_back(dados_entidade);
 	}
 }
 
 Listas::Lista<Entidades::Entidade>::Iterador Listas::ListaEntidades::get_primeiro() const {
 	return LEs.get_primeiro();
+}
+
+Listas::Lista<Entidades::Entidade>::Iterador Listas::ListaEntidades::inicio() const
+{
+	return LEs.get_primeiro();
+}
+
+Listas::Lista<Entidades::Entidade>::Iterador Listas::ListaEntidades::fim() const
+{
+	return LEs.get_final_vetor();
 }

@@ -29,8 +29,10 @@ void Entidades::Personagens::Tristeza::danificar(Jogador* p)
 		p->setNumVidas(p->getNumVidas() - nivel_maldade);
 }
 
-void Entidades::Personagens::Tristeza::salvar(std::ostringstream* entrada)
+void Entidades::Personagens::Tristeza::salvar(nlohmann::ordered_json& entrada)
 {
+	salvarInimigo(entrada);
+	projeteis.salvar(entrada);
 }
 
 void Entidades::Personagens::Tristeza::update(float dt)

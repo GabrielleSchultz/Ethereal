@@ -48,7 +48,7 @@ namespace Entidades {
 			void inicializa();
 			void update(float dt);
 			void mover(float dt);
-			void salvar(std::ostringstream* entrada);
+			void salvar(nlohmann::ordered_json& entrada);
 			void operator++(int p);
 			static const int getPontos();
 			static int getNumJogadores();

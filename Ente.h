@@ -1,5 +1,6 @@
 #pragma once
 #include "Gerenciador_Grafico.h"
+#include "json.h"
 
 class Ente {
 protected:
@@ -13,5 +14,5 @@ public:
 	virtual void executar(float dt) = 0;
 	virtual void desenhar() {}
 	virtual void update(float dt){}
-	virtual void salvar(std::ostringstream* entrada) = 0;
+	virtual void salvar(nlohmann::ordered_json& entrada) = 0;
 };

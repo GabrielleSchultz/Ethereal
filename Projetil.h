@@ -16,7 +16,7 @@ namespace Entidades {
 		void colidir(Entidades::Entidade* e);
 		void danificar(Entidades::Personagens::Personagem* p);
 		void update(float dt);
-		void salvar(std::ostringstream* entrada);
+		void salvar(nlohmann::ordered_json& entrada);
 	};
 
 }

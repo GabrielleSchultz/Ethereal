@@ -29,5 +29,11 @@ namespace Entidades {
 		{
 			num_vidas = nv;
 		}
+		void Personagem::salvarPersonagem(nlohmann::ordered_json& entrada)
+		{
+			salvarEntidade(entrada);
+			salvarAtributosDinamicos(entrada);
+			entrada["vidas"] = num_vidas;
+		}
 	}
 }

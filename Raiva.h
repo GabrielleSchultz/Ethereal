@@ -12,7 +12,7 @@ namespace Entidades {
 			Raiva(int nv = 10, int mal = 1, const char* texturePath = "Assets/Sprites/anger_teste.png", ID id = ID::inimigo_raiva);
 			~Raiva();
 			void executar();
-			void salvar(std::ostringstream* entrada);
+			void salvar(nlohmann::ordered_json& entrada);
 			void update(float dt);
 			void colidir(Entidades::Entidade* e);
 			void danificar(Jogador* p);

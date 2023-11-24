@@ -21,7 +21,6 @@ void Entidades::Obstaculos::Poca_Lagrimas::update(float dt)
 	desenhar();
 }
 
-
-void Entidades::Obstaculos::Poca_Lagrimas::salvar(std::ostringstream* entrada)
+void Entidades::Obstaculos::Poca_Lagrimas::salvar(nlohmann::ordered_json& entrada)
 {
 }

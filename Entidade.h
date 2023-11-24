@@ -37,7 +37,8 @@ namespace Entidades {
         virtual void update(float dt) = 0;
         void desenhar();
         //salvamento
-        virtual void salvar(std::ostringstream* entrada) = 0;
+        void salvarEntidade(nlohmann::ordered_json& entrada);
+        virtual void salvar(nlohmann::ordered_json& entrada) = 0;
         void setPosition(float x, float y);
         void setPosition(Math::Vector2Df v);
         void setTamanho(float x, float y);

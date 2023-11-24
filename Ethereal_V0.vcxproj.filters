@@ -56,16 +56,16 @@
       <Filter>Sources</Filter>
     </ClCompile>
     <ClCompile Include="Menu.cpp">
-      <Filter>Sources\Menu</Filter>
+      <Filter>Sources\Estados\Menu</Filter>
     </ClCompile>
     <ClCompile Include="MenuFases.cpp">
-      <Filter>Sources\Menu</Filter>
+      <Filter>Sources\Estados\Menu</Filter>
     </ClCompile>
     <ClCompile Include="MenuPrincipal.cpp">
-      <Filter>Sources\Menu</Filter>
+      <Filter>Sources\Estados\Menu</Filter>
     </ClCompile>
     <ClCompile Include="MenuRanking.cpp">
-      <Filter>Sources\Menu</Filter>
+      <Filter>Sources\Estados\Menu</Filter>
     </ClCompile>
     <ClCompile Include="Obstaculo.cpp">
       <Filter>Sources\Entidade\Obstaculo</Filter>
@@ -101,10 +101,12 @@
       <Filter>Sources\Entidade\Personagem\Inimigo</Filter>
     </ClCompile>
     <ClCompile Include="MenuPause.cpp">
-      <Filter>Sources\Menu</Filter>
+      <Filter>Sources\Estados\Menu</Filter>
     </ClCompile>
-    <ClCompile Include="MenuSelecao.cpp">
-      <Filter>Sources\Menu</Filter>
+    <ClCompile Include="Botao.cpp" />
+    <ClCompile Include="Texto.cpp" />
+    <ClCompile Include="MenuGameOver.cpp">
+      <Filter>Sources\Estados\Menu</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -116,9 +118,6 @@
     </ClInclude>
     <ClInclude Include="Controller.h">
       <Filter>Headers\Controle</Filter>
-    </ClInclude>
-    <ClInclude Include="Constants.h">
-      <Filter>Headers</Filter>
     </ClInclude>
     <ClInclude Include="Ente.h">
       <Filter>Headers</Filter>
@@ -155,9 +154,6 @@
     </ClInclude>
     <ClInclude Include="GameState.h">
       <Filter>Headers\Estados</Filter>
-    </ClInclude>
-    <ClInclude Include="Globals.h">
-      <Filter>Headers</Filter>
     </ClInclude>
     <ClInclude Include="Jogador.h">
       <Filter>Headers\Entidade\Personagem</Filter>
@@ -222,7 +218,9 @@
     <ClInclude Include="MenuPause.h">
       <Filter>Headers\Estados\Menu</Filter>
     </ClInclude>
-    <ClInclude Include="MenuSelecao.h">
+    <ClInclude Include="Botao.h" />
+    <ClInclude Include="Texto.h" />
+    <ClInclude Include="MenuGameOver.h">
       <Filter>Headers\Estados\Menu</Filter>
     </ClInclude>
   </ItemGroup>
@@ -257,9 +255,6 @@
     <Filter Include="Sources\Listas">
       <UniqueIdentifier>{b3660a0b-c68d-4231-80f2-97ce240c8a2d}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Sources\Menu">
-      <UniqueIdentifier>{70f9b1a9-d384-41e1-8adb-a2908d1649c3}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Headers\Controle">
       <UniqueIdentifier>{87e21b5b-2dc9-416a-b772-1652a94a4154}</UniqueIdentifier>
     </Filter>
@@ -292,6 +287,9 @@
     </Filter>
     <Filter Include="Headers\Estados\Menu">
       <UniqueIdentifier>{6d375dd3-2163-486b-82d2-440007b96f48}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Sources\Estados\Menu">
+      <UniqueIdentifier>{70f9b1a9-d384-41e1-8adb-a2908d1649c3}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>

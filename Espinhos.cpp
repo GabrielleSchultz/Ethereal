@@ -40,3 +40,7 @@ void Entidades::Obstaculos::Espinhos::salvar(nlohmann::ordered_json& entrada)
 {
 }
 
+void Entidades::Obstaculos::Espinhos::carregar(nlohmann::ordered_json& saida)
+{
+}
+

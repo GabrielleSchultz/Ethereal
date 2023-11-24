@@ -1,5 +1,6 @@
 #pragma once
 #include "Personagem.h"
+#include "ListaEntidades.h"
 
 namespace Entidades {
 
@@ -17,6 +18,8 @@ namespace Entidades {
 		void danificar(Entidades::Personagens::Personagem* p);
 		void update(float dt);
 		void salvar(nlohmann::ordered_json& entrada);
+		void carregar(nlohmann::ordered_json& saida){}
+		void carregar(nlohmann::ordered_json& saida, Listas::ListaEntidades* lista, Entidades::Entidade* pAtirador);
 	};
 
 }

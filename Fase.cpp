@@ -9,7 +9,7 @@ namespace Fases
 	Fase::Fase() :
 		Ente(),
 		pGerenciadorColisoes(Gerenciadores::Colisoes::getGerenciador_Colisoes()),
-		inimigos(), obstaculos(), jogadores()
+		inimigos(), obstaculos(), jogadores(), novo_jogo(false)
 	{
 		pGerenciadorColisoes->setListaInimigos(&inimigos);
 		pGerenciadorColisoes->setListaJogadores(&jogadores);

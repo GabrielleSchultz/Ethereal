@@ -1,4 +1,5 @@
 #include "ListaEntidades.h"
+#include "Projetil.h"
 
 Listas::ListaEntidades::ListaEntidades() :
 	LEs()
@@ -45,6 +46,29 @@ void Listas::ListaEntidades::salvar(nlohmann::ordered_json& entrada) {
 		aux = it.operator*();
 		aux->salvar(dados_entidade);
 		entrada.push_back(dados_entidade);
+	}
+}
+
+void Listas::ListaEntidades::carregar(nlohmann::ordered_json& saida) {
+	Lista<Entidades::Entidade>::Iterador it;
+	Entidades::Entidade* aux = nullptr;
+
+	for (it = get_primeiro(); (!it.operator==(nullptr)); it.operator++()) {
+		nlohmann::ordered_json dados_entidade;
+		aux = it.operator*();
+		aux->carregar(dados_entidade);
+	}
+}
+
+void Listas::ListaEntidades::carregar(nlohmann::ordered_json& saida, Entidades::Entidade* pAtirador)
+{
+	Lista<Entidades::Entidade>::Iterador it;
+	Entidades::Entidade* aux = nullptr;
+
+	for (it = get_primeiro(); (!it.operator==(nullptr)); it.operator++()) {
+		nlohmann::ordered_json dados_entidade;
+		aux = it.operator*();
+		static_cast<Entidades::Projetil*>(aux)->carregar(dados_entidade, this, pAtirador);
 	}
 }
 

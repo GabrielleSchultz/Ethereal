@@ -38,6 +38,7 @@ namespace Entidades {
 			virtual void mover(float dt) {}
 			void salvarAtributosDinamicos(nlohmann::ordered_json& entrada);
 			virtual void salvar(nlohmann::ordered_json& entrada) = 0;
+			void carregarAtributos(nlohmann::ordered_json& saida);
 
 		};
 	}

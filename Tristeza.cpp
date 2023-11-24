@@ -35,6 +35,12 @@ void Entidades::Personagens::Tristeza::salvar(nlohmann::ordered_json& entrada)
 	projeteis.salvar(entrada);
 }
 
+void Entidades::Personagens::Tristeza::carregar(nlohmann::ordered_json& saida)
+{
+	carregarInimigo(saida);
+	projeteis.carregar(saida);
+}
+
 void Entidades::Personagens::Tristeza::update(float dt)
 {
 	// não é afetado pela gravidade, levita no ar !!

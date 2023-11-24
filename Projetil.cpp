@@ -51,6 +51,19 @@ namespace Entidades
 	{
 		entrada["posicao_projetil"] = { {"pos x", position.x},{"pos y", position.y} };
 		entrada["velocidade_projetil"] = { {"vel x", currentVelocity.x},{"vel y", currentVelocity.y} };
+		entrada["direcao_projetil"] = { {"dir x", direction.x},{"dir y", direction.y} };
+
+	}
+
+	void Projetil::carregar(nlohmann::ordered_json& saida, Listas::ListaEntidades* lista, Entidades::Entidade* pAtirador)
+	{
+		setPosition(saida["posicao_projetil"]["x"].template get<float>(), saida["posicao_projetil"]["y"].template get<float>());
+		setVelocidade(saida["velocidade_projetil"]["x"].template get<float>(), saida["velocidade_projetil"]["y"].template get<float>());
+		setDirection(saida["direcao_projetil"]["x"].template get<float>(), saida["direcao_projetil"]["y"].template get<float>());
+
+		setAtirador(pAtirador);
+		lista->incluir(this);
+	
 	}
 
 }

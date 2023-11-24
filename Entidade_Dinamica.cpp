@@ -58,6 +58,13 @@ namespace Entidades {
 			entrada["velocidade"] = { {"x", direction.x}, {"y", direction.y } };
 		}
 
+		void Dinamica::carregarAtributos(nlohmann::ordered_json& saida)
+		{
+			setAtrito(saida["atrito"].template get<float>());
+			setDirection(saida["direcao"]["x"].template get<float>(), saida["direcao"]["y"].template get<float>());
+			setVelocidade(saida["velocidade"]["x"].template get<float>(), saida["velocidade"]["y"].template get<float>());
+		}
+
 		void Tipo::Dinamica::setDirection(const Math::Vector2Df direcao)
 		{
 			direction = direcao;

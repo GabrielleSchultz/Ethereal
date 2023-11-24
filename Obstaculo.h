@@ -12,6 +12,7 @@ namespace Entidades {
 			~Obstaculo();
 			virtual void obstacular(Personagens::Jogador* p) = 0;
 			virtual void salvar(nlohmann::ordered_json& entrada) = 0;
+			virtual void carregar(nlohmann::ordered_json& saida) = 0;
 			void update(float dt) = 0;
 		};
 	}

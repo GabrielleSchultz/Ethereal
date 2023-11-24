@@ -27,6 +27,12 @@ namespace Entidades {
 
 		}
 
+		void Raiva::carregar(nlohmann::ordered_json& saida)
+		{
+			carregarInimigo(saida);
+			agilidade = saida["agilidade"].template get<float>();
+		}
+
 		void Raiva::update(float dt) {
 			desenhar();
 		}

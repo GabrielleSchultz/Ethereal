@@ -105,6 +105,14 @@ namespace Entidades {
 		{
 			salvarPersonagem(entrada);
 			entrada["jogador_num"] = Player;
+			entrada["olhando_direita"] = facingRight;
+		}
+
+		void Jogador::carregar(nlohmann::ordered_json& saida)
+		{
+			carregarDadosPersonagem(saida);
+			setFacingRight(saida["olhando_direita"].template get<bool>());
+			
 		}
 
 		void Jogador::operator++(int p)

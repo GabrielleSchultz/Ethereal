@@ -26,3 +26,7 @@ void Entidades::Obstaculos::Plataforma::salvar(nlohmann::ordered_json& entrada)
 {
 }
 
+void Entidades::Obstaculos::Plataforma::carregar(nlohmann::ordered_json& saida)
+{
+}
+

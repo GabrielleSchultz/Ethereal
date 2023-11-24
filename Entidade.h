@@ -36,16 +36,17 @@ namespace Entidades {
         void executar(float dt);
         virtual void update(float dt) = 0;
         void desenhar();
-        //salvamento
-        void salvarEntidade(nlohmann::ordered_json& entrada);
-        virtual void salvar(nlohmann::ordered_json& entrada) = 0;
         void setPosition(float x, float y);
         void setPosition(Math::Vector2Df v);
         void setTamanho(float x, float y);
-
-        // m todo para o inimigo raiva perseguir
         Math::Vector2Df getPosition() const;
         Math::Vector2Df getTamanho() const;
+
+        //salvamento
+        void salvarEntidade(nlohmann::ordered_json& entrada);
+        virtual void salvar(nlohmann::ordered_json& entrada) = 0;
+        void carregarDadosEntidade(nlohmann::ordered_json& saida);
+        virtual void carregar(nlohmann::ordered_json& saida) = 0;
 
         ID getId();
     };

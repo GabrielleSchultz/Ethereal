@@ -44,6 +44,10 @@ void Entidades::Personagens::Vinganca::salvar(nlohmann::ordered_json& entrada)
 {
 }
 
+void Entidades::Personagens::Vinganca::carregar(nlohmann::ordered_json& entrada)
+{
+}
+
 void Entidades::Personagens::Vinganca::update(float dt) {
 	if (teletransporta == FREQUENCIA_TELETRANSPORTE) {
 		teletransporte();

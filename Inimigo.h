@@ -13,7 +13,9 @@ namespace Entidades {
 			virtual void executar() = 0;
 			virtual void colidir(Entidades::Entidade* e) = 0;
 			void salvarInimigo(nlohmann::ordered_json& entrada);
+			void carregarInimigo(nlohmann::ordered_json& saida);
 			virtual void salvar(nlohmann::ordered_json& entrada) = 0;
+			virtual void carregar(nlohmann::ordered_json& saida) = 0;
 			virtual void update(float dt = 0) = 0;
 		};
 	}

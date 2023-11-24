@@ -10,6 +10,7 @@ namespace Fases {
 
 	class Fase : public Ente {
 	protected:
+		bool novo_jogo;
 		Gerenciadores::Colisoes* pGerenciadorColisoes;
 		Listas::ListaEntidades inimigos;
 		Listas::ListaEntidades obstaculos;

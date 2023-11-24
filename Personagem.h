@@ -18,6 +18,9 @@ namespace Entidades {
 			virtual void update(float dt = 0) = 0;
 			void salvarPersonagem(nlohmann::ordered_json& entrada);
 			virtual void salvar(nlohmann::ordered_json& entrada) = 0;
+			void carregarDadosPersonagem(nlohmann::ordered_json& saida);
+			virtual void carregar(nlohmann::ordered_json& saida) = 0;
+
 		};
 	}
 }

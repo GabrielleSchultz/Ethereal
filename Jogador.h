@@ -49,6 +49,7 @@ namespace Entidades {
 			void update(float dt);
 			void mover(float dt);
 			void salvar(nlohmann::ordered_json& entrada);
+			void carregar(nlohmann::ordered_json& saida);
 			void operator++(int p);
 			static const int getPontos();
 			static int getNumJogadores();

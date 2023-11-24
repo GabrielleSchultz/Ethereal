@@ -16,6 +16,8 @@ namespace Listas {
 		const int getTamanho() const;
 		void clear();
 		void salvar(nlohmann::ordered_json& entrada);
+		void carregar(nlohmann::ordered_json& saida);
+		void carregar(nlohmann::ordered_json& saida, Entidades::Entidade* pAtirador); //sobrecarga para projetil
 		Lista<Entidades::Entidade>::Iterador get_primeiro() const;
 		Lista<Entidades::Entidade>::Iterador inicio() const;
 		Lista<Entidades::Entidade>::Iterador fim() const;

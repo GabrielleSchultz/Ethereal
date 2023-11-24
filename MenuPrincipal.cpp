@@ -12,7 +12,6 @@ Estados::Menus::MenuPrincipal::MenuPrincipal(): Menu(),
 
 	cria_botoes();
 	botoes[botao_atual]->setSelecionado(true);
-	//inicializaIterator();
 }
 
 Estados::Menus::MenuPrincipal::~MenuPrincipal()
@@ -22,7 +21,7 @@ Estados::Menus::MenuPrincipal::~MenuPrincipal()
 void Estados::Menus::MenuPrincipal::cria_botoes()
 {
 	std::string textos[QTD_BOTOES] = {"novo jogo", "continuar", "settings", "ranking", "sair"};
-	Estados::Tipo tipos[QTD_BOTOES] = { Estados::Tipo::GameState, Estados::Tipo::GameState, Estados::Tipo::MenuSettings, Estados::Tipo::MenuRanking, Estados::Tipo::vazio};
+	Estados::Tipo tipos[QTD_BOTOES] = { Estados::Tipo::MenuFases, Estados::Tipo::GameState, Estados::Tipo::MenuSettings, Estados::Tipo::MenuRanking, Estados::Tipo::sair};
 
 	Estados::Menus::ElementosGraficos::Botao* botao = nullptr;
 	for (int i = 0; i < QTD_BOTOES; i++) {

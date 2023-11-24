@@ -17,6 +17,7 @@ namespace Estados {
 			void cria_botoes();
 			void cria_ranking();
 			void desenhar();
+			void executar();
 		};
 
 	}

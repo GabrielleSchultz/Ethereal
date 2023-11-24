@@ -100,6 +100,7 @@ namespace Gerenciadores
 
         keyMap[sf::Keyboard::Delete] = "delete";
         keyMap[sf::Keyboard::Space] = "space";
+        keyMap[sf::Keyboard::Enter] = "enter";
 
         keyMap[sf::Keyboard::Up] = "up";
         keyMap[sf::Keyboard::Down] = "down";

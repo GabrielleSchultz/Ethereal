@@ -9,11 +9,11 @@ pGerenciadorGrafico(Gerenciadores::Grafico::getGerenciador_Grafico()),
 pGerenciadorEventos(Gerenciadores::Eventos::getGerenciador_Eventos()),
 pGerenciadorEstados(Gerenciadores::Gerenciador_Estados::getGerenciadorEstados()),
 deltaTime(0.f),
-dt_multiplier(DELTA_TIME_FIX),
-m()
+dt_multiplier(DELTA_TIME_FIX)
 {
     pGerenciadorGrafico->setWindowTitle(nome);
-    //pGerenciadorEstados->push(Estados::Tipo::MenuPrincipal);
+    pGerenciadorEstados->criar_estado(Estados::Tipo::MenuPrincipal);
+    //pGerenciadorEstados->criar_estado(Estados::Tipo::MenuRanking);
     executar();
 }
 
@@ -58,9 +58,10 @@ void Jogo::clear()
 void Jogo::update()
 {
     updateDeltaTime();
-    m.desenhar();
-   //if (pGerenciadorEstados->isEmpty())
-     //pGerenciadorGrafico->closeWindow();
+    if (pGerenciadorEstados->isEmpty())
+        pGerenciadorGrafico->closeWindow();
+    else
+        pGerenciadorEstados->executar(deltaTime * dt_multiplier);
 }
 
 void Jogo::draw()

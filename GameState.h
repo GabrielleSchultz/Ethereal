@@ -8,10 +8,10 @@ namespace Estados {
 	{
 	private:
 		Fases::Fase* pFase;
-
 	public:
-		GameState();
+		GameState(int num_fase = 1);
 		~GameState();
+		void executar(float dt);
 	};
 
 }

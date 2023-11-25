@@ -50,6 +50,7 @@ namespace Listas {
 			void operator=(const Elemento<TL>* outro);
 			TL* operator*();
 			Elemento<TL>* get_atual() const;
+			Elemento<TL>* get_proximo() const;
 		};
 
 		Iterador get_primeiro() const {
@@ -100,8 +101,6 @@ template <class TE>
 TE* Listas::Lista<TL>::Elemento<TE>::getInfo() {
 	return info;
 }
-
-
 
 /* LISTA */
 template <class TL>
@@ -218,4 +217,10 @@ template <class TL>
 Listas::Lista<TL>::Elemento<TL>* Listas::Lista<TL>::Iterador::get_atual() const
 {
 	return atual;
+}
+
+template <class TL>
+Listas::Lista<TL>::Elemento<TL>* Listas::Lista<TL>::Iterador::get_proximo() const
+{
+	return atual->getProximo();
 }

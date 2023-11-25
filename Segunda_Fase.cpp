@@ -26,52 +26,43 @@ void Fases::Segunda_Fase::executar(float dt)
 	Listas::Lista<Entidades::Entidade>::Iterador jog;
 	Entidades::Entidade* jogador = nullptr;
 
+	Listas::Lista<Entidades::Entidade>::Iterador it;
+	Entidades::Entidade* aux = nullptr;
+
 	int j = 0, i = 0, o = 0;
 	for (jog = jogadores.get_primeiro(), j = 0; j < jogadores.getTamanho(); jog.operator++(), j++) {
 		jogador = jog.operator*();
 		//jogador->update(dt);
 		jogador->executar(dt);
 
-		Listas::Lista<Entidades::Entidade>::Iterador it;
-		Entidades::Entidade* aux = nullptr;
 		for (it = inimigos.get_primeiro(), i = 0; i < inimigos.getTamanho(); it.operator++(), i++) {
 			aux = it.operator*();
 			//aux->update(dt);
 			aux->executar(dt);
-			if (!static_cast<Entidades::Personagens::Personagem*>(aux)->getVivo()) {
-				if (aux->getId() == Entidades::ID::boss) {
-					Listas::Lista<Entidades::Entidade>::Iterador it_boss = chefoes.get_primeiro();
-					if (chefoes.getTamanho() > 1) {
-						it_boss.operator++();
-						boss = static_cast<Entidades::Personagens::Vinganca*>(it_boss.operator*());
-						inimigos.incluir(boss);
-					}
-					chefoes.remover(aux);
-					//std::cout << "chefão morreu" << std::endl;
+			if (!static_cast<Entidades::Personagens::Personagem*>(aux)->getVivo() && aux->getId() == Entidades::ID::boss) {
+				Listas::Lista<Entidades::Entidade>::Iterador it_boss = chefoes.get_primeiro();
+				if (chefoes.getTamanho() > 1) {
+					it_boss.operator++();
+					boss = static_cast<Entidades::Personagens::Vinganca*>(it_boss.operator*());
+					inimigos.incluir(boss);
 				}
-				inimigos.remover(aux);
-				delete aux;
-				static_cast<Entidades::Personagens::Jogador*>(jogador)->operator++(100);
+				chefoes.remover(aux);
 			}
 			if (aux->getId() == Entidades::ID::inimigo_raiva) {
 				static_cast<Entidades::Personagens::Raiva*>(aux)->perseguir(static_cast<Entidades::Personagens::Jogador*>(jogador));
 			}
 		}
-
-		for (it = obstaculos.get_primeiro(), o = 0; o < obstaculos.getTamanho(); it.operator++(), o++) {
-			aux = it.operator*();
-			aux->update(dt);
-			//static_cast<Entidades::Obstaculos::Plataforma*>(aux)->obstacular(static_cast<Entidades::Personagens::Jogador*>(jogador));
-		}
-
-		if (!static_cast<Entidades::Personagens::Personagem*>(jogador)->getVivo()) {
-			jogadores.remover(jogador);
-			delete jogador;
-			// bool fim de fase ?? -> esperar menu pra ver
-		}
 	}
 
+	for (it = obstaculos.get_primeiro(), o = 0; o < obstaculos.getTamanho(); it.operator++(), o++) {
+		aux = it.operator*();
+		aux->update(dt);
+		//static_cast<Entidades::Obstaculos::Plataforma*>(aux)->obstacular(static_cast<Entidades::Personagens::Jogador*>(jogador));
+	}
 	pGerenciadorGrafico->desenharEnte("Assets/Backgrounds/Stars-Big_1_2_PC.png", Math::Vector2Df(0, 0));
+
+	remover_sem_vida(&inimigos);
+	remover_sem_vida(&jogadores);
 }
 
 void Fases::Segunda_Fase::salvar(std::ostringstream* entrada)

@@ -65,5 +65,7 @@ void Botao::setSelecionado(bool b)
 
 Estados::Tipo Botao::getTipo() const
 {
+	std::string str = texto.getString();
+	std::cout << str << std::endl;
 	return tipo_estado;
 }

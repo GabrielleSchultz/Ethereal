@@ -11,34 +11,49 @@ Controle::ControleMenu::ControleMenu() :
 
 Controle::ControleMenu::~ControleMenu()
 {
+	pGerenciadorInput->remover_observer(this);
 	pMenu = nullptr;
 }
 
 void Controle::ControleMenu::notifyKeyPressed(std::string key)
 {
-	if (pMenu) {
-		if (key == para_cima)
-		{
-			pMenu->selecionarCima();
-		}
+	if(pMenu)
+	{
+		if (pMenu->getAtivo()) {
+			if (key == para_cima)
+			{
+				pMenu->selecionarCima();
+				std::cout << "cima" << std::endl;
+			}
 
-		if (key == para_baixo)
-		{
-			pMenu->selecionarBaixo();
-		}
+			if (key == para_baixo)
+			{
+				pMenu->selecionarBaixo();
+				std::cout << "baixo" << std::endl;
+			}
 
-		if (key == enter)
-		{
-			/*if (pMenu->getTipoEstado() == Estados::Tipo::sair)
-				pMenu->request_clear();
-			else if(pMenu->getTipoEstado() == Estados::Tipo::vazio)
-				pMenu->request_pop();
-			else
-				pMenu->request_push(pMenu->getTipoEstado());*/
+			if (key == enter)
+			{
+				std::cout << "ENTER" << std::endl;
+				if (pMenu->getTipoEstado() == Estados::Tipo::sair) {
+					pMenu->request_clear();
+					std::cout << "clear" << std::endl;
+				}
+				else if (pMenu->getTipoEstado() == Estados::Tipo::vazio)
+				{
+					pMenu->request_pop();
+					std::cout << "pop" << std::endl;
+				}
+				else
+				{
+					pMenu->request_push(pMenu->getTipoEstado());
+					std::cout << "push" << std::endl;
+				}
+			}
 		}
 	}
 	else
-		std::cout << "Controle::ControleMenu -> ponteiro nulo" << std::endl;
+		std::cout << "Controle::ControleMenu -> ponteiro nulo keypressed" << std::endl;
 
 }
 
@@ -46,7 +61,7 @@ void Controle::ControleMenu::notifyKeyReleased(std::string key)
 {
 	if (pMenu) {
 		//std::cout << "tecla livre" << std::endl;
-		if (key == enter)
+		/* (key == enter)
 		{
 			if (pMenu->getTipoEstado() == Estados::Tipo::sair)
 				pMenu->request_clear();
@@ -54,7 +69,7 @@ void Controle::ControleMenu::notifyKeyReleased(std::string key)
 				pMenu->request_pop();
 			else
 				pMenu->request_push(pMenu->getTipoEstado());
-		}
+		}*/
 	}
 	else
 		std::cout << "Controle::ControleMenu -> ponteiro nulo" << std::endl;

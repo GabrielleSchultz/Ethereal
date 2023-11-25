@@ -7,7 +7,8 @@
 #include <iostream>
 
 Fases::Primeira_Fase::Primeira_Fase() :
-	Fase()
+	Fase(),
+	remover_inimigos()
 {
 	pGerenciadorGrafico->carregarTextura("Assets/Backgrounds/Stage1_full_background.png");
 	pGerenciadorGrafico->carregarTextura("Assets/Backgrounds/Stars Small_1.png");
@@ -37,8 +38,8 @@ void Fases::Primeira_Fase::executar(float dt)
 			//aux->update(dt);
 			aux->executar(dt);
 			if (!static_cast<Entidades::Personagens::Personagem*>(aux)->getVivo()) {
-				inimigos.remover(aux);
-				delete aux;
+				//inimigos.remover(aux);
+				//delete aux;
 				static_cast<Entidades::Personagens::Jogador*>(jogador)->operator++(100);
 			}
 			else if (aux->getId() == Entidades::ID::inimigo_raiva) {
@@ -51,13 +52,15 @@ void Fases::Primeira_Fase::executar(float dt)
 			aux->update(dt);
 		}
 
-		if (!static_cast<Entidades::Personagens::Personagem*>(jogador)->getVivo()) {
+		/*if (!static_cast<Entidades::Personagens::Personagem*>(jogador)->getVivo()) {
 			jogadores.remover(jogador);
 			delete jogador;
-		}
+		}*/
 	}
-
 	pGerenciadorGrafico->desenharEnte("Assets/Backgrounds/Stars Small_1.png", Math::Vector2Df(0, 0));
+
+	remover_sem_vida(&inimigos);
+	remover_sem_vida(&jogadores);
 }
 
 void Fases::Primeira_Fase::salvar(std::ostringstream* entrada)
@@ -70,8 +73,6 @@ void Fases::Primeira_Fase::criar_inimigos()
 
 	Entidades::Personagens::Raiva* raivinha = nullptr;
 	for (int i = 0; i < rand() % 3 + 3; i++) {
-		//std::cout << "criou raiva" << std::endl;
-		// posição aleatória
 		raivinha = new Entidades::Personagens::Raiva();
 		if (raivinha)
 		{

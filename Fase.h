@@ -5,6 +5,7 @@
 #include "Jogador.h"
 #include "Gerenciador_Colisoes.h"
 #include <string>
+#include <vector>
 
 namespace Fases {
 
@@ -14,6 +15,7 @@ namespace Fases {
 		Listas::ListaEntidades inimigos;
 		Listas::ListaEntidades obstaculos;
 		Listas::ListaEntidades jogadores;
+		std::vector<Entidades::Entidade*> mortos;
 
 	public:
 		Fase();
@@ -22,6 +24,7 @@ namespace Fases {
 		virtual void salvar(std::ostringstream* entrada) = 0;
 		void gerenciar_colisoes();
 		void criar_jogador(char type, Math::Vector2Df posicao);
+		void remover_sem_vida(Listas::ListaEntidades* lista);
 		virtual void criar_inimigos() = 0;
 		virtual void criar_obstaculos() = 0;
 		virtual void criar_cenario(std::string file_path) = 0;

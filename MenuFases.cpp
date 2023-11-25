@@ -1,6 +1,6 @@
 #include "MenuFases.h"
 
-#define QTD_BOTOES 2
+#define QTD_BOTOES 3
 
 Estados::Menus::MenuFases::MenuFases()
 {
@@ -24,8 +24,8 @@ void Estados::Menus::MenuFases::desenhar()
 
 void Estados::Menus::MenuFases::cria_botoes()
 {
-	std::string textos[QTD_BOTOES] = { "fase 1", "fase 2"};
-	Estados::Tipo tipos[QTD_BOTOES] = { Estados::Tipo::Fase1, Estados::Tipo::Fase2};
+	std::string textos[QTD_BOTOES] = { "fase 1", "fase 2", "voltar"};
+	Estados::Tipo tipos[QTD_BOTOES] = { Estados::Tipo::Fase1, Estados::Tipo::Fase2, Estados::Tipo::MenuPause};
 
 	Estados::Menus::ElementosGraficos::Botao* botao = nullptr;
 	for (int i = 0; i < QTD_BOTOES; i++) {

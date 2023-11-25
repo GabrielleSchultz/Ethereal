@@ -64,6 +64,8 @@ void Entidades::Personagens::Tristeza::update(float dt)
 	setPosition( Math::Vector2Df(position.x + currentVelocity.x * dt * direction.x, position.y));
 
 	desenhar();
+
+	remover_projeteis();
 }
 
 void Entidades::Personagens::Tristeza::lancar_projetil()
@@ -74,6 +76,24 @@ void Entidades::Personagens::Tristeza::lancar_projetil()
 	projetil->setDirection(0, 1);
 	projetil->setPosition(position.x, position.y);
 	projeteis.incluir(projetil);
+}
+
+void Entidades::Personagens::Tristeza::remover_projeteis()
+{
+	if (projeteis.getTamanho() > 0) {
+		Listas::Lista<Entidades::Entidade>::Iterador it = projeteis.get_primeiro();
+		Entidades::Entidade* aux = it.operator*();
+		int i = 0;
+
+		while(i < projeteis.getTamanho()){
+			aux = it.operator*();
+			if (static_cast<Entidades::Projetil*>(aux)->getColidiu()) {
+				projeteis.remover(aux);
+				projeteis_lancados.push_back(aux);
+			}
+			it.operator++(); i++;
+		}
+	}
 }
 
 void Entidades::Personagens::Tristeza::colidir(Entidades::Entidade* e)

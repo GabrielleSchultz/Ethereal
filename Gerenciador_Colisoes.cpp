@@ -99,7 +99,7 @@ namespace Gerenciadores
 				for (pro = projeteis->get_primeiro(), p = 0; p < projeteis->getTamanho(); pro.operator++(), p++) {
 					proj = pro.operator*();
 					if (Colisao(inim, proj)) {
-						projeteis->remover(proj);
+						//projeteis->remover(proj);
 						static_cast<Entidades::Personagens::Personagem*>(inim)->colidir(proj);
 						static_cast<Entidades::Personagens::Personagem*>(proj)->colidir(inim);
 					}
@@ -141,14 +141,14 @@ namespace Gerenciadores
 					for (it_proj_inim = projeteis_inimigo->get_primeiro(), p = 0; p < projeteis_inimigo->getTamanho(); it_proj_inim.operator++(), p++) {
 						projetil_inimigo = it_proj_inim.operator*();
 						if (Colisao(projetil_inimigo, jogador)) {
-							projeteis_inimigo->remover(projetil_inimigo);
+							//projeteis_inimigo->remover(projetil_inimigo);
 							static_cast<Entidades::Projetil*>(projetil_inimigo)->colidir(jogador);
 						}
 						for (it_proj_jog = projeteis_jogador->get_primeiro(), p2 = 0; p2 < projeteis_jogador->getTamanho(); it_proj_jog.operator++(), p2++) {
 							projetil_jogador = it_proj_jog.operator*();
 							if (Colisao(projetil_inimigo, projetil_jogador)) {
-								projeteis_inimigo->remover(projetil_inimigo);
-								projeteis_jogador->remover(projetil_jogador);
+								//projeteis_inimigo->remover(projetil_inimigo);
+								//projeteis_jogador->remover(projetil_jogador);
 								static_cast<Entidades::Projetil*>(projetil_inimigo)->colidir(projetil_jogador);
 								static_cast<Entidades::Projetil*>(projetil_jogador)->colidir(projetil_inimigo);
 
@@ -200,7 +200,7 @@ namespace Gerenciadores
 					for (proj = projeteis->get_primeiro(), p = 0; p < projeteis->getTamanho(); proj.operator++(), p++) {
 						projetil = proj.operator*();
 						if (Colisao(projetil, obstaculo)) {
-							projeteis->remover(projetil);
+							//projeteis->remover(projetil);
 							static_cast<Entidades::Personagens::Personagem*>(projetil)->colidir(obstaculo);
 						}
 					}

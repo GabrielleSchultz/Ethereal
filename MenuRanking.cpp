@@ -6,7 +6,9 @@
 #define RANKING_FILEPATH "../Ethereal/Ranking/ranking.txt"
 #define RANKING_MAX 10
 
-Estados::Menus::MenuRanking::MenuRanking(): Menu()
+Estados::Menus::MenuRanking::MenuRanking(): 
+	Menu(),
+	ranking()
 {
 	titulo.setTexto("Ranking");
 	cria_botoes();
@@ -16,6 +18,7 @@ Estados::Menus::MenuRanking::MenuRanking(): Menu()
 
 Estados::Menus::MenuRanking::~MenuRanking()
 {
+	ranking.clear();
 }
 
 void Estados::Menus::MenuRanking::cria_botoes()
@@ -104,9 +107,4 @@ void Estados::Menus::MenuRanking::desenhar()
 	{
 		ranking[i]->desenhar();
 	}
-}
-
-void Estados::Menus::MenuRanking::executar()
-{
-	desenhar();
 }

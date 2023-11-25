@@ -27,7 +27,7 @@ namespace Estados
 	{
 	protected:
 		static Gerenciadores::Gerenciador_Estados* pGE;
-		bool sair; // acho que não precisa (?!)
+		bool ativo;
 
 	public:
 
@@ -36,8 +36,10 @@ namespace Estados
 		void request_push(Estados::Tipo id_estado);
 		void request_pop();
 		void request_clear();
+		void setAtivo(bool b);
+		bool getAtivo();
 		virtual void executar(float dt) = 0;
-		virtual void salvar(std::ostringstream* entrada){}
+		void salvar(std::ostringstream* entrada){}
 	};
 
 }

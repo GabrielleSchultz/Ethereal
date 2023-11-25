@@ -14,7 +14,7 @@ namespace Estados {
 			MenuPause();
 			~MenuPause();
 			void cria_botoes();
-			void desenhar(){}
+			void desenhar();
 		};
 	}
 

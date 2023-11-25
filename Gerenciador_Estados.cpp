@@ -46,6 +46,9 @@ namespace Gerenciadores
 
 		switch (id)
 		{
+		/*case Estados::Tipo::vazio:
+			return;
+			break;*/
 		case Estados::Tipo::GameState:
 			novo_estado = new Estados::GameState();
 			break;
@@ -112,13 +115,30 @@ namespace Gerenciadores
 			switch (it->acao)
 			{
 			case Push:
+			{
 				criar_estado(it->ID);
+				vetor_estados[vetor_estados.size() - 2]->setAtivo(false);
+				std::cout << "criou pendencia push" << std::endl;
+				std::cout << "setou falso" << std::endl;
+			}
 				break;
 			case Pop:
+			{
+				//Estados::Estado* aux = vetor_estados[vetor_estados.size() - 1];
+				vetor_estados[vetor_estados.size() - 1]->setAtivo(false);
 				vetor_estados.pop_back();
+				//delete aux;
+				vetor_estados[vetor_estados.size() - 1]->setAtivo(true);
+				std::cout << "criou pendencia pop" << std::endl;
+				std::cout << "setou true" << std::endl;
+			}
 				break;
 			case Clear:
+			{
 				vetor_estados.clear();
+				std::cout << "criou clear" << std::endl;
+
+			}
 				break;
 			}
 		}

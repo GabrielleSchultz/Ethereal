@@ -67,6 +67,8 @@ void Entidades::Personagens::Vinganca::update(float dt) {
 	}
 
 	desenhar();
+
+	remover_projeteis();
 }
 
 void Entidades::Personagens::Vinganca::teletransporte() {
@@ -101,6 +103,24 @@ void Entidades::Personagens::Vinganca::lancar_projeteis() {
 	}
 
 	lancamento = 0;
+}
+
+void Entidades::Personagens::Vinganca::remover_projeteis()
+{
+	if (projeteis.getTamanho() > 0) {
+		Listas::Lista<Entidades::Entidade>::Iterador it = projeteis.get_primeiro();
+		Entidades::Entidade* aux = it.operator*();
+		int i = 0;
+
+		while (i < projeteis.getTamanho()) {
+			aux = it.operator*();
+			if (static_cast<Entidades::Projetil*>(aux)->getColidiu()) {
+				projeteis.remover(aux);
+				projeteis_lancados.push_back(aux);
+			}
+			it.operator++(); i++;
+		}
+	}
 }
 
 Listas::ListaEntidades* Entidades::Personagens::Vinganca::getProjeteis()

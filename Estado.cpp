@@ -4,7 +4,7 @@
 Gerenciadores::Gerenciador_Estados* Estados::Estado::pGE(Gerenciadores::Gerenciador_Estados::getGerenciadorEstados());
 
 Estados::Estado::Estado():
-	sair(false)
+	ativo(true)
 {
 }
 
@@ -25,4 +25,14 @@ void Estados::Estado::request_pop()
 void Estados::Estado::request_clear()
 {
 	pGE->clear();
+}
+
+void Estados::Estado::setAtivo(bool b)
+{
+	ativo = b;
+}
+
+bool Estados::Estado::getAtivo()
+{
+	return ativo;
 }

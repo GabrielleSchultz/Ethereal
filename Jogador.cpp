@@ -23,6 +23,8 @@ namespace Entidades {
 			groundedRememberTimer(0.2f),
 			jumpPressedRememberTimer(0.2f),
 			gravityCataliser(0.6f),
+			projeteis(),
+			projeteis_lancados(),
 			lancamento(FREQUENCIA_TIRO),
 			facingRight(true),
 			gravityScale (ALTURA_PULO / (2 * DURACAO_PULO * DURACAO_PULO))
@@ -34,6 +36,11 @@ namespace Entidades {
 
 		Jogador::~Jogador()
 		{
+			for (int i = 0; i < projeteis_lancados.size(); i++) {
+				delete(projeteis_lancados[i]);
+			}
+			projeteis_lancados.clear();
+			projeteis.clear();
 		}
 
 		void Jogador::inicializa()
@@ -57,12 +64,15 @@ namespace Entidades {
 			int p = 0;
 			for (it = projeteis.get_primeiro(), p = 0; p < projeteis.getTamanho(); it.operator++(), p++) {
 				aux = it.operator*();
-				if(aux){
+				if(aux != nullptr){
 					aux->update(dt);
 				}
 			}
 			lancamento++;
+
 			desenhar();
+
+			remover_projeteis();
 		}
 
 		void Jogador::mover(float dt)
@@ -166,6 +176,25 @@ namespace Entidades {
 				float jumpSpeed = sqrtf(2.0f * gravityScale * 0.2 * ALTURA_PULO);
 				currentVelocity.y = -jumpSpeed;
 				isGrounded = false;
+			}
+		}
+
+		void Jogador::remover_projeteis()
+		{
+			if (projeteis.getTamanho() > 0) {
+				Listas::Lista<Entidades::Entidade>::Iterador it = projeteis.get_primeiro();
+				Entidades::Entidade* aux = it.operator*();
+				int i = 0;
+
+				while (i < projeteis.getTamanho()) {
+					aux = it.operator*();
+					if (static_cast<Entidades::Projetil*>(aux)->getColidiu()) {
+						projeteis.remover(aux);
+						projeteis_lancados.push_back(aux);
+					}
+					it.operator++(); i++;
+
+				}
 			}
 		}
 

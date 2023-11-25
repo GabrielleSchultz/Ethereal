@@ -2,12 +2,14 @@
 
 #include "Inimigo.h"
 #include "Projetil.h"
+#include <vector>
 
 namespace Entidades {
 	namespace Personagens {
 		class Tristeza : public Inimigo {
 		private:
 			Listas::ListaEntidades projeteis;
+			std::vector<Entidades::Entidade*> projeteis_lancados;
 			int lancamento;
 			float x_maximo;
 			float x_minimo;
@@ -19,6 +21,7 @@ namespace Entidades {
 			void salvar(std::ostringstream* entrada);
 			void update(float dt);
 			void lancar_projetil();
+			void remover_projeteis();
 			void colidir(Entidades::Entidade* e);
 			Listas::ListaEntidades* getProjeteis();
 			void setMovimentacao(const float x);

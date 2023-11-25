@@ -1,11 +1,13 @@
 #include "ControleJogador.h"
 #include "Jogador.h"
 
+Gerenciadores::Gerenciador_Estados* Controle::ControleJogador::pGE(Gerenciadores::Gerenciador_Estados::getGerenciadorEstados());
+
 Controle::ControleJogador::ControleJogador() :
 	Controller(),
 	pJogador(nullptr)
 {
-	setKeyCommands("W", "D", "A", "S");
+	setKeyCommands("W", "D", "A", "S", "space");
 }
 
 void Controle::ControleJogador::notifyKeyPressed(std::string key)
@@ -33,6 +35,10 @@ void Controle::ControleJogador::notifyKeyPressed(std::string key)
 		if (key == ataque) {
 			pJogador->atacar();
 		}
+
+		if (key == pause) {
+			pGE->push(Estados::Tipo::MenuPause);
+		}
 	}
 	else
 		std::cout << "Controle::ControleJogador -> ponteiro nulo" << std::endl;
@@ -55,12 +61,13 @@ void Controle::ControleJogador::setJogador(Entidades::Personagens::Jogador* joga
 	pJogador = jogador;
 }
 
-void Controle::ControleJogador::setKeyCommands(std::string jump, std::string right, std::string left, std::string attack)
+void Controle::ControleJogador::setKeyCommands(std::string jump, std::string right, std::string left, std::string attack, std::string pausar)
 {
 	pular = jump;
 	esquerda = left;
 	direita = right;
 	ataque = attack;
+	pause = pausar;
 }
 
 void Controle::ControleJogador::setReviveCommand(std::string revive)

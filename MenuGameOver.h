@@ -8,7 +8,7 @@ namespace Estados {
 		class MenuGameOver : public Menu
 		{
 		private:
-			ElementosGraficos::Texto texto;
+			// inventar algo
 
 		public:
 			MenuGameOver();

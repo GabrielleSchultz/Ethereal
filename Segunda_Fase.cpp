@@ -39,7 +39,8 @@ void Fases::Segunda_Fase::executar(float dt)
 			aux = it.operator*();
 			//aux->update(dt);
 			aux->executar(dt);
-			if (!static_cast<Entidades::Personagens::Personagem*>(aux)->getVivo() && aux->getId() == Entidades::ID::boss) {
+			// VAMOS USAR THREADS
+			/*if (!static_cast<Entidades::Personagens::Personagem*>(aux)->getVivo() && aux->getId() == Entidades::ID::boss) {
 				Listas::Lista<Entidades::Entidade>::Iterador it_boss = chefoes.get_primeiro();
 				if (chefoes.getTamanho() > 1) {
 					it_boss.operator++();
@@ -47,7 +48,7 @@ void Fases::Segunda_Fase::executar(float dt)
 					inimigos.incluir(boss);
 				}
 				chefoes.remover(aux);
-			}
+			}*/
 			if (aux->getId() == Entidades::ID::inimigo_raiva) {
 				static_cast<Entidades::Personagens::Raiva*>(aux)->perseguir(static_cast<Entidades::Personagens::Jogador*>(jogador));
 			}

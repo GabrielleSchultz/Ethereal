@@ -1,4 +1,4 @@
-#pragma once
+/*#pragma once
 
 #include <iostream>
 #include <time.h>
@@ -20,4 +20,4 @@ private:
     static pthread_mutex_t mute;
     pthread_t thread;
 
-};
+};*/

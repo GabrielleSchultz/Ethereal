@@ -1,4 +1,4 @@
-#include "Vinganca_Thread.h"
+/*#include "Vinganca_Thread.h"
 
 void Entidades::Personagens::Inimigos::Vinganca_Thread::run()
 {
@@ -50,3 +50,4 @@ void Entidades::Personagens::Inimigos::Vinganca_Thread::salvar()
     arquivo << "]";
     arquivo.close();
 }
+*/

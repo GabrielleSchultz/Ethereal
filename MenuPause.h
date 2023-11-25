@@ -9,7 +9,6 @@ namespace Estados {
 		private:
 			//...
 
-
 		public:
 			MenuPause();
 			~MenuPause();

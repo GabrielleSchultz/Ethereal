@@ -1,6 +1,7 @@
 #pragma once
 #include "Estado.h"
 #include "Fase.h"
+#include "Texto.h"
 
 namespace Estados {
 
@@ -8,6 +9,7 @@ namespace Estados {
 	{
 	private:
 		Fases::Fase* pFase;
+		Estados::Menus::ElementosGraficos::Texto pontuacao;
 	public:
 		GameState(int num_fase = 1);
 		~GameState();

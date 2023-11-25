@@ -25,7 +25,7 @@ namespace Estados {
 			void selecionarBaixo();
 			Estados::Tipo getTipoEstado() const;
 			void executar(float dt);
-			virtual void desenhar() = 0;
+			virtual void desenhar();
 			virtual void cria_botoes() = 0;
 		};
 	}

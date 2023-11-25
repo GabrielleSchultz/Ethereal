@@ -17,37 +17,37 @@ Controle::ControleMenu::~ControleMenu()
 
 void Controle::ControleMenu::notifyKeyPressed(std::string key)
 {
-	if(pMenu)
+	if (pMenu)
 	{
 		if (pMenu->getAtivo()) {
 			if (key == para_cima)
 			{
 				pMenu->selecionarCima();
-				std::cout << "cima" << std::endl;
+				//std::cout << "cima" << std::endl;
 			}
 
 			if (key == para_baixo)
 			{
 				pMenu->selecionarBaixo();
-				std::cout << "baixo" << std::endl;
+				//std::cout << "baixo" << std::endl;
 			}
 
 			if (key == enter)
 			{
-				std::cout << "ENTER" << std::endl;
+				//std::cout << "ENTER" << std::endl;
 				if (pMenu->getTipoEstado() == Estados::Tipo::sair) {
 					pMenu->request_clear();
-					std::cout << "clear" << std::endl;
+					//std::cout << "clear" << std::endl;
 				}
 				else if (pMenu->getTipoEstado() == Estados::Tipo::vazio)
 				{
 					pMenu->request_pop();
-					std::cout << "pop" << std::endl;
+					//std::cout << "pop" << std::endl;
 				}
 				else
 				{
 					pMenu->request_push(pMenu->getTipoEstado());
-					std::cout << "push" << std::endl;
+					//std::cout << "push" << std::endl;
 				}
 			}
 		}
@@ -84,7 +84,7 @@ void Controle::ControleMenu::setKeyCommands(std::string up, std::string down, st
 
 void Controle::ControleMenu::setMenu(Estados::Menus::Menu* m)
 {
-	if (m){
+	if (m) {
 		pMenu = m;
 		pGerenciadorInput->adicionar_observer(this);
 	}

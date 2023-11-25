@@ -13,19 +13,10 @@ Estados::Menus::MenuFases::~MenuFases()
 {
 }
 
-void Estados::Menus::MenuFases::desenhar()
-{
-	pGG->desenhar("Assets/Backgrounds/Menu.png", Math::Vector2Df(0, 0));
-	titulo.desenhar();
-	for (int i = 0; i < botoes.size(); i++) {
-		botoes[i]->desenhar();
-	}
-}
-
 void Estados::Menus::MenuFases::cria_botoes()
 {
-	std::string textos[QTD_BOTOES] = { "fase 1", "fase 2", "voltar"};
-	Estados::Tipo tipos[QTD_BOTOES] = { Estados::Tipo::Fase1, Estados::Tipo::Fase2, Estados::Tipo::MenuPause};
+	std::string textos[QTD_BOTOES] = { "fase 1", "fase 2", "voltar" };
+	Estados::Tipo tipos[QTD_BOTOES] = { Estados::Tipo::Fase1, Estados::Tipo::Fase2, Estados::Tipo::vazio };
 
 	Estados::Menus::ElementosGraficos::Botao* botao = nullptr;
 	for (int i = 0; i < QTD_BOTOES; i++) {

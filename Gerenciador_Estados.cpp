@@ -6,6 +6,7 @@
 #include "MenuRanking.h"
 #include "MenuFases.h"
 #include "MenuSettings.h"
+#include "MenuGameOver.h"
 
 namespace Gerenciadores
 {
@@ -46,9 +47,9 @@ namespace Gerenciadores
 
 		switch (id)
 		{
-		/*case Estados::Tipo::vazio:
-			return;
-			break;*/
+			/*case Estados::Tipo::vazio:
+				return;
+				break;*/
 		case Estados::Tipo::GameState:
 			novo_estado = new Estados::GameState();
 			break;
@@ -79,6 +80,8 @@ namespace Gerenciadores
 		case Estados::Tipo::MenuSettings:
 			novo_estado = new Estados::Menus::MenuSettings();
 			break;
+		case Estados::Tipo::Gameover:
+			novo_estado = new Estados::Menus::MenuGameOver();
 		}
 
 		vetor_estados.push_back(static_cast<Estados::Estado*>(novo_estado));
@@ -110,7 +113,7 @@ namespace Gerenciadores
 
 	void Gerenciador_Estados::aplicar_pendencias()
 	{
-		for(Acoes_Pendentes *it : lista_pendencias)
+		for (Acoes_Pendentes* it : lista_pendencias)
 		{
 			switch (it->acao)
 			{
@@ -118,10 +121,10 @@ namespace Gerenciadores
 			{
 				criar_estado(it->ID);
 				vetor_estados[vetor_estados.size() - 2]->setAtivo(false);
-				std::cout << "criou pendencia push" << std::endl;
-				std::cout << "setou falso" << std::endl;
+				//std::cout << "criou pendencia push" << std::endl;
+				//std::cout << "setou falso" << std::endl;
 			}
-				break;
+			break;
 			case Pop:
 			{
 				//Estados::Estado* aux = vetor_estados[vetor_estados.size() - 1];
@@ -129,17 +132,17 @@ namespace Gerenciadores
 				vetor_estados.pop_back();
 				//delete aux;
 				vetor_estados[vetor_estados.size() - 1]->setAtivo(true);
-				std::cout << "criou pendencia pop" << std::endl;
-				std::cout << "setou true" << std::endl;
+				//std::cout << "criou pendencia pop" << std::endl;
+				//std::cout << "setou true" << std::endl;
 			}
-				break;
+			break;
 			case Clear:
 			{
 				vetor_estados.clear();
-				std::cout << "criou clear" << std::endl;
+				//std::cout << "criou clear" << std::endl;
 
 			}
-				break;
+			break;
 			}
 		}
 		lista_pendencias.clear();

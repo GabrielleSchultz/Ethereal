@@ -9,7 +9,7 @@ namespace Gerenciadores
 	Colisoes* Colisoes::instancia_pGC(nullptr);
 
 	Colisoes::Colisoes() :
-		inimigos(nullptr), 
+		inimigos(nullptr),
 		jogadores(nullptr),
 		obstaculos(nullptr)
 	{
@@ -29,13 +29,13 @@ namespace Gerenciadores
 
 	void Colisoes::setListaInimigos(Listas::ListaEntidades* i)
 	{
-		if(i)
+		if (i)
 			inimigos = i;
 	}
 
 	void Colisoes::setListaJogadores(Listas::ListaEntidades* j)
 	{
-		if(j)
+		if (j)
 			jogadores = j;
 	}
 
@@ -132,11 +132,8 @@ namespace Gerenciadores
 				inimigo = it_inimigo.operator*();
 
 				// arrumar depois se der tempo
-				if (inimigo->getId() == Entidades::ID::inimigo_tristeza || inimigo->getId() == Entidades::ID::boss) {
-					if(inimigo->getId() == Entidades::ID::inimigo_tristeza)
+				if (inimigo->getId() == Entidades::ID::inimigo_tristeza) {
 					projeteis_inimigo = static_cast<Entidades::Personagens::Tristeza*>(inimigo)->getProjeteis();
-					else if(inimigo->getId() == Entidades::ID::boss)
-					projeteis_inimigo = static_cast<Entidades::Personagens::Vinganca*>(inimigo)->getProjeteis();
 
 					for (it_proj_inim = projeteis_inimigo->get_primeiro(), p = 0; p < projeteis_inimigo->getTamanho(); it_proj_inim.operator++(), p++) {
 						projetil_inimigo = it_proj_inim.operator*();
@@ -191,12 +188,9 @@ namespace Gerenciadores
 					static_cast<Entidades::Personagens::Jogador*>(inimigo)->colidir(obstaculo);
 				}
 
-				if (inimigo->getId() == Entidades::ID::inimigo_tristeza || inimigo->getId() == Entidades::ID::boss) {
-					if(inimigo->getId() == Entidades::ID::inimigo_tristeza)
+				if (inimigo->getId() == Entidades::ID::inimigo_tristeza) {
 					projeteis = static_cast<Entidades::Personagens::Tristeza*>(inimigo)->getProjeteis();
-					else if(inimigo->getId() == Entidades::ID::boss)
-					projeteis = static_cast<Entidades::Personagens::Vinganca*>(inimigo)->getProjeteis();
-					
+
 					for (proj = projeteis->get_primeiro(), p = 0; p < projeteis->getTamanho(); proj.operator++(), p++) {
 						projetil = proj.operator*();
 						if (Colisao(projetil, obstaculo)) {

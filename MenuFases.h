@@ -9,11 +9,9 @@ namespace Estados {
 		private:
 			//...
 
-
 		public:
 			MenuFases();
 			~MenuFases();
-			void desenhar();
 			void cria_botoes();
 		};
 

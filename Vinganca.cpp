@@ -40,8 +40,12 @@ void Entidades::Personagens::Vinganca::colidir(Entidades::Entidade* e)
 	}
 }
 
-void Entidades::Personagens::Vinganca::salvar(std::ostringstream* entrada) {
+void Entidades::Personagens::Vinganca::salvar(nlohmann::ordered_json& entrada)
+{
+}
 
+void Entidades::Personagens::Vinganca::carregar(nlohmann::ordered_json& entrada)
+{
 }
 
 void Entidades::Personagens::Vinganca::update(float dt) {

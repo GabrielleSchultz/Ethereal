@@ -40,6 +40,13 @@ namespace Fases
 
 		jsonOutput.close();
 	}
+		for (int i = 0; i < mortos.size(); i++) {
+			delete(mortos[i]);
+		}
+		mortos.clear();
+		inimigos.clear();
+		jogadores.clear();
+		obstaculos.clear();
 	}
 
 	void Fase::salvarInimigos()

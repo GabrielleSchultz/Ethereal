@@ -47,6 +47,8 @@ namespace Listas {
 				return *this;
 			}
 			bool operator==(const Elemento<TL>* outro) const;
+			bool operator!=(const Elemento<TL>* outro) const;
+			bool operator!=(const Iterador outro) const;
 			void operator=(const Elemento<TL>* outro);
 			TL* operator*();
 			Elemento<TL>* get_atual() const;
@@ -55,6 +57,9 @@ namespace Listas {
 
 		Iterador get_primeiro() const {
 			return Iterador(primeiro);
+		}
+		Iterador get_final_vetor() const {
+			return Iterador(ultimo->getProximo());
 		}
 	};
 }
@@ -201,6 +206,18 @@ bool Listas::Lista<TL>::Iterador::operator==(const Elemento<TL>* outro) const
 	return atual == outro;
 }
 
+template<class TL>
+bool Listas::Lista<TL>::Iterador::operator!=(const Elemento<TL>* outro) const
+{
+	return atual != outro;
+}
+
+template<class TL>
+bool Listas::Lista<TL>::Iterador::operator!=(const Iterador outro) const
+{
+	return this->atual() != outro->get_atual();
+}
+
 template <class TL>
 void Listas::Lista<TL>::Iterador::operator=(const Elemento<TL>* outro)
 {
@@ -212,6 +229,7 @@ TL* Listas::Lista<TL>::Iterador::operator*()
 {
 	return atual->getInfo();
 }
+
 
 template <class TL>
 Listas::Lista<TL>::Elemento<TL>* Listas::Lista<TL>::Iterador::get_atual() const

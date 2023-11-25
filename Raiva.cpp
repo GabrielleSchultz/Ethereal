@@ -20,8 +20,17 @@ namespace Entidades {
 
 		}
 
-		void Raiva::salvar(std::ostringstream* entrada) {
+		void Raiva::salvar(nlohmann::ordered_json& entrada)
+		{
+			salvarInimigo(entrada);
+			entrada["agilidade"] = agilidade;
 
+		}
+
+		void Raiva::carregar(nlohmann::ordered_json& saida)
+		{
+			carregarInimigo(saida);
+			agilidade = saida["agilidade"].template get<float>();
 		}
 
 		void Raiva::update(float dt) {

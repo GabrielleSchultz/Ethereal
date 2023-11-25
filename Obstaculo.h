@@ -11,7 +11,8 @@ namespace Entidades {
 			Obstaculo(Math::Vector2Df posicao = Math::Vector2Df(0.f,0.f), const char* texture = "", ID id = ID::vazio);
 			~Obstaculo();
 			virtual void obstacular(Personagens::Jogador* p) = 0;
-			virtual void salvar(std::ostringstream* entrada) = 0;
+			virtual void salvar(nlohmann::ordered_json& entrada) = 0;
+			virtual void carregar(nlohmann::ordered_json& saida) = 0;
 			void update(float dt) = 0;
 		};
 	}

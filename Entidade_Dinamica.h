@@ -1,6 +1,7 @@
 #pragma once
 
 #include "Vector2D.h"
+#include "json.h"
 
 //toda entidade que pode se mover dentro do jogo
 
@@ -35,8 +36,9 @@ namespace Entidades {
 			virtual void colidir(Entidades::Entidade* e) = 0;
 			virtual void update(float dt) = 0;
 			virtual void mover(float dt) {}
-
-			virtual void salvar(std::ostringstream* entrada) = 0;
+			void salvarAtributosDinamicos(nlohmann::ordered_json& entrada);
+			virtual void salvar(nlohmann::ordered_json& entrada) = 0;
+			void carregarAtributos(nlohmann::ordered_json& saida);
 
 		};
 	}

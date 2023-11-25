@@ -13,7 +13,8 @@ namespace Entidades {
 			~Plataforma();
 			void obstacular(Entidades::Personagens::Jogador* p);
 			void update(float dt);
-			void salvar(std::ostringstream* entrada);
+			void salvar(nlohmann::ordered_json& entrada);
+			void carregar(nlohmann::ordered_json& saida);
 		};
 	}
 

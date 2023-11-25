@@ -11,6 +11,7 @@ namespace Fases {
 
 	class Fase : public Ente {
 	protected:
+		bool novo_jogo;
 		Gerenciadores::Colisoes* pGerenciadorColisoes;
 		Listas::ListaEntidades inimigos;
 		Listas::ListaEntidades obstaculos;
@@ -21,8 +22,12 @@ namespace Fases {
 		Fase();
 		~Fase();
 		virtual void executar(float dt) = 0;
-		virtual void salvar(std::ostringstream* entrada) = 0;
+		virtual void salvar();
+		virtual void salvarJogadores();
+		virtual void salvarInimigos();
+		virtual void salvarObstaculos();
 		void gerenciar_colisoes();
+		int getPontuacaoJogadores() const;
 		void criar_jogador(char type, Math::Vector2Df posicao);
 		void remover_sem_vida(Listas::ListaEntidades* lista);
 		virtual void criar_inimigos() = 0;

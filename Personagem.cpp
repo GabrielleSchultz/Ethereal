@@ -29,5 +29,17 @@ namespace Entidades {
 		{
 			num_vidas = nv;
 		}
+		void Personagem::salvarPersonagem(nlohmann::ordered_json& entrada)
+		{
+			salvarEntidade(entrada);
+			salvarAtributosDinamicos(entrada);
+			entrada["vidas"] = num_vidas;
+		}
+		void Personagem::carregarDadosPersonagem(nlohmann::ordered_json& saida)
+		{
+			carregarDadosEntidade(saida);
+			carregarAtributos(saida); //atributos dinamicos
+			setNumVidas(saida["vidas"].template get<const int>());
+		}
 	}
 }

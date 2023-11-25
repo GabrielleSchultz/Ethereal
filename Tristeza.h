@@ -18,7 +18,8 @@ namespace Entidades {
 			~Tristeza();
 			void executar();
 			void danificar(Jogador* p);
-			void salvar(std::ostringstream* entrada);
+			void salvar(nlohmann::ordered_json& entrada);
+			void carregar(nlohmann::ordered_json& entrada);
 			void update(float dt);
 			void lancar_projetil();
 			void remover_projeteis();

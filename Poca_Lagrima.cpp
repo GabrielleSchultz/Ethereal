@@ -23,8 +23,10 @@ void Entidades::Obstaculos::Poca_Lagrimas::update(float dt)
 
 void Entidades::Obstaculos::Poca_Lagrimas::salvar(nlohmann::ordered_json& entrada)
 {
+	salvarEntidade(entrada);
 }
 
 void Entidades::Obstaculos::Poca_Lagrimas::carregar(nlohmann::ordered_json& saida)
 {
+	carregarDadosEntidade(saida);
 }

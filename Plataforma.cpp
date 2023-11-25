@@ -32,9 +32,11 @@ void Entidades::Obstaculos::Plataforma::update(float dt)
 
 void Entidades::Obstaculos::Plataforma::salvar(nlohmann::ordered_json& entrada)
 {
+	salvarEntidade(entrada);
 }
 
 void Entidades::Obstaculos::Plataforma::carregar(nlohmann::ordered_json& saida)
 {
+	carregarDadosEntidade(saida);
 }
 

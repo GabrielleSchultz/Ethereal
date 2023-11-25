@@ -27,17 +27,13 @@ namespace Entidades {
 			//checagem de movimento
 			bool isGrounded;
 			bool isJumping;
-			//remembers de movimento
-			float jumpPressedRemember;
-			float groundedRemember;
-			//timers
-			const float groundedRememberTimer;
-			const float jumpPressedRememberTimer;
+			const float jumpSpeed;
 
 			//multiplayer
 			JogadorNum Player;
 			static int numJogadores;
 
+			//projeteis
 			Listas::ListaEntidades projeteis;
 			std::vector<Entidades::Entidade*> projeteis_lancados;
 			int lancamento;
@@ -58,6 +54,7 @@ namespace Entidades {
 			void colidir(Entidades::Entidade* e);
 			void atacar();
 			void pular();
+			void aplicarFisica(float dt);
 			void remover_projeteis();
 			bool getFacingRight() const;
 			void setFacingRight(const bool b);

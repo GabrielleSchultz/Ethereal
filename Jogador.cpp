@@ -18,10 +18,7 @@ namespace Entidades {
 			isGrounded(false),
 			isJumping(false),
 			Player(player),
-			jumpPressedRemember(0.f),
-			groundedRemember(0.f),
-			groundedRememberTimer(0.2f),
-			jumpPressedRememberTimer(0.2f),
+			jumpSpeed(sqrtf(gravityScale * 0.2 * ALTURA_PULO)),
 			gravityCataliser(0.6f),
 			projeteis(),
 			projeteis_lancados(),
@@ -77,36 +74,7 @@ namespace Entidades {
 
 		void Jogador::mover(float dt)
 		{
-			float velocidadeX = fabs(currentVelocity.x);
-
-			if (velocidadeX < max_vel)
-				currentVelocity.x += acceleration * direction.x * dt;
-
-			if (!isGrounded)
-				position.y += 2 * gravityCataliser * dt;
-			
-			//atrito
-			if (currentVelocity.x > 0.f)
-			{
-				currentVelocity.x -= atrito * dt;
-				if (currentVelocity.x < 0.f)
-					currentVelocity.x = 0.f;
-			}
-			else if (currentVelocity.x < 0.f)
-			{
-				currentVelocity.x += atrito * dt;
-				if (currentVelocity.x > 0.f)
-					currentVelocity.x = 0.f;
-			}
-
-			if (currentVelocity.y < 0.f) {
-				currentVelocity.y += gravidade + gravityCataliser * 4.f;
-				if (currentVelocity.y > 0.f)
-					currentVelocity.y = 0.f;
-			}
-
-			//std::cout << isGrounded << std::endl;
-			//std::cout << currentVelocity.y << std::endl;
+			aplicarFisica(dt);
 			setPosition(position.x + (currentVelocity.x * dt), position.y + currentVelocity.y);
 		}
 
@@ -177,10 +145,53 @@ namespace Entidades {
 		void Jogador::pular()
 		{
 			if (isGrounded) {
-				float jumpSpeed = sqrtf(2.0f * gravityScale * 0.2 * ALTURA_PULO);
 				currentVelocity.y = -jumpSpeed;
+				direction.y = 1;
 				isGrounded = false;
 			}
+		}
+
+		void Jogador::aplicarFisica(float dt)
+		{
+			float velocidadeX = fabs(currentVelocity.x);
+			if (velocidadeX < max_vel)
+				currentVelocity.x += acceleration * direction.x * dt;
+
+			//gravidade
+			position.y += gravityCataliser;
+			if (!isGrounded) {
+				position.y += gravityCataliser;
+				direction.y = -1;
+			}
+			//atrito
+			if (currentVelocity.x > 0.f)
+			{
+				currentVelocity.x -= atrito * dt;
+				if (currentVelocity.x < 0.f)
+					currentVelocity.x = 0.f;
+			}
+			else if (currentVelocity.x < 0.f)
+			{
+				currentVelocity.x += atrito * dt;
+				if (currentVelocity.x > 0.f)
+					currentVelocity.x = 0.f;
+			}
+
+			//pulo
+			if (currentVelocity.y < 0.f && fabs(currentVelocity.y) < ALTURA_PULO / 100)
+				currentVelocity.y -= jumpSpeed * dt;
+
+			else if (currentVelocity.y < 0.f) {
+				currentVelocity.y += gravidade + gravityCataliser * 2.f;
+				direction.y = -1;
+				if (currentVelocity.y > 0.f) {
+					currentVelocity.y = 0.f;
+					direction.y = 0;
+				}
+			}
+
+			if (direction.y == -1)
+				position.y -= gravidade * gravityCataliser;
 		}
 
 		void Jogador::remover_projeteis()

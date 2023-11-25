@@ -51,6 +51,11 @@ namespace Entidades {
 			return direction;
 		}
 
+		Math::Vector2Df Dinamica::getVelocidade() const
+		{
+			return currentVelocity;
+		}
+
 		void Dinamica::salvarAtributosDinamicos(nlohmann::ordered_json& entrada)
 		{
 			entrada["atrito"] = atrito;

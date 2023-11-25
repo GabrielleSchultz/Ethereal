@@ -32,6 +32,8 @@ namespace Entidades {
 			//gets
 			float getAtrito() const;
 			Math::Vector2Df getDirection() const;
+			Math::Vector2Df getVelocidade() const;
+
 			//move
 			virtual void colidir(Entidades::Entidade* e) = 0;
 			virtual void update(float dt) = 0;

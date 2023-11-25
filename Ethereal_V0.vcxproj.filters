@@ -108,6 +108,12 @@
     <ClCompile Include="MenuGameOver.cpp">
       <Filter>Sources\Estados\Menu</Filter>
     </ClCompile>
+    <ClCompile Include="Vinganca_Thread.cpp">
+      <Filter>Sources\Entidade\Personagem\Inimigo</Filter>
+    </ClCompile>
+    <ClCompile Include="MenuSettings.cpp">
+      <Filter>Sources\Estados\Menu</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="ControleJogador.h">
@@ -221,6 +227,12 @@
     <ClInclude Include="Botao.h" />
     <ClInclude Include="Texto.h" />
     <ClInclude Include="MenuGameOver.h">
+      <Filter>Headers\Estados\Menu</Filter>
+    </ClInclude>
+    <ClInclude Include="Vinganca_Thread.h">
+      <Filter>Headers\Entidade\Personagem\Inimigo</Filter>
+    </ClInclude>
+    <ClInclude Include="MenuSettings.h">
       <Filter>Headers\Estados\Menu</Filter>
     </ClInclude>
   </ItemGroup>

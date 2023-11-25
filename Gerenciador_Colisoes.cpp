@@ -181,6 +181,15 @@ namespace Gerenciadores
 					static_cast<Entidades::Obstaculos::Obstaculo*>(obstaculo)->obstacular(static_cast<Entidades::Personagens::Jogador*>(jogador));
 					static_cast<Entidades::Personagens::Jogador*>(jogador)->colidir(obstaculo);
 				}
+
+				projeteis = static_cast<Entidades::Personagens::Jogador*>(jogador)->getProjeteis();
+				for (proj = projeteis->get_primeiro(), p = 0; p < projeteis->getTamanho(); proj.operator++(), p++) {
+					projetil = proj.operator*();
+					if (Colisao(projetil, obstaculo)) {
+						//projeteis->remover(projetil);
+						static_cast<Entidades::Personagens::Personagem*>(projetil)->colidir(obstaculo);
+					}
+				}
 			}
 			for (inim = inimigos->get_primeiro(), i = 0; i < inimigos->getTamanho(); inim.operator++(), i++) {
 				inimigo = inim.operator*();

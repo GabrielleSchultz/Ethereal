@@ -20,11 +20,8 @@ Fases::Primeira_Fase::~Primeira_Fase()
 
 void Fases::Primeira_Fase::executar(float dt)
 {
-	if (fim_de_fase) {
-		if (jogadores.getTamanho() != 0)
-			proxima_fase = true;
-	}
-	else {
+	
+	if(!fim_de_fase) {
 		pGerenciadorGrafico->desenhar("Assets/Backgrounds/Stage1_full_background.png", Math::Vector2Df(0, 0));
 
 		Listas::Lista<Entidades::Entidade>::Iterador jog;
@@ -66,6 +63,11 @@ void Fases::Primeira_Fase::executar(float dt)
 
 		remover_sem_vida(&inimigos);
 		remover_sem_vida(&jogadores);
+
+		if (fim_de_fase) {
+			if (jogadores.getTamanho() != 0)
+				proxima_fase = true;
+		}
 	}
 }
 
@@ -82,7 +84,7 @@ void Fases::Primeira_Fase::criar_inimigos()
 		raivinha = new Entidades::Personagens::Raiva();
 		if (raivinha)
 		{
-			raivinha->setPosition((float)700 + 64 * i, 200);
+			raivinha->setPosition((float)600 + 64 * i, 200);
 			inimigos.incluir(raivinha);
 		}
 	}
@@ -92,7 +94,7 @@ void Fases::Primeira_Fase::criar_inimigos()
 		sadness = new Entidades::Personagens::Tristeza();
 		if (sadness)
 		{
-			sadness->setPosition((float)450 + 64 * i, 100 * (rand() % 2 + 2));
+			sadness->setPosition((float)200 + 64 * i, 100 * (rand() % 2 + 2));
 			sadness->setMovimentacao((float)450 + 64 * i);
 			inimigos.incluir(sadness);
 		}
@@ -115,8 +117,8 @@ void Fases::Primeira_Fase::criar_obstaculos()
 	Entidades::Obstaculos::Plataforma* plataforma_cima = nullptr;
 	Entidades::Obstaculos::Plataforma* plataforma_baixo = nullptr;
 	for (i = 0; i < 5 - qtd_espinhos; i++, x++) {
-		plataforma_cima = new Entidades::Obstaculos::Plataforma(Math::Vector2Df(x * 32.f + 16.f, 624.f), "Assets/Sprites/middle_ground_sprite.png");
-		plataforma_baixo = new Entidades::Obstaculos::Plataforma(Math::Vector2Df(x * 32.f + 16.f, 656.f), "Assets/Sprites/middle_ground_sprite.png");
+		plataforma_cima = new Entidades::Obstaculos::Plataforma(Math::Vector2Df(x * 32.f + 16.f, 624.f));
+		plataforma_baixo = new Entidades::Obstaculos::Plataforma(Math::Vector2Df(x * 32.f + 16.f, 656.f));
 		if (plataforma_cima && plataforma_baixo) {
 			obstaculos.incluir(plataforma_cima);
 			obstaculos.incluir(plataforma_baixo);
@@ -143,18 +145,28 @@ void Fases::Primeira_Fase::criar_cenario(std::string file_path)
 			switch (simbolo)
 			{
 			case '#':
-				aux = static_cast<Entidades::Entidade*>(new Entidades::Obstaculos::Plataforma(Math::Vector2Df(j * 32.f + 16.f, i * 32.f + 16.f), "Assets/Sprites/middle_ground_sprite.png"));
+			{
+				aux = static_cast<Entidades::Entidade*>(new Entidades::Obstaculos::Plataforma(Math::Vector2Df(j * 32.f + 16.f, i * 32.f + 16.f)));
 				if (aux)
 					obstaculos.incluir(aux);
-
+			}
 				break;
+			case '^':
+			{
+				aux = static_cast<Entidades::Entidade*>(new Entidades::Obstaculos::Espinhos(Math::Vector2Df(j * 32.f + 16.f, i * 32.7f)));
+				if (aux)
+					obstaculos.incluir(aux);
+			}
+			break;
 			case 'P':
 				criar_jogador('P', Math::Vector2Df(j * 32.f, i * 32.f));
 
 				break;
 			case 'B':
-				criar_jogador('B', Math::Vector2Df(j * 32.f, i * 32.f));
-
+			{
+				if(Estados::Estado::getMultiplayer())
+					criar_jogador('B', Math::Vector2Df(j * 32.f, i * 32.f));
+			}
 				break;
 			default:
 				break;

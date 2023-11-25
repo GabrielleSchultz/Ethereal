@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 ﻿  Gerenciador_Colisoes.cpp
   Menu.cpp
 C:\Users\gabri\source\repos\GabrielleSchultz\Ethereal\Menu.cpp(30,37): warning C4267: '=': conversão de 'size_t' para 'int', possível perda de dados
@@ -20,3 +21,7 @@ C:\Users\gabri\source\repos\GabrielleSchultz\Ethereal\Projetil.cpp(16,20): warni
 C:\Users\gabri\source\repos\GabrielleSchultz\Ethereal\Projetil.cpp(16,17): warning C4244: 'argumento': conversão de 'int' para 'float', possível perda de dados
   Tristeza.cpp
   Gerando Código...
+=======
+﻿  GameState.cpp
+  Ethereal_V0.vcxproj -> C:\Users\miche_bb3fmdp\OneDrive\Documentos\GitHub\Ethereal\x64\Debug\Ethereal_V0.exe
+>>>>>>> 41972525db5a2a4f7af2271bedf0e6eeb8930225

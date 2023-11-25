@@ -139,6 +139,7 @@ void Gerenciadores::Grafico::desenhar(const std::string filePath, Math::Vector2D
 
 	sf::Sprite sprite;
 	sprite.setTexture(*texture);
+	sprite.setPosition(pos.x, pos.y);
 
 	janelaPrincipal->draw(sprite);
 }

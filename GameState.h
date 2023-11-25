@@ -14,6 +14,7 @@ namespace Estados {
 		GameState(int num_fase = 1);
 		~GameState();
 		void executar(float dt);
+		void salvar();
 	};
 
 }

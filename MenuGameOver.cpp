@@ -3,8 +3,9 @@
 
 Estados::Menus::MenuGameOver::MenuGameOver() : 
 	Menu()
-
 {
+	fundo_gameover = "Assets/Backgrounds/gameover.png";
+	setFundo(fundo_gameover);
 	titulo.setTexto("Fim de Jogo");
 	cria_botoes();
 	botoes[botao_atual]->setSelecionado(true);

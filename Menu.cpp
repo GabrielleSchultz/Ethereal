@@ -6,11 +6,12 @@ Estados::Menus::Menu::Menu() :
     Estado(),
     titulo(),
     botoes(),
-    botao_atual(0)
+    botao_atual(0),
+    fundo()
 {
-    pGG->carregarTextura("Assets/Backgrounds/Menu.png");
     pControles = new Controle::ControleMenu();
     pControles->setMenu(this);
+    setFundo("Assets/Backgrounds/Menu.png");
 }
 
 Estados::Menus::Menu::~Menu()
@@ -51,9 +52,15 @@ void Estados::Menus::Menu::executar(float dt)
     desenhar();
 }
 
+void Estados::Menus::Menu::setFundo(std::string f)
+{
+    pGG->carregarTextura(f);
+    fundo = f;
+}
+
 void Estados::Menus::Menu::desenhar()
 {
-    pGG->desenhar("Assets/Backgrounds/Menu.png", Math::Vector2Df(0, 0));
+    pGG->desenhar(fundo, Math::Vector2Df(0, 0));
     titulo.desenhar();
     for (int i = 0; i < botoes.size(); i++)
     {

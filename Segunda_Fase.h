@@ -12,8 +12,8 @@ namespace Fases {
 	class Segunda_Fase : public Fase
 	{
 	private:
-		Listas::ListaEntidades chefoes;
 		Entidades::Personagens::Vinganca* boss;
+		int boss_ativo;
 	public:
 		Segunda_Fase();
 		~Segunda_Fase();
@@ -22,6 +22,5 @@ namespace Fases {
 		void criar_inimigos();
 		void criar_obstaculos();
 		void criar_cenario(std::string file_path);
-		void checa_boss();
 	};
 }

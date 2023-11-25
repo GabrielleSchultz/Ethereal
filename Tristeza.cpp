@@ -73,7 +73,7 @@ void Entidades::Personagens::Tristeza::update(float dt)
 void Entidades::Personagens::Tristeza::lancar_projetil()
 {
 	Entidades::Projetil* projetil = nullptr;
-	projetil = new Entidades::Projetil("Assets/Sprites/teardrop_projectile_cortado.png", nivel_maldade, 2);
+	projetil = new Entidades::Projetil("Assets/Sprites/teardrop_projectile_cortado.png", nivel_maldade, 4);
 	projetil->setAtirador(this);
 	projetil->setDirection(0, 1);
 	projetil->setPosition(position.x, position.y);

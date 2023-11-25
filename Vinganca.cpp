@@ -5,7 +5,8 @@ int Entidades::Personagens::Vinganca::Vinganca::cont_frequencia(4500);
 Entidades::Personagens::Vinganca::Vinganca(int nv, int mal, const char* texturePath, ID id) :
 	Inimigo(nv, mal, texturePath, id),
 	teletransporta(0),
-	frequencia_teletransporte(cont_frequencia)
+	frequencia_teletransporte(cont_frequencia),
+	ativo(false)
 {
 	cont_frequencia -= 500;
 	if (Entidades::Personagens::Jogador::getNumJogadores() == 2)
@@ -73,4 +74,14 @@ void Entidades::Personagens::Vinganca::teletransporte() {
 	//std::cout << x << " " << y << std::endl;
 
 	teletransporta = 0;
+}
+
+void Entidades::Personagens::Vinganca::setAtivo(bool b)
+{
+	ativo = b;
+}
+
+bool Entidades::Personagens::Vinganca::getAtivo()
+{
+	return ativo;
 }

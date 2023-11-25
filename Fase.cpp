@@ -18,9 +18,16 @@ namespace Fases
 
 	Fase::~Fase()
 	{
+		for (int i = 0; i < mortos.size(); i++) {
+			delete(mortos[i]);
+		}
+		mortos.clear();
+		inimigos.clear();
+		jogadores.clear();
+		obstaculos.clear();
 	}
 
-	void Fase::salvar()
+	void Fase::salvar(nlohmann::ordered_json& entrada)
 	{
 		salvarJogadores();
 		salvarInimigos();
@@ -39,14 +46,6 @@ namespace Fases
 		jsonOutput << std::setw(2) << dados_jogadores;
 
 		jsonOutput.close();
-	}
-		for (int i = 0; i < mortos.size(); i++) {
-			delete(mortos[i]);
-		}
-		mortos.clear();
-		inimigos.clear();
-		jogadores.clear();
-		obstaculos.clear();
 	}
 
 	void Fase::salvarInimigos()

@@ -22,7 +22,7 @@ namespace Fases {
 		Fase();
 		~Fase();
 		virtual void executar(float dt) = 0;
-		virtual void salvar();
+		virtual void salvar(nlohmann::ordered_json& entrada);
 		virtual void salvarJogadores();
 		virtual void salvarInimigos();
 		virtual void salvarObstaculos();

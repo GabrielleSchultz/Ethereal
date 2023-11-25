@@ -39,7 +39,7 @@ namespace Estados
 		void setAtivo(bool b);
 		bool getAtivo();
 		virtual void executar(float dt) = 0;
-		void salvar(std::ostringstream* entrada){}
+		void salvar(nlohmann::ordered_json& entrada){}
 	};
 
 }

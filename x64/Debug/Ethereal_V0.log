@@ -1,45 +1,48 @@
-<<<<<<< HEAD
-﻿  ControleJogador.cpp
+﻿  Botao.cpp
+  ControleMenu.cpp
   Estado.cpp
-  Fase.cpp
+  MenuGameOver.cpp
   GameState.cpp
-  Gerenciador_Colisoes.cpp
   Gerenciador_Estados.cpp
-  Inimigo.cpp
-C:\Users\gabri\source\repos\GabrielleSchultz\Ethereal\Inimigo.cpp(26,56): warning C4244: '=': conversão de 'ValueType' para 'int', possível perda de dados
+  Gerenciador_Grafico.cpp
+  Jogo.cpp
+  main.cpp
+  Menu.cpp
+C:\Users\gabri\source\repos\GabrielleSchultz\Ethereal\Menu.cpp(30,37): warning C4267: '=': conversão de 'size_t' para 'int', possível perda de dados
+  MenuFases.cpp
+C:\Users\gabri\source\repos\GabrielleSchultz\Ethereal\MenuFases.cpp(32,84): warning C4244: 'argumento': conversão de 'int' para 'T', possível perda de dados
           with
           [
-              ValueType=float
+              T=float
           ]
-  Jogador.cpp
-C:\Users\gabri\source\repos\GabrielleSchultz\Ethereal\Jogador.cpp(171,55): warning C4244: 'argumento': conversão de 'double' para 'float', possível perda de dados
-  Jogo.cpp
-  ListaEntidades.cpp
-  main.cpp
-  Obstaculo.cpp
-  Espinhos.cpp
-  Plataforma.cpp
-  Poca_Lagrima.cpp
-C:\Users\gabri\source\repos\GabrielleSchultz\Ethereal\Poca_Lagrima.cpp(15,30): warning C4244: 'argumento': conversão de 'double' para 'const float', possível perda de dados
-  Primeira_Fase.cpp
-C:\Users\gabri\source\repos\GabrielleSchultz\Ethereal\Primeira_Fase.cpp(69,12): warning C4244: 'argumento': conversão de 'time_t' para 'unsigned int', possível perda de dados
-C:\Users\gabri\source\repos\GabrielleSchultz\Ethereal\Primeira_Fase.cpp(88,50): warning C4244: 'argumento': conversão de 'int' para 'float', possível perda de dados
-C:\Users\gabri\source\repos\GabrielleSchultz\Ethereal\Primeira_Fase.cpp(97,12): warning C4244: 'argumento': conversão de 'time_t' para 'unsigned int', possível perda de dados
-  Projetil.cpp
-C:\Users\gabri\source\repos\GabrielleSchultz\Ethereal\Projetil.cpp(13,20): warning C4244: 'argumento': conversão de 'int' para 'float', possível perda de dados
-C:\Users\gabri\source\repos\GabrielleSchultz\Ethereal\Projetil.cpp(13,17): warning C4244: 'argumento': conversão de 'int' para 'float', possível perda de dados
-  Raiva.cpp
-C:\Users\gabri\source\repos\GabrielleSchultz\Ethereal\Raiva.cpp(10,14): warning C4244: 'argumento': conversão de 'time_t' para 'unsigned int', possível perda de dados
-  Segunda_Fase.cpp
-C:\Users\gabri\source\repos\GabrielleSchultz\Ethereal\Segunda_Fase.cpp(83,12): warning C4244: 'argumento': conversão de 'time_t' para 'unsigned int', possível perda de dados
-C:\Users\gabri\source\repos\GabrielleSchultz\Ethereal\Segunda_Fase.cpp(112,12): warning C4244: 'argumento': conversão de 'time_t' para 'unsigned int', possível perda de dados
-  Tristeza.cpp
-  Gerando Código...
-  Compilando...
+  MenuPrincipal.cpp
+C:\Users\gabri\source\repos\GabrielleSchultz\Ethereal\MenuPrincipal.cpp(28,84): warning C4244: 'argumento': conversão de 'int' para 'T', possível perda de dados
+          with
+          [
+              T=float
+          ]
+  MenuPause.cpp
+  MenuRanking.cpp
+C:\Users\gabri\source\repos\GabrielleSchultz\Ethereal\MenuRanking.cpp(75,47): warning C4244: 'argumento': conversão de 'int' para 'T', possível perda de dados
+          with
+          [
+              T=float
+          ]
+C:\Users\gabri\source\repos\GabrielleSchultz\Ethereal\MenuRanking.cpp(79,49): warning C4244: 'argumento': conversão de 'int' para 'T', possível perda de dados
+          with
+          [
+              T=float
+          ]
+  MenuSettings.cpp
+C:\Users\gabri\source\repos\GabrielleSchultz\Ethereal\MenuSettings.cpp(32,85): warning C4244: 'argumento': conversão de 'int' para 'T', possível perda de dados
+          with
+          [
+              T=float
+          ]
   Vinganca.cpp
-C:\Users\gabri\source\repos\GabrielleSchultz\Ethereal\Vinganca.cpp(77,12): warning C4244: 'argumento': conversão de 'time_t' para 'unsigned int', possível perda de dados
+C:\Users\gabri\source\repos\GabrielleSchultz\Ethereal\Vinganca.cpp(79,12): warning C4244: 'argumento': conversão de 'time_t' para 'unsigned int', possível perda de dados
   Gerando Código...
+  LINK : C:\Users\gabri\source\repos\GabrielleSchultz\Ethereal\x64\Debug\Ethereal_V0.exe não encontrado ou não compilado pelo o último link incremental; executando link completo
+Gerenciador_Eventos.obj : warning LNK4204: '' está faltando informação de depuração para módulo de referência; vinculando objeto quando sem informação de depuração
+Texto.obj : warning LNK4204: '' está faltando informação de depuração para módulo de referência; vinculando objeto quando sem informação de depuração
   Ethereal_V0.vcxproj -> C:\Users\gabri\source\repos\GabrielleSchultz\Ethereal\x64\Debug\Ethereal_V0.exe
-=======
-﻿  Ethereal_V0.vcxproj -> C:\Users\gabri\source\repos\GabrielleSchultz\Ethereal\x64\Debug\Ethereal_V0.exe
->>>>>>> main

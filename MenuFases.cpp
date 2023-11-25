@@ -4,6 +4,8 @@
 
 Estados::Menus::MenuFases::MenuFases()
 {
+	estrelas = "Assets/Backgrounds/Stars-Big_1_1_PC.png";
+	pGG->carregarTextura(estrelas);
 	titulo.setTexto("Novo jogo");
 	cria_botoes();
 	botoes[botao_atual]->setSelecionado(true);
@@ -24,4 +26,15 @@ void Estados::Menus::MenuFases::cria_botoes()
 		botao->setTexto(textos[i]);
 		botoes.push_back(botao);
 	}
+}
+
+void Estados::Menus::MenuFases::desenhar()
+{
+	pGG->desenhar(fundo, Math::Vector2Df(0, 0));
+	titulo.desenhar();
+	for (int i = 0; i < botoes.size(); i++)
+	{
+		botoes[i]->desenhar();
+	}
+	pGG->desenhar(estrelas, Math::Vector2Df(0, 0));
 }

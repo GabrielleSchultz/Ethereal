@@ -8,8 +8,8 @@
 
 Fases::Segunda_Fase::Segunda_Fase() :
 	Fase(),
-	chefoes(),
-	boss(nullptr)
+	boss(nullptr),
+	boss_ativo(0)
 {
 	pGerenciadorGrafico->carregarTextura("Assets/Backgrounds/Stage2_full_background.png");
 	pGerenciadorGrafico->carregarTextura("Assets/Backgrounds/Stars-Big_1_2_PC.png");
@@ -21,49 +21,59 @@ Fases::Segunda_Fase::~Segunda_Fase()
 
 void Fases::Segunda_Fase::executar(float dt)
 {
-	pGerenciadorGrafico->desenhar("Assets/Backgrounds/Stage2_full_background.png", Math::Vector2Df(0, 0));
+	if (!fim_de_fase) {
+		pGerenciadorGrafico->desenhar("Assets/Backgrounds/Stage2_full_background.png", Math::Vector2Df(0, 0));
 
-	Listas::Lista<Entidades::Entidade>::Iterador jog;
-	Entidades::Entidade* jogador = nullptr;
+		Listas::Lista<Entidades::Entidade>::Iterador jog;
+		Entidades::Entidade* jogador = nullptr;
 
-	Listas::Lista<Entidades::Entidade>::Iterador it;
-	Entidades::Entidade* aux = nullptr;
+		Listas::Lista<Entidades::Entidade>::Iterador it;
+		Entidades::Entidade* aux = nullptr;
 
-	int j = 0, i = 0, o = 0;
-	for (jog = jogadores.get_primeiro(), j = 0; j < jogadores.getTamanho(); jog.operator++(), j++) {
-		jogador = jog.operator*();
-		//jogador->update(dt);
-		jogador->executar(dt);
+		int j = 0, i = 0, o = 0;
+		for (jog = jogadores.get_primeiro(), j = 0; j < jogadores.getTamanho(); jog.operator++(), j++) {
+			jogador = jog.operator*();
+			//jogador->update(dt);
+			jogador->executar(dt);
 
-		for (it = inimigos.get_primeiro(), i = 0; i < inimigos.getTamanho(); it.operator++(), i++) {
-			aux = it.operator*();
-			//aux->update(dt);
-			aux->executar(dt);
-			// VAMOS USAR THREADS
-			/*if (!static_cast<Entidades::Personagens::Personagem*>(aux)->getVivo() && aux->getId() == Entidades::ID::boss) {
-				Listas::Lista<Entidades::Entidade>::Iterador it_boss = chefoes.get_primeiro();
-				if (chefoes.getTamanho() > 1) {
-					it_boss.operator++();
-					boss = static_cast<Entidades::Personagens::Vinganca*>(it_boss.operator*());
-					inimigos.incluir(boss);
+			for (it = inimigos.get_primeiro(), i = 0; i < inimigos.getTamanho(); it.operator++(), i++) {
+				aux = it.operator*();
+				//aux->update(dt);
+				if (aux->getId() == Entidades::ID::boss) {
+					boss = static_cast<Entidades::Personagens::Vinganca*>(aux);
+					if (boss_ativo == 0) {
+						boss->setAtivo(true);
+					}
+					if (boss->getAtivo()) {
+						aux->executar(dt);
+						boss_ativo++;
+					}
 				}
-				chefoes.remover(aux);
-			}*/
-			if (aux->getId() == Entidades::ID::inimigo_raiva) {
-				static_cast<Entidades::Personagens::Raiva*>(aux)->perseguir(static_cast<Entidades::Personagens::Jogador*>(jogador));
+				else
+					aux->executar(dt);
+				if (aux->getId() == Entidades::ID::inimigo_raiva) {
+					static_cast<Entidades::Personagens::Raiva*>(aux)->perseguir(static_cast<Entidades::Personagens::Jogador*>(jogador));
+				}
+				if (!static_cast<Entidades::Personagens::Personagem*>(aux)->getVivo()) {
+					static_cast<Entidades::Personagens::Jogador*>(jogador)->operator++(100);
+				}
 			}
 		}
-	}
 
-	for (it = obstaculos.get_primeiro(), o = 0; o < obstaculos.getTamanho(); it.operator++(), o++) {
-		aux = it.operator*();
-		aux->update(dt);
-		//static_cast<Entidades::Obstaculos::Plataforma*>(aux)->obstacular(static_cast<Entidades::Personagens::Jogador*>(jogador));
-	}
-	pGerenciadorGrafico->desenharEnte("Assets/Backgrounds/Stars-Big_1_2_PC.png", Math::Vector2Df(0, 0));
+		for (it = obstaculos.get_primeiro(), o = 0; o < obstaculos.getTamanho(); it.operator++(), o++) {
+			aux = it.operator*();
+			aux->update(dt);
+			//static_cast<Entidades::Obstaculos::Plataforma*>(aux)->obstacular(static_cast<Entidades::Personagens::Jogador*>(jogador));
+		}
+		pGerenciadorGrafico->desenharEnte("Assets/Backgrounds/Stars-Big_1_2_PC.png", Math::Vector2Df(0, 0));
 
-	remover_sem_vida(&inimigos);
-	remover_sem_vida(&jogadores);
+		remover_sem_vida(&inimigos);
+		remover_sem_vida(&jogadores);
+
+		if (boss_ativo > 0) {
+			boss_ativo = 0;
+		}
+	}
 }
 
 void Fases::Segunda_Fase::salvar(std::ostringstream* entrada)
@@ -87,16 +97,13 @@ void Fases::Segunda_Fase::criar_inimigos()
 	}
 
 	for (i = 0; i < rand() % 2 + 3; i++) {
-		Entidades::Personagens::Vinganca* chefao = new Entidades::Personagens::Vinganca(50 * i + 50, 25 * i + 25);
+		//Entidades::Personagens::Vinganca* chefao = new Entidades::Personagens::Vinganca(3, 25 * i + 25);
+		Entidades::Personagens::Vinganca* chefao = new Entidades::Personagens::Vinganca(25 * i + 30, 25 * i + 25);
 		chefao->setPosition(1000, 0);
-		chefoes.incluir(chefao);
-		//std::cout << "criou um chefão" << std::endl;
+		if (i == 0)
+			chefao->setAtivo(true);
+		inimigos.incluir(chefao);
 	}
-
-	// um chefão por vez!
-	Listas::Lista<Entidades::Entidade>::Iterador it = chefoes.get_primeiro();
-	boss = static_cast<Entidades::Personagens::Vinganca*>(it.operator*());
-	inimigos.incluir(boss);
 }
 
 void Fases::Segunda_Fase::criar_obstaculos()
@@ -106,14 +113,14 @@ void Fases::Segunda_Fase::criar_obstaculos()
 
 	Entidades::Obstaculos::Poca_Lagrimas* poca = nullptr;
 	for (i = 0; i < qtd_pocas; i++, x++) {
-		poca = new Entidades::Obstaculos::Poca_Lagrimas(Math::Vector2Df(x * 32.f + 16.f, 624.f), "Assets/Sprites/top_ground_sprite.png");
+		poca = new Entidades::Obstaculos::Poca_Lagrimas(Math::Vector2Df(x * 32.f + 16.f, 624.f));
 		if (poca)
 			obstaculos.incluir(poca);
 	}
 
 	Entidades::Obstaculos::Plataforma* plataforma = nullptr;
 	for (i = 0; i < 8 - qtd_pocas; i++, x++) {
-		plataforma = new Entidades::Obstaculos::Plataforma(Math::Vector2Df(x * 32.f + 16.f, 624.f), "Assets/Sprites/middle_ground_sprite.png");
+		plataforma = new Entidades::Obstaculos::Plataforma(Math::Vector2Df(x * 32.f + 16.f, 624.f));
 		if (plataforma)
 			obstaculos.incluir(plataforma);
 	}
@@ -140,18 +147,28 @@ void Fases::Segunda_Fase::criar_cenario(std::string file_path)
 			{
 				// plataforma
 			case '#':
-				aux = static_cast<Entidades::Entidade*>(new Entidades::Obstaculos::Plataforma(Math::Vector2Df(j * 32.f + 16.f, i * 32.f + 16.f), "Assets/Sprites/middle_ground_sprite.png"));
+			{
+				aux = static_cast<Entidades::Entidade*>(new Entidades::Obstaculos::Plataforma(Math::Vector2Df(j * 32.f + 16.f, i * 32.f + 16.f)));
 				if (aux)
 					obstaculos.incluir(aux);
-
+			}
 				break;
+			case '~':
+			{
+				aux = static_cast<Entidades::Entidade*>(new Entidades::Obstaculos::Poca_Lagrimas(Math::Vector2Df(j * 32.f + 16.f, i * 32.f + 16.f)));
+				if (aux)
+					obstaculos.incluir(aux);
+			}
+			break;
 			case 'P':
 				criar_jogador('P', Math::Vector2Df(j * 32.f, i * 32.f));
 
 				break;
 			case 'B':
-				criar_jogador('B', Math::Vector2Df(j * 32.f, i * 32.f));
-
+			{
+				if (Estados::Estado::getMultiplayer())
+					criar_jogador('B', Math::Vector2Df(j * 32.f, i * 32.f));
+			}
 				break;
 			default:
 				break;

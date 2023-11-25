@@ -7,6 +7,8 @@ namespace Estados {
 
 		class MenuSettings : public Menu {
 		private:
+			std::string bolha;
+			Math::Vector2Df posicoes[2];
 
 		public:
 			MenuSettings();

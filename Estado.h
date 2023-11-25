@@ -18,7 +18,10 @@ namespace Estados
 		Fase2,
 		MenuPrincipal,
 		MenuSettings,
+		singleplayer,
+		multiplayer,
 		MenuPause,
+		save,
 		MenuRanking,
 		sair
 	};
@@ -28,6 +31,7 @@ namespace Estados
 	protected:
 		static Gerenciadores::Gerenciador_Estados* pGE;
 		bool ativo;
+		static bool multiplayer;
 
 	public:
 
@@ -40,6 +44,8 @@ namespace Estados
 		bool getAtivo();
 		virtual void executar(float dt) = 0;
 		void salvar(nlohmann::ordered_json& entrada){}
+		static void setMultiplayer(bool b);
+		static bool getMultiplayer();
 	};
 
 }

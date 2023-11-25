@@ -14,6 +14,7 @@ namespace Estados {
 			ElementosGraficos::Texto titulo;
 			std::vector<ElementosGraficos::Botao*> botoes;
 			int botao_atual;
+			std::string fundo;
 
 			Controle::ControleMenu* pControles;
 			static Gerenciadores::Grafico* pGG;
@@ -25,6 +26,7 @@ namespace Estados {
 			void selecionarBaixo();
 			Estados::Tipo getTipoEstado() const;
 			void executar(float dt);
+			void setFundo(std::string f);
 			virtual void desenhar();
 			virtual void cria_botoes() = 0;
 		};

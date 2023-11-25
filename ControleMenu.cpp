@@ -35,7 +35,16 @@ void Controle::ControleMenu::notifyKeyPressed(std::string key)
 			if (key == enter)
 			{
 				//std::cout << "ENTER" << std::endl;
-				if (pMenu->getTipoEstado() == Estados::Tipo::sair) {
+				if (pMenu->getTipoEstado() == Estados::Tipo::singleplayer) {
+					Estados::Estado::setMultiplayer(false);
+				}
+				else if (pMenu->getTipoEstado() == Estados::Tipo::multiplayer) {
+					Estados::Estado::setMultiplayer(true);
+				}
+				else if (pMenu->getTipoEstado() == Estados::Tipo::save) {
+					// chamar de alguma forma função salvar do GameState
+				}
+				else if (pMenu->getTipoEstado() == Estados::Tipo::sair) {
 					pMenu->request_clear();
 					//std::cout << "clear" << std::endl;
 				}

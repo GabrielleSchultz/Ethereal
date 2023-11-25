@@ -8,7 +8,7 @@ namespace Estados {
 		class MenuGameOver : public Menu
 		{
 		private:
-			// inventar algo
+			std::string fundo_gameover;
 
 		public:
 			MenuGameOver();

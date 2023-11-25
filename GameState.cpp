@@ -31,13 +31,15 @@ Estados::GameState::~GameState()
 void Estados::GameState::executar(float dt) {
 
 	if (!pFase->getfim_de_fase()) {
+		//std::cout << "executando" << std::endl;
 		pFase->executar(dt);
 		pFase->gerenciar_colisoes();
 		pontuacao.setTexto(std::to_string(Entidades::Personagens::Jogador::getPontos()));
 		pontuacao.desenhar();
+		//pFase->salvarJogadores();
 	}
 	else if (pFase->getproxima_fase()) {
-		std::cout << "CRIOU SEGUNDA FASE" << std::endl;
+		//std::cout << "CRIOU SEGUNDA FASE" << std::endl;
 		pFase = new Fases::Segunda_Fase();
 		pFase->criar_cenario("Mapas/Fase2.txt");
 		pFase->criar_obstaculos();
@@ -46,5 +48,15 @@ void Estados::GameState::executar(float dt) {
 	else {
 		request_pop();
 		request_push(Estados::Tipo::Gameover);
+	}
+}
+
+void Estados::GameState::salvar()
+{
+
+	if (Estados::GameState::pFase)
+	{
+		nlohmann::ordered_json ethereal;
+		pFase->salvar(ethereal);
 	}
 }

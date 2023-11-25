@@ -7,12 +7,13 @@ namespace Estados {
 
 		class MenuFases : public Menu {
 		private:
-			//...
+			std::string estrelas;
 
 		public:
 			MenuFases();
 			~MenuFases();
 			void cria_botoes();
+			void desenhar();
 		};
 
 	}

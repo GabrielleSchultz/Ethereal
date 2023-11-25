@@ -1,7 +1,7 @@
 #include "Espinhos.h"
 
-#define IMPACTO_HORIZONTAL 0.f
-#define IMPACTO_VERTICAL 400.f
+#define IMPACTO_HORIZONTAL 5.f
+#define IMPACTO_VERTICAL 100.f
 
 Entidades::Obstaculos::Espinhos::Espinhos(Math::Vector2Df posicao, const char* texture, ID id) :
 Obstaculo (posicao, texture, id),

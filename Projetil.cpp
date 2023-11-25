@@ -38,8 +38,8 @@ namespace Entidades
 
 	bool Projetil::getColidiu()
 	{
-		//if (position.x > WIDTH || position.x < 0 || position.y > HEIGHT || position.y < 0)
-			//colidiu = true;
+		if (position.x > WIDTH || position.x < 0 || position.y > HEIGHT || position.y < 0)
+			colidiu = true;
 		return colidiu;
 	}
 

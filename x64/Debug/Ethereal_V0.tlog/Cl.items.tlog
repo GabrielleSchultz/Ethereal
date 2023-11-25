@@ -23,6 +23,10 @@ C:\Users\gabri\source\repos\GabrielleSchultz\Ethereal\MenuFases.cpp;C:\Users\gab
 C:\Users\gabri\source\repos\GabrielleSchultz\Ethereal\MenuPrincipal.cpp;C:\Users\gabri\source\repos\GabrielleSchultz\Ethereal\x64\Debug\MenuPrincipal.obj
 C:\Users\gabri\source\repos\GabrielleSchultz\Ethereal\MenuPause.cpp;C:\Users\gabri\source\repos\GabrielleSchultz\Ethereal\x64\Debug\MenuPause.obj
 C:\Users\gabri\source\repos\GabrielleSchultz\Ethereal\MenuRanking.cpp;C:\Users\gabri\source\repos\GabrielleSchultz\Ethereal\x64\Debug\MenuRanking.obj
+<<<<<<< HEAD
+=======
+C:\Users\gabri\source\repos\GabrielleSchultz\Ethereal\MenuSettings.cpp;C:\Users\gabri\source\repos\GabrielleSchultz\Ethereal\x64\Debug\MenuSettings.obj
+>>>>>>> main
 C:\Users\gabri\source\repos\GabrielleSchultz\Ethereal\Obstaculo.cpp;C:\Users\gabri\source\repos\GabrielleSchultz\Ethereal\x64\Debug\Obstaculo.obj
 C:\Users\gabri\source\repos\GabrielleSchultz\Ethereal\Espinhos.cpp;C:\Users\gabri\source\repos\GabrielleSchultz\Ethereal\x64\Debug\Espinhos.obj
 C:\Users\gabri\source\repos\GabrielleSchultz\Ethereal\Plataforma.cpp;C:\Users\gabri\source\repos\GabrielleSchultz\Ethereal\x64\Debug\Plataforma.obj

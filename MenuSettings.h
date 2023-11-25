@@ -5,17 +5,15 @@
 namespace Estados {
 	namespace Menus {
 
-		class MenuPause : public Menu {
+		class MenuSettings : public Menu {
 		private:
-			//...
-
 
 		public:
-			MenuPause();
-			~MenuPause();
-			void cria_botoes();
+			MenuSettings();
+			~MenuSettings();
 			void desenhar();
+			void cria_botoes();
 		};
-	}
 
+	}
 }

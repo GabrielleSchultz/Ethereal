@@ -54,14 +54,18 @@ void Botao::setSelecionado(bool b)
 	if (b) {
 		texto.setFillColor(sf::Color::Black);
 		texto.setOutlineColor(sf::Color::White);
+		texto.setCharacterSize(32);
 	}
 	else {
 		texto.setFillColor(sf::Color::White);
 		texto.setOutlineColor(sf::Color::Black);
+		texto.setCharacterSize(30);
 	}
 }
 
 Estados::Tipo Botao::getTipo() const
 {
+	std::string str = texto.getString();
+	std::cout << str << std::endl;
 	return tipo_estado;
 }

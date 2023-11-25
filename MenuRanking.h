@@ -9,7 +9,6 @@ namespace Estados {
 		class MenuRanking : public Menu {
 		private:
 			std::vector <ElementosGraficos::Texto*> ranking;
-			std::vector <ElementosGraficos::Texto*>::iterator ranking_iterator;
 
 		public:
 			MenuRanking();
@@ -18,7 +17,5 @@ namespace Estados {
 			void cria_ranking();
 			void desenhar();
 		};
-
 	}
-
 }

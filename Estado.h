@@ -1,5 +1,7 @@
 #pragma once
 
+#include "Ente.h"
+
 namespace Gerenciadores {
 	class Gerenciador_Estados;
 }
@@ -11,17 +13,21 @@ namespace Estados
 		vazio,
 		GameState,
 		Gameover,
+		MenuFases,
+		Fase1,
+		Fase2,
 		MenuPrincipal,
 		MenuSettings,
 		MenuPause,
-		MenuRanking
+		MenuRanking,
+		sair
 	};
 
-	class Estado
+	class Estado : public Ente
 	{
 	protected:
 		static Gerenciadores::Gerenciador_Estados* pGE;
-		bool sair;
+		bool ativo;
 
 	public:
 
@@ -30,6 +36,10 @@ namespace Estados
 		void request_push(Estados::Tipo id_estado);
 		void request_pop();
 		void request_clear();
+		void setAtivo(bool b);
+		bool getAtivo();
+		virtual void executar(float dt) = 0;
+		void salvar(std::ostringstream* entrada){}
 	};
 
 }

@@ -5,24 +5,19 @@
 #include <vector>
 
 #include "Estado.h"
-#include "GameState.h"
-#include "MenuPause.h"
-#include "MenuPrincipal.h"
-#include "MenuRanking.h"
 
 namespace Gerenciadores {
 	class Gerenciador_Estados
 	{
 	public:
 		enum Comandos { Push, Pop, Clear };
-
-	private:
 		struct Acoes_Pendentes
 		{
 			Comandos acao;
 			Estados::Tipo ID;
 		};
 
+	private:
 		std::vector<Estados::Estado*> vetor_estados;
 		std::vector <Acoes_Pendentes*> lista_pendencias;
 
@@ -39,5 +34,6 @@ namespace Gerenciadores {
 		void pop();
 		void clear();
 		void aplicar_pendencias();
+		void executar(float dt);
 	};
 }

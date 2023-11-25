@@ -4,8 +4,6 @@
 #include "Gerenciador_Colisoes.h"
 #include "Gerenciador_Estados.h"
 
-#include "MenuPrincipal.h"
-
 //classe principal
 
 class Jogo {
@@ -18,8 +16,6 @@ private:
 	sf::Clock clock;
 	float deltaTime;
 	float dt_multiplier; //constancia para diferentes framerates
-
-	Estados::Menus::MenuPrincipal m;
 
 public:
 	Jogo();

@@ -6,38 +6,54 @@ Controle::ControleMenu::ControleMenu() :
 	Controller(),
 	pMenu(nullptr)
 {
-	setKeyCommands("up", "down", "space");
+	setKeyCommands("up", "down", "enter");
 }
 
 Controle::ControleMenu::~ControleMenu()
 {
+	pGerenciadorInput->remover_observer(this);
 	pMenu = nullptr;
 }
 
 void Controle::ControleMenu::notifyKeyPressed(std::string key)
 {
-	if (pMenu) {
-		if (key == para_cima)
-		{
-			//std::cout << "vai pra cima" << std::endl;
-			pMenu->selecionarCima();
-		}
+	if(pMenu)
+	{
+		if (pMenu->getAtivo()) {
+			if (key == para_cima)
+			{
+				pMenu->selecionarCima();
+				std::cout << "cima" << std::endl;
+			}
 
-		if (key == para_baixo)
-		{
-			//std::cout << "vai pra baixo" << std::endl;
-			pMenu->selecionarBaixo();
-		}
+			if (key == para_baixo)
+			{
+				pMenu->selecionarBaixo();
+				std::cout << "baixo" << std::endl;
+			}
 
-		if (key == enter)
-		{
-			pMenu->request_pop();
-			if(pMenu->getTipoEstado() != Estados::Tipo::vazio)
-				pMenu->request_push(pMenu->getTipoEstado());
+			if (key == enter)
+			{
+				std::cout << "ENTER" << std::endl;
+				if (pMenu->getTipoEstado() == Estados::Tipo::sair) {
+					pMenu->request_clear();
+					std::cout << "clear" << std::endl;
+				}
+				else if (pMenu->getTipoEstado() == Estados::Tipo::vazio)
+				{
+					pMenu->request_pop();
+					std::cout << "pop" << std::endl;
+				}
+				else
+				{
+					pMenu->request_push(pMenu->getTipoEstado());
+					std::cout << "push" << std::endl;
+				}
+			}
 		}
 	}
 	else
-		std::cout << "Controle::ControleMenu -> ponteiro nulo" << std::endl;
+		std::cout << "Controle::ControleMenu -> ponteiro nulo keypressed" << std::endl;
 
 }
 
@@ -45,6 +61,15 @@ void Controle::ControleMenu::notifyKeyReleased(std::string key)
 {
 	if (pMenu) {
 		//std::cout << "tecla livre" << std::endl;
+		/* (key == enter)
+		{
+			if (pMenu->getTipoEstado() == Estados::Tipo::sair)
+				pMenu->request_clear();
+			else if (pMenu->getTipoEstado() == Estados::Tipo::vazio)
+				pMenu->request_pop();
+			else
+				pMenu->request_push(pMenu->getTipoEstado());
+		}*/
 	}
 	else
 		std::cout << "Controle::ControleMenu -> ponteiro nulo" << std::endl;

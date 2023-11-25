@@ -1,5 +1,12 @@
 #include "Gerenciador_Estados.h"
 
+#include "GameState.h"
+#include "MenuPause.h"
+#include "MenuPrincipal.h"
+#include "MenuRanking.h"
+#include "MenuFases.h"
+#include "MenuSettings.h"
+
 namespace Gerenciadores
 {
 	Gerenciador_Estados* Gerenciador_Estados::instancia_pGE(nullptr);
@@ -39,6 +46,9 @@ namespace Gerenciadores
 
 		switch (id)
 		{
+		/*case Estados::Tipo::vazio:
+			return;
+			break;*/
 		case Estados::Tipo::GameState:
 			novo_estado = new Estados::GameState();
 			break;
@@ -47,12 +57,27 @@ namespace Gerenciadores
 			novo_estado = new Estados::Menus::MenuPrincipal();
 			break;
 
+		case Estados::Tipo::MenuFases:
+			novo_estado = new Estados::Menus::MenuFases();
+			break;
+
+		case Estados::Tipo::Fase1:
+			novo_estado = new Estados::GameState(1);
+			break;
+
+		case Estados::Tipo::Fase2:
+			novo_estado = new Estados::GameState(2);
+			break;
+
 		case Estados::Tipo::MenuPause:
 			novo_estado = new Estados::Menus::MenuPause();
 			break;
 
 		case Estados::Tipo::MenuRanking:
 			novo_estado = new Estados::Menus::MenuRanking();
+			break;
+		case Estados::Tipo::MenuSettings:
+			novo_estado = new Estados::Menus::MenuSettings();
 			break;
 		}
 
@@ -78,7 +103,7 @@ namespace Gerenciadores
 	void Gerenciador_Estados::clear()
 	{
 		Acoes_Pendentes* aux = new Acoes_Pendentes;
-		aux->acao = Push;
+		aux->acao = Clear;
 		aux->ID = Estados::Tipo::vazio;
 		lista_pendencias.push_back(aux);
 	}
@@ -90,17 +115,41 @@ namespace Gerenciadores
 			switch (it->acao)
 			{
 			case Push:
+			{
 				criar_estado(it->ID);
+				vetor_estados[vetor_estados.size() - 2]->setAtivo(false);
+				std::cout << "criou pendencia push" << std::endl;
+				std::cout << "setou falso" << std::endl;
+			}
 				break;
 			case Pop:
+			{
+				//Estados::Estado* aux = vetor_estados[vetor_estados.size() - 1];
+				vetor_estados[vetor_estados.size() - 1]->setAtivo(false);
 				vetor_estados.pop_back();
+				//delete aux;
+				vetor_estados[vetor_estados.size() - 1]->setAtivo(true);
+				std::cout << "criou pendencia pop" << std::endl;
+				std::cout << "setou true" << std::endl;
+			}
 				break;
 			case Clear:
+			{
 				vetor_estados.clear();
+				std::cout << "criou clear" << std::endl;
+
+			}
 				break;
 			}
 		}
 		lista_pendencias.clear();
+	}
+
+	void Gerenciador_Estados::executar(float dt)
+	{
+		aplicar_pendencias();
+		if (!isEmpty())
+			vetor_estados[vetor_estados.size() - 1]->executar(dt);
 	}
 
 	bool Gerenciador_Estados::isEmpty() const

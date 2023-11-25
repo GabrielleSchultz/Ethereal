@@ -8,6 +8,7 @@ namespace Entidades {
 
 	private:
 		int dano;
+		bool colidiu;
 		Entidade* atirador;
 
 	public:
@@ -15,6 +16,7 @@ namespace Entidades {
 		~Projetil();
 		void setAtirador(Entidade* a);
 		void colidir(Entidades::Entidade* e);
+		bool getColidiu();
 		void danificar(Entidades::Personagens::Personagem* p);
 		void update(float dt);
 		void salvar(nlohmann::ordered_json& entrada);

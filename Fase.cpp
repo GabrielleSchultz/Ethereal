@@ -9,7 +9,7 @@ namespace Fases
 	Fase::Fase() :
 		Ente(),
 		pGerenciadorColisoes(Gerenciadores::Colisoes::getGerenciador_Colisoes()),
-		inimigos(), obstaculos(), jogadores(), novo_jogo(false)
+		inimigos(), obstaculos(), jogadores(), mortos()
 	{
 		pGerenciadorColisoes->setListaInimigos(&inimigos);
 		pGerenciadorColisoes->setListaJogadores(&jogadores);
@@ -39,6 +39,14 @@ namespace Fases
 		jsonOutput << std::setw(2) << dados_jogadores;
 
 		jsonOutput.close();
+	}
+		for (int i = 0; i < mortos.size(); i++) {
+			delete(mortos[i]);
+		}
+		mortos.clear();
+		inimigos.clear();
+		jogadores.clear();
+		obstaculos.clear();
 	}
 
 	void Fase::salvarInimigos()
@@ -104,5 +112,22 @@ namespace Fases
 		}
 		else
 			std::cerr << "Erro ao criar jogador. Verificar arquivo de gera o de mapa" << std::endl;
+	}
+	void Fase::remover_sem_vida(Listas::ListaEntidades* lista)
+	{
+		if(lista->getTamanho() > 0){
+			Listas::Lista<Entidades::Entidade>::Iterador it = lista->get_primeiro();
+			Entidades::Entidade* aux = it.operator*();
+			int i = 0;
+			
+			while (i < lista->getTamanho()) {
+				aux = it.operator*(); 
+				if (!static_cast<Entidades::Personagens::Personagem*>(aux)->getVivo()) {
+					lista->remover(aux);
+					mortos.push_back(aux);
+				}	
+				it.operator++(); i++;
+			}
+		}
 	}
 }

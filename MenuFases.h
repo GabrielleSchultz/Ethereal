@@ -13,6 +13,8 @@ namespace Estados {
 		public:
 			MenuFases();
 			~MenuFases();
+			void desenhar();
+			void cria_botoes();
 		};
 
 	}

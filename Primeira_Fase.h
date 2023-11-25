@@ -1,12 +1,14 @@
 #pragma once
 #include "Fase.h"
 #include "Projetil.h"
+#include <vector>
 
 namespace Fases {
 	class Primeira_Fase : public Fase
 	{
 	private:
-		// portal 
+		std::vector<Entidades::Entidade*> remover_inimigos;
+	
 	public:
 		Primeira_Fase();
 		~Primeira_Fase();

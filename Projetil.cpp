@@ -3,11 +3,15 @@
 #include "Tristeza.h"
 #include "Vinganca.h"
 
+#define WIDTH 1400
+#define HEIGHT 670
+
 namespace Entidades
 {
 	Projetil::Projetil(const char* texturePath, int d, int v, ID id) :
 		Entidade(texturePath, id),
 		dano(d),
+		colidiu(false),
 		atirador(nullptr)
 	{
 		setVelocidade(v, v);
@@ -29,8 +33,15 @@ namespace Entidades
 				&& e->getId() != Entidades::ID::projetil && e->getId() != Entidades::ID::vazio) {
 				danificar(static_cast<Entidades::Personagens::Personagem*>(e));
 			}
-			delete this;
+			colidiu = true;
 		}
+	}
+
+	bool Projetil::getColidiu()
+	{
+		if (position.x > WIDTH || position.x < -30 || position.y > HEIGHT || position.y < -30)
+			colidiu = true;
+		return colidiu;
 	}
 
 	void Projetil::danificar(Entidades::Personagens::Personagem* p)

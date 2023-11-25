@@ -4,6 +4,7 @@
 #include "ControleJogador.h"
 #include "Projetil.h"
 #include "ListaEntidades.h"
+#include <vector>
 
 namespace Gerenciadores
 {
@@ -38,6 +39,7 @@ namespace Entidades {
 			static int numJogadores;
 
 			Listas::ListaEntidades projeteis;
+			std::vector<Entidades::Entidade*> projeteis_lancados;
 			int lancamento;
 
 			bool facingRight;
@@ -56,6 +58,7 @@ namespace Entidades {
 			void colidir(Entidades::Entidade* e);
 			void atacar();
 			void pular();
+			void remover_projeteis();
 			bool getFacingRight() const;
 			void setFacingRight(const bool b);
 			bool getIsGrounded();

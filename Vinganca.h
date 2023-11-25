@@ -9,9 +9,9 @@ namespace Entidades {
 		class Vinganca : public Inimigo {
 		private:
 			int teletransporta;
-			Listas::ListaEntidades projeteis;
-			std::vector<Entidades::Entidade*> projeteis_lancados;
-			int lancamento;
+			const int frequencia_teletransporte;
+			static int cont_frequencia;
+			
 		public:
 			Vinganca(int nv = 200, int mal = 100, const char* texturePath = "Assets/Sprites/boss.png", ID id = ID::boss);
 			~Vinganca();
@@ -22,9 +22,6 @@ namespace Entidades {
 			void carregar(nlohmann::ordered_json& entrada);
 			void update(float dt);
 			void teletransporte();
-			void lancar_projeteis();
-			void remover_projeteis();
-			Listas::ListaEntidades* getProjeteis();
 		};
 	}
 }

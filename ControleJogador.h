@@ -1,8 +1,9 @@
 #pragma once
 #include "Controller.h"
+#include "Gerenciador_Estados.h"
 
 namespace Entidades {
-	namespace Personagens {
+	namespace Personagens{
 		class Jogador;
 	}
 }
@@ -19,6 +20,9 @@ namespace Controle {
 		std::string esquerda;
 		std::string ataque;
 		std::string ressucitar;
+		std::string pause;
+
+		static Gerenciadores::Gerenciador_Estados* pGE;
 
 	public:
 
@@ -29,7 +33,7 @@ namespace Controle {
 		void notifyKeyReleased(std::string key);
 
 		void setJogador(Entidades::Personagens::Jogador* jogador);
-		void setKeyCommands(std::string jump, std::string right, std::string left, std::string attack);
+		void setKeyCommands(std::string jump, std::string right, std::string left, std::string attack, std::string pausar);
 		void setReviveCommand(std::string revive); //somente se dois jogadores
 
 		//mudar comandos

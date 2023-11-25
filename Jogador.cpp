@@ -49,7 +49,7 @@ namespace Entidades {
 
 			if (Player == 2)
 			{
-				pControles->setKeyCommands("up", "right", "left", "down");
+				pControles->setKeyCommands("up", "right", "left", "down", "delete");
 			}
 
 			max_vel = PLAYER_MAXVEL;

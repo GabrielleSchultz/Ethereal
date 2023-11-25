@@ -20,8 +20,7 @@ void Estados::Menus::MenuPause::cria_botoes()
 
 	Estados::Menus::ElementosGraficos::Botao* botao = nullptr;
 	for (int i = 0; i < QTD_BOTOES; i++) {
-		botao = new Estados::Menus::ElementosGraficos::Botao(Math::Vector2Df(650.f, 50 * i + 200.f));
-		botao->setTexto(textos[i]);
+		botao = new Estados::Menus::ElementosGraficos::Botao(Math::Vector2Df(650.f, 50 * i + 200.f), tipos[i]);
 		botao->setTexto(textos[i]);
 		botoes.push_back(botao);
 	}
@@ -29,7 +28,7 @@ void Estados::Menus::MenuPause::cria_botoes()
 
 void Estados::Menus::MenuPause::desenhar()
 {
-	//pGG->desenhar("Assets/Backgrounds/Menu.png", Math::Vector2Df(0, 0));
+	pGG->desenhar("Assets/Backgrounds/Menu.png", Math::Vector2Df(0, 0));
 	titulo.desenhar();
 	for (int i = 0; i < botoes.size(); i++) {
 		botoes[i]->desenhar();

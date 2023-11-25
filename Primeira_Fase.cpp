@@ -8,7 +8,7 @@
 
 Fases::Primeira_Fase::Primeira_Fase() :
 	Fase(),
-	remover_inimigos()
+	max_raiva(3), max_tristeza(2)
 {
 	pGerenciadorGrafico->carregarTextura("Assets/Backgrounds/Stage1_full_background.png");
 	pGerenciadorGrafico->carregarTextura("Assets/Backgrounds/Stars Small_1.png");
@@ -20,47 +20,53 @@ Fases::Primeira_Fase::~Primeira_Fase()
 
 void Fases::Primeira_Fase::executar(float dt)
 {
-	pGerenciadorGrafico->desenhar("Assets/Backgrounds/Stage1_full_background.png", Math::Vector2Df(0, 0));
-
-	Listas::Lista<Entidades::Entidade>::Iterador jog;
-	Entidades::Entidade* jogador = nullptr;
-
-	int j = 0, i = 0, o = 0;
-	for (jog = jogadores.get_primeiro(), j = 0; j < jogadores.getTamanho(); jog.operator++(), j++) {
-		jogador = jog.operator*();
-		//jogador->update(dt);
-		jogador->executar(dt);
-
-		Listas::Lista<Entidades::Entidade>::Iterador it;
-		Entidades::Entidade* aux = nullptr;
-		for (it = inimigos.get_primeiro(), i = 0; i < inimigos.getTamanho(); it.operator++(), i++) {
-			aux = it.operator*();
-			//aux->update(dt);
-			aux->executar(dt);
-			if (!static_cast<Entidades::Personagens::Personagem*>(aux)->getVivo()) {
-				//inimigos.remover(aux);
-				//delete aux;
-				static_cast<Entidades::Personagens::Jogador*>(jogador)->operator++(100);
-			}
-			else if (aux->getId() == Entidades::ID::inimigo_raiva) {
-				static_cast<Entidades::Personagens::Raiva*>(aux)->perseguir(static_cast<Entidades::Personagens::Jogador*>(jogador));
-			}
-		}
-
-		for (it = obstaculos.get_primeiro(), o = 0; o < obstaculos.getTamanho(); it.operator++(), o++) {
-			aux = it.operator*();
-			aux->update(dt);
-		}
-
-		/*if (!static_cast<Entidades::Personagens::Personagem*>(jogador)->getVivo()) {
-			jogadores.remover(jogador);
-			delete jogador;
-		}*/
+	if(fim_de_fase){
+		if (jogadores.getTamanho() != 0)
+			proxima_fase = true;
 	}
-	pGerenciadorGrafico->desenharEnte("Assets/Backgrounds/Stars Small_1.png", Math::Vector2Df(0, 0));
+	else{
+		pGerenciadorGrafico->desenhar("Assets/Backgrounds/Stage1_full_background.png", Math::Vector2Df(0, 0));
 
-	remover_sem_vida(&inimigos);
-	remover_sem_vida(&jogadores);
+		Listas::Lista<Entidades::Entidade>::Iterador jog;
+		Entidades::Entidade* jogador = nullptr;
+
+		int j = 0, i = 0, o = 0;
+		for (jog = jogadores.get_primeiro(), j = 0; j < jogadores.getTamanho(); jog.operator++(), j++) {
+			jogador = jog.operator*();
+			//jogador->update(dt);
+			jogador->executar(dt);
+
+			Listas::Lista<Entidades::Entidade>::Iterador it;
+			Entidades::Entidade* aux = nullptr;
+			for (it = inimigos.get_primeiro(), i = 0; i < inimigos.getTamanho(); it.operator++(), i++) {
+				aux = it.operator*();
+				//aux->update(dt);
+				aux->executar(dt);
+				if (!static_cast<Entidades::Personagens::Personagem*>(aux)->getVivo()) {
+					//inimigos.remover(aux);
+					//delete aux;
+					static_cast<Entidades::Personagens::Jogador*>(jogador)->operator++(100);
+				}
+				else if (aux->getId() == Entidades::ID::inimigo_raiva) {
+					static_cast<Entidades::Personagens::Raiva*>(aux)->perseguir(static_cast<Entidades::Personagens::Jogador*>(jogador));
+				}
+			}
+
+			for (it = obstaculos.get_primeiro(), o = 0; o < obstaculos.getTamanho(); it.operator++(), o++) {
+				aux = it.operator*();
+				aux->update(dt);
+			}
+
+			/*if (!static_cast<Entidades::Personagens::Personagem*>(jogador)->getVivo()) {
+				jogadores.remover(jogador);
+				delete jogador;
+			}*/
+		}
+		pGerenciadorGrafico->desenharEnte("Assets/Backgrounds/Stars Small_1.png", Math::Vector2Df(0, 0));
+
+		remover_sem_vida(&inimigos);
+		remover_sem_vida(&jogadores);
+	}
 }
 
 void Fases::Primeira_Fase::salvar(std::ostringstream* entrada)
@@ -72,7 +78,7 @@ void Fases::Primeira_Fase::criar_inimigos()
 	srand(time(NULL));
 
 	Entidades::Personagens::Raiva* raivinha = nullptr;
-	for (int i = 0; i < rand() % 3 + 3; i++) {
+	for (int i = 0; i < rand() % max_raiva + 3; i++) {
 		raivinha = new Entidades::Personagens::Raiva();
 		if (raivinha)
 		{
@@ -82,7 +88,7 @@ void Fases::Primeira_Fase::criar_inimigos()
 	}
 
 	Entidades::Personagens::Tristeza* sadness = nullptr;
-	for (int i = 0; i < rand() % 2 + 3; i++) {
+	for (int i = 0; i < rand() % max_tristeza + 3; i++) {
 		sadness = new Entidades::Personagens::Tristeza();
 		if (sadness)
 		{
@@ -96,7 +102,8 @@ void Fases::Primeira_Fase::criar_inimigos()
 void Fases::Primeira_Fase::criar_obstaculos()
 {
 	srand(time(NULL));
-	int i = 0, x = 12, qtd_espinhos = rand() % 3 + 3;
+	int i = 0, x = 12; 
+	const int qtd_espinhos = rand() % 3 + 3;
 
 	Entidades::Obstaculos::Espinhos* espinho = nullptr;
 	for (i = 0; i < qtd_espinhos; i++, x++) {

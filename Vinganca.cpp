@@ -1,18 +1,18 @@
 #include "Vinganca.h"
 
-#define FREQUENCIA_TELETRANSPORTE 5000
-#define FREQUENCIA_LANCAMENTO 1500
+int Entidades::Personagens::Vinganca::Vinganca::cont_frequencia(4500);
 
 Entidades::Personagens::Vinganca::Vinganca(int nv, int mal, const char* texturePath, ID id) :
 	Inimigo(nv, mal, texturePath, id),
-	teletransporta(0), lancamento(0)
+	teletransporta(0),
+	frequencia_teletransporte(cont_frequencia)
 {
+	cont_frequencia -= 500;
 	if (Entidades::Personagens::Jogador::getNumJogadores() == 2)
 		nivel_maldade /= 4;
 }
 
 Entidades::Personagens::Vinganca::~Vinganca() {
-	projeteis.clear();
 }
 
 void Entidades::Personagens::Vinganca::executar() {
@@ -49,30 +49,12 @@ void Entidades::Personagens::Vinganca::carregar(nlohmann::ordered_json& entrada)
 }
 
 void Entidades::Personagens::Vinganca::update(float dt) {
-	if (teletransporta == FREQUENCIA_TELETRANSPORTE) {
+	if (teletransporta == frequencia_teletransporte) {
 		teletransporte();
 	}
 	teletransporta++;
 
-	if (lancamento == FREQUENCIA_LANCAMENTO) {
-		lancar_projeteis();
-	}
-	lancamento++;
-
-	//projeteis.executar(dt);
-	Listas::Lista<Entidades::Entidade>::Iterador it;
-	Entidades::Entidade* aux = nullptr;
-	int i = 0;
-	for (it = projeteis.get_primeiro(), i = 0; i < projeteis.getTamanho(); it.operator++(), i++) {
-		aux = it.operator*();
-		if (aux != nullptr) {
-			aux->update(dt);
-		}
-	}
-
 	desenhar();
-
-	remover_projeteis();
 }
 
 void Entidades::Personagens::Vinganca::teletransporte() {
@@ -91,43 +73,4 @@ void Entidades::Personagens::Vinganca::teletransporte() {
 	//std::cout << x << " " << y << std::endl;
 
 	teletransporta = 0;
-	lancar_projeteis();
-}
-
-void Entidades::Personagens::Vinganca::lancar_projeteis() {
-	Entidades::Projetil* projetil = nullptr;
-	Math::Vector2Df direcoes[] = { Math::Vector2Df(1, 0), Math::Vector2Df(0, 1), Math::Vector2Df(-1, 0), Math::Vector2Df(0, -1), Math::Vector2Df(1, 1), Math::Vector2Df(1, -1), Math::Vector2Df(-1, -1), Math::Vector2Df(-1, 1) };
-
-	for (int i = 0; i < 8; i++) {
-		projetil = new Entidades::Projetil("Assets/Sprites/boss_bubble.png", nivel_maldade, 4);
-		projetil->setAtirador(this);
-		projetil->setDirection(direcoes[i]);
-		projetil->setPosition(position.x, position.y);
-		projeteis.incluir(projetil);
-	}
-
-	lancamento = 0;
-}
-
-void Entidades::Personagens::Vinganca::remover_projeteis()
-{
-	if (projeteis.getTamanho() > 0) {
-		Listas::Lista<Entidades::Entidade>::Iterador it = projeteis.get_primeiro();
-		Entidades::Entidade* aux = it.operator*();
-		int i = 0;
-
-		while (i < projeteis.getTamanho()) {
-			aux = it.operator*();
-			if (static_cast<Entidades::Projetil*>(aux)->getColidiu()) {
-				projeteis.remover(aux);
-				projeteis_lancados.push_back(aux);
-			}
-			it.operator++(); i++;
-		}
-	}
-}
-
-Listas::ListaEntidades* Entidades::Personagens::Vinganca::getProjeteis()
-{
-	return &projeteis;
 }

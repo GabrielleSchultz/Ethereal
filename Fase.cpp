@@ -9,6 +9,7 @@ namespace Fases
 	Fase::Fase() :
 		Ente(),
 		pGerenciadorColisoes(Gerenciadores::Colisoes::getGerenciador_Colisoes()),
+		fim_de_fase(false), proxima_fase(false),
 		inimigos(), obstaculos(), jogadores(), mortos()
 	{
 		pGerenciadorColisoes->setListaInimigos(&inimigos);
@@ -114,19 +115,30 @@ namespace Fases
 	}
 	void Fase::remover_sem_vida(Listas::ListaEntidades* lista)
 	{
-		if(lista->getTamanho() > 0){
+		if (lista->getTamanho() > 0) {
 			Listas::Lista<Entidades::Entidade>::Iterador it = lista->get_primeiro();
 			Entidades::Entidade* aux = it.operator*();
 			int i = 0;
-			
+
 			while (i < lista->getTamanho()) {
-				aux = it.operator*(); 
+				aux = it.operator*();
 				if (!static_cast<Entidades::Personagens::Personagem*>(aux)->getVivo()) {
 					lista->remover(aux);
 					mortos.push_back(aux);
-				}	
+				}
 				it.operator++(); i++;
 			}
 		}
+		else if (lista->getTamanho() == 0){
+			fim_de_fase = true;
+		}
+	}
+	bool Fase::getfim_de_fase()
+	{
+		return fim_de_fase;
+	}
+	bool Fase::getproxima_fase()
+	{
+		return proxima_fase;
 	}
 }

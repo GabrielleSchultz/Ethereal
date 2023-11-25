@@ -7,7 +7,8 @@ namespace Fases {
 	class Primeira_Fase : public Fase
 	{
 	private:
-		std::vector<Entidades::Entidade*> remover_inimigos;
+		const int max_raiva;
+		const int max_tristeza;
 	
 	public:
 		Primeira_Fase();

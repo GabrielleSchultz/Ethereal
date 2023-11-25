@@ -103,10 +103,17 @@
     <ClCompile Include="MenuPause.cpp">
       <Filter>Sources\Estados\Menu</Filter>
     </ClCompile>
-    <ClCompile Include="Botao.cpp" />
-    <ClCompile Include="Texto.cpp" />
     <ClCompile Include="MenuGameOver.cpp">
       <Filter>Sources\Estados\Menu</Filter>
+    </ClCompile>
+    <ClCompile Include="MenuSettings.cpp">
+      <Filter>Sources\Estados\Menu</Filter>
+    </ClCompile>
+    <ClCompile Include="Botao.cpp">
+      <Filter>Sources\Estados\Menu\ElementosGraficos</Filter>
+    </ClCompile>
+    <ClCompile Include="Texto.cpp">
+      <Filter>Sources\Estados\Menu\ElementosGraficos</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -218,10 +225,17 @@
     <ClInclude Include="MenuPause.h">
       <Filter>Headers\Estados\Menu</Filter>
     </ClInclude>
-    <ClInclude Include="Botao.h" />
-    <ClInclude Include="Texto.h" />
     <ClInclude Include="MenuGameOver.h">
       <Filter>Headers\Estados\Menu</Filter>
+    </ClInclude>
+    <ClInclude Include="MenuSettings.h">
+      <Filter>Headers\Estados\Menu</Filter>
+    </ClInclude>
+    <ClInclude Include="Botao.h">
+      <Filter>Headers\Estados\Menu\ElementosGraficos</Filter>
+    </ClInclude>
+    <ClInclude Include="Texto.h">
+      <Filter>Headers\Estados\Menu\ElementosGraficos</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -290,6 +304,12 @@
     </Filter>
     <Filter Include="Sources\Estados\Menu">
       <UniqueIdentifier>{70f9b1a9-d384-41e1-8adb-a2908d1649c3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Headers\Estados\Menu\ElementosGraficos">
+      <UniqueIdentifier>{12069c0f-244a-4ac7-b03d-f12e2a2ca78b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Sources\Estados\Menu\ElementosGraficos">
+      <UniqueIdentifier>{26dbb616-3da2-4561-a713-dd2e57834fb8}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>

@@ -6,6 +6,7 @@
 #include "MenuRanking.h"
 #include "MenuFases.h"
 #include "MenuSettings.h"
+#include "MenuGameOver.h"
 
 namespace Gerenciadores
 {
@@ -79,6 +80,8 @@ namespace Gerenciadores
 		case Estados::Tipo::MenuSettings:
 			novo_estado = new Estados::Menus::MenuSettings();
 			break;
+		case Estados::Tipo::Gameover:
+			novo_estado = new Estados::Menus::MenuGameOver();
 		}
 
 		vetor_estados.push_back(static_cast<Estados::Estado*>(novo_estado));
@@ -118,8 +121,8 @@ namespace Gerenciadores
 			{
 				criar_estado(it->ID);
 				vetor_estados[vetor_estados.size() - 2]->setAtivo(false);
-				std::cout << "criou pendencia push" << std::endl;
-				std::cout << "setou falso" << std::endl;
+				//std::cout << "criou pendencia push" << std::endl;
+				//std::cout << "setou falso" << std::endl;
 			}
 				break;
 			case Pop:
@@ -129,14 +132,14 @@ namespace Gerenciadores
 				vetor_estados.pop_back();
 				//delete aux;
 				vetor_estados[vetor_estados.size() - 1]->setAtivo(true);
-				std::cout << "criou pendencia pop" << std::endl;
-				std::cout << "setou true" << std::endl;
+				//std::cout << "criou pendencia pop" << std::endl;
+				//std::cout << "setou true" << std::endl;
 			}
 				break;
 			case Clear:
 			{
 				vetor_estados.clear();
-				std::cout << "criou clear" << std::endl;
+				//std::cout << "criou clear" << std::endl;
 
 			}
 				break;

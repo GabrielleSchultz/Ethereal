@@ -1,4 +1,3 @@
-#include "Projetil.h"
 #include "Jogador.h"
 #include "Tristeza.h"
 #include "Vinganca.h"
@@ -39,8 +38,8 @@ namespace Entidades
 
 	bool Projetil::getColidiu()
 	{
-		if (position.x > WIDTH || position.x < -30 || position.y > HEIGHT || position.y < -30)
-			colidiu = true;
+		//if (position.x > WIDTH || position.x < 0 || position.y > HEIGHT || position.y < 0)
+			//colidiu = true;
 		return colidiu;
 	}
 

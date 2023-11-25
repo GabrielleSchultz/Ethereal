@@ -1,9 +1,12 @@
 #include "MenuGameOver.h"
+#define QTD_BOTOES 3
 
 Estados::Menus::MenuGameOver::MenuGameOver() : Menu(),
 texto()
 {
+	titulo.setTexto("Fim de Jogo");
 	cria_botoes();
+	botoes[botao_atual]->setSelecionado(true);
 }
 
 Estados::Menus::MenuGameOver::~MenuGameOver()
@@ -12,7 +15,8 @@ Estados::Menus::MenuGameOver::~MenuGameOver()
 
 void Estados::Menus::MenuGameOver::cria_botoes()
 {
-	std::string textos[] = { "voltar ao Menu Principal", "ranking", "sair"};
+	std::string textos[QTD_BOTOES] = { "voltar ao Menu Principal", "salvar", "sair" };
+	Estados::Tipo tipos[QTD_BOTOES] = { Estados::Tipo::vazio, Estados::Tipo::sair };
 
 	Estados::Menus::ElementosGraficos::Botao* botao = nullptr;
 	for (int i = 0; i < textos->size(); i++) {

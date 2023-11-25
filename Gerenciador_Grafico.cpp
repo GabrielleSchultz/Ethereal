@@ -145,12 +145,14 @@ void Gerenciadores::Grafico::desenhar(const std::string filePath, Math::Vector2D
 
 void Gerenciadores::Grafico::desenharForma(sf::RectangleShape* rec)
 {
-	janelaPrincipal->draw(*rec);
+	if (rec)
+		janelaPrincipal->draw(*rec);
 }
 
 void Gerenciadores::Grafico::desenharTexto(sf::Text* t)
 {
-	janelaPrincipal->draw(*t);
+	if (t)
+		janelaPrincipal->draw(*t);
 }
 
 sf::Font* Gerenciadores::Grafico::getFonte() const

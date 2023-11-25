@@ -19,10 +19,6 @@ Entidades::Personagens::Tristeza::~Tristeza()
 	projeteis.clear();
 }
 
-void Entidades::Personagens::Tristeza::executar()
-{
-}
-
 void Entidades::Personagens::Tristeza::danificar(Jogador* p)
 {
 	if (p)
@@ -70,9 +66,7 @@ void Entidades::Personagens::Tristeza::update(float dt)
 		setDirection(1, 0);
 
 	setPosition( Math::Vector2Df(position.x + currentVelocity.x * dt * direction.x, position.y));
-
 	desenhar();
-
 	remover_projeteis();
 }
 

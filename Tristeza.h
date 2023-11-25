@@ -16,7 +16,6 @@ namespace Entidades {
 		public:
 			Tristeza(int nv = 10, int mal = 1, const char* texturePath = "Assets/Sprites/sadness_teste.png", ID id = ID::inimigo_tristeza);
 			~Tristeza();
-			void executar();
 			void danificar(Jogador* p);
 			void salvar(nlohmann::ordered_json& entrada);
 			void carregar(nlohmann::ordered_json& entrada);

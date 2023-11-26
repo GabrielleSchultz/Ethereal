@@ -15,6 +15,7 @@ namespace Estados {
 			MenuPause(Estados::GameState* pFase = nullptr);
 			~MenuPause();
 			void cria_botoes();
+			void salvar_jogo();
 		};
 	}
 

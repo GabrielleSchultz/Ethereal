@@ -1,5 +1,6 @@
 #include "ControleMenu.h"
-#include "Menu.h"
+#include "MenuPause.h"
+#include "MenuGameOver.h"
 #include <iostream>
 
 Controle::ControleMenu::ControleMenu() :
@@ -42,7 +43,10 @@ void Controle::ControleMenu::notifyKeyPressed(std::string key)
 					Estados::Estado::setMultiplayer(true);
 				}
 				else if (pMenu->getTipoEstado() == Estados::Tipo::save) {
-					// chamar de alguma forma função salvar do GameState
+					static_cast<Estados::Menus::MenuPause*>(pMenu)->salvar_jogo();
+				}
+				else if (pMenu->getTipoEstado() == Estados::Tipo::saverranking) {
+					static_cast<Estados::Menus::MenuGameOver*>(pMenu)->salva_pontuacao();
 				}
 				else if (pMenu->getTipoEstado() == Estados::Tipo::sair) {
 					pMenu->request_clear();

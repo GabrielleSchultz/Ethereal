@@ -50,6 +50,7 @@ namespace Entidades {
 			}
 
 			max_vel = PLAYER_MAXVEL;
+			pontos = 0;
 		}
 
 		void Jogador::update(float dt)
@@ -83,13 +84,14 @@ namespace Entidades {
 			salvarPersonagem(entrada);
 			entrada["jogador_num"] = Player;
 			entrada["olhando_direita"] = facingRight;
+			entrada["pontos"] = pontos;
 		}
 
 		void Jogador::carregar(nlohmann::ordered_json& saida)
 		{
 			carregarDadosPersonagem(saida);
 			setFacingRight(saida["olhando_direita"].template get<bool>());
-			
+			pontos = (saida["pontos"].template get<unsigned int>());
 		}
 
 		void Jogador::operator++(int p)

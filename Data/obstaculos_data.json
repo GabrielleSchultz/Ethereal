@@ -1,0 +1,42 @@
+[
+  {
+    "ID": 1,
+    "posicao": {
+      "x": 52.691001892089844,
+      "y": 579.0
+    },
+    "atrito": 0.25,
+    "direcao": {
+      "x": 0.0,
+      "y": -1.0
+    },
+    "velocidade": {
+      "x": 0.0,
+      "y": -1.0
+    },
+    "vidas": 50,
+    "jogador_num": 1,
+    "olhando_direita": true,
+    "pontos": 6
+  },
+  {
+    "ID": 1,
+    "posicao": {
+      "x": 114.844970703125,
+      "y": 579.0
+    },
+    "atrito": 0.25,
+    "direcao": {
+      "x": 0.0,
+      "y": -1.0
+    },
+    "velocidade": {
+      "x": 0.0,
+      "y": -1.0
+    },
+    "vidas": 50,
+    "jogador_num": 2,
+    "olhando_direita": true,
+    "pontos": 6
+  }
+]

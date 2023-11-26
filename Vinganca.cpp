@@ -43,10 +43,16 @@ void Entidades::Personagens::Vinganca::colidir(Entidades::Entidade* e)
 
 void Entidades::Personagens::Vinganca::salvar(nlohmann::ordered_json& entrada)
 {
+	salvarInimigo(entrada);
+	entrada["teletransporta"] = teletransporta;
+	entrada["ativo"] = ativo;
 }
 
-void Entidades::Personagens::Vinganca::carregar(nlohmann::ordered_json& entrada)
+void Entidades::Personagens::Vinganca::carregar(nlohmann::ordered_json& saida)
 {
+	carregarInimigo(saida);
+	teletransporta = (saida["teletransporta"].template get<int>());
+	ativo = (saida["ativo"].template get<bool>());
 }
 
 void Entidades::Personagens::Vinganca::update(float dt) {

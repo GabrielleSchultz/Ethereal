@@ -4,13 +4,18 @@
 #include "Fase.h"
 #include "json.h"
 
+#include "Raiva.h"
+#include "Tristeza.h"
+#include "Vinganca.h"
+
 namespace Fases
 {
 	Fase::Fase() :
 		Ente(),
 		pGerenciadorColisoes(Gerenciadores::Colisoes::getGerenciador_Colisoes()),
-		fim_de_fase(false), proxima_fase(false),
-		inimigos(), obstaculos(), jogadores(), fila_delecao()
+		num_fase(0), fim_de_fase(false), proxima_fase(false),
+		inimigos(), obstaculos(), jogadores(), fila_delecao(),
+		num_raivas(0), num_tristezas(0), num_vingancas(0)
 	{
 		pGerenciadorColisoes->setListaInimigos(&inimigos);
 		pGerenciadorColisoes->setListaJogadores(&jogadores);
@@ -30,6 +35,20 @@ namespace Fases
 
 	void Fase::salvar(nlohmann::ordered_json& entrada)
 	{
+		nlohmann::ordered_json dados_fase;
+
+		dados_fase["num_fase"] = num_fase;
+		dados_fase["fim_de_fase"] = fim_de_fase;
+		dados_fase["proxima_fase"] = proxima_fase;
+		dados_fase["num_raivas"] = num_raivas;
+		dados_fase["num_tristezas"] = num_tristezas;
+		dados_fase["num_vingancas"] = num_vingancas;
+
+		std::ofstream jsonOutput("../Ethereal/Data/fase_data.json");
+		jsonOutput << std::setw(2) << dados_fase;
+
+		jsonOutput.close();
+
 		salvarJogadores();
 		salvarInimigos();
 		salvarObstaculos();
@@ -75,6 +94,89 @@ namespace Fases
 		jsonOutput << std::setw(2) << dados_obstaculos;
 
 		jsonOutput.close();
+	}
+
+	void Fase::carregar()
+	{
+		std::ifstream jsonInput("../Ethereal/Data/fase_data.json");
+		if (!jsonInput)
+			throw std::runtime_error("Error loading stage data!");
+		nlohmann::ordered_json dados_fase = nlohmann::ordered_json::parse(jsonInput);
+		num_fase = (dados_fase["num_fase"].template get<int>());
+		fim_de_fase = (dados_fase["fim_de_fase"].template get<bool>());
+		proxima_fase = (dados_fase["proxima_fase"].template get<bool>());
+		num_raivas = (dados_fase["num_raivas"].template get<int>());
+		num_tristezas = (dados_fase["num_tristezas"].template get<int>());
+		num_vingancas = (dados_fase["num_vingancas"].template get<int>());
+
+		jsonInput.close();
+
+		criar_inimigos_carregados();
+
+		carregarJogadores();
+		carregarInimigos();
+		carregarObstaculos();
+	}
+
+	void Fase::criar_inimigos_carregados()
+	{
+		Entidades::Personagens::Raiva* raivinha = nullptr;
+		for (int i = 0; i < num_raivas; i++) {
+			raivinha = new Entidades::Personagens::Raiva();
+			if (raivinha)
+			{
+				inimigos.incluir(raivinha);
+			}
+		}
+
+		Entidades::Personagens::Tristeza* sadness = nullptr;
+		for (int i = 0; i < num_tristezas; i++) {
+			sadness = new Entidades::Personagens::Tristeza();
+			if (sadness)
+			{
+				inimigos.incluir(sadness);
+			}
+		}
+
+		Entidades::Personagens::Vinganca* chefao = nullptr;
+		for (int i = 0; i < num_vingancas; i++) {
+			chefao = new Entidades::Personagens::Vinganca(25 * i + 30, 25 * i + 25);
+			inimigos.incluir(chefao);
+		}
+	}
+
+	void Fase::carregarJogadores()
+	{
+		std::ifstream jsonInput("../Ethereal/Data/jogadores_data.json");
+		if (!jsonInput)
+			throw std::runtime_error("Error loading stage data!");
+		nlohmann::ordered_json dados_jogadores = nlohmann::ordered_json::parse(jsonInput);
+
+		jogadores.carregar(dados_jogadores);
+
+		jsonInput.close();
+	}
+
+	void Fase::carregarInimigos()
+	{
+		std::ifstream jsonInput("../Ethereal/Data/inimigos_data.json");
+		if (!jsonInput)
+			throw std::runtime_error("Error loading stage data!");
+		nlohmann::ordered_json dados_inimigos = nlohmann::ordered_json::parse(jsonInput);
+
+		jogadores.carregar(dados_inimigos);
+
+		jsonInput.close();
+	}
+
+	void Fase::carregarObstaculos()
+	{
+		std::ifstream jsonInput("../Ethereal/Data/obstaculos_data.json");
+		nlohmann::ordered_json dados_obstaculos = nlohmann::ordered_json::parse(jsonInput);
+
+		jogadores.carregar(dados_obstaculos);
+
+		jsonInput.close();
 	}
 
 	void Fase::gerenciar_colisoes()

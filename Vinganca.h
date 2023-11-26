@@ -20,7 +20,7 @@ namespace Entidades {
 			void danificar(Jogador* p);
 			void colidir(Entidades::Entidade* e);
 			void salvar(nlohmann::ordered_json& entrada);
-			void carregar(nlohmann::ordered_json& entrada);
+			void carregar(nlohmann::ordered_json& saida);
 			void update(float dt);
 			void teletransporte();
 			void setAtivo(bool b);

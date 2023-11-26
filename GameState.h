@@ -12,11 +12,12 @@ namespace Estados {
 	private:
 		Fases::Fase* pFase;
 		Estados::Menus::ElementosGraficos::Texto pontuacao;
+		int carrega_fase;
 	public:
 		GameState(int num_fase = 1);
 		~GameState();
 		void executar(float dt);
-		void salvar();
+		void salvar_jogo();
 	};
 
 }

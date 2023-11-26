@@ -18,6 +18,7 @@ namespace Estados
 		MenuFases,
 		Fase1,
 		Fase2,
+		carregarjogo,
 		MenuPrincipal,
 		MenuSettings,
 		singleplayer,
@@ -25,6 +26,7 @@ namespace Estados
 		MenuPause,
 		save,
 		MenuRanking,
+		saverranking,
 		sair
 	};
 

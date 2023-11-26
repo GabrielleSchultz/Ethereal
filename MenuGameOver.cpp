@@ -3,7 +3,7 @@
 
 #include <fstream>
 
-#define QTD_BOTOES 3
+#define QTD_BOTOES 4
 
 Estados::Menus::MenuGameOver::MenuGameOver() : 
 	Menu()
@@ -12,9 +12,9 @@ Estados::Menus::MenuGameOver::MenuGameOver() :
 	setFundo(fundo_gameover);
 	titulo.setTexto("Fim de Jogo");
 	titulo.setPosicao(Math::Vector2Df(545.f, 85.f));
-	pontos_jogador.setPosicao(Math::Vector2Df(250.f, 250.f));
+	pontos_jogador.setPosicao(Math::Vector2Df(300.f, 300.f));
 	pontos_jogador.setTamanho(50);
-	nome_jogador.setPosicao(Math::Vector2Df(400.f, 400.f));
+	nome_jogador.setPosicao(Math::Vector2Df(300.f, 365.f));
 	nome_jogador.setTamanho(40);
 	cria_botoes();
 	botoes[botao_atual]->setSelecionado(true);
@@ -27,13 +27,13 @@ Estados::Menus::MenuGameOver::~MenuGameOver()
 void Estados::Menus::MenuGameOver::executar(float dt)
 {
 	update_pontuacao();
-	salva_pontuacao();
+	//salva_pontuacao();
 	desenhar();
 }
 
 void Estados::Menus::MenuGameOver::update_pontuacao()
 {
-	nome_jogador.setTexto("Seu nome :" + input_nome_jogador.getTexto());
+	nome_jogador.setTexto("Seu nome: " + input_nome_jogador.getTexto());
 	pontos_jogador.setTexto("Pontuacao: " + std::to_string(pontuacao_jogo));
 }
 
@@ -51,12 +51,12 @@ void Estados::Menus::MenuGameOver::desenhar()
 
 void Estados::Menus::MenuGameOver::cria_botoes()
 {
-	std::string textos[QTD_BOTOES] = { "voltar ao menu principal", "ranking", "sair" };
-	Estados::Tipo tipos[QTD_BOTOES] = { Estados::Tipo::MenuPrincipal, Estados::Tipo::MenuRanking, Estados::Tipo::sair };
+	std::string textos[QTD_BOTOES] = { "salvar", "voltar ao menu principal", "ranking", "sair" };
+	Estados::Tipo tipos[QTD_BOTOES] = {Estados::Tipo::saverranking, Estados::Tipo::MenuPrincipal, Estados::Tipo::MenuRanking, Estados::Tipo::sair };
 
 	Estados::Menus::ElementosGraficos::Botao* botao = nullptr;
 	for (int i = 0; i < QTD_BOTOES; i++) {
-		botao = new Estados::Menus::ElementosGraficos::Botao(Math::Vector2Df(650.f, 50 * i + 500.f), tipos[i]);
+		botao = new Estados::Menus::ElementosGraficos::Botao(Math::Vector2Df(650.f, 50 * i + 425.f), tipos[i]);
 		botao->setTexto(textos[i]);
 		botoes.push_back(botao);
 	}

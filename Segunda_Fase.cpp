@@ -11,6 +11,7 @@ Fases::Segunda_Fase::Segunda_Fase() :
 	boss(nullptr),
 	boss_ativo(0)
 {
+	num_fase = 2;
 	pGerenciadorGrafico->carregarTextura("Assets/Backgrounds/Stage2_full_background.png");
 	pGerenciadorGrafico->carregarTextura("Assets/Backgrounds/Stars-Big_1_2_PC.png");
 }
@@ -66,6 +67,8 @@ void Fases::Segunda_Fase::executar(float dt)
 			//static_cast<Entidades::Obstaculos::Plataforma*>(aux)->obstacular(static_cast<Entidades::Personagens::Jogador*>(jogador));
 		}
 		pGerenciadorGrafico->desenharEnte("Assets/Backgrounds/Stars-Big_1_2_PC.png", Math::Vector2Df(0, 0));
+
+		gerenciar_colisoes();
 
 		remover_sem_vida(&inimigos);
 		remover_sem_vida(&jogadores);

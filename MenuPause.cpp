@@ -28,3 +28,10 @@ void Estados::Menus::MenuPause::cria_botoes()
 		botoes.push_back(botao);
 	}
 }
+
+void Estados::Menus::MenuPause::salvar_jogo()
+{
+	if (pFase_atual) {
+		pFase_atual->salvar_jogo();
+	}
+}

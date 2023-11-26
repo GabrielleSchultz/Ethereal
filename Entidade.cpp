@@ -23,9 +23,14 @@ namespace Entidades {
 		tamanho = pGerenciadorGrafico->getDimensao(caminho_textura);
 	}
 
-	void Entidade::executar(float dt)
+	void Entidade::aplicar_gravidade(float dt)
 	{
 		position.y += gravidade * dt;
+	}
+
+	void Entidade::executar(float dt)
+	{
+		aplicar_gravidade(dt);
 		update(dt);
 	}
 
@@ -38,13 +43,13 @@ namespace Entidades {
 	void Entidade::salvarEntidade(nlohmann::ordered_json& entrada)
 	{
 		entrada["ID"] = id;
-		entrada["posicao"] = { {"x", getPosition().x}, {"y", getPosition().y } };
+		entrada["posicao"] = {{"x", getPosition().x}, {"y", getPosition().y }};
 	}
 
 	void Entidade::carregarDadosEntidade(nlohmann::ordered_json& saida)
 	{
 		//lê a posicao de acordo com o arquivo, fazendo as devidas conversões
-		setPosition(saida["posicao"]["x"].template get<float>(), saida["posicao"]["y"].template get<float>());
+		setPosition(Math::Vector2Df(saida["posicao"]["x"].template get<float>(), saida["posicao"]["y"].template get<float>()));
 	}
 
 	void Entidade::setPosition(float x, float y)

@@ -10,6 +10,7 @@ Fases::Primeira_Fase::Primeira_Fase() :
 	Fase(),
 	max_raiva(3), max_tristeza(2)
 {
+	num_fase = 1;
 	pGerenciadorGrafico->carregarTextura("Assets/Backgrounds/Stage1_full_background.png");
 	pGerenciadorGrafico->carregarTextura("Assets/Backgrounds/Stars Small_1.png");
 }
@@ -60,6 +61,8 @@ void Fases::Primeira_Fase::executar(float dt)
 			}*/
 		}
 		pGerenciadorGrafico->desenharEnte("Assets/Backgrounds/Stars Small_1.png", Math::Vector2Df(0, 0));
+
+		gerenciar_colisoes();
 
 		remover_sem_vida(&inimigos);
 		remover_sem_vida(&jogadores);

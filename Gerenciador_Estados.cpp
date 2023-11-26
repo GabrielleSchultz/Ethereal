@@ -81,6 +81,10 @@ namespace Gerenciadores
 			novo_estado = new Estados::GameState(2);
 			break;
 
+		case Estados::Tipo::carregarjogo:
+			novo_estado = new Estados::GameState(3);
+			break;
+
 		case Estados::Tipo::MenuPause:
 		{
 			Estados::Estado* pGameState = vetor_estados[vetor_estados.size() - 1];

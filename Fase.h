@@ -11,6 +11,7 @@ namespace Fases {
 
 	class Fase : public Ente {
 	protected:
+		int num_fase;
 		bool fim_de_fase;
 		bool proxima_fase;
 		Gerenciadores::Colisoes* pGerenciadorColisoes;
@@ -18,15 +19,25 @@ namespace Fases {
 		Listas::ListaEntidades obstaculos;
 		Listas::ListaEntidades jogadores;
 		std::vector<Entidades::Entidade*> fila_delecao;
+		int num_raivas;
+		int num_tristezas;
+		int num_vingancas;
 
 	public:
 		Fase();
 		~Fase();
 		virtual void executar(float dt) = 0;
+		
 		virtual void salvar(nlohmann::ordered_json& entrada);
 		virtual void salvarJogadores();
 		virtual void salvarInimigos();
 		virtual void salvarObstaculos();
+		virtual void carregar();
+		void criar_inimigos_carregados();
+		virtual void carregarJogadores();
+		virtual void carregarInimigos();
+		virtual void carregarObstaculos();
+		
 		void gerenciar_colisoes();
 		int getPontuacaoJogadores() const;
 		void criar_jogador(char type, Math::Vector2Df posicao);

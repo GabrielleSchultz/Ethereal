@@ -28,13 +28,13 @@ void Entidades::Personagens::Tristeza::danificar(Jogador* p)
 void Entidades::Personagens::Tristeza::salvar(nlohmann::ordered_json& entrada)
 {
 	salvarInimigo(entrada);
-	projeteis.salvar(entrada);
+	//projeteis.salvar(entrada);
 }
 
 void Entidades::Personagens::Tristeza::carregar(nlohmann::ordered_json& saida)
 {
 	carregarInimigo(saida);
-	projeteis.carregar(saida);
+	//projeteis.carregar(saida);
 }
 
 void Entidades::Personagens::Tristeza::update(float dt)

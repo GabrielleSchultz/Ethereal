@@ -85,7 +85,7 @@ namespace Gerenciadores
 		{
 			Estados::Estado* pGameState = vetor_estados[vetor_estados.size() - 1];
 			if (pGameState)
-				novo_estado = new Estados::Menus::MenuPause(pGameState);
+				novo_estado = new Estados::Menus::MenuPause(dynamic_cast<Estados::GameState*>(pGameState));
 			break;
 		}
 

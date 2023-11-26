@@ -15,6 +15,7 @@ namespace Entidades {
 			void salvar(nlohmann::ordered_json& entrada);
 			void carregar(nlohmann::ordered_json& saida);
 			void update(float dt);
+			void mover(float dt);
 			void colidir(Entidades::Entidade* e);
 			void danificar(Jogador* p);
 			void perseguir(Jogador* p);

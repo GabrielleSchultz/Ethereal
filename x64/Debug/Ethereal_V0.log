@@ -1,27 +1,20 @@
-<<<<<<< HEAD
-﻿  Gerenciador_Colisoes.cpp
-  Menu.cpp
-C:\Users\gabri\source\repos\GabrielleSchultz\Ethereal\Menu.cpp(30,37): warning C4267: '=': conversão de 'size_t' para 'int', possível perda de dados
+﻿  Botao.cpp
+  Gerenciador_Colisoes.cpp
+  MenuSettings.cpp
+C:\Users\gabri\source\repos\GabrielleSchultz\Ethereal\MenuSettings.cpp(40,85): warning C4244: 'argumento': conversão de 'int' para 'T', possível perda de dados
+          with
+          [
+              T=float
+          ]
   Primeira_Fase.cpp
-C:\Users\gabri\source\repos\GabrielleSchultz\Ethereal\Primeira_Fase.cpp(78,12): warning C4244: 'argumento': conversão de 'time_t' para 'unsigned int', possível perda de dados
-C:\Users\gabri\source\repos\GabrielleSchultz\Ethereal\Primeira_Fase.cpp(92,41): error C2259: 'Entidades::Personagens::Tristeza': não é possível instanciar a classe abstrata
-C:\Users\gabri\source\repos\GabrielleSchultz\Ethereal\Tristeza.h(9,9): message : consulte a declaração de 'Entidades::Personagens::Tristeza'
-C:\Users\gabri\source\repos\GabrielleSchultz\Ethereal\Primeira_Fase.cpp(92,41): message : devido aos seguintes membros:
-C:\Users\gabri\source\repos\GabrielleSchultz\Ethereal\Primeira_Fase.cpp(92,41): message : 'void Entidades::Personagens::Inimigo::executar(void)': é abstrato
-C:\Users\gabri\source\repos\GabrielleSchultz\Ethereal\Inimigo.h(13,17): message : consulte a declaração de 'Entidades::Personagens::Inimigo::executar'
-C:\Users\gabri\source\repos\GabrielleSchultz\Ethereal\Primeira_Fase.cpp(92,49): error C2259: 'Entidades::Personagens::Tristeza': não é possível instanciar a classe abstrata
-C:\Users\gabri\source\repos\GabrielleSchultz\Ethereal\Tristeza.h(9,9): message : consulte a declaração de 'Entidades::Personagens::Tristeza'
-C:\Users\gabri\source\repos\GabrielleSchultz\Ethereal\Primeira_Fase.cpp(92,49): message : devido aos seguintes membros:
-C:\Users\gabri\source\repos\GabrielleSchultz\Ethereal\Primeira_Fase.cpp(92,49): message : 'void Entidades::Personagens::Inimigo::executar(void)': é abstrato
-C:\Users\gabri\source\repos\GabrielleSchultz\Ethereal\Inimigo.h(13,17): message : consulte a declaração de 'Entidades::Personagens::Inimigo::executar'
-C:\Users\gabri\source\repos\GabrielleSchultz\Ethereal\Primeira_Fase.cpp(95,50): warning C4244: 'argumento': conversão de 'int' para 'float', possível perda de dados
-C:\Users\gabri\source\repos\GabrielleSchultz\Ethereal\Primeira_Fase.cpp(104,12): warning C4244: 'argumento': conversão de 'time_t' para 'unsigned int', possível perda de dados
+C:\Users\gabri\source\repos\GabrielleSchultz\Ethereal\Primeira_Fase.cpp(80,12): warning C4244: 'argumento': conversão de 'time_t' para 'unsigned int', possível perda de dados
+C:\Users\gabri\source\repos\GabrielleSchultz\Ethereal\Primeira_Fase.cpp(97,50): warning C4244: 'argumento': conversão de 'int' para 'float', possível perda de dados
+C:\Users\gabri\source\repos\GabrielleSchultz\Ethereal\Primeira_Fase.cpp(106,12): warning C4244: 'argumento': conversão de 'time_t' para 'unsigned int', possível perda de dados
   Projetil.cpp
 C:\Users\gabri\source\repos\GabrielleSchultz\Ethereal\Projetil.cpp(16,20): warning C4244: 'argumento': conversão de 'int' para 'float', possível perda de dados
 C:\Users\gabri\source\repos\GabrielleSchultz\Ethereal\Projetil.cpp(16,17): warning C4244: 'argumento': conversão de 'int' para 'float', possível perda de dados
   Tristeza.cpp
+  Vinganca.cpp
+C:\Users\gabri\source\repos\GabrielleSchultz\Ethereal\Vinganca.cpp(62,12): warning C4244: 'argumento': conversão de 'time_t' para 'unsigned int', possível perda de dados
   Gerando Código...
-=======
-﻿  GameState.cpp
-  Ethereal_V0.vcxproj -> C:\Users\miche_bb3fmdp\OneDrive\Documentos\GitHub\Ethereal\x64\Debug\Ethereal_V0.exe
->>>>>>> 41972525db5a2a4f7af2271bedf0e6eeb8930225
+  Ethereal_V0.vcxproj -> C:\Users\gabri\source\repos\GabrielleSchultz\Ethereal\x64\Debug\Ethereal_V0.exe

@@ -70,6 +70,10 @@ void Entidades::Personagens::Tristeza::update(float dt)
 	remover_projeteis();
 }
 
+void Entidades::Personagens::Tristeza::executar()
+{
+}
+
 void Entidades::Personagens::Tristeza::lancar_projetil()
 {
 	Entidades::Projetil* projetil = nullptr;

@@ -20,6 +20,7 @@ namespace Entidades {
 			void salvar(nlohmann::ordered_json& entrada);
 			void carregar(nlohmann::ordered_json& entrada);
 			void update(float dt);
+			void executar();
 			void lancar_projetil();
 			void remover_projeteis();
 			void colidir(Entidades::Entidade* e);

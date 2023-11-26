@@ -103,8 +103,6 @@
     <ClCompile Include="MenuPause.cpp">
       <Filter>Sources\Estados\Menu</Filter>
     </ClCompile>
-    <ClCompile Include="Botao.cpp" />
-    <ClCompile Include="Texto.cpp" />
     <ClCompile Include="MenuGameOver.cpp">
       <Filter>Sources\Estados\Menu</Filter>
     </ClCompile>
@@ -113,6 +111,12 @@
     </ClCompile>
     <ClCompile Include="MenuSettings.cpp">
       <Filter>Sources\Estados\Menu</Filter>
+    </ClCompile>
+    <ClCompile Include="Botao.cpp">
+      <Filter>Sources\ElementosGraficos</Filter>
+    </ClCompile>
+    <ClCompile Include="Texto.cpp">
+      <Filter>Sources\ElementosGraficos</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -224,8 +228,6 @@
     <ClInclude Include="MenuPause.h">
       <Filter>Headers\Estados\Menu</Filter>
     </ClInclude>
-    <ClInclude Include="Botao.h" />
-    <ClInclude Include="Texto.h" />
     <ClInclude Include="MenuGameOver.h">
       <Filter>Headers\Estados\Menu</Filter>
     </ClInclude>
@@ -234,6 +236,12 @@
     </ClInclude>
     <ClInclude Include="MenuSettings.h">
       <Filter>Headers\Estados\Menu</Filter>
+    </ClInclude>
+    <ClInclude Include="Botao.h">
+      <Filter>Headers\ElementosGraficos</Filter>
+    </ClInclude>
+    <ClInclude Include="Texto.h">
+      <Filter>Headers\ElementosGraficos</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -302,6 +310,18 @@
     </Filter>
     <Filter Include="Sources\Estados\Menu">
       <UniqueIdentifier>{70f9b1a9-d384-41e1-8adb-a2908d1649c3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Headers\ElementosGraficos">
+      <UniqueIdentifier>{15c0aa42-0b09-4439-81d7-f4560e04a407}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Headers\ElementosGraficos\UI">
+      <UniqueIdentifier>{2ffa11dc-eed4-46d2-a1e3-fafa3798c8b4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Sources\ElementosGraficos">
+      <UniqueIdentifier>{3921b39c-8385-4b98-9d66-9cfe7c0d8167}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Sources\ElementosGraficos\UI">
+      <UniqueIdentifier>{6a73478c-69bf-4099-9772-70cc20e4501d}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>

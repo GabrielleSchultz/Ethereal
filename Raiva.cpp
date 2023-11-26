@@ -34,7 +34,12 @@ namespace Entidades {
 		}
 
 		void Raiva::update(float dt) {
+			mover(dt);
 			desenhar();
+		}
+
+		void Raiva::mover(float dt) {
+			
 		}
 
 		void Raiva::colidir(Entidades::Entidade* e)

@@ -2,7 +2,8 @@
 
 #define	QTD_BOTOES 3
 
-Estados::Menus::MenuPause::MenuPause() : Menu()
+Estados::Menus::MenuPause::MenuPause(GameState* pFase) : Menu(),
+pFase_atual(pFase)
 {
 	fundo_pause = "Assets/Backgrounds/pausar.png";
 	setFundo(fundo_pause);

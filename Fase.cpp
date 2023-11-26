@@ -96,16 +96,12 @@ namespace Fases
 
 		if (type == 'P')
 		{
-			//cria novo jogador 1
-			//passa o jogador para o gerenciador grafico
 			jogador = new Entidades::Personagens::Jogador(50, "Assets/Sprites/Pixi_cortado.png", Jogador1);
 			jogador->setPosition(posicao);
 			jogadores.incluir(jogador);
 		}
 		else if (type == 'B')
 		{
-			//cria novo jogador 2
-			//passa o jogador para o gerenciador grafico
 			jogador = new Entidades::Personagens::Jogador(50, "Assets/Sprites/Bity_cortado.png", Jogador2);
 			jogador->setPosition(posicao);
 			jogadores.incluir(jogador);

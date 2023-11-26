@@ -82,8 +82,12 @@ namespace Gerenciadores
 			break;
 
 		case Estados::Tipo::MenuPause:
-			novo_estado = new Estados::Menus::MenuPause();
+		{
+			Estados::Estado* pGameState = vetor_estados[vetor_estados.size() - 1];
+			if (pGameState)
+				novo_estado = new Estados::Menus::MenuPause(pGameState);
 			break;
+		}
 
 		case Estados::Tipo::MenuRanking:
 			novo_estado = new Estados::Menus::MenuRanking();

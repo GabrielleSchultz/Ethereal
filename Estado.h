@@ -2,6 +2,8 @@
 
 #include "Ente.h"
 
+//referencia do código: livro SFML Game Development - Arthur Moreira, Jan Haller
+
 namespace Gerenciadores {
 	class Gerenciador_Estados;
 }
@@ -32,6 +34,7 @@ namespace Estados
 		static Gerenciadores::Gerenciador_Estados* pGE;
 		bool ativo;
 		static bool multiplayer;
+		static unsigned int pontuacao_jogo;
 
 	public:
 
@@ -40,12 +43,14 @@ namespace Estados
 		void request_push(Estados::Tipo id_estado);
 		void request_pop();
 		void request_clear();
-		void setAtivo(bool b);
-		bool getAtivo();
+		void setAtivo(const bool b);
+		bool getAtivo() const;
 		virtual void executar(float dt) = 0;
 		void salvar(nlohmann::ordered_json& entrada){}
-		static void setMultiplayer(bool b);
+		static void setMultiplayer(const bool b);
 		static bool getMultiplayer();
+		static void setPontuacao(const unsigned int pontos);
+		static unsigned int getPontuacao();
 	};
 
 }

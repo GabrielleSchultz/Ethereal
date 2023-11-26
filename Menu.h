@@ -25,7 +25,7 @@ namespace Estados {
 			void selecionarCima();
 			void selecionarBaixo();
 			Estados::Tipo getTipoEstado() const;
-			void executar(float dt);
+			virtual void executar(float dt);
 			void setFundo(std::string f);
 			virtual void desenhar();
 			virtual void cria_botoes() = 0;

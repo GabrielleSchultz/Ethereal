@@ -16,7 +16,7 @@ Entidades::Obstaculos::Espinhos::~Espinhos()
 
 void Entidades::Obstaculos::Espinhos::obstacular(Entidades::Personagens::Jogador* p)
 {
-	//dano = p->getNumVidas();
+	dano = p->getMaxVidas();
 	if (p->getNumJogadores() == 2)
 		dano = (dano / 2);
 	espetar(p);

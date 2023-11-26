@@ -4,6 +4,8 @@
 #include "Ente.h"
 #include <fstream>
 
+//salvamento com o auxílio de Edison Furusato Oda: https://github.com/0x4D4453/GOTY-TEST
+
 namespace Entidades {
 
     enum class ID

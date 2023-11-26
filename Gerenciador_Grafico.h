@@ -5,10 +5,7 @@
 #include <map>
 #include <string>
 
-//gerenciador gráfico baseado no tutorial do Matheus Burda!
-
-//ps:o nome da classe de cada gerenciador se da pela sua funçao
-//sua chamada por namespace ja nos diz que se trata de um gerenciador
+//baseado no código do monitor Matheus Burda e Lucas Skora
 
 class Ente;
 
@@ -46,13 +43,11 @@ namespace Gerenciadores
 		sf::RenderWindow* getWindow();
 		bool foraDaCamera(Math::Vector2Df pos, sf::Vector2u size);
 
-		//geracao de mundo
-		//bool criarMapa(const std::string file_path);
-
 		//render
 		void desenharEnte(const std::string filePath, Math::Vector2Df pos);
 		void desenhar(const std::string filePath, Math::Vector2Df pos);
-		// pro botao
+
+		//botões
 		void desenharForma(sf::RectangleShape* rec);
 		void desenharTexto(sf::Text* t);
 		sf::Font* getFonte() const;

@@ -17,7 +17,7 @@ namespace Fases {
 		Listas::ListaEntidades inimigos;
 		Listas::ListaEntidades obstaculos;
 		Listas::ListaEntidades jogadores;
-		std::vector<Entidades::Entidade*> mortos;
+		std::vector<Entidades::Entidade*> fila_delecao;
 
 	public:
 		Fase();

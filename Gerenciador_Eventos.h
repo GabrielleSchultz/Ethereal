@@ -4,6 +4,8 @@
 #include "Gerenciador_Grafico.h"
 #include "Gerenciador_Inputs.h"
 
+//baseado no código do monitor Matheus Burda e Lucas Skora
+
 namespace Gerenciadores {
 	class Eventos{
 	private:

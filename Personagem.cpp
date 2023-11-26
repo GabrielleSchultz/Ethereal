@@ -5,7 +5,8 @@ namespace Entidades {
 	namespace Personagens {
 
 		Personagem::Personagem(int nv, const char* texturePath, ID id) :
-			Entidade(texturePath, id), num_vidas(nv)
+			Entidade(texturePath, id), num_vidas(nv),
+			max_vidas(nv)
 		{
 
 		}
@@ -40,6 +41,10 @@ namespace Entidades {
 			carregarDadosEntidade(saida);
 			carregarAtributos(saida); //atributos dinamicos
 			setNumVidas(saida["vidas"].template get<const int>());
+		}
+		int Personagem::getMaxVidas() const
+		{
+			return max_vidas;
 		}
 	}
 }

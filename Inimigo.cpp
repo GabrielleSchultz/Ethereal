@@ -23,7 +23,7 @@ namespace Entidades {
 		void Inimigo::carregarInimigo(nlohmann::ordered_json& saida)
 		{
 			carregarDadosPersonagem(saida);
-			nivel_maldade = saida["maldade"].template get<float>();
+			nivel_maldade = saida["maldade"].template get<int>();
 		}
 
 	}

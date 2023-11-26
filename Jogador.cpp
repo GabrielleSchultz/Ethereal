@@ -8,7 +8,7 @@
 #define ALTURA_PULO 128
 
 int Entidades::Personagens::Jogador::numJogadores(0);
-int Entidades::Personagens::Jogador::pontos(0);
+unsigned int Entidades::Personagens::Jogador::pontos(0);
 
 namespace Entidades {
 
@@ -97,7 +97,7 @@ namespace Entidades {
 			pontos += p;
 		}
 
-		const int Jogador::getPontos()
+		unsigned int Jogador::getPontos()
 		{
 			return pontos;
 		}

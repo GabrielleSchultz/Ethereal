@@ -7,7 +7,7 @@ namespace Estados {
 
 		class MenuFases : public Menu {
 		private:
-			std::string estrelas;
+			std::string camada_fundo_estrelas;
 
 		public:
 			MenuFases();

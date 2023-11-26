@@ -6,6 +6,9 @@
 #define RANKING_FILEPATH "../Ethereal/Ranking/ranking.txt"
 #define RANKING_MAX 10
 
+const int Estados::Menus::MenuRanking::MenuRanking::tam_ranking(RANKING_MAX);
+const std::string Estados::Menus::MenuRanking::MenuRanking::ranking_filepath(RANKING_FILEPATH);
+
 Estados::Menus::MenuRanking::MenuRanking(): 
 	Menu(),
 	ranking()
@@ -107,4 +110,14 @@ void Estados::Menus::MenuRanking::desenhar()
 	{
 		ranking[i]->desenhar();
 	}
+}
+
+const int Estados::Menus::MenuRanking::getTamanhoRanking()
+{
+	return tam_ranking;
+}
+
+const std::string Estados::Menus::MenuRanking::getRankingFilepath()
+{
+	return ranking_filepath;
 }

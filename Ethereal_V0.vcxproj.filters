@@ -118,6 +118,9 @@
     <ClCompile Include="Texto.cpp">
       <Filter>Sources\ElementosGraficos</Filter>
     </ClCompile>
+    <ClCompile Include="TextBox.cpp">
+      <Filter>Sources\Controle\ControleUI</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="ControleJogador.h">
@@ -243,6 +246,9 @@
     <ClInclude Include="Texto.h">
       <Filter>Headers\ElementosGraficos</Filter>
     </ClInclude>
+    <ClInclude Include="TextBox.h">
+      <Filter>Headers\Controle\ControleUI</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Sources">
@@ -314,13 +320,13 @@
     <Filter Include="Headers\ElementosGraficos">
       <UniqueIdentifier>{15c0aa42-0b09-4439-81d7-f4560e04a407}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Headers\ElementosGraficos\UI">
-      <UniqueIdentifier>{2ffa11dc-eed4-46d2-a1e3-fafa3798c8b4}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Sources\ElementosGraficos">
       <UniqueIdentifier>{3921b39c-8385-4b98-9d66-9cfe7c0d8167}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Sources\ElementosGraficos\UI">
+    <Filter Include="Headers\Controle\ControleUI">
+      <UniqueIdentifier>{2ffa11dc-eed4-46d2-a1e3-fafa3798c8b4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Sources\Controle\ControleUI">
       <UniqueIdentifier>{6a73478c-69bf-4099-9772-70cc20e4501d}</UniqueIdentifier>
     </Filter>
   </ItemGroup>

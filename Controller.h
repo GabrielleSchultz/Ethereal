@@ -2,6 +2,7 @@
 #include "Gerenciador_Inputs.h"
 
 //Observer - Interface
+//baseado fortemente no código do monitor Matheus Burda
 
 class Controller
 {

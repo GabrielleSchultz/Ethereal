@@ -12,7 +12,10 @@ namespace Gerenciadores
 {
 	Gerenciador_Estados* Gerenciador_Estados::instancia_pGE(nullptr);
 
-	Gerenciador_Estados::Gerenciador_Estados()
+	Gerenciador_Estados::Gerenciador_Estados() :
+	vetor_estados(),
+	lista_pendencias(),
+	fila_delecao()
 	{
 	}
 	Gerenciador_Estados::~Gerenciador_Estados()
@@ -32,6 +35,14 @@ namespace Gerenciadores
 			delete(aux_pendencia);
 		}
 		lista_pendencias.clear();
+
+		Estados::Estado* aux_delete = nullptr;
+		while (fila_delecao.size() != 0) {
+			aux_delete = fila_delecao.back();
+			fila_delecao.pop_back();
+			delete(aux_delete);
+		}
+		fila_delecao.clear();
 	}
 
 	Gerenciador_Estados* Gerenciador_Estados::getGerenciadorEstados()
@@ -127,10 +138,10 @@ namespace Gerenciadores
 			break;
 			case Pop:
 			{
-				//Estados::Estado* aux = vetor_estados[vetor_estados.size() - 1];
+				Estados::Estado* aux = vetor_estados[vetor_estados.size() - 1];
 				vetor_estados[vetor_estados.size() - 1]->setAtivo(false);
 				vetor_estados.pop_back();
-				//delete aux;
+				fila_delecao.push_back(aux);
 				vetor_estados[vetor_estados.size() - 1]->setAtivo(true);
 				//std::cout << "criou pendencia pop" << std::endl;
 				//std::cout << "setou true" << std::endl;
@@ -138,8 +149,13 @@ namespace Gerenciadores
 			break;
 			case Clear:
 			{
+				Estados::Estado* aux_estado = nullptr;
+				while (vetor_estados.size() != 0) {
+					aux_estado = vetor_estados.back();
+					vetor_estados.pop_back();
+					fila_delecao.push_back(aux_estado);
+				}
 				vetor_estados.clear();
-				//std::cout << "criou clear" << std::endl;
 
 			}
 			break;

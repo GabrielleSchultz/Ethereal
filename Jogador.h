@@ -19,7 +19,7 @@ namespace Entidades {
 		class Jogador : public Personagem {
 
 		private:
-			static int pontos;
+			static unsigned int pontos;
 			const float gravityCataliser;
 			float gravityScale;
 			Controle::ControleJogador* pControles;
@@ -49,7 +49,7 @@ namespace Entidades {
 			void salvar(nlohmann::ordered_json& entrada);
 			void carregar(nlohmann::ordered_json& saida);
 			void operator++(int p);
-			static const int getPontos();
+			static unsigned int getPontos();
 			static int getNumJogadores();
 			void colidir(Entidades::Entidade* e);
 			void atacar();

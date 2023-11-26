@@ -7,7 +7,7 @@ Controle::ControleJogador::ControleJogador() :
 	Controller(),
 	pJogador(nullptr)
 {
-	setKeyCommands("W", "D", "A", "S", "space");
+	setKeyCommands("W", "D", "A", "S", "tab");
 }
 
 void Controle::ControleJogador::notifyKeyPressed(std::string key)
@@ -70,7 +70,3 @@ void Controle::ControleJogador::setKeyCommands(std::string jump, std::string rig
 	pause = pausar;
 }
 
-void Controle::ControleJogador::setReviveCommand(std::string revive)
-{
-
-}

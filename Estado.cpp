@@ -3,6 +3,7 @@
 
 Gerenciadores::Gerenciador_Estados* Estados::Estado::pGE(Gerenciadores::Gerenciador_Estados::getGerenciadorEstados());
 bool Estados::Estado::multiplayer(true);
+unsigned int Estados::Estado::pontuacao_jogo(0);
 
 Estados::Estado::Estado():
 	ativo(true)
@@ -33,12 +34,12 @@ void Estados::Estado::setAtivo(bool b)
 	ativo = b;
 }
 
-bool Estados::Estado::getAtivo()
+bool Estados::Estado::getAtivo()const
 {
 	return ativo;
 }
 
-void Estados::Estado::setMultiplayer(bool b)
+void Estados::Estado::setMultiplayer(const bool b)
 {
 	multiplayer = b;
 }
@@ -46,4 +47,14 @@ void Estados::Estado::setMultiplayer(bool b)
 bool Estados::Estado::getMultiplayer()
 {
 	return multiplayer;
+}
+
+void Estados::Estado::setPontuacao(const unsigned int pontos)
+{
+	pontuacao_jogo = pontos;
+}
+
+unsigned int Estados::Estado::getPontuacao()
+{
+	return pontuacao_jogo;
 }

@@ -1,6 +1,6 @@
 #pragma once
 
-//referencia: livro SFML Game Development - Arthur Moreira, Jan Haller
+//referencia do código: livro SFML Game Development - Arthur Moreira, Jan Haller
 
 #include <vector>
 
@@ -20,6 +20,7 @@ namespace Gerenciadores {
 	private:
 		std::vector<Estados::Estado*> vetor_estados;
 		std::vector <Acoes_Pendentes*> lista_pendencias;
+		std::vector <Estados::Estado*> fila_delecao;
 
 		static Gerenciador_Estados* instancia_pGE;
 

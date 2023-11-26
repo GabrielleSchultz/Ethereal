@@ -1,6 +1,7 @@
 #pragma once
 #include "Controller.h"
 #include "Gerenciador_Estados.h"
+//baseado fortemente no código do monitor Matheus Burda
 
 namespace Entidades {
 	namespace Personagens {
@@ -19,7 +20,6 @@ namespace Controle {
 		std::string direita;
 		std::string esquerda;
 		std::string ataque;
-		std::string ressucitar;
 		std::string pause;
 
 		static Gerenciadores::Gerenciador_Estados* pGE;
@@ -34,9 +34,8 @@ namespace Controle {
 
 		void setJogador(Entidades::Personagens::Jogador* jogador);
 		void setKeyCommands(std::string jump, std::string right, std::string left, std::string attack, std::string pausar);
-		void setReviveCommand(std::string revive); //somente se dois jogadores
 
-		//mudar comandos
+		//mudar comandos individualmente:
 		/*
 		void setJumpCommand(std::string jump);
 		void setMoveRightCommand(std::string right);

@@ -10,7 +10,7 @@ namespace Fases
 		Ente(),
 		pGerenciadorColisoes(Gerenciadores::Colisoes::getGerenciador_Colisoes()),
 		fim_de_fase(false), proxima_fase(false),
-		inimigos(), obstaculos(), jogadores(), mortos()
+		inimigos(), obstaculos(), jogadores(), fila_delecao()
 	{
 		pGerenciadorColisoes->setListaInimigos(&inimigos);
 		pGerenciadorColisoes->setListaJogadores(&jogadores);
@@ -19,10 +19,10 @@ namespace Fases
 
 	Fase::~Fase()
 	{
-		for (int i = 0; i < mortos.size(); i++) {
-			delete(mortos[i]);
+		for (int i = 0; i < fila_delecao.size(); i++) {
+			delete(fila_delecao[i]);
 		}
-		mortos.clear();
+		fila_delecao.clear();
 		inimigos.clear();
 		jogadores.clear();
 		obstaculos.clear();
@@ -124,7 +124,7 @@ namespace Fases
 				aux = it.operator*();
 				if (!static_cast<Entidades::Personagens::Personagem*>(aux)->getVivo()) {
 					lista->remover(aux);
-					mortos.push_back(aux);
+					fila_delecao.push_back(aux);
 				}
 				it.operator++(); i++;
 			}

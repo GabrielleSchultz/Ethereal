@@ -46,6 +46,7 @@ void Estados::GameState::executar(float dt) {
 		pFase->criar_inimigos();
 	}
 	else {
+		pontuacao_jogo = pFase->getPontuacaoJogadores();
 		request_pop();
 		request_push(Estados::Tipo::Gameover);
 	}

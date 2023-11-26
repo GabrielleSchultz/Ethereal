@@ -7,6 +7,7 @@ namespace Entidades {
 		class Personagem : public Entidade, public Tipo::Dinamica {
 		protected:
 			int num_vidas;
+			const int max_vidas;
 
 		public:
 			Personagem(int nv = 0, const char* texturePath = "", ID id = ID::vazio);
@@ -20,6 +21,7 @@ namespace Entidades {
 			virtual void salvar(nlohmann::ordered_json& entrada) = 0;
 			void carregarDadosPersonagem(nlohmann::ordered_json& saida);
 			virtual void carregar(nlohmann::ordered_json& saida) = 0;
+			int getMaxVidas() const;
 
 		};
 	}

@@ -11,7 +11,6 @@ namespace Entidades {
 		public:
 			Raiva(int nv = 10, int mal = 1, const char* texturePath = "Assets/Sprites/anger_teste.png", ID id = ID::inimigo_raiva);
 			~Raiva();
-			void executar();
 			void salvar(nlohmann::ordered_json& entrada);
 			void carregar(nlohmann::ordered_json& saida);
 			void update(float dt);

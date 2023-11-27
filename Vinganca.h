@@ -16,7 +16,6 @@ namespace Entidades {
 		public:
 			Vinganca(int nv = 200, int mal = 100, const char* texturePath = "Assets/Sprites/revenge_boss.png", ID id = ID::boss);
 			~Vinganca();
-			void executar();
 			void danificar(Jogador* p);
 			void colidir(Entidades::Entidade* e);
 			void salvar(nlohmann::ordered_json& entrada);

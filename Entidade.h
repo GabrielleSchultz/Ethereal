@@ -36,7 +36,7 @@ namespace Entidades {
         //execucao
         virtual void inicializar();
         void aplicar_gravidade(float dt);
-        void executar(float dt);
+        virtual void executar(float dt);
         virtual void update(float dt) = 0;
         void desenhar();
         void setPosition(float x, float y);

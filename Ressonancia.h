@@ -1,22 +1,18 @@
 #pragma once
 #include "Fase.h"
 #include "Projetil.h"
-
-namespace Entidades {
-	namespace Personagens {
-		class Vinganca;
-	}
-}
+#include <vector>
 
 namespace Fases {
-	class Segunda_Fase : public Fase
+	class Ressonancia : public Fase
 	{
 	private:
-		Entidades::Personagens::Vinganca* boss;
-		int boss_ativo;
+		const int max_raiva;
+		const int max_tristeza;
+
 	public:
-		Segunda_Fase();
-		~Segunda_Fase();
+		Ressonancia();
+		~Ressonancia();
 		void executar(float dt);
 		void salvar(std::ostringstream* entrada);
 		void criar_inimigos();

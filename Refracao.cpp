@@ -1,4 +1,4 @@
-#include "Segunda_Fase.h"
+#include "Refracao.h"
 #include "Raiva.h"
 #include "Vinganca.h"
 #include "Plataforma.h"
@@ -6,7 +6,7 @@
 #include <fstream>
 #include <iostream>
 
-Fases::Segunda_Fase::Segunda_Fase() :
+Fases::Refracao::Refracao() :
 	Fase(),
 	boss(nullptr),
 	boss_ativo(0)
@@ -16,11 +16,11 @@ Fases::Segunda_Fase::Segunda_Fase() :
 	pGerenciadorGrafico->carregarTextura("Assets/Backgrounds/Stars-Big_1_2_PC.png");
 }
 
-Fases::Segunda_Fase::~Segunda_Fase()
+Fases::Refracao::~Refracao()
 {
 }
 
-void Fases::Segunda_Fase::executar(float dt)
+void Fases::Refracao::executar(float dt)
 {
 	if (!fim_de_fase) {
 		pGerenciadorGrafico->desenhar("Assets/Backgrounds/Stage2_full_background.png", Math::Vector2Df(0, 0));
@@ -73,11 +73,11 @@ void Fases::Segunda_Fase::executar(float dt)
 	}
 }
 
-void Fases::Segunda_Fase::salvar(std::ostringstream* entrada)
+void Fases::Refracao::salvar(std::ostringstream* entrada)
 {
 }
 
-void Fases::Segunda_Fase::criar_inimigos()
+void Fases::Refracao::criar_inimigos()
 {
 	srand(time(NULL));
 
@@ -103,7 +103,7 @@ void Fases::Segunda_Fase::criar_inimigos()
 	}
 }
 
-void Fases::Segunda_Fase::criar_obstaculos()
+void Fases::Refracao::criar_obstaculos()
 {
 	srand(time(NULL));
 	int i = 0, x = 15, qtd_pocas = rand() % 6 + 3;
@@ -124,7 +124,7 @@ void Fases::Segunda_Fase::criar_obstaculos()
 
 }
 
-void Fases::Segunda_Fase::criar_cenario(std::string file_path)
+void Fases::Refracao::criar_cenario(std::string file_path)
 {
 	std::ifstream arq(file_path);
 	if (!arq)

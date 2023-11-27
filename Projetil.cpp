@@ -22,7 +22,8 @@ namespace Entidades
 
 	void Projetil::setAtirador(Entidade* a)
 	{
-		atirador = a;
+		if (a)
+			atirador = a;
 	}
 
 	void Projetil::colidir(Entidades::Entidade* e)

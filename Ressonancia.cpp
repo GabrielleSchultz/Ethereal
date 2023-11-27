@@ -1,4 +1,4 @@
-#include "Primeira_Fase.h"
+#include "Ressonancia.h"
 #include "Raiva.h"
 #include "Tristeza.h"
 #include "Plataforma.h"
@@ -6,7 +6,7 @@
 #include <fstream>
 #include <iostream>
 
-Fases::Primeira_Fase::Primeira_Fase() :
+Fases::Ressonancia::Ressonancia() :
 	Fase(),
 	max_raiva(3), max_tristeza(2)
 {
@@ -15,11 +15,11 @@ Fases::Primeira_Fase::Primeira_Fase() :
 	pGerenciadorGrafico->carregarTextura("Assets/Backgrounds/Stars Small_1.png");
 }
 
-Fases::Primeira_Fase::~Primeira_Fase()
+Fases::Ressonancia::~Ressonancia()
 {
 }
 
-void Fases::Primeira_Fase::executar(float dt)
+void Fases::Ressonancia::executar(float dt)
 {
 	
 	if(!fim_de_fase) {
@@ -62,11 +62,11 @@ void Fases::Primeira_Fase::executar(float dt)
 	}
 }
 
-void Fases::Primeira_Fase::salvar(std::ostringstream* entrada)
+void Fases::Ressonancia::salvar(std::ostringstream* entrada)
 {
 }
 
-void Fases::Primeira_Fase::criar_inimigos()
+void Fases::Ressonancia::criar_inimigos()
 {
 	srand(time(NULL));
 
@@ -92,7 +92,7 @@ void Fases::Primeira_Fase::criar_inimigos()
 	}
 }
 
-void Fases::Primeira_Fase::criar_obstaculos()
+void Fases::Ressonancia::criar_obstaculos()
 {
 	srand(time(NULL));
 	int i = 0, x = 12;
@@ -117,7 +117,7 @@ void Fases::Primeira_Fase::criar_obstaculos()
 	}
 }
 
-void Fases::Primeira_Fase::criar_cenario(std::string file_path)
+void Fases::Ressonancia::criar_cenario(std::string file_path)
 {
 	std::ifstream arq(file_path);
 	if (!arq)

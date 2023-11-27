@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 2000
 Gabrielle
 1060
@@ -19,15 +18,3 @@ PI
 PI
 1060
 PIXIE
-=======
-216
-OLE
-60
-MICHELE
-20
-Pixi
-10
-Edison
-0
-OI
->>>>>>> dc10e933bde8b483e458d5f4d4e66150047504b5

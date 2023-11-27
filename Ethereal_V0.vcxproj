@@ -164,10 +164,10 @@
     <ClCompile Include="Plataforma.cpp" />
     <ClCompile Include="Poca_Lagrima.cpp" />
     <ClCompile Include="Personagem.cpp" />
-    <ClCompile Include="Primeira_Fase.cpp" />
+    <ClCompile Include="Ressonancia.cpp" />
     <ClCompile Include="Projetil.cpp" />
     <ClCompile Include="Raiva.cpp" />
-    <ClCompile Include="Segunda_Fase.cpp" />
+    <ClCompile Include="Refracao.cpp" />
     <ClCompile Include="TextBox.cpp" />
     <ClCompile Include="Texto.cpp" />
     <ClCompile Include="Tristeza.cpp" />
@@ -207,10 +207,10 @@
     <ClInclude Include="Espinhos.h" />
     <ClInclude Include="Plataforma.h" />
     <ClInclude Include="Personagem.h" />
-    <ClInclude Include="Primeira_Fase.h" />
+    <ClInclude Include="Ressonancia.h" />
     <ClInclude Include="Projetil.h" />
     <ClInclude Include="Raiva.h" />
-    <ClInclude Include="Segunda_Fase.h" />
+    <ClInclude Include="Refracao.h" />
     <ClInclude Include="TextBox.h" />
     <ClInclude Include="Texto.h" />
     <ClInclude Include="Tristeza.h" />

@@ -1,42 +1,85 @@
-﻿  ControleJogador.cpp
+﻿  Botao.cpp
+  ControleJogador.cpp
   ControleMenu.cpp
   Entidade_Dinamica.cpp
-  Espinhos.cpp
+  Ente.cpp
+  Entidade.cpp
+  Estado.cpp
   Fase.cpp
+  MenuGameOver.cpp
   GameState.cpp
   Gerenciador_Colisoes.cpp
   Gerenciador_Estados.cpp
+  Gerenciador_Eventos.cpp
+  Gerenciador_Grafico.cpp
+  Gerenciador_Inputs.cpp
   Inimigo.cpp
   Jogador.cpp
-C:\Users\gabri\source\repos\GabrielleSchultz\Ethereal\Jogador.cpp(21,39): warning C4244: 'argumento': conversão de 'double' para 'float', possível perda de dados
+C:\Users\miche_bb3fmdp\OneDrive\Documentos\GitHub\Ethereal\Jogador.cpp(21,39): warning C4244: 'argumento': conversão de 'double' para 'float', possível perda de dados
+  Jogo.cpp
   ListaEntidades.cpp
+  main.cpp
+  Gerando Código...
+  Compilando...
+  Menu.cpp
+C:\Users\miche_bb3fmdp\OneDrive\Documentos\GitHub\Ethereal\Menu.cpp(31,37): warning C4267: '=': conversão de 'size_t' para 'int', possível perda de dados
+  MenuFases.cpp
+C:\Users\miche_bb3fmdp\OneDrive\Documentos\GitHub\Ethereal\MenuFases.cpp(25,84): warning C4244: 'argumento': conversão de 'int' para 'T', possível perda de dados
+          with
+          [
+              T=float
+          ]
+  MenuPrincipal.cpp
+C:\Users\miche_bb3fmdp\OneDrive\Documentos\GitHub\Ethereal\MenuPrincipal.cpp(28,84): warning C4244: 'argumento': conversão de 'int' para 'T', possível perda de dados
+          with
+          [
+              T=float
+          ]
   MenuPause.cpp
+  MenuRanking.cpp
+C:\Users\miche_bb3fmdp\OneDrive\Documentos\GitHub\Ethereal\MenuRanking.cpp(60,47): warning C4244: 'argumento': conversão de 'int' para 'T', possível perda de dados
+          with
+          [
+              T=float
+          ]
+C:\Users\miche_bb3fmdp\OneDrive\Documentos\GitHub\Ethereal\MenuRanking.cpp(64,49): warning C4244: 'argumento': conversão de 'int' para 'T', possível perda de dados
+          with
+          [
+              T=float
+          ]
+  MenuSettings.cpp
+C:\Users\miche_bb3fmdp\OneDrive\Documentos\GitHub\Ethereal\MenuSettings.cpp(40,85): warning C4244: 'argumento': conversão de 'int' para 'T', possível perda de dados
+          with
+          [
+              T=float
+          ]
   Obstaculo.cpp
-  Personagem.cpp
+  Espinhos.cpp
   Plataforma.cpp
   Poca_Lagrima.cpp
-C:\Users\gabri\source\repos\GabrielleSchultz\Ethereal\Poca_Lagrima.cpp(15,30): warning C4244: 'argumento': conversão de 'double' para 'const float', possível perda de dados
+C:\Users\miche_bb3fmdp\OneDrive\Documentos\GitHub\Ethereal\Poca_Lagrima.cpp(15,30): warning C4244: 'argumento': conversão de 'double' para 'const float', possível perda de dados
+  Personagem.cpp
+  Ressonancia.cpp
+C:\Users\miche_bb3fmdp\OneDrive\Documentos\GitHub\Ethereal\Ressonancia.cpp(71,12): warning C4244: 'argumento': conversão de 'time_t' para 'unsigned int', possível perda de dados
+C:\Users\miche_bb3fmdp\OneDrive\Documentos\GitHub\Ethereal\Ressonancia.cpp(88,50): warning C4244: 'argumento': conversão de 'int' para 'float', possível perda de dados
+C:\Users\miche_bb3fmdp\OneDrive\Documentos\GitHub\Ethereal\Ressonancia.cpp(97,12): warning C4244: 'argumento': conversão de 'time_t' para 'unsigned int', possível perda de dados
   Projetil.cpp
-C:\Users\gabri\source\repos\GabrielleSchultz\Ethereal\Projetil.cpp(16,20): warning C4244: 'argumento': conversão de 'int' para 'float', possível perda de dados
-C:\Users\gabri\source\repos\GabrielleSchultz\Ethereal\Projetil.cpp(16,17): warning C4244: 'argumento': conversão de 'int' para 'float', possível perda de dados
-C:\Users\gabri\source\repos\GabrielleSchultz\Ethereal\Projetil.cpp(55,94): warning C4244: 'argumento': conversão de 'T' para 'int', possível perda de dados
+C:\Users\miche_bb3fmdp\OneDrive\Documentos\GitHub\Ethereal\Projetil.cpp(16,20): warning C4244: 'argumento': conversão de 'int' para 'float', possível perda de dados
+C:\Users\miche_bb3fmdp\OneDrive\Documentos\GitHub\Ethereal\Projetil.cpp(16,17): warning C4244: 'argumento': conversão de 'int' para 'float', possível perda de dados
+C:\Users\miche_bb3fmdp\OneDrive\Documentos\GitHub\Ethereal\Projetil.cpp(55,94): warning C4244: 'argumento': conversão de 'T' para 'int', possível perda de dados
           with
           [
               T=float
           ]
   Raiva.cpp
-C:\Users\gabri\source\repos\GabrielleSchultz\Ethereal\Raiva.cpp(10,14): warning C4244: 'argumento': conversão de 'time_t' para 'unsigned int', possível perda de dados
+C:\Users\miche_bb3fmdp\OneDrive\Documentos\GitHub\Ethereal\Raiva.cpp(10,14): warning C4244: 'argumento': conversão de 'time_t' para 'unsigned int', possível perda de dados
   Refracao.cpp
-C:\Users\gabri\source\repos\GabrielleSchultz\Ethereal\Refracao.cpp(82,12): warning C4244: 'argumento': conversão de 'time_t' para 'unsigned int', possível perda de dados
-C:\Users\gabri\source\repos\GabrielleSchultz\Ethereal\Refracao.cpp(108,12): warning C4244: 'argumento': conversão de 'time_t' para 'unsigned int', possível perda de dados
-  Ressonancia.cpp
-C:\Users\gabri\source\repos\GabrielleSchultz\Ethereal\Ressonancia.cpp(71,12): warning C4244: 'argumento': conversão de 'time_t' para 'unsigned int', possível perda de dados
-C:\Users\gabri\source\repos\GabrielleSchultz\Ethereal\Ressonancia.cpp(88,50): warning C4244: 'argumento': conversão de 'int' para 'float', possível perda de dados
-C:\Users\gabri\source\repos\GabrielleSchultz\Ethereal\Ressonancia.cpp(97,12): warning C4244: 'argumento': conversão de 'time_t' para 'unsigned int', possível perda de dados
-  Gerando Código...
-  Compilando...
+C:\Users\miche_bb3fmdp\OneDrive\Documentos\GitHub\Ethereal\Refracao.cpp(82,12): warning C4244: 'argumento': conversão de 'time_t' para 'unsigned int', possível perda de dados
+C:\Users\miche_bb3fmdp\OneDrive\Documentos\GitHub\Ethereal\Refracao.cpp(108,12): warning C4244: 'argumento': conversão de 'time_t' para 'unsigned int', possível perda de dados
+  TextBox.cpp
+  Texto.cpp
   Tristeza.cpp
   Vinganca.cpp
-C:\Users\gabri\source\repos\GabrielleSchultz\Ethereal\Vinganca.cpp(65,12): warning C4244: 'argumento': conversão de 'time_t' para 'unsigned int', possível perda de dados
+C:\Users\miche_bb3fmdp\OneDrive\Documentos\GitHub\Ethereal\Vinganca.cpp(65,12): warning C4244: 'argumento': conversão de 'time_t' para 'unsigned int', possível perda de dados
   Gerando Código...
-  Ethereal_V0.vcxproj -> C:\Users\gabri\source\repos\GabrielleSchultz\Ethereal\x64\Debug\Ethereal_V0.exe
+  Ethereal_V0.vcxproj -> C:\Users\miche_bb3fmdp\OneDrive\Documentos\GitHub\Ethereal\x64\Debug\Ethereal_V0.exe

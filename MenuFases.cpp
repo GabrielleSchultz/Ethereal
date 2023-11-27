@@ -17,7 +17,7 @@ Estados::Menus::MenuFases::~MenuFases()
 
 void Estados::Menus::MenuFases::cria_botoes()
 {
-	std::string textos[QTD_BOTOES] = { "fase 1", "fase 2", "voltar" };
+	std::string textos[QTD_BOTOES] = { "ressonancia", "refracao", "voltar" };
 	Estados::Tipo tipos[QTD_BOTOES] = { Estados::Tipo::Fase1, Estados::Tipo::Fase2, Estados::Tipo::vazio };
 
 	Estados::Menus::ElementosGraficos::Botao* botao = nullptr;

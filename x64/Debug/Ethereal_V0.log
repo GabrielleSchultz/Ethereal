@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 ﻿  ControleJogador.cpp
   ControleMenu.cpp
   Entidade.cpp
@@ -21,10 +22,16 @@ C:\Users\gabri\source\repos\GabrielleSchultz\Ethereal\Poca_Lagrima.cpp(15,30): w
 C:\Users\gabri\source\repos\GabrielleSchultz\Ethereal\Projetil.cpp(16,20): warning C4244: 'argumento': conversão de 'int' para 'float', possível perda de dados
 C:\Users\gabri\source\repos\GabrielleSchultz\Ethereal\Projetil.cpp(16,17): warning C4244: 'argumento': conversão de 'int' para 'float', possível perda de dados
 C:\Users\gabri\source\repos\GabrielleSchultz\Ethereal\Projetil.cpp(55,94): warning C4244: 'argumento': conversão de 'T' para 'int', possível perda de dados
+=======
+﻿  Gerenciador_Estados.cpp
+  MenuPrincipal.cpp
+C:\Users\miche_bb3fmdp\OneDrive\Documentos\GitHub\Ethereal\MenuPrincipal.cpp(28,84): warning C4244: 'argumento': conversão de 'int' para 'T', possível perda de dados
+>>>>>>> bfe29cca1c0e0fcf11cebb7aea4534844f2a2d53
           with
           [
               T=float
           ]
+<<<<<<< HEAD
   Raiva.cpp
 C:\Users\gabri\source\repos\GabrielleSchultz\Ethereal\Raiva.cpp(10,14): warning C4244: 'argumento': conversão de 'time_t' para 'unsigned int', possível perda de dados
   Refracao.cpp
@@ -40,5 +47,7 @@ C:\Users\gabri\source\repos\GabrielleSchultz\Ethereal\Ressonancia.cpp(97,12): wa
   Vinganca.cpp
 C:\Users\gabri\source\repos\GabrielleSchultz\Ethereal\Vinganca.cpp(69,12): warning C4244: 'argumento': conversão de 'time_t' para 'unsigned int', possível perda de dados
   main.cpp
+=======
+>>>>>>> bfe29cca1c0e0fcf11cebb7aea4534844f2a2d53
   Gerando Código...
-  Ethereal_V0.vcxproj -> C:\Users\gabri\source\repos\GabrielleSchultz\Ethereal\x64\Debug\Ethereal_V0.exe
+  Ethereal_V0.vcxproj -> C:\Users\miche_bb3fmdp\OneDrive\Documentos\GitHub\Ethereal\x64\Debug\Ethereal_V0.exe

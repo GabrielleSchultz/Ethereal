@@ -58,9 +58,6 @@ namespace Gerenciadores
 
 		switch (id)
 		{
-			/*case Estados::Tipo::vazio:
-				return;
-				break;*/
 		case Estados::Tipo::GameState:
 			novo_estado = new Estados::GameState();
 			break;

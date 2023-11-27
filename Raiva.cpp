@@ -16,10 +16,6 @@ namespace Entidades {
 
 		}
 
-		void Raiva::executar() {
-
-		}
-
 		void Raiva::salvar(nlohmann::ordered_json& entrada)
 		{
 			salvarInimigo(entrada);
@@ -56,6 +52,8 @@ namespace Entidades {
 
 		void Raiva::danificar(Jogador* p)
 		{
+			if (Jogador::getNumJogadores() == 2)
+				nivel_maldade /= 2;
 			p->setNumVidas(p->getNumVidas() - nivel_maldade);
 		}
 

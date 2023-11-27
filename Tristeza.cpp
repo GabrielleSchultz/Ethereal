@@ -22,7 +22,11 @@ Entidades::Personagens::Tristeza::~Tristeza()
 void Entidades::Personagens::Tristeza::danificar(Jogador* p)
 {
 	if (p)
+	{
+		if (Jogador::getNumJogadores() == 2)
+			nivel_maldade /= 2;
 		p->setNumVidas(p->getNumVidas() - nivel_maldade);
+	}
 }
 
 void Entidades::Personagens::Tristeza::salvar(nlohmann::ordered_json& entrada)
@@ -68,10 +72,6 @@ void Entidades::Personagens::Tristeza::update(float dt)
 	setPosition( Math::Vector2Df(position.x + currentVelocity.x * dt * direction.x, position.y));
 	desenhar();
 	remover_projeteis();
-}
-
-void Entidades::Personagens::Tristeza::executar()
-{
 }
 
 void Entidades::Personagens::Tristeza::lancar_projetil()

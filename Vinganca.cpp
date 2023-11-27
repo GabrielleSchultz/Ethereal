@@ -16,10 +16,6 @@ Entidades::Personagens::Vinganca::Vinganca(int nv, int mal, const char* textureP
 Entidades::Personagens::Vinganca::~Vinganca() {
 }
 
-void Entidades::Personagens::Vinganca::executar() {
-
-}
-
 void Entidades::Personagens::Vinganca::danificar(Jogador* p) {
 	if (Jogador::getNumJogadores() == 1) {
 		p->setNumVidas(p->getNumVidas() - nivel_maldade);

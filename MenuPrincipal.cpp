@@ -21,7 +21,7 @@ Estados::Menus::MenuPrincipal::~MenuPrincipal()
 void Estados::Menus::MenuPrincipal::cria_botoes()
 {
 	std::string textos[QTD_BOTOES] = {"novo jogo", "continuar", "settings", "ranking", "sair"};
-	Estados::Tipo tipos[QTD_BOTOES] = { Estados::Tipo::MenuFases, Estados::Tipo::carregarjogo, Estados::Tipo::MenuSettings, Estados::Tipo::MenuRanking, Estados::Tipo::sair};
+	Estados::Tipo tipos[QTD_BOTOES] = { Estados::Tipo::MenuFases, Estados::Tipo::Fase1, Estados::Tipo::MenuSettings, Estados::Tipo::MenuRanking, Estados::Tipo::sair};
 
 	Estados::Menus::ElementosGraficos::Botao* botao = nullptr;
 	for (int i = 0; i < QTD_BOTOES; i++) {

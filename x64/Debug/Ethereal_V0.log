@@ -1,5 +1,6 @@
 ﻿  ControleJogador.cpp
   ControleMenu.cpp
+  Entidade.cpp
   Espinhos.cpp
   Fase.cpp
   GameState.cpp
@@ -8,8 +9,11 @@
   Inimigo.cpp
   Jogador.cpp
 C:\Users\gabri\source\repos\GabrielleSchultz\Ethereal\Jogador.cpp(21,39): warning C4244: 'argumento': conversão de 'double' para 'float', possível perda de dados
+  Jogo.cpp
+  ListaEntidades.cpp
   MenuPause.cpp
   Obstaculo.cpp
+  Personagem.cpp
   Plataforma.cpp
   Poca_Lagrima.cpp
 C:\Users\gabri\source\repos\GabrielleSchultz\Ethereal\Poca_Lagrima.cpp(15,30): warning C4244: 'argumento': conversão de 'double' para 'const float', possível perda de dados
@@ -26,6 +30,8 @@ C:\Users\gabri\source\repos\GabrielleSchultz\Ethereal\Raiva.cpp(10,14): warning 
   Refracao.cpp
 C:\Users\gabri\source\repos\GabrielleSchultz\Ethereal\Refracao.cpp(82,12): warning C4244: 'argumento': conversão de 'time_t' para 'unsigned int', possível perda de dados
 C:\Users\gabri\source\repos\GabrielleSchultz\Ethereal\Refracao.cpp(108,12): warning C4244: 'argumento': conversão de 'time_t' para 'unsigned int', possível perda de dados
+  Gerando Código...
+  Compilando...
   Ressonancia.cpp
 C:\Users\gabri\source\repos\GabrielleSchultz\Ethereal\Ressonancia.cpp(71,12): warning C4244: 'argumento': conversão de 'time_t' para 'unsigned int', possível perda de dados
 C:\Users\gabri\source\repos\GabrielleSchultz\Ethereal\Ressonancia.cpp(88,50): warning C4244: 'argumento': conversão de 'int' para 'float', possível perda de dados
@@ -33,5 +39,6 @@ C:\Users\gabri\source\repos\GabrielleSchultz\Ethereal\Ressonancia.cpp(97,12): wa
   Tristeza.cpp
   Vinganca.cpp
 C:\Users\gabri\source\repos\GabrielleSchultz\Ethereal\Vinganca.cpp(69,12): warning C4244: 'argumento': conversão de 'time_t' para 'unsigned int', possível perda de dados
+  main.cpp
   Gerando Código...
   Ethereal_V0.vcxproj -> C:\Users\gabri\source\repos\GabrielleSchultz\Ethereal\x64\Debug\Ethereal_V0.exe

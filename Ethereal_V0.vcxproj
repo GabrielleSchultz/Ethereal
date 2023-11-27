@@ -172,7 +172,6 @@
     <ClCompile Include="Texto.cpp" />
     <ClCompile Include="Tristeza.cpp" />
     <ClCompile Include="Vinganca.cpp" />
-    <ClCompile Include="Vinganca_Thread.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Botao.h" />
@@ -216,7 +215,6 @@
     <ClInclude Include="Tristeza.h" />
     <ClInclude Include="Vector2D.h" />
     <ClInclude Include="Vinganca.h" />
-    <ClInclude Include="Vinganca_Thread.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

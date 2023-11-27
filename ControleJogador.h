@@ -34,14 +34,6 @@ namespace Controle {
 
 		void setJogador(Entidades::Personagens::Jogador* jogador);
 		void setKeyCommands(std::string jump, std::string right, std::string left, std::string attack, std::string pausar);
-
-		//mudar comandos individualmente:
-		/*
-		void setJumpCommand(std::string jump);
-		void setMoveRightCommand(std::string right);
-		void setMoveLeftCommand(std::string left);
-		void setAttackCommand(std::string left);
-		*/
 	};
 }
 

@@ -19,6 +19,9 @@ dt_multiplier(DELTA_TIME_FIX)
 
 Jogo::~Jogo()
 {
+    pGerenciadorGrafico = nullptr;
+    pGerenciadorEventos = nullptr;
+    pGerenciadorEstados = nullptr;
 }
 
 //Game loop

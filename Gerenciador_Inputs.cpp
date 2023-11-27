@@ -14,7 +14,11 @@ namespace Gerenciadores
 
     Input::~Input()
     {
+        for (int i = 0; i < observers.size(); i++) {
+            delete(observers[i]);
+        }
         observers.clear();
+        instancia_pGI = nullptr;
     }
 
     Input* Input::getGerenciador_Inputs()

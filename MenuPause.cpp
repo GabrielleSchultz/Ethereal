@@ -14,6 +14,7 @@ pFase_atual(pFase)
 
 Estados::Menus::MenuPause::~MenuPause()
 {
+	pFase_atual = nullptr;
 }
 
 void Estados::Menus::MenuPause::cria_botoes()

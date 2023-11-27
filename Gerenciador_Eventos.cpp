@@ -13,6 +13,9 @@ namespace Gerenciadores {
 
     Eventos::~Eventos()
     {
+        pGerenciadorGrafico = nullptr;
+        pGerenciadorEntradas = nullptr;
+        instancia_pGE = nullptr;
     }
 
     Eventos* Eventos::getGerenciador_Eventos()

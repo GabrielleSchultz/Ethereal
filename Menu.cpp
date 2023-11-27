@@ -20,6 +20,8 @@ Estados::Menus::Menu::~Menu()
         delete botoes[botao_atual];
     }
     botoes.clear();
+    pControles = nullptr;
+    pGG = nullptr;
 }
 
 void Estados::Menus::Menu::selecionarCima()

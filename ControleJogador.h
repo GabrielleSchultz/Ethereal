@@ -27,7 +27,7 @@ namespace Controle {
 	public:
 
 		ControleJogador();
-		~ControleJogador() { pJogador = nullptr; }
+		~ControleJogador();
 
 		void notifyKeyPressed(std::string key);
 		void notifyKeyReleased(std::string key);

@@ -31,6 +31,7 @@ namespace Fases
 		inimigos.clear();
 		jogadores.clear();
 		obstaculos.clear();
+		pGerenciadorColisoes = nullptr;
 	}
 
 	void Fase::salvar(nlohmann::ordered_json& entrada)

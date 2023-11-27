@@ -18,6 +18,10 @@ namespace Gerenciadores
 
 	Colisoes::~Colisoes()
 	{
+		inimigos = nullptr;
+		jogadores = nullptr;
+		obstaculos = nullptr;
+		instancia_pGC = nullptr;
 	}
 
 	Colisoes* Colisoes::getGerenciador_Colisoes()

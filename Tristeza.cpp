@@ -16,6 +16,10 @@ Entidades::Personagens::Tristeza::Tristeza(int nv, int mal, const char* textureP
 
 Entidades::Personagens::Tristeza::~Tristeza()
 {
+	for (int i = 0; i < projeteis_lancados.size(); i++) {
+		delete(projeteis_lancados[i]);
+	}
+	projeteis_lancados.clear();
 	projeteis.clear();
 }
 

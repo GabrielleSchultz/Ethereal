@@ -38,6 +38,7 @@ namespace Entidades {
 			}
 			projeteis_lancados.clear();
 			projeteis.clear();
+			pControles = nullptr;
 		}
 
 		void Jogador::inicializa()

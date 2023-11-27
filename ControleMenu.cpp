@@ -12,7 +12,6 @@ Controle::ControleMenu::ControleMenu() :
 
 Controle::ControleMenu::~ControleMenu()
 {
-	pGerenciadorInput->remover_observer(this);
 	pMenu = nullptr;
 }
 

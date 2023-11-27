@@ -1,59 +1,10 @@
 [
   {
-    "ID": 3,
-    "posicao x": 600.0,
-    "posicao y": 591.5,
-    "atrito": 0.25,
-    "direcao": {
-      "x": 0.0,
-      "y": 0.0
-    },
-    "velocidade": {
-      "x": 0.0,
-      "y": 0.0
-    },
-    "vidas": 10,
-    "maldade": 1,
-    "agilidade": 0.5
-  },
-  {
-    "ID": 3,
-    "posicao x": 664.0,
-    "posicao y": 591.5,
-    "atrito": 0.25,
-    "direcao": {
-      "x": 0.0,
-      "y": 0.0
-    },
-    "velocidade": {
-      "x": 0.0,
-      "y": 0.0
-    },
-    "vidas": 10,
-    "maldade": 1,
-    "agilidade": 0.5
-  },
-  {
-    "ID": 3,
-    "posicao x": 728.0,
-    "posicao y": 591.5,
-    "atrito": 0.25,
-    "direcao": {
-      "x": 0.0,
-      "y": 0.0
-    },
-    "velocidade": {
-      "x": 0.0,
-      "y": 0.0
-    },
-    "vidas": 10,
-    "maldade": 1,
-    "agilidade": 0.5
-  },
-  {
     "ID": 2,
-    "posicao x": 232.93594360351563,
-    "posicao y": 199.99998474121094,
+    "posicao": {
+      "x": 228.68060302734375,
+      "y": 200.00001525878906
+    },
     "atrito": 0.25,
     "direcao": {
       "x": 1.0,
@@ -68,8 +19,10 @@
   },
   {
     "ID": 2,
-    "posicao x": 296.93597412109375,
-    "posicao y": 300.0,
+    "posicao": {
+      "x": 292.680419921875,
+      "y": 200.00001525878906
+    },
     "atrito": 0.25,
     "direcao": {
       "x": 1.0,
@@ -84,8 +37,28 @@
   },
   {
     "ID": 2,
-    "posicao x": 360.93597412109375,
-    "posicao y": 300.0,
+    "posicao": {
+      "x": 356.680419921875,
+      "y": 200.00001525878906
+    },
+    "atrito": 0.25,
+    "direcao": {
+      "x": 1.0,
+      "y": 0.0
+    },
+    "velocidade": {
+      "x": 1.0,
+      "y": 0.0
+    },
+    "vidas": 10,
+    "maldade": 1
+  },
+  {
+    "ID": 2,
+    "posicao": {
+      "x": 420.680419921875,
+      "y": 200.00001525878906
+    },
     "atrito": 0.25,
     "direcao": {
       "x": 1.0,

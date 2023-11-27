@@ -10,6 +10,12 @@ Controle::ControleJogador::ControleJogador() :
 	setKeyCommands("W", "D", "A", "S", "tab");
 }
 
+Controle::ControleJogador::~ControleJogador()
+{
+	pJogador = nullptr;
+	pGE = nullptr;
+}
+
 void Controle::ControleJogador::notifyKeyPressed(std::string key)
 {
 	if (pJogador) {
@@ -57,8 +63,11 @@ void Controle::ControleJogador::notifyKeyReleased(std::string key)
 
 void Controle::ControleJogador::setJogador(Entidades::Personagens::Jogador* jogador)
 {
-	pGerenciadorInput->adicionar_observer(this);
-	pJogador = jogador;
+	if(jogador)
+	{
+		pJogador = jogador;
+		pGerenciadorInput->adicionar_observer(this);
+	}
 }
 
 void Controle::ControleJogador::setKeyCommands(std::string jump, std::string right, std::string left, std::string attack, std::string pausar)

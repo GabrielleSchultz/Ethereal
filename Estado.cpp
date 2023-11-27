@@ -12,6 +12,7 @@ Estados::Estado::Estado():
 
 Estados::Estado::~Estado()
 {
+	pGE = nullptr;
 }
 
 void Estados::Estado::request_push(Estados::Tipo id_estado)

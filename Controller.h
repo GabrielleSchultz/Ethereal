@@ -11,7 +11,7 @@ protected:
 public:
 	Controller() :
 		pGerenciadorInput(Gerenciadores::Input::getGerenciador_Inputs()) {}
-	~Controller() {}
+	~Controller() { pGerenciadorInput = nullptr; pGerenciadorInput->remover_observer(this);}
 	virtual void notifyKeyPressed(std::string key) = 0;
 	virtual void notifyKeyReleased(std::string key) = 0;
 };

@@ -21,6 +21,9 @@ Estados::Menus::MenuRanking::MenuRanking():
 
 Estados::Menus::MenuRanking::~MenuRanking()
 {
+	for (int i = 0; i < ranking.size(); i++) {
+		delete(ranking[i]);
+	}
 	ranking.clear();
 }
 

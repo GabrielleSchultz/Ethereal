@@ -28,7 +28,7 @@ Botao::Botao(const Math::Vector2Df pos, Estados::Tipo tipo) :
 }
 
 Botao::~Botao() {
-
+	pGG = nullptr;
 }
 
 void Botao::setPosicao(Math::Vector2Df pos)

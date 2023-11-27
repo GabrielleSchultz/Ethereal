@@ -43,6 +43,8 @@ namespace Gerenciadores
 			delete(aux_delete);
 		}
 		fila_delecao.clear();
+
+		instancia_pGE = nullptr;
 	}
 
 	Gerenciador_Estados* Gerenciador_Estados::getGerenciadorEstados()

@@ -18,6 +18,7 @@ Fases::Refracao::Refracao() :
 
 Fases::Refracao::~Refracao()
 {
+	boss = nullptr;
 }
 
 void Fases::Refracao::executar(float dt)

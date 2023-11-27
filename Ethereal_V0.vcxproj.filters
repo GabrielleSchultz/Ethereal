@@ -76,12 +76,6 @@
     <ClCompile Include="Plataforma.cpp">
       <Filter>Sources\Entidade\Obstaculo</Filter>
     </ClCompile>
-    <ClCompile Include="Segunda_Fase.cpp">
-      <Filter>Sources\Fases</Filter>
-    </ClCompile>
-    <ClCompile Include="Primeira_Fase.cpp">
-      <Filter>Sources\Fases</Filter>
-    </ClCompile>
     <ClCompile Include="Poca_Lagrima.cpp">
       <Filter>Sources\Entidade\Obstaculo</Filter>
     </ClCompile>
@@ -106,9 +100,6 @@
     <ClCompile Include="MenuGameOver.cpp">
       <Filter>Sources\Estados\Menu</Filter>
     </ClCompile>
-    <ClCompile Include="Vinganca_Thread.cpp">
-      <Filter>Sources\Entidade\Personagem\Inimigo</Filter>
-    </ClCompile>
     <ClCompile Include="MenuSettings.cpp">
       <Filter>Sources\Estados\Menu</Filter>
     </ClCompile>
@@ -120,6 +111,12 @@
     </ClCompile>
     <ClCompile Include="TextBox.cpp">
       <Filter>Sources\Controle\ControleUI</Filter>
+    </ClCompile>
+    <ClCompile Include="Refracao.cpp">
+      <Filter>Sources\Fases</Filter>
+    </ClCompile>
+    <ClCompile Include="Ressonancia.cpp">
+      <Filter>Sources\Fases</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -207,12 +204,6 @@
     <ClInclude Include="Poca_Lagrima.h">
       <Filter>Headers\Entidade\Obstaculo</Filter>
     </ClInclude>
-    <ClInclude Include="Primeira_Fase.h">
-      <Filter>Headers\Fases</Filter>
-    </ClInclude>
-    <ClInclude Include="Segunda_Fase.h">
-      <Filter>Headers\Fases</Filter>
-    </ClInclude>
     <ClInclude Include="Projetil.h">
       <Filter>Headers\Entidade</Filter>
     </ClInclude>
@@ -234,9 +225,6 @@
     <ClInclude Include="MenuGameOver.h">
       <Filter>Headers\Estados\Menu</Filter>
     </ClInclude>
-    <ClInclude Include="Vinganca_Thread.h">
-      <Filter>Headers\Entidade\Personagem\Inimigo</Filter>
-    </ClInclude>
     <ClInclude Include="MenuSettings.h">
       <Filter>Headers\Estados\Menu</Filter>
     </ClInclude>
@@ -248,6 +236,12 @@
     </ClInclude>
     <ClInclude Include="TextBox.h">
       <Filter>Headers\Controle\ControleUI</Filter>
+    </ClInclude>
+    <ClInclude Include="Refracao.h">
+      <Filter>Headers\Fases</Filter>
+    </ClInclude>
+    <ClInclude Include="Ressonancia.h">
+      <Filter>Headers\Fases</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

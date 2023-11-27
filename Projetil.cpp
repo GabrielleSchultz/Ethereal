@@ -47,6 +47,12 @@ namespace Entidades
 	{
 		p->setNumVidas(p->getNumVidas() - dano);
 		if (atirador->getId() == Entidades::ID::jogador) {
+			if ((p->getId() == Entidades::ID::boss || p->getId() == Entidades::ID::inimigo_raiva || p->getId() == Entidades::ID::inimigo_tristeza) && !p->getVivo())
+			{
+				int dificuldade = static_cast<Entidades::Personagens::Inimigo*>(p)->getNivelMaldade();
+				Math::Vector2Df bonus(static_cast<Entidades::Personagens::Inimigo*>(p)->getPosition().x, static_cast<Entidades::Personagens::Inimigo*>(p)->getPosition().y);
+				static_cast<Entidades::Personagens::Jogador*>(atirador)->operator++(bonus.modulo() / 100 + dificuldade);
+			}
 			static_cast<Entidades::Personagens::Jogador*>(atirador)->operator++(dano);
 		}
 	}

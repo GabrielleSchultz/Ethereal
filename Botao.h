@@ -3,6 +3,8 @@
 #include "Gerenciador_Grafico.h"
 #include "Estado.h"
 
+//baseado fortemente no código do repositório TimeAdventure++, desenvolvido pela dupla Isabela e Jean
+
 namespace Estados {
 	namespace Menus {
 		namespace ElementosGraficos {

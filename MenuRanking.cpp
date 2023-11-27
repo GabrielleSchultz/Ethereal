@@ -43,7 +43,6 @@ void Estados::Menus::MenuRanking::cria_ranking()
 		std::ifstream arq(RANKING_FILEPATH);
 		if (arq)
 		{
-			unsigned int pontuacao;
 			std::string str_nome;
 			std::string str_pontos;
 			
@@ -54,23 +53,6 @@ void Estados::Menus::MenuRanking::cria_ranking()
 			{
 				std::getline(arq, str_pontos);
 				std::getline(arq, str_nome);
-
-				//alinha os pontos na mesma largura
-				if (str_pontos.length() > 0)
-				{
-					pontuacao = std::stoi(str_pontos);
-
-					str_pontos += std::to_string(pontuacao / 1000);
-					pontuacao %= 1000;
-
-					str_pontos += std::to_string(pontuacao / 100);
-					pontuacao %= 100;
-
-					str_pontos += std::to_string(pontuacao / 10);
-					pontuacao %= 10;
-
-					str_pontos += std::to_string(pontuacao);
-				}
 				
 				nome = new ElementosGraficos::Texto();
 				nome->setTexto(str_nome);

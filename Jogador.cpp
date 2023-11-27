@@ -50,13 +50,11 @@ namespace Entidades {
 			}
 
 			max_vel = PLAYER_MAXVEL;
-			pontos = 0;
 		}
 
 		void Jogador::update(float dt)
 		{
 			mover(dt);
-			//projeteis.executar(dt);
 			Listas::Lista<Entidades::Entidade>::Iterador it;
 			Entidades::Entidade* aux = nullptr;
 			int p = 0;
@@ -124,7 +122,6 @@ namespace Entidades {
 		void Jogador::atacar()
 		{
 			if(lancamento >= FREQUENCIA_TIRO){
-				// feito com base no vídeo: https://www.youtube.com/watch?v=DZOCzW9e6Qs
 				Entidades::Projetil* projetil;
 				if (Player == Jogador1) {
 					projetil = new Entidades::Projetil("Assets/Sprites/pixie_bubble.png", 3);
@@ -231,6 +228,10 @@ namespace Entidades {
 		Listas::ListaEntidades* Jogador::getProjeteis()
 		{
 			return &projeteis;
+		}
+		void Jogador::zeraPontos()
+		{
+			pontos = 0;
 		}
 	}
 }

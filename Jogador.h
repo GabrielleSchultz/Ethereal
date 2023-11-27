@@ -60,6 +60,7 @@ namespace Entidades {
 			void setFacingRight(const bool b);
 			bool getIsGrounded();
 			Listas::ListaEntidades* getProjeteis();
+			static void zeraPontos();
 		};
 	}
 }

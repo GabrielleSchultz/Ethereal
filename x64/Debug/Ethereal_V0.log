@@ -1,14 +1,15 @@
-﻿  ControleMenu.cpp
-  Fase.cpp
-  GameState.cpp
-  Gerenciador_Estados.cpp
-  MenuPause.cpp
+﻿  GameState.cpp
   Primeira_Fase.cpp
-C:\Users\miche_bb3fmdp\OneDrive\Documentos\GitHub\Ethereal\Primeira_Fase.cpp(83,12): warning C4244: 'argumento': conversão de 'time_t' para 'unsigned int', possível perda de dados
-C:\Users\miche_bb3fmdp\OneDrive\Documentos\GitHub\Ethereal\Primeira_Fase.cpp(100,50): warning C4244: 'argumento': conversão de 'int' para 'float', possível perda de dados
-C:\Users\miche_bb3fmdp\OneDrive\Documentos\GitHub\Ethereal\Primeira_Fase.cpp(109,12): warning C4244: 'argumento': conversão de 'time_t' para 'unsigned int', possível perda de dados
-  Segunda_Fase.cpp
-C:\Users\miche_bb3fmdp\OneDrive\Documentos\GitHub\Ethereal\Segunda_Fase.cpp(88,12): warning C4244: 'argumento': conversão de 'time_t' para 'unsigned int', possível perda de dados
-C:\Users\miche_bb3fmdp\OneDrive\Documentos\GitHub\Ethereal\Segunda_Fase.cpp(114,12): warning C4244: 'argumento': conversão de 'time_t' para 'unsigned int', possível perda de dados
+C:\Users\miche_bb3fmdp\OneDrive\Documentos\GitHub\Ethereal\Primeira_Fase.cpp(71,12): warning C4244: 'argumento': conversão de 'time_t' para 'unsigned int', possível perda de dados
+C:\Users\miche_bb3fmdp\OneDrive\Documentos\GitHub\Ethereal\Primeira_Fase.cpp(88,50): warning C4244: 'argumento': conversão de 'int' para 'float', possível perda de dados
+C:\Users\miche_bb3fmdp\OneDrive\Documentos\GitHub\Ethereal\Primeira_Fase.cpp(97,12): warning C4244: 'argumento': conversão de 'time_t' para 'unsigned int', possível perda de dados
+  Projetil.cpp
+C:\Users\miche_bb3fmdp\OneDrive\Documentos\GitHub\Ethereal\Projetil.cpp(16,20): warning C4244: 'argumento': conversão de 'int' para 'float', possível perda de dados
+C:\Users\miche_bb3fmdp\OneDrive\Documentos\GitHub\Ethereal\Projetil.cpp(16,17): warning C4244: 'argumento': conversão de 'int' para 'float', possível perda de dados
+C:\Users\miche_bb3fmdp\OneDrive\Documentos\GitHub\Ethereal\Projetil.cpp(54,94): warning C4244: 'argumento': conversão de 'T' para 'int', possível perda de dados
+          with
+          [
+              T=float
+          ]
   Gerando Código...
   Ethereal_V0.vcxproj -> C:\Users\miche_bb3fmdp\OneDrive\Documentos\GitHub\Ethereal\x64\Debug\Ethereal_V0.exe

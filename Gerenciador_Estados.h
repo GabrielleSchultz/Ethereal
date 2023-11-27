@@ -1,6 +1,6 @@
 #pragma once
 
-//referencia do código: livro SFML Game Development - Arthur Moreira, Jan Haller
+//referência do código: livro SFML Game Development - Arthur Moreira, Jan Haller
 
 #include <vector>
 

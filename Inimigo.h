@@ -10,6 +10,7 @@ namespace Entidades {
 			Inimigo(int nv  = 0, int mal = 0, const char* texturePath = "", ID id = ID::vazio);
 			~Inimigo();
 			virtual void danificar(Jogador* p) = 0;
+			int getNivelMaldade();
 			virtual void executar() = 0;
 			virtual void colidir(Entidades::Entidade* e) = 0;
 			void salvarInimigo(nlohmann::ordered_json& entrada);

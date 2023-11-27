@@ -34,12 +34,10 @@ void Fases::Segunda_Fase::executar(float dt)
 		int j = 0, i = 0, o = 0;
 		for (jog = jogadores.get_primeiro(), j = 0; j < jogadores.getTamanho(); jog.operator++(), j++) {
 			jogador = jog.operator*();
-			//jogador->update(dt);
 			jogador->executar(dt);
 
 			for (it = inimigos.get_primeiro(), i = 0; i < inimigos.getTamanho(); it.operator++(), i++) {
 				aux = it.operator*();
-				//aux->update(dt);
 				if (aux->getId() == Entidades::ID::boss) {
 					boss = static_cast<Entidades::Personagens::Vinganca*>(aux);
 					if (boss_ativo == 0) {
@@ -55,16 +53,12 @@ void Fases::Segunda_Fase::executar(float dt)
 				if (aux->getId() == Entidades::ID::inimigo_raiva) {
 					static_cast<Entidades::Personagens::Raiva*>(aux)->perseguir(static_cast<Entidades::Personagens::Jogador*>(jogador));
 				}
-				if (!static_cast<Entidades::Personagens::Personagem*>(aux)->getVivo()) {
-					static_cast<Entidades::Personagens::Jogador*>(jogador)->operator++(100);
-				}
 			}
 		}
 
 		for (it = obstaculos.get_primeiro(), o = 0; o < obstaculos.getTamanho(); it.operator++(), o++) {
 			aux = it.operator*();
 			aux->update(dt);
-			//static_cast<Entidades::Obstaculos::Plataforma*>(aux)->obstacular(static_cast<Entidades::Personagens::Jogador*>(jogador));
 		}
 		pGerenciadorGrafico->desenharEnte("Assets/Backgrounds/Stars-Big_1_2_PC.png", Math::Vector2Df(0, 0));
 

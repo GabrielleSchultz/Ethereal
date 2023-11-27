@@ -76,6 +76,7 @@ void Estados::GameState::executar(float dt) {
 	}
 	else {
 		pontuacao_jogo = pFase->getPontuacaoJogadores();
+		Entidades::Personagens::Jogador::zeraPontos();
 		request_pop();
 		request_push(Estados::Tipo::Gameover);
 	}

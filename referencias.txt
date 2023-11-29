@@ -3,30 +3,27 @@ referencias dos assets e referencias de código:
 
 **código:
 
-agradecimentos aos monitores Skora, Burda, Felipe, Giovane, (...)
+agradecimentos aos monitores Skora, Burda, Felipe, Giovane e Ariel
 agradecimentos ao Jean e Murilo do Peteco
 agradecimentos a dupla do Matheus e Edison
-agradecimentos a dupla do Cristiano e (...)
+agradecimentos a Cristiano Frota
 
-json em c++ -> créditos e link do github para (...)
-understanding delta time (video)
-movimentation tips (video)
-livro SFML (...)
-livro Como Programar C++ Deitel
-livro GameProgrammingPatterns Bob Nystrom
-link movimento parabólico para o pulo (...)
+livros utilizados no desenvolvimento constam no documento do trabalho
+Biblioteca de json em C++ : https://github.com/nlohmann/json, créditos a Niels Lohmann
 
 **assets:
 
 FONTES DE TEXTO:
 
-https://www.fontspace.com/call-of-ops-duty-ii-font-f10390 // Chequered Ink
-
-MUSICA E SOUND_EFFECTS:
+https://www.fontspace.com/romance-fatal-serif-font-f7489 do website FontSpace
 
 BACKGROUND
-https://craftpix.net/file-licenses/
-https://digitalmoons.itch.io/parallax-forest-background
-DinVStudio
-TheWiseHedgehog
-Digital Moons
+Creditos aos artistas:
+  Jun Dong Li
+  Lucy Blueroses
+  James Sypniewski
+
+
+Demais imagens retiradas de:
+https://abstract.desktopnexus.com/wallpaper/882081/
+https://www.pxfuel.com/es/desktop-wallpaper-kbcsi
